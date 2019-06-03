@@ -10,9 +10,91 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_06_03_140555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "desks", force: :cascade do |t|
+    t.integer "price_per_day"
+    t.bigint "space_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["space_id"], name: "index_desks_on_space_id"
+  end
+
+  create_table "owners", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "siret"
+    t.string "phone"
+    t.index ["email"], name: "index_owners_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.date "arrival_date"
+    t.date "departure_date"
+    t.string "status"
+    t.bigint "user_id"
+    t.bigint "desk_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["desk_id"], name: "index_reservations_on_desk_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "content"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.bigint "space_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["space_id"], name: "index_reviews_on_space_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
+
+  create_table "spaces", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "phone"
+    t.string "address"
+    t.string "website"
+    t.json "opening_hours"
+    t.string "photo"
+    t.bigint "owner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_spaces_on_owner_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "avatar"
+    t.string "phone"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "desks", "spaces"
+  add_foreign_key "reservations", "desks"
+  add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "spaces"
+  add_foreign_key "reviews", "users"
+  add_foreign_key "spaces", "owners"
 end

@@ -1,1 +1,13 @@
-// Specific CSS for your home-page
+section {
+  width: 100%;
+  display: table;
+  max-width: none;
+  height: 100vh;
+}
+
+.intro {
+  background-image: asset-url('banner.-test.jpg');
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}

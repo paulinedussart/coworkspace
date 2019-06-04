@@ -10,11 +10,9 @@
       <%= submit_tag 'Go!', class:"btn btn-primary mx-2" %>
   <% end %>
 
-
-
-
+<div class="">
   <% @spaces.each do |space|  %>
-    <div class="card card-space" style="width: 18rem;">
+    <div class=" card card-space">
   <!--     <img src="..." class="card-img-top" alt="..."> -->
         <div class="card-body">
           <h3 class="card-title"> <%= space.name %> </h3>
@@ -30,5 +28,8 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
+</div>
+
+
 
 </div>

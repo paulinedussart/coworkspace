@@ -1,4 +1,5 @@
 class SpacesController < ApplicationController
+
   def index
     @spaces = Space.where.not(latitude: nil, longitude: nil)
 
@@ -9,5 +10,12 @@ class SpacesController < ApplicationController
         infoWindow: render_to_string(partial: "infowindow", locals: { space: space })
       }
     end
+  end  
+
+  def new
+    @space = Space.new
+  end
+    
+  def create
   end
 end

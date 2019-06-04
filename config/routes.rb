@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :owners do
-    resources :spaces, only: [:new, :create]
+    resources :spaces, only: [:index, :show, :new, :create]
   end
 end

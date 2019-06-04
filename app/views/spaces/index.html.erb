@@ -1,6 +1,18 @@
 <div class="container">
 
   <h1>Spaces</h1>
+
+   <%= form_tag spaces_path, method: :get, class:"form-inline" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a space "%>
+      <%= submit_tag 'Go!', class:"btn btn-primary mx-2" %>
+  <% end %>
+
+
+
+
   <% @spaces.each do |space|  %>
     <div class="card card-space" style="width: 18rem;">
   <!--     <img src="..." class="card-img-top" alt="..."> -->

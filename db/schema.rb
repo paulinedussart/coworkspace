@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_03_140555) do
+ActiveRecord::Schema.define(version: 2019_06_04_125554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2019_06_03_140555) do
     t.index ["reset_password_token"], name: "index_owners_on_reset_password_token", unique: true
   end
 
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text "content"
+    t.string "searchable_type"
+    t.bigint "searchable_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
+  end
+
   create_table "reservations", force: :cascade do |t|
     t.date "arrival_date"
     t.date "departure_date"
@@ -61,6 +70,21 @@ ActiveRecord::Schema.define(version: 2019_06_03_140555) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
+  create_table "services", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "space_services", force: :cascade do |t|
+    t.bigint "space_id"
+    t.bigint "service_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["service_id"], name: "index_space_services_on_service_id"
+    t.index ["space_id"], name: "index_space_services_on_space_id"
+  end
+
   create_table "spaces", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -72,6 +96,8 @@ ActiveRecord::Schema.define(version: 2019_06_03_140555) do
     t.bigint "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "latitude"
+    t.float "longitude"
     t.index ["owner_id"], name: "index_spaces_on_owner_id"
   end
 
@@ -96,5 +122,7 @@ ActiveRecord::Schema.define(version: 2019_06_03_140555) do
   add_foreign_key "reservations", "users"
   add_foreign_key "reviews", "spaces"
   add_foreign_key "reviews", "users"
+  add_foreign_key "space_services", "services"
+  add_foreign_key "space_services", "spaces"
   add_foreign_key "spaces", "owners"
 end

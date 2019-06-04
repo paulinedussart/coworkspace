@@ -1,7 +1,13 @@
 class SpacesController < ApplicationController
 
   def index
-    @spaces = Space.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @spaces = Space
+        .search_by_name_and_description_and_address(params[:query])
+        .where.not(latitude: nil, longitude: nil)
+    else
+      @spaces = Space.where.not(latitude: nil, longitude: nil)
+    end
 
     @markers = @spaces.map do |space|
       {

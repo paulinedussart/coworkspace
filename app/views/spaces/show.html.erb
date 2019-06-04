@@ -5,15 +5,17 @@
   </div>
   <div>
     <p> <i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
-    <p> <%= @space.description %> </p>
     <p><em> <%= link_to @space.website %></em></p>
+    <p> <%= @space.description %> </p>
+
   </div>
   <div>
-     <h2>Services available</h2>
+     <h2 >Services available</h2>
   </div>
   <div class="card hours" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title"> <i class="far fa-clock"></i> Opening Hours</h5>
+  <div class="card-hours">
+    <h3 class="card-title"> <i class="far fa-clock"></i> Opening Hours</h3>
+
     <p class="card-text"> <strong>Monday-Friday :</strong> <%= @space.opening_hours["Mon-Fri"] %> </p>
     <p class="card-text"> <strong>Saturday :</strong> <%= @space.opening_hours['Sat'] %> </p>
     <p class="card-text"> <strong>Sunday :</strong> <%= @space.opening_hours['Sun'] %> </p>

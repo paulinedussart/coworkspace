@@ -1,7 +1,5 @@
-
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-
 puts 'Cleaning database...'
 Reservation.destroy_all
 Owner.destroy_all
@@ -9,8 +7,11 @@ Space.destroy_all
 User.destroy_all
 Service.destroy_all
 
+
+
+
 # SEED SPACE_SERVICES
-puts 'Creating services...'
+puts 'Creating SERVICES...'
 services = [ "High-speed wifi", "Heating", "Air conditioning", "Standing desks", "Beanbags",
 "Ergonomic chairs", "Printer", "3D printer", "Scanner", "Photocopier", "Projector",
 "Skype room", "Outdoor terrace", "Kitchen", "Wheelchair accessibility", "Free drinking water",
@@ -19,10 +20,13 @@ services = [ "High-speed wifi", "Heating", "Air conditioning", "Standing desks",
 services.each do |service|
   Service.create!(name: service)
 end
-puts 'Services created !'
+puts 'SERVICES created !'
+
+
+
 
 # SEED OWNERS
-puts 'Creating owner...'
+puts 'Creating OWNERS...'
 
 vr_lab = Owner.create!(
   email: 'vr-lab@example.com',
@@ -47,11 +51,14 @@ green_advisor = Owner.create!(
   name: "Green Advisor",
   siret: '493 234 654 00038'
 )
-puts 'Owner Created!'
+puts 'OWNERS created!'
+
+
+
 
 
 # SEED USERS
-puts 'Creating user...'
+puts 'Creating USERS...'
 pauline = User.create!(
   email: 'pau@example.com',
   password: 'password',
@@ -67,17 +74,22 @@ ludivine = User.create!(
   first_name: "Ludivine",
   last_name: "Robin"
 )
-puts 'User Created!'
+puts 'USERS created!'
+
+
+
+
 
 
 # SEED DESKS
-puts 'Creating desks...'
+puts 'Creating SPACES...'
+# SEEDS I WILL USE FOR DEMODAY !!!!!!!
 
 url = "https://coworker.imgix.net/photos/australia/sydney/servcorp-mlc-centre-sydney/3-1558052144.jpg"
-mlc = Space.new(name: "MCL", address: "29 Martin Place, Sydney, Australia", description: "MCL is a creative workspace with an established working environment located just 2km from the Sydney CBD. Featuring great location accessibility, efficient workspaces and a thriving community, this is where coworking works.
+mlc = Space.new(name: "MCL", address: "369 Pittwater Road, North Manly, Sydney, Australia", description: "MCL is a creative workspace with an established working environment located just 2km from the Sydney CBD. Featuring great location accessibility, efficient workspaces and a thriving community, this is where coworking works.
 Professional shared workspace meets flexible memberships and functional facilities, MCL offers designer desks, tables, sofas and super fast wifi. There are also informal meeting areas, barista coffee, access to all Spaces locations worldwide and additional services.
 Work better together in the Spaces Surry Hills environment where their community supports one another in many ways through exchanging valuable insight and feedback, idea sharing as well as collaborative efforts intended for professional development.",
-owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.mcl-sydney.com')
+owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.mcl-sydney.com')
 # mlc.remote_photo_url = url
 mlc.save
 
@@ -91,31 +103,34 @@ manly_house_studio.save
 url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
 havana_beach = Space.new(name: "Havana Beach", address: "14 South Steyne, Manly, Sydney, Australia", description: "Havana Beach turns the restaurant that is normally closed during the day into a unique and affordable co-working space. Located in Manly, mere steps away from the beach sits Havana Beach.
 Light and color fill this eternally sunny space as people rest their backs on plush scarlet and lime patterned cushions and listen to the ocean as they sip on hot coffee made by the in-house barista. The exposed brick walls and light bulbs, murals and vintage posters are reminiscent of the warmth and easy
-vibrancy so renowned in Cuban culture. ",
-owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.havana_beach.com')
+vibrancy so renowned in Cuban culture.", owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.havana_beach.com')
 # we_work_martin_place.remote_photo_url = url
-manly_house_studio.save
+havana_beach.save
 
 url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
-we_work_martin_place = Space.new(name: "We Work Martin Place", address: "5 Martin Place, Sydney, Australia", description: "",
-owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.wework.com')
+we_work_martin_place = Space.new(name: "We Work Martin Place", address: "5 Martin Place, Sydney, Australia", description: "We Work is the worlds most unique coworking space, tucked within the foundations of the iconic Sydney Harbour Bridge at Lavender Bay. This heritage space has been reimagined to cultivate a community of driven start-ups and businesses created by entrepreneurs for entrepreneurs.
+", owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.wework.com')
 # we_work_martin_place.remote_photo_url = url
 we_work_martin_place.save
 
 url = "https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-hub_southern_cross_melbourne = Space.new(name: "Hub Southern Cross - Melbourne", address: "696 Bourke St, Melbourne VIC 3000, Australia",
+hub_southern_cross_melbourne = Space.new(name: "Hub Southern Cross - Melbourne", address: "696 Bourke St, Melbourne VIC 3000, Australia", description:"Coworking space and serviced offices in a stunning heritage listed building!
+Check out our North Strathfield space for Serviced Offices for every business type and size. Our offices are there to help you start your business off or seat all 30 of your employees! Doesn't matter what size or how many you need we have the offices to accomodate you and your business.
+Join up month-to-month with no lock in contracts just an awesome environment with loads of people waiting to meet you! ",
 owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Hub-Southern-Cross.com')
 # hub_southern_cross_melbourne.remote_photo_url = url
 hub_southern_cross_melbourne.save
 
 url = "https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-fishburners = Space.new(name: "Fishburners", address: "level 2/11 York St, Sydney NSW 2000, Australia",
+fishburners = Space.new(name: "Fishburners", address: "level 2/11 York St, Sydney NSW 2000, Australia", description:"Working alone can be a bore sometimes. It might even be a routine that’s suddenly unproductive for you anymore. Or perhaps the bustling cafe is just not for you to spend long working hours in? At Fishburners, this is why they’ve built a coworking space for such purposes of working together instead of alone. Break your normal working style and try coworking at their collaborative space instead!",
 owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Fishburners.com')
 # fishburners.remote_photo_url = url
 fishburners.save
 
 url = "https://images.unsplash.com/photo-1554774853-719586f82d77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-spacecubed = Space.new(name: "Spacecubed", address: "45 St Georges Terrace, Perth WA 6000, Australia",
+spacecubed = Space.new(name: "Spacecubed", address: "45 St Georges Terrace, Perth WA 6000, Australia", description:"An impressive space for your next business meeting.
+berrins is a boutique co-working space in the heart of Manly, right across the road from Manly Wharf.
+With mid-century modern furniture, quality light fittings, high ceilings, abundance of natural light and Manly’s best barista just next door – it’s the perfect destination for your next business meeting.",
 owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Spacecubed.com')
 # spacecubed.remote_photo_url = url
 spacecubed.save
@@ -126,29 +141,52 @@ the need to escape the lonesome confined spaces of your cubicle or your comfy so
 owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.CoWorkin.com')
 # work_in.remote_photo_url = url
 work_in.save
-
 # SEEDS AUSTRALIA END
 
-url = "https://images.unsplash.com/photo-1507537231947-f2ff14bc1554?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-hub_hoi_an_coworking = Space.new(name: "Hub Hoi An Coworking", address: "105 Lê Thánh Tông, Cẩm Sơn, Hội An, Quảng Nam, Vietnam", owner: green_advisor, opening_hours: {"Mon-Fri": "8AMP-8PM", "Sat": "9AM-6PM", "Sun": "10AM-1PM"}, website: 'https://www.hubhoian.com')
-# hub_hoi_an_coworking.remote_photo_url = url
-hub_hoi_an_coworking.save
 
-url = "https://images.unsplash.com/photo-1507537231947-f2ff14bc1554?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-smart_point = Space.new(name: "SmArt.Point", address: "Baizakov St 280, Almaty 050040, Kazakhstan", owner: green_advisor)
-# smart_point.remote_photo_url = url
-smart_point.save
 
-url = "https://images.unsplash.com/photo-1507296950187-9b0c7c88e7af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-club_coworking = Space.new(name: "Club Coworking", address: "Jamiyan Gun Str. 9, Sukhbaatar District, 1st Khoroo ICC Tower, 13th Floor, Ulaanbaatar 14240, Mongolie", owner: tech_digital, opening_hours: {"Mon-Fri": "8AMP-8PM", "Sat": "9AM-6PM", "Sun": "10AM-1PM"})
-# club_coworking.remote_photo_url = url
-club_coworking.save
 
-url = "https://images.unsplash.com/photo-1464075208758-5623fb69e13b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-ay7_coworking = Space.new(name: "7AY Coworking", address: "Lot 15, 16 - Zone industrielle Takadoum، Rabat, Maroc", owner: tech_digital, opening_hours: {"Mon-Fri": "8AMP-8PM", "Sat": "9AM-6PM", "Sun": "10AM-1PM"})
-# ay7_coworking.remote_photo_url = url
-ay7_coworking.save
 
+
+# EUROPE
+    # FRANCE
+url = "https://images.unsplash.com/photo-1556745753-b2904692b3cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+cowork_in_montpellier = Space.new(name: "Cowork'in Montpellier", address: "4 Rue Auguste Comte, 34000 Montpellier, France", description: 'New establishment, private access to the sea. Free deckchairs at your disposal.', phone: '0643847569', owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# cowork_in_montpellier.remote_photo_url = url
+cowork_in_montpellier.save
+
+url = "https://images.unsplash.com/photo-1461988625982-7e46a099bf4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+the_island = Space.new(name: "The Island", address: "19 Avenue de Toulouse, 34070 Montpellier, France", description: 'New establishment, private access to the sea. Free deckchairs at your disposal.', owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# the_island.remote_photo_url = url
+the_island.save
+
+url = "https://images.unsplash.com/photo-1554902843-260acd0993f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+le_loft = Space.new(name: "Le Loft", address: "33 Rue de Robien, 35000 Rennes, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# le_loft.remote_photo_url = url
+le_loft.save
+
+url = "https://images.unsplash.com/photo-1429681601148-75510b2cef43?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+etincelle_cowoking = Space.new(name: "Etincelle Cowoking", address: " 2 Rue d'Austerlitz, 31000 Toulouse, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# etincelle_cowoking.remote_photo_url = url
+etincelle_cowoking.save
+
+url = "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+coworkimmo = Space.new(name: "Coworkimmo", address: " 23 Rue Edmond Michelet, 33000 Bordeaux, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# coworkimmo.remote_photo_url = url
+coworkimmo.save
+
+url = "https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+la_ruche = Space.new(name: "La Ruche", address: "66 Rue Abbé de l'Épée, 33000 Bordeaux, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# la_ruche.remote_photo_url = url
+la_ruche.save
+
+url = "https://images.unsplash.com/photo-1556745753-b2904692b3cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+mtp = Space.new(name: "MTP", address: "4 Rue Auguste Comte, 34000 Montpellier, France", description: 'New establishment, private access to the sea. Free deckchairs at your disposal.', phone: '0693847519', owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# mtp.remote_photo_url = url
+mtp.save
+
+
+    # AUTRES
 url = "https://images.unsplash.com/photo-1535078035266-a0fa7d3b8f65?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 cowork_central = Space.new(name: "Cowork Central – Cais do Sodré", address: "Praça Duque da Terceira 24, 1200-161 Lisboa, Portugal", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 # cowork_central.remote_photo_url = url
@@ -164,13 +202,25 @@ e_commerce_park_of_sweden = Space.new(name: "E-Commerce Park of Sweden", address
 # e_commerce_park_of_sweden.remote_photo_url = url
 e_commerce_park_of_sweden.save
 
-url = "https://images.unsplash.com/photo-1461418559055-6f020c5a91e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-optimus_coworking_space = Space.new(name: "Optimus Coworking Space", address: "El Gomhouria St, Mit Khamis WA Kafr Al Mougi, Mansoura, Dakahlia Governorate, Égypte", owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# optimus_coworking_space.remote_photo_url = url
-optimus_coworking_space.save
+url = "https://images.unsplash.com/photo-1461704946971-9e5d8b7938f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+rent24 = Space.new(name: "Rent24", address: "Potsdamer Straße 182/4.og, 10783 Berlin, Allemagne", owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# rent24.remote_photo_url = url
+rent24.save
 
+url = "https://images.unsplash.com/photo-1461701204332-2aa3db5b20c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=1000&q=80"
+polo = Space.new(name: "Polo", address: "Plac Konesera 10, 03-736 Warszawa, Pologne", owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# polo.remote_photo_url = url
+polo.save
+
+
+
+
+
+
+# AMERIQUE
+    # USA
 url = "https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-the_emery = Space.new(name: "The Emery", address: "801 N Federal Hwy #212, Hallandale Beach, FL 33009, United Sates", owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+the_emery = Space.new(name: "The Emery", address: "801 N Federal Hwy 212, Hallandale Beach, FL 33009, United Sates", owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 # the_emery.remote_photo_url = url
 the_emery.save
 
@@ -178,6 +228,59 @@ url = "https://images.unsplash.com/photo-1484251065541-c9770829890f?ixlib=rb-1.2
 station_house = Space.new(name: "Station House", address: "260 1st Ave S, St. Petersburg, FL 33701, United Sates", owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 # station_house.remote_photo_url = url
 station_house.save
+
+url = "https://images.unsplash.com/photo-1498409785966-ab341407de6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+co_white_house_work = Space.new(name: "Co White House Work", address: "1600 Pennsylvania Ave NW, Washington, DC 20500, United Sates", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# co_white_house_work.remote_photo_url = url
+co_white_house_work.save
+
+url = "https://coworker.imgix.net/photos/indonesia/bali/hub-bali-coworking-legian/1.jpg"
+coworking_legian = Space.new(name: "Coworking Legian", address: "999 S Logan St Suite 202, Denver, CO 80209, United Sates", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# coworking_legian.remote_photo_url = url
+coworking_legian.save
+
+url = "https://images.unsplash.com/photo-1467320424268-f91a16cf7c77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+the_lab_miami = Space.new(name: "The Lab Miami", address: "400 NW 26th St, Miami, FL 33127, United Sates", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# the_lab_miami.remote_photo_url = url
+the_lab_miami.save
+
+url = "https://images.unsplash.com/photo-1505624198937-c704aff72608?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+we_work = Space.new(name: "We Work", address: "US Custom House, 220 NW 8th Ave, Portland, OR 97209, United Sates", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# we_work.remote_photo_url = url
+we_work.save
+
+
+    # AUTRE
+url = "https://images.unsplash.com/photo-1461782296610-c552d61b149a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+guaja_café_coworking = Space.new(name: "GUAJA Café & Coworking", address: " R Fradique Coutinho, 160, Sao Paulo, Brazil", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# guaja_café_coworking.remote_photo_url = url
+guaja_café_coworking.save
+
+url = "https://images.unsplash.com/photo-1511549945984-b2b193cb87e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+rather_coworking = Space.new(name: "Rather Coworking", address: "R. José Maia Gomes, 258 - Jatiúca, Maceió - AL, 57036-240, Brasil", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# rather_coworking.remote_photo_url = url
+rather_coworking.save
+
+url = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
+chillhy = Space.new(name: "Chill'Hi", address: "Aviador David Fuentes, Pudahuel, Región Metropolitana, Chili", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# chillhy.remote_photo_url = url
+chillhy.save
+
+
+
+
+
+
+# MAGREB
+url = "https://images.unsplash.com/photo-1507537231947-f2ff14bc1554?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+smart_point = Space.new(name: "SmArt.Point", address: "Baizakov St 280, Almaty 050040, Kazakhstan", owner: green_advisor)
+# smart_point.remote_photo_url = url
+smart_point.save
+
+url = "https://images.unsplash.com/photo-1464075208758-5623fb69e13b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+ay7_coworking = Space.new(name: "7AY Coworking", address: "Lot 15, 16 - Zone industrielle Takadoum، Rabat, Maroc", owner: tech_digital, opening_hours: {"Mon-Fri": "8AMP-8PM", "Sat": "9AM-6PM", "Sun": "10AM-1PM"})
+# ay7_coworking.remote_photo_url = url
+ay7_coworking.save
 
 url = "https://images.unsplash.com/photo-1439130490301-25e322d88054?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 talent_hub = Space.new(name: "Talent HUB", address: "Saint-Clgreen_advisor, Guadeloupe", description: 'New establishment, private access to the sea. Free deckchairs at your disposal.', owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'www.talenthub.fr/rdv')
@@ -204,87 +307,12 @@ banj = Space.new(name: "Banj", address: "514, Route de Delmas, Delmas 66, Port-a
 # banj.remote_photo_url = url
 banj.save
 
-url = "https://images.unsplash.com/photo-1452690700222-8a2a1a109f4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-the_hub = Space.new(name: "The Hub", address: "34 Lady Musgrave Rd, Kingston, Jamaïque", description: 'New establishment, private access to the sea. Free deckchairs at your disposal.', phone: '0693347569', owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'http://www.hubcoworking.net')
-# the_hub.remote_photo_url = url
-the_hub.save
-
-url = "https://images.unsplash.com/photo-1556745753-b2904692b3cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-mtp = Space.new(name: "MTP", address: "4 Rue Auguste Comte, 34000 Montpellier, France", description: 'New establishment, private access to the sea. Free deckchairs at your disposal.', phone: '0693847519', owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# mtp.remote_photo_url = url
-mtp.save
-
-url = "https://images.unsplash.com/photo-1461704946971-9e5d8b7938f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-rent24 = Space.new(name: "Rent24", address: "Potsdamer Straße 182/4.og, 10783 Berlin, Allemagne", owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# rent24.remote_photo_url = url
-rent24.save
-
-url = "https://images.unsplash.com/photo-1461701204332-2aa3db5b20c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=1000&q=80"
-polo = Space.new(name: "Polo", address: "Plac Konesera 10, 03-736 Warszawa, Pologne", owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# polo.remote_photo_url = url
-polo.save
-
-url = "https://images.unsplash.com/photo-1556745753-b2904692b3cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-cowork_in_montpellier = Space.new(name: "Cowork'in Montpellier", address: "4 Rue Auguste Comte, 34000 Montpellier, France", description: 'New establishment, private access to the sea. Free deckchairs at your disposal.', phone: '0643847569', owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# cowork_in_montpellier.remote_photo_url = url
-cowork_in_montpellier.save
-
-url = "https://images.unsplash.com/photo-1461988625982-7e46a099bf4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-the_island = Space.new(name: "The Island", address: "19 Avenue de Toulouse, 34070 Montpellier, France", description: 'New establishment, private access to the sea. Free deckchairs at your disposal.', owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# the_island.remote_photo_url = url
-the_island.save
-
-url = "https://images.unsplash.com/photo-1461782296610-c552d61b149a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-guaja_café_coworking = Space.new(name: "GUAJA Café & Coworking", address: "Av. Afonso Pena, 2881 - Funcionários, Belo Horizonte - MG, 30130-011, Brésil", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# guaja_café_coworking.remote_photo_url = url
-guaja_café_coworking.save
-
-url = "https://images.unsplash.com/photo-1511549945984-b2b193cb87e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-rather_coworking = Space.new(name: "Rather Coworking", address: "R. José Maia Gomes, 258 - Jatiúca, Maceió - AL, 57036-240, Brasil", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# rather_coworking.remote_photo_url = url
-rather_coworking.save
-
-url = "https://images.unsplash.com/photo-1467320424268-f91a16cf7c77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-the_lab_miami = Space.new(name: "The Lab Miami", address: "400 NW 26th St, Miami, FL 33127, United Sates", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# the_lab_miami.remote_photo_url = url
-the_lab_miami.save
-
-url = "https://images.unsplash.com/photo-1505624198937-c704aff72608?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-we_work = Space.new(name: "We Work", address: "US Custom House, 220 NW 8th Ave, Portland, OR 97209, United Sates", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# we_work.remote_photo_url = url
-we_work.save
-
-url = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-chillhy = Space.new(name: "Chill'Hi", address: "Aviador David Fuentes, Pudahuel, Región Metropolitana, Chili", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# chillhy.remote_photo_url = url
-chillhy.save
 
 
-url = "https://images.unsplash.com/photo-1498409785966-ab341407de6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-co_white_house_work = Space.new(name: "Co White House Work", address: "1600 Pennsylvania Ave NW, Washington, DC 20500, United Sates", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# co_white_house_work.remote_photo_url = url
-co_white_house_work.save
 
-url = "https://coworker.imgix.net/photos/indonesia/bali/hub-bali-coworking-legian/1.jpg"
-coworking_legian = Space.new(name: "Coworking Legian", address: "999 S Logan St Suite 202, Denver, CO 80209, United Sates", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# coworking_legian.remote_photo_url = url
-coworking_legian.save
 
-url = "https://coworker.imgix.net/photos/indonesia/bali/finns-bali/4-1529055152.jpg"
-finns_bali = Space.new(name: "Finns Bali", address: "No.90X Jalan Monkey Forest, Ubud, Bali, Indonesia", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# finns_bali.remote_photo_url = url
-finns_bali.save
 
-url = "https://coworker.imgix.net/photos/singapore/singapore/the-hive-new-bridge-road-singapore/1-1526289115.JPG"
-the_hive = Space.new(name: "The Hive", address: "59 New Bridge Road, Singapore, Singapore", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# the_hive.remote_photo_url = url
-the_hive.save
-
-url = "https://coworker.imgix.net/photos/singapore/singapore/the-company/8-1557286237.jpg"
-the_company = Space.new(name: "The Company", address: "331 NORTH BRIDGE ROAD, Singapore, Singapore", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# the_company.remote_photo_url = url
-the_company.save
-
+# AFRIQUE
 url = "https://images.unsplash.com/photo-1520881363902-a0ff4e722963?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 africa_work = Space.new(name: "Africa Work", address: "Suite 303 The Point Mall, 76 Regent Rd, Sea Point, Cape Town, 8005, South Africa", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 # africa_work.remote_photo_url = url
@@ -300,27 +328,34 @@ africa_south = Space.new(name: "Africa South", address: "Point Close, Eastford, 
 # africa_south.remote_photo_url = url
 africa_south.save
 
-url = "https://images.unsplash.com/photo-1554902843-260acd0993f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-le_loft = Space.new(name: "Le Loft", address: "33 Rue de Robien, 35000 Rennes, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# le_loft.remote_photo_url = url
-le_loft.save
+url = "https://images.unsplash.com/photo-1452690700222-8a2a1a109f4c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+the_hub = Space.new(name: "The Hub", address: "34 Lady Musgrave Rd, Kingston, Jamaïque", description: 'New establishment, private access to the sea. Free deckchairs at your disposal.', phone: '0693347569', owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'http://www.hubcoworking.net')
+# the_hub.remote_photo_url = url
+the_hub.save
 
-url = "https://images.unsplash.com/photo-1429681601148-75510b2cef43?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-etincelle_cowoking = Space.new(name: "Etincelle Cowoking", address: " 2 Rue d'Austerlitz, 31000 Toulouse, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# etincelle_cowoking.remote_photo_url = url
-etincelle_cowoking.save
 
-url = "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-coworkimmo = Space.new(name: "Coworkimmo", address: " 23 Rue Edmond Michelet, 33000 Bordeaux, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# coworkimmo.remote_photo_url = url
-coworkimmo.save
 
-url = "https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-la_ruche = Space.new(name: "La Ruche", address: "66 Rue Abbé de l'Épée, 33000 Bordeaux, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# la_ruche.remote_photo_url = url
-la_ruche.save
 
-puts 'Finish'
+
+
+# ASIE
+url = "https://coworker.imgix.net/photos/indonesia/bali/finns-bali/4-1529055152.jpg"
+finns_bali = Space.new(name: "Finns Bali", address: "No.90X Jalan Monkey Forest, Ubud, Bali, Indonesia", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# finns_bali.remote_photo_url = url
+finns_bali.save
+
+url = "https://coworker.imgix.net/photos/singapore/singapore/the-hive-new-bridge-road-singapore/1-1526289115.JPG"
+the_hive = Space.new(name: "The Hive", address: "59 New Bridge Road, Singapore, Singapore", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# the_hive.remote_photo_url = url
+the_hive.save
+
+url = "https://coworker.imgix.net/photos/singapore/singapore/the-company/8-1557286237.jpg"
+the_company = Space.new(name: "The Company", address: "331 NORTH BRIDGE ROAD, Singapore, Singapore", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# the_company.remote_photo_url = url
+the_company.save
+
+puts 'SPACES created!'
+puts 'Great ! Everything has been created ! '
 
 # SEED RESERVATIONS
 # puts 'Creating reservations...'

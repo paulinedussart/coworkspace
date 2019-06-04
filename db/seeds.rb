@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+services = [ "High-speed wifi", "Heating", "Air conditioning", "Standing desks", "Beanbags",
+"Ergonomic chairs", "Printer", "3D printer", "Scanner", "Photocopier", "Projector",
+"Skype room", "Outdoor terrace", "Kitchen", "Wheelchair accessibility", "Free drinking water",
+"Free coffee", "Free tea", "Community drinks", "Lounge", "Parking"]
+
+services.each do |service|
+  Service.create!(name: service)
+end

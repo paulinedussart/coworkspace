@@ -18,7 +18,7 @@ p {
 
 
 .intro {
-  background-image: asset-url('banner.jpg');
+  background-image: asset-url('banner-web.jpg');
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -30,6 +30,10 @@ p {
   flex-direction: column;
   margin: 150px;
   justify-content: center;
+}
+
+.about {
+  height: 50
 }
 
 .infos {

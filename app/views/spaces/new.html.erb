@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row no-ml">
     <div class="col-xs-12 col-sm-6 offset-sm-3">
-      <div class="form-post">
+      <div class="form-space">
         <h1>Add your Cowork Space</h1>
-        <%= simple_form_for @space do |f| %>
-        <div class="row">
+        <%= simple_form_for @space, url: owner_spaces_path  do |f| %>
+        <div class="row d-flex justify-content-between">
           <div class="col-xs-6">
             <%= f.input :name, placeholder: "Le Wagon Marseille" %>
           </div>
@@ -13,7 +13,7 @@
           </div>
         </div>
         <%= f.input :description,  placeholder: "Le Wagon à Marseille accueille principalement des développeurs, développeuses et les équipes techniques de startups installées dans le sud de la France. Vous souhaitez ..." %>
-        <div class="row">
+        <div class="row d-flex justify-content-between">
           <div class="col-xs-6">
             <%= f.input :phone, placeholder: "0767004019" %>
           </div>
@@ -21,6 +21,23 @@
             <%= f.input :website, placeholder: "https://coworking-marseille.tech/" %>
           </div>
         </div>
+
+          <fieldset class="form-group">
+            <input type="hidden" name="space[service_ids][]" value="">
+
+          <label for="">Add your available cowork services </label>
+          <div class="service-choices">
+
+            <% Service.all.each do |service| %>
+
+                <input class="hidden" type="checkbox" value="<%= service.id %>" name="space[service_ids][]" id="space_service_ids_<%= service.id %>">
+                <label class="service-choice" for="space_service_ids_<%= service.id %>"><%= service.name %>
+                <i class="fa fa-check"></i>
+                </label>
+
+            <% end %>
+          </div>
+
           <%= f.input :photo, placeholder: "https://coworking-marseille.tech/wp-content/uploads/2018/03/IMG_1051-2-1600x1200.jpg" %>
         <%= f.submit "Save your cowork space", class: "btn btn-primary" %>
         <% end %>

@@ -1,8 +1,11 @@
+// Form design
+
 .row {
   margin-left: 0px;
+  margin-right: 0px;
 }
 
-.form-post {
+.form-space {
   background: white;
   margin-top: 50px;
   padding: 20px;
@@ -20,4 +23,37 @@
     padding: 10px;
     font-weight: bold;
   }
+}
+
+// Checkboxes design
+.service-choices {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.service-choice {
+  background: #ECECEC;
+  padding: 15px;
+  border-radius: 5px;
+  opacity: .4;
+  flex: 0 0 30%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+  &.active {
+  background: #F99A1B;
+  color: white;
+  opacity: .7;
+  }
+}
+
+.hidden {
+  display:none;
 }

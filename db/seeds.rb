@@ -1,13 +1,16 @@
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 
-# SEED SERVICES
+puts 'Cleaning database...'
+Reservation.destroy_all
+Owner.destroy_all
+Space.destroy_all
+User.destroy_all
+Service.destroy_all
+
+# SEED SPACE_SERVICES
+puts 'Creating services...'
 services = [ "High-speed wifi", "Heating", "Air conditioning", "Standing desks", "Beanbags",
 "Ergonomic chairs", "Printer", "3D printer", "Scanner", "Photocopier", "Projector",
 "Skype room", "Outdoor terrace", "Kitchen", "Wheelchair accessibility", "Free drinking water",
@@ -16,13 +19,6 @@ services = [ "High-speed wifi", "Heating", "Air conditioning", "Standing desks",
 services.each do |service|
   Service.create!(name: service)
 end
-
-puts 'Cleaning database...'
-Reservation.destroy_all
-Owner.destroy_all
-Space.destroy_all
-User.destroy_all
-
 
 # SEED OWNERS
 puts 'Creating owner...'
@@ -362,6 +358,7 @@ greck_work = Space.new(name: "Greck'Work", address: "Heraklion 716 01, Grèce", 
 # greck_work.remote_photo_url = url
 greck_work.save
 
+puts 'Finish'
 
 # SEED RESERVATIONS
 # puts 'Creating reservations...'
@@ -405,4 +402,5 @@ greck_work.save
 #   user: user_aurelie,
 #   desk: work_in
 # )
+
 

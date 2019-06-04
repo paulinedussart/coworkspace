@@ -19,8 +19,10 @@ services = [ "High-speed wifi", "Heating", "Air conditioning", "Standing desks",
 
 services.each do |service|
   Service.create!(name: service)
+end
+puts 'SERVICES created !'
 
-puts 'Service Created!'
+
 
 
 # SEED OWNERS
@@ -52,6 +54,9 @@ green_advisor = Owner.create!(
 puts 'OWNERS created!'
 
 
+
+
+
 # SEED USERS
 puts 'Creating USERS...'
 pauline = User.create!(
@@ -72,12 +77,15 @@ ludivine = User.create!(
 puts 'USERS created!'
 
 
+
+
+
+
 # SEED DESKS
 puts 'Creating SPACES...'
 # SEEDS I WILL USE FOR DEMODAY !!!!!!!
 
 url = "https://coworker.imgix.net/photos/australia/sydney/servcorp-mlc-centre-sydney/3-1558052144.jpg"
-
 mlc = Space.new(name: "MCL", address: "369 Pittwater Road, North Manly, Sydney, Australia", description: "MCL is a creative workspace with an established working environment located just 2km from the Sydney CBD. Featuring great location accessibility, efficient workspaces and a thriving community, this is where coworking works.
 Professional shared workspace meets flexible memberships and functional facilities, MCL offers designer desks, tables, sofas and super fast wifi. There are also informal meeting areas, barista coffee, access to all Spaces locations worldwide and additional services.
 Work better together in the Spaces Surry Hills environment where their community supports one another in many ways through exchanging valuable insight and feedback, idea sharing as well as collaborative efforts intended for professional development.",
@@ -136,6 +144,10 @@ work_in.save
 # SEEDS AUSTRALIA END
 
 
+
+
+
+
 # EUROPE
     # FRANCE
 url = "https://images.unsplash.com/photo-1556745753-b2904692b3cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
@@ -175,6 +187,7 @@ mtp.save
 
 
     # AUTRES
+url = "https://images.unsplash.com/photo-1535078035266-a0fa7d3b8f65?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 cowork_central = Space.new(name: "Cowork Central – Cais do Sodré", address: "Praça Duque da Terceira 24, 1200-161 Lisboa, Portugal", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 cowork_central.remote_photo_url = url
 cowork_central.save
@@ -198,6 +211,11 @@ url = "https://images.unsplash.com/photo-1461701204332-2aa3db5b20c8?ixlib=rb-1.2
 polo = Space.new(name: "Polo", address: "Plac Konesera 10, 03-736 Warszawa, Pologne", owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 polo.remote_photo_url = url
 polo.save
+
+
+
+
+
 
 # AMERIQUE
     # USA
@@ -248,6 +266,11 @@ chillhy = Space.new(name: "Chill'Hi", address: "Aviador David Fuentes, Pudahuel,
 chillhy.remote_photo_url = url
 chillhy.save
 
+
+
+
+
+
 # MAGREB
 url = "https://images.unsplash.com/photo-1507537231947-f2ff14bc1554?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 smart_point = Space.new(name: "SmArt.Point", address: "Baizakov St 280, Almaty 050040, Kazakhstan", owner: green_advisor)
@@ -285,6 +308,10 @@ banj.remote_photo_url = url
 banj.save
 
 
+
+
+
+
 # AFRIQUE
 url = "https://images.unsplash.com/photo-1520881363902-a0ff4e722963?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 africa_work = Space.new(name: "Africa Work", address: "Suite 303 The Point Mall, 76 Regent Rd, Sea Point, Cape Town, 8005, South Africa", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
@@ -305,6 +332,10 @@ url = "https://images.unsplash.com/photo-1452690700222-8a2a1a109f4c?ixlib=rb-1.2
 the_hub = Space.new(name: "The Hub", address: "34 Lady Musgrave Rd, Kingston, Jamaïque", description: 'New establishment, private access to the sea. Free deckchairs at your disposal.', phone: '0693347569', owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'http://www.hubcoworking.net')
 the_hub.remote_photo_url = url
 the_hub.save
+
+
+
+
 
 
 # ASIE
@@ -352,7 +383,3 @@ puts 'Great ! Everything has been created ! '
 #   user: pauline,
 #   desk: the_company
 # )
-
-# )
-
-

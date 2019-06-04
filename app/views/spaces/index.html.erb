@@ -4,11 +4,12 @@
   <% @spaces.each do |space|  %>
     <div class="card card-space" style="width: 18rem;">
   <!--     <img src="..." class="card-img-top" alt="..."> -->
-        <div class="card-body">
-          <h3 class="card-title"> <%= space.name %> </h3>
-          <p class="card-text"> <%= space.address %> </p>
-          <%= link_to "See details", space_path(space), class: "btn btn-primary"%>
-        </div>
+      <%= cl_image_tag space.photo, crop: :fill %>
+      <div class="card-body">
+        <h3 class="card-title"> <%= space.name %> </h3>
+        <p class="card-text"> <%= space.address %> </p>
+        <%= link_to "See details", space_path(space), class: "btn btn-primary"%>
+      </div>
     </div>
   <% end  %>
   <div

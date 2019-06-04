@@ -39,6 +39,7 @@
           </div>
 
           <%= f.input :photo, placeholder: "https://coworking-marseille.tech/wp-content/uploads/2018/03/IMG_1051-2-1600x1200.jpg" %>
+          <%= f.input :photo_cache, as: :hidden %>
         <%= f.submit "Save your cowork space", class: "btn btn-primary" %>
         <% end %>
       </div>

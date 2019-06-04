@@ -1,13 +1,41 @@
 <section class="intro">
-  <div class="content">
-    <h1>Première section = search</h1>
-    <p>The height is set to 90vh, that means 90% height.</p>
- </div>
+  <nav class="navbar nav-home">
+    <%= link_to "/", class: "navbar-brand" do %>
+    <%= image_tag "logo-x2.png" %>
+    <% end %>
+    <form class="form-inline">
+      <button class="btn btn-outline-light mx-3" type="button">Manage your space</button>
+      <button class="btn btn-outline-light" type="button">Login</button>
+    </form>
+  </nav>
+  <div class="header">
+    <div class="title">
+      <h1>COWORK SPACE</h1>
+      <h2>Find the desk you deserve !</h2>
+      <p>COWORK SPACE allows you to search coworking spaces around the world</p>
+    </div>
+    <div class="button">
+      <button class="btn-custom btn-lg btn-custom-gradient mt-3" type="button">Find a space !</button>
+    </div>
 </section>
 
+
 <section class="about">
-  <div class="content">
-    <h1>Seconde section = about us</h1>
-    <p>The height is set to 90vh, that means 90% height.</p>
- </div>
+    <div class="infos">
+      <div class="info-photo">
+        <img src="/assets/night.svg">
+      </div>
+      <div class="content">
+        <h1>About us</h1>
+        <p>Less alone than at home and more professional than in a coffee shop, Cowork Space has been installed all over the world since 2019. A place of work, exchange and sharing of skills for all entrepreneurs, self-employed, freelancers, project leaders and teleworkers wishing to break the isolation of their homes and develop a quality professional network. Enjoy our spaces and all the services they offer without further delay: cafeteria, relaxation areas, individual or collective offices, wifi, etc.</p>
+      </div>
+    </div>
+</section>
+
+<section class="map-home">
+    <div class="fond">
+      <div class="map">
+        <img src="/assets/carte.png">
+      </div>
+    </div>
 </section>

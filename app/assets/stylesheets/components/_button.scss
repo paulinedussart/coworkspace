@@ -1,0 +1,28 @@
+.btn-custom {
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  transition: 0.5s;
+  border-radius: 20px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 5px 15px;
+}
+
+.btn-custom-gradient {
+  background-image: linear-gradient(to right, #E47097, #F8A348);
+}
+
+.btn-custom-gradient-purple {
+  background-image: linear-gradient(to right, #6F54DF, #501EA5);
+}
+
+.btn-custom-gradient-orange {
+  background-image: linear-gradient(to right, #F9B139, #F9972A);
+}
+
+.btn-outline-custom {
+  color: black;
+}
+
+.btn-custom:hover {
+  transform: translateY(-7px);
+}

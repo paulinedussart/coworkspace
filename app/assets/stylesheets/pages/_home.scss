@@ -5,9 +5,67 @@ section {
   height: 100vh;
 }
 
+h1 {
+  color: #5134A2;
+  font-weight: bold;
+  font-size: 64px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+
 .intro {
-  background-image: asset-url('banner.jpg');
+  background-image: asset-url('banner-web.jpg');
   width: 100%;
   background-size: cover;
   background-position: center;
+}
+
+.header {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 150px;
+  justify-content: center;
+}
+
+section.about {
+  height: 80vh;
+  width: 100%;
+}
+
+.infos {
+  display: flex;
+  width: 80%;
+  height: 70vh;
+  margin: 100px;
+  justify-content: space-betwwen;
+  padding-top: 20px;
+  align-self: center;
+}
+
+.info-photo img{
+  width: 600px;
+  margin-left: 50px;
+}
+
+.content {
+  margin-left: 100px;
+  width: 600px;
+  padding: 20px;
+  padding-top: 50px;
+}
+
+section.map-home {
+  height: 70vh;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.fond {
+ justify-content: center;
 }

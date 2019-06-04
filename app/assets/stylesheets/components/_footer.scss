@@ -1,0 +1,45 @@
+footer{
+  background-image: asset-url('footer.png');
+  height: 400px;
+  width: 100%;
+  background-size: cover;
+  opacity: 0.8;
+}
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 350px;
+  padding: 0px 50px;
+  position: relative;
+  width: 100%;
+  bottom: 0; left: 0;
+}
+.footer-links {
+  align-items: center;
+}
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+.footer p {
+  color: white;
+  text-align: center;
+  line-height: 0.5;
+}
+
+.footer_contacts i {
+  color: white;
+  font-size: 16px;
+}
+
+.footer_contacts, .footer-links, .footer-copyright {
+  margin-top: 100px;
+}
+

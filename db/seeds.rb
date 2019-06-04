@@ -71,6 +71,26 @@ puts 'User Created!'
 
 # SEED DESKS
 puts 'Creating desks...'
+
+url = "https://coworker.imgix.net/photos/australia/sydney/servcorp-mlc-centre-sydney/3-1558052144.jpg"
+mlc = Space.new(name: "MLC", address: "29 Martin Place, Sydney, Australia", description: "MCL is a creative workspace with an established working environment located just 2km from the Sydney CBD. Featuring great location accessibility, efficient workspaces and a thriving community, this is where coworking works.
+
+Professional shared workspace meets flexible memberships and functional facilities, MCL offers designer desks, tables, sofas and super fast wifi. There are also informal meeting areas, barista coffee, access to all Spaces locations worldwide and additional services.
+
+Work better together in the Spaces Surry Hills environment where their community supports one another in many ways through exchanging valuable insight and feedback, idea sharing as well as collaborative efforts intended for professional development. ", owner: aude, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# mlc.remote_photo_url = url
+mlc.save
+
+url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
+we_work_martin_place = Space.new(name: "We Work Martin Place", address: "5 Martin Place, Sydney, Australia", description: "", owner: aude, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# we_work_martin_place.remote_photo_url = url
+we_work_martin_place.save
+
+url = "https://coworker.imgix.net/photos/australia/sydney/work-inc/1-1542083293.JPG"
+work_in = Space.new(name: "CoWork In", address: "6 Middlemiss Street, Sydney, Australia", description: "Work In is the biggest coworking space in the southern area of Sydney. In their words, “Work for yourself, not by yourself” so if you ever feel the need to escape the lonesome confined spaces of your cubicle or your comfy sofa at home, head on over to Inspire Cowork to get your work mojo going while being surrounded by motivated like minded individuals.", owner: aude, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+# work_in.remote_photo_url = url
+work_in.save
+
 url = "https://images.unsplash.com/photo-1507537231947-f2ff14bc1554?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 hub_hoi_an_coworking = Space.new(name: "Hub Hoi An Coworking", address: "105 Lê Thánh Tông, Cẩm Sơn, Hội An, Quảng Nam, Vietnam", owner: aude, opening_hours: {"Mon-Fri": "8AMP-8PM", "Sat": "9AM-6PM", "Sun": "10AM-1PM"}, website: 'https://www.hubhoian.com')
 # hub_hoi_an_coworking.remote_photo_url = url
@@ -232,21 +252,6 @@ finns_bali = Space.new(name: "Finns Bali", address: "No.90X Jalan Monkey Forest,
 # finns_bali.remote_photo_url = url
 finns_bali.save
 
-url = "https://coworker.imgix.net/photos/australia/sydney/servcorp-mlc-centre-sydney/3-1558052144.jpg"
-mlc = Space.new(name: "MLC", address: "29 Martin Place, Sydney, Australia", owner: aude, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# mlc.remote_photo_url = url
-mlc.save
-
-url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
-we_work_martin_place = Space.new(name: "We Work Martin Place", address: "5 Martin Place, Sydney, Australia", owner: aude, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# we_work_martin_place.remote_photo_url = url
-we_work_martin_place.save
-
-url = "https://coworker.imgix.net/photos/australia/sydney/work-inc/1-1542083293.JPG"
-work_in = Space.new(name: "Work In", address: "6 Middlemiss Street, Sydney, Australia", owner: aude, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# work_in.remote_photo_url = url
-work_in.save
-
 url = "https://coworker.imgix.net/photos/singapore/singapore/the-hive-new-bridge-road-singapore/1-1526289115.JPG"
 the_hive = Space.new(name: "The Hive", address: "59 New Bridge Road, Singapore, Singapore", owner: bob, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 # the_hive.remote_photo_url = url
@@ -256,11 +261,6 @@ url = "https://coworker.imgix.net/photos/singapore/singapore/the-company/8-15572
 the_company = Space.new(name: "The Company", address: "331 NORTH BRIDGE ROAD, Singapore, Singapore", owner: jack, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 # the_company.remote_photo_url = url
 the_company.save
-
-url = "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-the_mali = Space.new(name: "The Mali", address: " Place de la CAN, ACI 2000, Bamako, Mali", owner: bob, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# the_mali.remote_photo_url = url
-the_mali.save
 
 url = "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 maliwork = Space.new(name: "MaliWork", address: "Bamako, Mali", owner: bob, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
@@ -282,26 +282,6 @@ africa_south = Space.new(name: "Africa South", address: "Point Close, Eastford, 
 # africa_south.remote_photo_url = url
 africa_south.save
 
-url = "https://images.unsplash.com/photo-1488901512066-cd403111aeb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-india_work = Space.new(name: "India Work", address: "A-9, above Airtel office, near Kanha Restaurant, Queens Road, Vaishali Nagar, Jaipur, Rajasthan 302021, Inde", owner: aude, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# india_work.remote_photo_url = url
-india_work.save
-
-url = "https://images.unsplash.com/photo-1488901512066-cd403111aeb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-taj_work = Space.new(name: "Taj Work", address: "Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001, Inde", owner: aude, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# taj_work.remote_photo_url = url
-taj_work.save
-
-url = "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-fort_rouge = Space.new(name: "Fort Rouge", address: "Netaji Subhash Marg, Lal Qila, Chandni Chowk, New Delhi, Delhi 110006, Inde", owner: aude, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# fort_rouge.remote_photo_url = url
-fort_rouge.save
-
-url = "https://images.unsplash.com/photo-1495576775051-8af0d10f19b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-paris_work = Space.new(name: "Paris Work", address: "30 Rue de la Chine, 75020 Paris", owner: aude, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# paris_work.remote_photo_url = url
-paris_work.save
-
 url = "https://images.unsplash.com/photo-1554902843-260acd0993f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 le_loft = Space.new(name: "Le Loft", address: "33 Rue de Robien, 35000 Rennes", owner: bob, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 # le_loft.remote_photo_url = url
@@ -321,21 +301,6 @@ url = "https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?ixlib=rb-1.2
 la_ruche = Space.new(name: "La Ruche", address: "66 Rue Abbé de l'Épée, 33000 Bordeaux", owner: bob, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 # la_ruche.remote_photo_url = url
 la_ruche.save
-
-url = "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-china_work = Space.new(name: "China Work", address: "Chine, Shandong Sheng, Jinan Shi, 历城区遥墙镇机场路1号 邮政编码: 250107", owner: bob, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# china_work.remote_photo_url = url
-china_work.save
-
-url = "https://images.unsplash.com/photo-1554200876-2b37eac20913?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-chen_working = Space.new(name: "Chen Working", address: "District de Rongcheng, Jieyang, Chine, 515645", owner: bob, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# chen_working.remote_photo_url = url
-chen_working.save
-
-url = "https://images.unsplash.com/photo-1530099486328-e021101a494a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-tchong_work = Space.new(name: "Tchong Work", address: "1 Airport Rd, Nanming Qu, Guiyang Shi, Guizhou Sheng, Chine, 550012", owner: bob, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
-# tchong_work.remote_photo_url = url
-tchong_work.save
 
 url = "https://images.unsplash.com/photo-1516534775068-ba3e7458af70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 russia_work = Space.new(name: "Russia Work", address: "Red Square, Moskva, Russie, 109012", owner: bob, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})

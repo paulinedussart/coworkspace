@@ -1,7 +1,17 @@
 <section class="intro">
-  <div class="content">
-    <h1>Première section = search</h1>
-    <p>The height is set to 90vh, that means 90% height.</p>
+  <nav class="navbar">
+  <%= link_to "/", class: "navbar-brand" do %>
+  <%= image_tag "planets.png" %>
+  <% end %>
+
+  <form class="form-inline">
+    <button class="btn btn-outline-light mx-3" type="button">Manage your space</button>
+    <button class="btn btn-outline-light" type="button">Login</button>
+  </form>
+</nav>
+  <div class="container mt-5">
+    <h1>COWORK SPACE</h1>
+    <h2>Find the desk you deserve !</h2>
  </div>
 </section>
 
@@ -11,3 +21,4 @@
     <p>The height is set to 90vh, that means 90% height.</p>
  </div>
 </section>
+

@@ -1,7 +1,24 @@
+<div class="container">
+
+  <h1>Spaces</h1>
+  <div class="card" style="width: 18rem;">
+    <% @spaces.each do |space|  %>
+<!--     <img src="..." class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <h5 class="card-title"> <%= space.name %> </h5>
+        <p class="card-text"> <%= space.address %> </p>
+        <%= link_to "See details", space_path(space), class: "btn btn-primary"%>
+      </div>
+    <% end  %>
+  </div>
+
 <div
   id="map"
-  style="width: 100%;
+  style="width: 600px;
   height: 600px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
+
+</div>
+

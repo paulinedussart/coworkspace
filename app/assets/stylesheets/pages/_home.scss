@@ -5,6 +5,18 @@ section {
   height: 100vh;
 }
 
+h1 {
+  color: #5134A2;
+  font-weight: bold;
+  font-size: 64px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 30px;
+}
+
+
 .intro {
   background-image: asset-url('banner.jpg');
   width: 100%;
@@ -12,8 +24,34 @@ section {
   background-position: center;
 }
 
-h1 {
-  color: #5134A2;
-  font-weight: bold;
+.header {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  margin: 150px;
+  justify-content: center;
 }
+
+.infos {
+  display: flex;
+  width: 80%;
+  height: 50vh;
+  margin: 100px;
+  justify-content: space-betwwen;
+  padding-top: 20px;
+  align-self: center;
+}
+
+.info-photo img{
+  width: 600px;
+  margin-left: 50px;
+}
+
+.content {
+  margin-left: 100px;
+  width: 600px;
+  padding: 20px;
+  padding-top: 50px;
+}
+
 

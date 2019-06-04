@@ -7,15 +7,19 @@ class SpacesController < ApplicationController
       {
         lat: space.latitude,
         lng: space.longitude,
-        infoWindow: render_to_string(partial: "infowindow", locals: { space: space })
+        infoWindow: render_to_string(partial: "shared/infowindow", locals: { space: space })
       }
     end
-  end  
+  end
+
+  def show
+    @space = Space.find(params[:id])
+  end
 
   def new
     @space = Space.new
   end
-    
+
   def create
   end
 end

@@ -1,0 +1,31 @@
+<div class="container">
+
+  <div>
+    <h1> <%= @space.name %> </h1>
+  </div>
+  <div>
+    <p> <%= @space.address %></p>
+    <p><em> <%= link_to @space.website %></em></p>
+  </div>
+  <div>
+     <h2>Services available</h2>
+  </div>
+  <div class="card hours" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"> <i class="far fa-clock"></i> Opening Hours</h5>
+    <p class="card-text"> <strong>Monday-Friday :</strong> <%= @space.opening_hours["Mon-Fri"] %> </p>
+    <p class="card-text"> <strong>Saturday :</strong> <%= @space.opening_hours['Sat'] %> </p>
+    <p class="card-text"> <strong>Sunday :</strong> <%= @space.opening_hours['Sun'] %> </p>
+  </div>
+</div>
+  <div
+    id="map"
+    style="width: 500px;
+    height: 400px;
+    position: sticky;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+
+</div>

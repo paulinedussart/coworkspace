@@ -1,8 +1,18 @@
 <div class="container">
 
   <h1>Spaces</h1>
+
+   <%= form_tag spaces_path, method: :get, class:"form-inline" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a space "%>
+      <%= submit_tag 'Go!', class:"btn btn-primary mx-2" %>
+  <% end %>
+
+<div class="">
   <% @spaces.each do |space|  %>
-    <div class="card card-space" style="width: 18rem;">
+    <div class=" card card-space">
   <!--     <img src="..." class="card-img-top" alt="..."> -->
       <%= cl_image_tag space.photo, crop: :fill %>
       <div class="card-body">
@@ -19,5 +29,8 @@
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
+</div>
+
+
 
 </div>

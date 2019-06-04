@@ -1,3 +1,5 @@
+// SPACES #show ---> MAPBOX POPUP
+
 .mapboxgl-popup {
   max-width: 200px;
 }
@@ -5,4 +7,15 @@
 .mapboxgl-popup-content {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+  border-radius: 30px !important;
 }
+
+#map{
+  border-radius: 20px !important;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  border-radius: 20px !important;
+}
+
+// --------------------------------

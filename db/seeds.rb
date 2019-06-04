@@ -49,7 +49,7 @@ puts 'User Created!'
 puts 'Creating desks...'
 
 url = "https://images.unsplash.com/photo-1507537231947-f2ff14bc1554?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-hub_hoi_an_coworking = Space.new(name: "Hub Hoi An Coworking", address: "105 Lê Thánh Tông, Cẩm Sơn, Hội An, Quảng Nam, Vietnam", price_per_day: 12, user: aude, opening_hours: {'Mon-Fri' : '8AMP-8PM', 'Sat' : '9AM-6PM', 'Sun' : '10AM-1PM'}, website: 'https://www.hubhoian.com')
+hub_hoi_an_coworking = Space.new(name: "Hub Hoi An Coworking", address: "105 Lê Thánh Tông, Cẩm Sơn, Hội An, Quảng Nam, Vietnam", price_per_day: 12, user: aude, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.hubhoian.com')
 hub_hoi_an_coworking.remote_photo_url = url
 hub_hoi_an_coworking.save
 
@@ -149,12 +149,12 @@ mtp.remote_photo_url = url
 mtp.save
 
 url = "https://images.unsplash.com/photo-1461704946971-9e5d8b7938f0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-rent24 = Space.new(name: "Rent24", address: "Potsdamer Straße 182/4.og, 10783 Berlin, Allemagne", price_per_day: 10, user: bob, opening_hours: {'Mon-Fri' : '8AMP-8PM', 'Sat' : '9AM-6PM', 'Sun' : '10AM-1PM'})
+rent24 = Space.new(name: "Rent24", address: "Potsdamer Straße 182/4.og, 10783 Berlin, Allemagne", price_per_day: 10, user: bob, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 rent24.remote_photo_url = url
 rent24.save
 
 url = "https://images.unsplash.com/photo-1461701204332-2aa3db5b20c8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjF9&auto=format&fit=crop&w=1000&q=80"
-polo = Space.new(name: "Polo", address: "Plac Konesera 10, 03-736 Warszawa, Pologne", price_per_day: 10, user: bob, opening_hours: {'Mon-Fri' : '8AMP-8PM', 'Sat' : '9AM-6PM', 'Sun' : '10AM-1PM'})
+polo = Space.new(name: "Polo", address: "Plac Konesera 10, 03-736 Warszawa, Pologne", price_per_day: 10, user: bob, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 polo.remote_photo_url = url
 polo.save
 

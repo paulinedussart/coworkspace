@@ -25,6 +25,7 @@ class SpacesController < ApplicationController
       lat: @space.latitude,
       lng: @space.longitude
     }
+    @review = Review.new
   end
 
   def new

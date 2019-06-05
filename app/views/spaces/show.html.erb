@@ -1,4 +1,10 @@
 <div class="container">
+  <div class="card-space_details">
+    <div class="banner" style= "background-image: url('<%= cl_image_path @space.photo%>')"></div>
+      <div>
+        <h1> <%= @space.name %> </h1>
+      </div>
+
 
   <div >
     <h1> <%= @space.name %> </h1>
@@ -8,27 +14,91 @@
     <p><em> <%= link_to @space.website %></em></p>
     <p> <%= @space.description %> </p>
 
-  </div>
-  <div>
-     <h2 >Services available</h2>
-  </div>
-  <div class="card hours" style="width: 18rem;">
-  <div class="card-hours">
-    <h3 class="card-title"> <i class="far fa-clock"></i> Opening Hours</h3>
+      <div class="space-infos">
+        <p> <i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
+        <p><em> <%= link_to @space.website %></em></p>
+        <p> THE REVIEWS RATE</p>
+        <h3> @space.desks.first.price_per_day / desk /day </h3>
+        <h2>Description</h2>
+        <p> <%= @space.description %> </p>
+      </div>
 
-    <p class="card-text"> <strong>Monday-Friday :</strong> <%= @space.opening_hours["Mon-Fri"] %> </p>
-    <p class="card-text"> <strong>Saturday :</strong> <%= @space.opening_hours['Sat'] %> </p>
-    <p class="card-text"> <strong>Sunday :</strong> <%= @space.opening_hours['Sun'] %> </p>
-  </div>
-</div>
-  <div
-    id="map"
-    style="width: 500px;
-    height: 400px;
-    position: sticky;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+
+
+      <div class="space-services">
+        <h2 >Services available</h2>
+      </div>
+
+      <div class="card hours" style="width: 18rem;">
+        <h3 class="card-title"> <i class="far fa-clock"></i> Opening Hours</h3>
+        <p class="card-text"> <strong>Monday-Friday :</strong> <%= @space.opening_hours["Mon-Fri"] %> </p>
+        <p class="card-text"> <strong>Saturday :</strong> <%= @space.opening_hours['Sat'] %> </p>
+        <p class="card-text"> <strong>Sunday :</strong> <%= @space.opening_hours['Sun'] %> </p>
+      </div>
+    </div>
+    <div
+      id="map"
+      style="width: 500px;
+      height: 400px;
+      position: sticky;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+  <!--REVIEWS PAULINE -->
+    <h2>
+      <div id="counter">
+      <%= pluralize @space.reviews.size, "review" %>
+      </div>
+    </h2>
+
+    <div id="reviews">
+      <% if @space.reviews.blank? %>
+        Be the first to leave a review for <%= @space.name %>
+      <% else %>
+        <% @space.reviews.order('created_at DESC').each do |review| %>
+          <%= render 'reviews/show', review: review %>
+        <% end %>
+      <% end %>
+      <%= render 'reviews/form', space: @space, review: @review %>
+     </div>
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      BOOK !
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel"> <strong>Reservation Details</strong> </h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <h3><%= @space.name %></h3>
+            <p>puts ratings</p>
+
+            <h3>Dates</h3>
+            <p>Add a calendar to select dates</p>
+            <p><i class="fas fa-user"></i> 1 person</p>
+            <p></p>
+            <p> Service charge :</p>
+            <p><strong>Total : </strong></p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Confirm</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
 </div>
+

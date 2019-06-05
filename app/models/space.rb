@@ -1,8 +1,10 @@
 class Space < ApplicationRecord
   belongs_to :owner
   has_many :space_services
+  has_many :desks, dependent: :destroy
   has_many :services, through: :space_services
   has_many :desks, dependent: :destroy
+  has_many :reviews, dependent: :destroy
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
@@ -15,6 +17,7 @@ class Space < ApplicationRecord
     }
 
   mount_uploader :photo, PhotoUploader
+
 
   def self.available_spaces(arrival_date)
     self.all.select do |space|

@@ -9,8 +9,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :spaces, only: [:index, :show]
-
+  resources :spaces, only: [:index, :show] do
+    resources :reviews, only: :create
+  end
 
   resources :users do
     resources :reservations, only: [:new, :create, :index, :show]

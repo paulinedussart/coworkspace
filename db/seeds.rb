@@ -232,7 +232,7 @@ polo.save
 # AMERIQUE
     # USA
 url = "https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-the_emery = Space.new(name: "The Emery", address: "XG3P+4C Tampa, Floride, États-Unis", owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+the_emery = Space.new(name: "The Emery", address: "111 W Fortune St, Tampa, FL 33602, États-Unis", owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 the_emery.remote_photo_url = url
 the_emery.save
 

@@ -49,7 +49,20 @@ private
     params.require(:space).permit(:name, :description, :phone, :address, :opening_hours, :website, :photo)
   end
 
- # METHODE POUR AFFICHER LES ESPACES AVEC AU MOINS 1 BUREAU DISPONIBLE
+   # METHODE POUR AFFICHER LES ESPACES AVEC AU MOINS 1 BUREAU DISPONIBLE
+     # afficher space quand il dispose dau moins 1 desk disponible
+  def available?(desk)
+    if (params[:arrival_date] !="" && params[:departure_date] !="")
+        # definir les dates de séjours du user
+        user_reservation = params(:arrival_date)..params(:departure_date)
+        # Iterer sur chaque bureau pour verifier si la dates est disponible
+
+        desks.each do |reservation|
+          space_available =
+        end
+    end
+  end
+
  #  def available?(desk)
  #   available = 0
  #   if (params[:arrival_date] !=“” && params[:departure_date] !=“”)
@@ -63,5 +76,3 @@ private
  #   end
  #   available > 0 ? true : false
  # end
-
-end

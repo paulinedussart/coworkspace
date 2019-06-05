@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   resources :owners do
     resources :spaces, only: [:index, :show, :new, :create]
   end
-  
+
   resources :spaces, only: [:index, :show]
+
+  resources :chat_rooms, only: [:show] do
+    resources :messages, only: [:create]
+  end
 end

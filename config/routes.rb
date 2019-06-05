@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :owners do
     resources :spaces, only: [:index, :show, :new, :create]
   end
-  
+
   resources :spaces, only: [:index, :show]
+
+  resources :users, only: [:show, :edit]
 end

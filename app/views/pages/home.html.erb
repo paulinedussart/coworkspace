@@ -8,7 +8,8 @@
             <button class="btn btn-outline-light mx-3" type="button">Manage your space</button>
             <button class="btn btn-outline-light mx-3" type="button">Find a space</button>
             <button class=" nav-item dropdown btn mx-3" type="button">
-              <%= image_tag "https://pbs.twimg.com/profile_images/901947348699545601/hqRMHITj_400x400.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <i class="fas fa-user"></i>  <%= link_to "Profile", "#", class: "dropdown-item" %>
             <i class="fas fa-cogs"></i> <%= link_to  "Settings", "#", class: "dropdown-item" %>

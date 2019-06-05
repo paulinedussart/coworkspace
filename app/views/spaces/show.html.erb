@@ -5,6 +5,15 @@
         <h1> <%= @space.name %> </h1>
       </div>
 
+
+  <div >
+    <h1> <%= @space.name %> </h1>
+  </div>
+  <div>
+    <p> <i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
+    <p><em> <%= link_to @space.website %></em></p>
+    <p> <%= @space.description %> </p>
+
       <div class="space-infos">
         <p> <i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
         <p><em> <%= link_to @space.website %></em></p>
@@ -13,6 +22,7 @@
         <h2>Description</h2>
         <p> <%= @space.description %> </p>
       </div>
+
 
 
       <div class="space-services">

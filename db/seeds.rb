@@ -108,9 +108,10 @@ manly_house_studio.save
 
 2.times do
 Desk.create!(
- price_per_day: 15,
- space: manly_house_studio
-) end
+   price_per_day: 15,
+   space: manly_house_studio
+  )
+end
 
 url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
 havana_beach = Space.new(name: "Havana Beach", address: "14 South Steyne, Manly, Sydney, Australia", description: "Havana Beach turns the restaurant that is normally closed during the day into a unique and affordable co-working space. Located in Manly, mere steps away from the beach sits Havana Beach.
@@ -120,10 +121,11 @@ havana_beach.remote_photo_url = url
 havana_beach.save
 
 20.times do
-Desk.create!(
- price_per_day: 15,
- space: havana_beach
-) end
+  Desk.create!(
+    price_per_day: 15,
+    space: havana_beach
+  )
+end
 
 url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
 we_work_martin_place = Space.new(name: "We Work Martin Place", address: "5 Martin Place, Sydney, Australia", description: "We Work is the worlds most unique coworking space, tucked within the foundations of the iconic Sydney Harbour Bridge at Lavender Bay. This heritage space has been reimagined to cultivate a community of driven start-ups and businesses created by entrepreneurs for entrepreneurs.

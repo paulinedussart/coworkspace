@@ -256,7 +256,7 @@ the_lab_miami = Space.new(name: "The Lab Miami", address: "3600 Suncadia Trail, 
 the_lab_miami.remote_photo_url = url
 the_lab_miami.save
 
-url = "https://images.unsplash.com/photo-1445865272827-4894eb9d48de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80""
+url = "https://images.unsplash.com/photo-1445865272827-4894eb9d48de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 we_work = Space.new(name: "We Work", address: "10068 W South Highway 69, Mayer, AZ 86333, États-Unis", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 we_work.remote_photo_url = url
 we_work.save

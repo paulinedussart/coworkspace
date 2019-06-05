@@ -10,12 +10,10 @@ function addReview(reviewHTML) {
   reviews.insertAdjacentHTML('afterbegin', reviewHTML);
 }
 
-function addCounter() {
-  counter = document.getElementById('counter');
+function addCounter(innerHTML) {
+  const counter = document.getElementById('counter');
   counter.innerHTML = innerHTML;
 }
-
-
 
 
 <% if @review.errors.any? %>

@@ -93,7 +93,7 @@ owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '
 mlc.remote_photo_url = url
 mlc.save
 
-url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
+url = "https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
 manly_house_studio = Space.new(name: "Manly House Studio", address: "46 Palomar Parade, Sydney, Australia", description: "Manly House Studio is a series of co-working spaces in a 200m2 open plan New York loft style warehouse in North Manly on Sydney's Northern Beaches. Situated just out of town, 5 mins from 2 beaches, it was founded to provide people
 nvolved with the Creative Industries an inspiring place to work, connect and share knowledge with each other.",
 owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.manly_house_studio.com')
@@ -150,7 +150,7 @@ work_in.save
 
 5.times do
 Desk.create!(
- price_per_day: 15,
+ price_per_day: 18,
  space: work_in
 )
 # SEEDS AUSTRALIA END
@@ -256,7 +256,7 @@ the_lab_miami = Space.new(name: "The Lab Miami", address: "3600 Suncadia Trail, 
 the_lab_miami.remote_photo_url = url
 the_lab_miami.save
 
-url = "https://images.unsplash.com/photo-1505624198937-c704aff72608?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+url = "https://images.unsplash.com/photo-1445865272827-4894eb9d48de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80""
 we_work = Space.new(name: "We Work", address: "10068 W South Highway 69, Mayer, AZ 86333, États-Unis", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 we_work.remote_photo_url = url
 we_work.save

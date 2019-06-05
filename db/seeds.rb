@@ -111,7 +111,7 @@ havana_beach.save
 Desk.create!(
  price_per_day: 15,
  space: havana_beach
-)
+) end
 
 url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
 we_work_martin_place = Space.new(name: "We Work Martin Place", address: "5 Martin Place, Sydney, Australia", description: "We Work is the worlds most unique coworking space, tucked within the foundations of the iconic Sydney Harbour Bridge at Lavender Bay. This heritage space has been reimagined to cultivate a community of driven start-ups and businesses created by entrepreneurs for entrepreneurs.
@@ -152,7 +152,7 @@ work_in.save
 Desk.create!(
  price_per_day: 18,
  space: work_in
-)
+)end
 # SEEDS AUSTRALIA END
 
 

@@ -5,6 +5,9 @@ class MessagesController < ApplicationController
     @message.chat_room = @chat_room
     @message.user = current_user
     if @message.save
+      ActionCable.server.broadcast("chat_room_#{@chat_room.id}", {
+        message_partial: render(partial: "messages/message", locals{message: @message})
+      })
       respond_to do |format|
         format.html { redirect_to chat_room_path(@chat_room)}
         format.js

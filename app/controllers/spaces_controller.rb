@@ -25,6 +25,7 @@ class SpacesController < ApplicationController
       lat: @space.latitude,
       lng: @space.longitude
     }
+    @reservation = Reservation.new
   end
 
   def new
@@ -47,5 +48,20 @@ private
   def space_params
     params.require(:space).permit(:name, :description, :phone, :address, :opening_hours, :website, :photo)
   end
+
+ # METHODE POUR AFFICHER LES ESPACES AVEC AU MOINS 1 BUREAU DISPONIBLE
+ #  def available?(desk)
+ #   available = 0
+ #   if (params[:arrival_date] !=“” && params[:departure_date] !=“”)
+ #     period_book_by_user = params[:arrival_date].to_date..params[:departure_date].to_date
+ #     desk.reservations.each do |reservation|
+ #       non_available_period = reservation.arrival_date..reservation.departure_date
+ #       period_book_by_user.each do |day|
+ #         available +=1 if non_available_period.include?(day)
+ #       end
+ #     end
+ #   end
+ #   available > 0 ? true : false
+ # end
 
 end

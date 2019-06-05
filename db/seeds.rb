@@ -147,6 +147,12 @@ the need to escape the lonesome confined spaces of your cubicle or your comfy so
 owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.CoWorkin.com')
 work_in.remote_photo_url = url
 work_in.save
+
+5.times do
+Desk.create!(
+ price_per_day: 15,
+ space: work_in
+)
 # SEEDS AUSTRALIA END
 
 

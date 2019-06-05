@@ -7,20 +7,18 @@
     <p> <i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
     <p><em> <%= link_to @space.website %></em></p>
     <p> <%= @space.description %> </p>
-
   </div>
   <div>
      <h2 >Services available</h2>
   </div>
   <div class="card hours" style="width: 18rem;">
-  <div class="card-hours">
-    <h3 class="card-title"> <i class="far fa-clock"></i> Opening Hours</h3>
-
-    <p class="card-text"> <strong>Monday-Friday :</strong> <%= @space.opening_hours["Mon-Fri"] %> </p>
-    <p class="card-text"> <strong>Saturday :</strong> <%= @space.opening_hours['Sat'] %> </p>
-    <p class="card-text"> <strong>Sunday :</strong> <%= @space.opening_hours['Sun'] %> </p>
+    <div class="card-hours">
+      <h3 class="card-title"> <i class="far fa-clock"></i> Opening Hours</h3>
+      <p class="card-text"> <strong>Monday-Friday :</strong> <%= @space.opening_hours["Mon-Fri"] %> </p>
+      <p class="card-text"> <strong>Saturday :</strong> <%= @space.opening_hours['Sat'] %> </p>
+      <p class="card-text"> <strong>Sunday :</strong> <%= @space.opening_hours['Sun'] %> </p>
+    </div>
   </div>
-</div>
   <div
     id="map"
     style="width: 500px;
@@ -28,7 +26,23 @@
     position: sticky;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
   </div>
 
+  <!--REVIEWS PAULINE -->
+  <h2>
+    <%= pluralize @space.reviews.size, "review" %>
+  </h2>
+
+  <div id="reviews">
+    <% if @space.reviews.blank? %>
+      Be the first to leave a review for <%= @space.name %>
+    <% else %>
+      <% @space.reviews.each do |review| %>
+        <%= render 'reviews/show', review: review %>
+      <% end %>
+    <% end %>
+  </div>
 </div>
+
+
+

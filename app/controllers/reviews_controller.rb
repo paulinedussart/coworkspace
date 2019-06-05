@@ -4,10 +4,16 @@ class ReviewsController < ApplicationController
     @review = current_user.reviews.build(review_params)
     @review.space = @space
     if @review.save
-      redirect_to space_path(@space)
+      respond_to do |format|
+        format.html { redirect_to space_path(@space) }
+        format.js # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
       flash[:alert] = "Something went wrong."
-      render 'space/show'
+      respond_to do |format|
+        format.html { render 'space/show' }
+        format.js
+      end
     end
   end
 

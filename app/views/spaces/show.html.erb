@@ -37,7 +37,7 @@
     <% if @space.reviews.blank? %>
       Be the first to leave a review for <%= @space.name %>
     <% else %>
-      <% @space.reviews.each do |review| %>
+      <% @space.reviews.order('created_at DESC').each do |review| %>
         <%= render 'reviews/show', review: review %>
       <% end %>
     <% end %>

@@ -21,8 +21,10 @@
 <script>
   App['chat_room_<% @chat_room.id %>'] = App.cable.subscriptions.create ({ channel: 'ChatRoomChannel', chat_room_id: <%= @chat_room_id %> }, {
     received: (data) => {
-      const messagesContainer = document.querySelector('.mesages');
-      messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+      if (data.current_user_id !== <%= current_user.id %>){
+        const messagesContainer = document.querySelector('.mesages');
+        messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+      }
     }
   })
 </script>

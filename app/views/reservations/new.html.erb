@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row no-ml">
+    <div class="col-xs-12 col-sm-6 offset-sm-3">
+      <div class="form-reservation">
+
+  <h1>Make your booking</h1>
+  <%= simple_form_for [@desk, @reservation], url: new_user_desk_reservation_path(current_user) do |f| %>
+  <div class="form-inputs my-5">
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= f.input :arrival_date %>
+    <!-- Checker arrival avant depart -->
+    <%= f.input :departure_date %>
+  </div>
+  <div class="form-actions my-5">
+    <%= f.button :submit, class:'btn btn-primary' %>
+  </div>
+ <% end %>
+ <div class="button-return mt-5">
+  <%= link_to "Return to details", user_desk_reservations_path, class: "btn btn-outline-primary mt-5"  %>
+  </div>
+
+      </div>
+    </div>
+  </div>
+</div>

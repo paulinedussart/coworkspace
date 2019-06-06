@@ -8,9 +8,14 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
+  def new
+    @reservation = Reservation.new
+
+  end
+
   def create
     @reservation = current_user.reservation.build(reservation_params)
-    @desk = S
+    @desk = Desk.find(params[:desk_id])
     @reservation.desk = @desk
     @reservation.status = "Pending"
 

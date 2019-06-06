@@ -6,6 +6,7 @@ Owner.destroy_all
 Space.destroy_all
 User.destroy_all
 Service.destroy_all
+Desk.destroy_all
 
 
 

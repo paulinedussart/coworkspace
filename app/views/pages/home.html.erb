@@ -5,6 +5,7 @@
     <% end %>
     <form class="form-inline">
           <% if user_signed_in? %>
+            <%= link_to "Manage your coworking space", owner_session_path, class: "btn-outline-primary" %>
             <button class="btn btn-outline-light mx-3" type="button">Manage your space</button>
             <button class="btn btn-outline-light mx-3" type="button">Find a space</button>
             <button class=" nav-item dropdown btn mx-3" type="button">
@@ -27,7 +28,7 @@
 
   <div class="header">
     <div class="title">
-      <h1>COWORK SPACE</h1>
+      <h1>COWORK SPACE </h1>
       <h2>Find the desk you deserve !</h2>
       <p>COWORK SPACE allows you to search coworking spaces around the world</p>
 

@@ -20,7 +20,7 @@ services = [ "High-speed wifi", "Heating", "Air conditioning", "Standing desks",
 services.each do |service|
   Service.create!(name: service)
 end
-puts 'SERVICES created !'
+puts ' --> SERVICES created !'
 
 
 
@@ -51,7 +51,7 @@ green_advisor = Owner.create!(
   name: "Green Advisor",
   siret: '493 234 654 00038'
 )
-puts 'OWNERS created!'
+puts ' --> OWNERS created!'
 
 
 
@@ -68,17 +68,13 @@ pauline = User.create!(
 )
 
 ludivine = User.create!(
-  email: 'aure@gmail.com',
+  email: 'lulu@gmail.com',
   phone: '0638294710',
   password: 'password',
   first_name: "Ludivine",
   last_name: "Robin"
 )
-puts 'USERS created!'
-
-
-
-
+puts ' --> USERS created!'
 
 
 # SEED DESKS
@@ -100,7 +96,7 @@ Desk.create!(
 ) end
 
 url = "https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-manly_house_studio = Space.new(name: "Manly House Studio", address: "46 Palomar Parade, Sydney, Australia", description: "Manly House Studio is a series of co-working spaces in a 200m2 open plan New York loft style warehouse in North Manly on Sydney's Northern Beaches. Situated just out of town, 5 mins from 2 beaches, it was founded to provide people
+manly_house_studio = Space.new(name: "Manly House Studio", address: "17-19 Bridge Street, Sydney, Australia", description: "Manly House Studio is a series of co-working spaces in a 200m2 open plan New York loft style warehouse in North Manly on Sydney's Northern Beaches. Situated just out of town, 5 mins from 2 beaches, it was founded to provide people
 nvolved with the Creative Industries an inspiring place to work, connect and share knowledge with each other.",
 owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.manly_house_studio.com')
 manly_house_studio.remote_photo_url = url
@@ -120,12 +116,41 @@ vibrancy so renowned in Cuban culture.", owner: vr_lab, opening_hours: {'Mon-Fri
 havana_beach.remote_photo_url = url
 havana_beach.save
 
-20.times do
-  Desk.create!(
-    price_per_day: 15,
-    space: havana_beach
+puts 'Creating DESKS for Havana Beach...'
+# Desk for Havana Beach
+desk1 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
   )
-end
+
+desk2 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+
+desk3 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+puts ' --> DESKS created for Havana Beach !'
+
+puts 'Creating RESERVATIONS for Havana Beach...'
+# Reservation for Havana Beach
+reservation1 = Reservation.create!(
+  arrival_date: Date.today + 1.week,
+  departure_date: Date.today + 2.week,
+  status: "PENDING",
+  user: pauline,
+  desk: desk1
+  )
+reservation2 = Reservation.create!(
+  arrival_date: Date.today + 3.week,
+  departure_date: Date.today + 4.week,
+  status: "PENDING",
+  user: pauline,
+  desk: desk1
+  )
+puts ' --> RESERVATIONS created for Havana Beach'
 
 url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
 we_work_martin_place = Space.new(name: "We Work Martin Place", address: "5 Martin Place, Sydney, Australia", description: "We Work is the worlds most unique coworking space, tucked within the foundations of the iconic Sydney Harbour Bridge at Lavender Bay. This heritage space has been reimagined to cultivate a community of driven start-ups and businesses created by entrepreneurs for entrepreneurs.
@@ -168,11 +193,23 @@ owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', '
 work_in.remote_photo_url = url
 work_in.save
 
-10.times do
-Desk.create!(
- price_per_day: 18,
- space: work_in
-)end
+puts 'Creating DESKS for Work In ...'
+# Desk for Work In
+desk100 = Desk.create!(
+  price_per_day: 18,
+  space: work_in
+  )
+
+desk200 = Desk.create!(
+  price_per_day: 18,
+  space: work_in
+  )
+
+desk300 = Desk.create!(
+  price_per_day: 18,
+  space: work_in
+  )
+puts ' --> DESKS created for Work In'
 # SEEDS AUSTRALIA END
 
 
@@ -428,7 +465,7 @@ Desk.create!(
  space: the_company
 ) end
 
-puts 'SPACES created!'
+puts ' --> SPACES created!'
 puts 'Great ! Everything has been created ! '
 
 # SEED RESERVATIONS

@@ -169,7 +169,7 @@ puts 'Creating RESERVATIONS for Havana Beach...'
 reservation1 = Reservation.create!(
   arrival_date: Date.today + 1.week,
   departure_date: Date.today + 2.week,
-  status: "PENDING",
+  status: "ACCEPTED",
   user: pauline,
   desk: desk1
   )
@@ -178,8 +178,16 @@ reservation2 = Reservation.create!(
   departure_date: Date.today + 4.week,
   status: "PENDING",
   user: pauline,
+  desk: desk100
+  )
+reservation3 = Reservation.create!(
+  arrival_date: Date.today + 4.week,
+  departure_date: Date.today + 5.week,
+  status: "REFUSED",
+  user: pauline,
   desk: desk1
   )
+
 puts ' --> RESERVATIONS created for Havana Beach'
 
 puts ' --> creating REVIEWS for Havana Beach'

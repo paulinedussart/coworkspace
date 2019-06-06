@@ -1,10 +1,8 @@
 <div class="container">
   <div class="card-space_details">
-    <div class="banner" style= "background-image: url('<%= cl_image_path @space.photo%>')"></div>
-      <div>
-        <h1> <%= @space.name %> </h1>
-      </div>
 
+    <div class="banner" style= "background-image: url('<%= cl_image_tag @space.photo%>')"></div>
+    <%= link_to "Back to list", spaces_path, class: "btn btn-outline-primary mb-5"  %>
 
   <div >
     <h1> <%= @space.name %> </h1>

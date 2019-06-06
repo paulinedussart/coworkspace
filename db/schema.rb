@@ -85,12 +85,13 @@ ActiveRecord::Schema.define(version: 2019_06_06_105649) do
 
   create_table "messages", force: :cascade do |t|
     t.string "content"
-    t.bigint "user_id"
+    t.string "sender_type"
+    t.bigint "sender_id"
     t.bigint "chat_room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
+    t.index ["sender_type", "sender_id"], name: "index_messages_on_sender_type_and_sender_id"
   end
 
   create_table "owners", force: :cascade do |t|
@@ -192,7 +193,6 @@ ActiveRecord::Schema.define(version: 2019_06_06_105649) do
   add_foreign_key "mailboxer_notifications", "mailboxer_conversations", column: "conversation_id", name: "notifications_on_conversation_id"
   add_foreign_key "mailboxer_receipts", "mailboxer_notifications", column: "notification_id", name: "receipts_on_notification_id"
   add_foreign_key "messages", "chat_rooms"
-  add_foreign_key "messages", "users"
   add_foreign_key "reservations", "desks"
   add_foreign_key "reservations", "users"
   add_foreign_key "reviews", "spaces"

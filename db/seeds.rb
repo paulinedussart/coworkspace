@@ -67,12 +67,41 @@ pauline = User.create!(
   last_name: "Dussart"
 )
 
-ludivine = User.create!(
-  email: 'lulu@gmail.com',
+aure = User.create!(
+  email: 'aure@gmail.com',
   phone: '0638294710',
+  password: 'password',
+  first_name: "Aurelie",
+  last_name: "Gimet"
+)
+
+lulu = User.create!(
+  email: 'lulu@gmail.com',
+  phone: '0638294730',
   password: 'password',
   first_name: "Ludivine",
   last_name: "Robin"
+)
+popo = User.create!(
+  email: 'popo@gmail.com',
+  phone: '0638294740',
+  password: 'password',
+  first_name: "Poline",
+  last_name: "Florens"
+)
+marc = User.create!(
+  email: 'marc@gmail.com',
+  phone: '0638294750',
+  password: 'password',
+  first_name: "Marc",
+  last_name: "Opolo"
+)
+pierre = User.create!(
+  email: 'pierre@gmail.com',
+  phone: '0638294760',
+  password: 'password',
+  first_name: "Pierre",
+  last_name: "Etlelou"
 )
 puts ' --> USERS created!'
 
@@ -178,6 +207,12 @@ owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', '
 fishburners.remote_photo_url = url
 fishburners.save
 
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: fishburners
+) end
+
 url = "https://images.unsplash.com/photo-1554774853-719586f82d77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 spacecubed = Space.new(name: "Spacecubed", address: "45 St Georges Terrace, Perth WA 6000, Australia", description:"An impressive space for your next business meeting.
 berrins is a boutique co-working space in the heart of Manly, right across the road from Manly Wharf.
@@ -185,6 +220,13 @@ With mid-century modern furniture, quality light fittings, high ceilings, abunda
 owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Spacecubed.com')
 spacecubed.remote_photo_url = url
 spacecubed.save
+
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: spacecubed
+) end
+
 
 url = "https://coworker.imgix.net/photos/australia/sydney/work-inc/1-1542083293.JPG"
 work_in = Space.new(name: "CoWork In", address: "36 Sydney Road, Manly, Sydney, Australia", description: "Work In is the biggest coworking space in the southern area of Sydney. In their words, “Work for yourself, not by yourself” so if you ever feel

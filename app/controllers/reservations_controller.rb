@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
   def index
     @reservations = current_user.reservations
+    # @reservation.desk = @desk
   end
 
   def show
@@ -22,11 +23,12 @@ class ReservationsController < ApplicationController
     end
   end
 
+
   def status?
     # "pending", "confirm" and "refused"
   end
 
-  private
+  # private
 
   def reservation_params
     params.require(:reservation).permit(:arrival_date, :departure_date, :status)

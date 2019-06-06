@@ -68,12 +68,41 @@ pauline = User.create!(
   last_name: "Dussart"
 )
 
-ludivine = User.create!(
-  email: 'lulu@gmail.com',
+aure = User.create!(
+  email: 'aure@gmail.com',
   phone: '0638294710',
+  password: 'password',
+  first_name: "Aurelie",
+  last_name: "Gimet"
+)
+
+lulu = User.create!(
+  email: 'lulu@gmail.com',
+  phone: '0638294730',
   password: 'password',
   first_name: "Ludivine",
   last_name: "Robin"
+)
+popo = User.create!(
+  email: 'popo@gmail.com',
+  phone: '0638294740',
+  password: 'password',
+  first_name: "Poline",
+  last_name: "Florens"
+)
+marc = User.create!(
+  email: 'marc@gmail.com',
+  phone: '0638294750',
+  password: 'password',
+  first_name: "Marc",
+  last_name: "Opolo"
+)
+pierre = User.create!(
+  email: 'pierre@gmail.com',
+  phone: '0638294760',
+  password: 'password',
+  first_name: "Pierre",
+  last_name: "Etlelou"
 )
 puts ' --> USERS created!'
 
@@ -153,6 +182,42 @@ reservation2 = Reservation.create!(
   )
 puts ' --> RESERVATIONS created for Havana Beach'
 
+puts ' --> creating REVIEWS for Havana Beach'
+review1 = review.create!(
+  content: "From the day we moved in to Havana Beach, it has met all our needs professionally and quickly. The environment is perfect for a small and rapidly growing business, with so much space to accommodate small client meetings and larger marketing or networking events.",
+  rating: "5",
+  user: "aure",
+  space: "havana_beach",
+  created_at: "04/06/19",
+  updated_at: "18:00")
+
+review2 = review.create!(
+  content: "Work Inc has the fastest internet we could find, mixed with the coolest warehouse vibe, strong community feel and reasonable pricing.",
+  rating: "4",
+  user: "lulu",
+  space: "havana_beach",
+  created_at: "03/06/19",
+  updated_at: "10:00")
+
+review3 = review.create!(
+  content: "Great working environment with a super dedicated team ensuring everything runs smoothly.",
+  rating: "5",
+  user: "pierre",
+  space: "havana_beach",
+  created_at: "05/06/19",
+  updated_at: "18:00")
+
+review4 = review.create!(
+  content: "Great location, creative design, vibrant community and friendly staff! I’ve been working at Work Inc for months and seeing how the team is making continuous improvement where things are already good enough. Thanks team! Highly recommended.",
+  rating: "5",
+  user: "marc",
+  space: "havana_beach",
+  created_at: "04/05/19",
+  updated_at: "18:00")
+puts ' --> REVIEWS created for Havana Beach'
+
+
+
 url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
 we_work_martin_place = Space.new(name: "We Work Martin Place", address: "5 Martin Place, Sydney, Australia", description: "We Work is the worlds most unique coworking space, tucked within the foundations of the iconic Sydney Harbour Bridge at Lavender Bay. This heritage space has been reimagined to cultivate a community of driven start-ups and businesses created by entrepreneurs for entrepreneurs.
 ", owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.wework.com')
@@ -179,6 +244,12 @@ owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', '
 fishburners.remote_photo_url = url
 fishburners.save
 
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: fishburners
+) end
+
 url = "https://images.unsplash.com/photo-1554774853-719586f82d77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 spacecubed = Space.new(name: "Spacecubed", address: "45 St Georges Terrace, Perth WA 6000, Australia", description:"An impressive space for your next business meeting.
 berrins is a boutique co-working space in the heart of Manly, right across the road from Manly Wharf.
@@ -186,6 +257,13 @@ With mid-century modern furniture, quality light fittings, high ceilings, abunda
 owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Spacecubed.com')
 spacecubed.remote_photo_url = url
 spacecubed.save
+
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: spacecubed
+) end
+
 
 url = "https://coworker.imgix.net/photos/australia/sydney/work-inc/1-1542083293.JPG"
 work_in = Space.new(name: "CoWork In", address: "36 Sydney Road, Manly, Sydney, Australia", description: "Work In is the biggest coworking space in the southern area of Sydney. In their words, “Work for yourself, not by yourself” so if you ever feel
@@ -211,6 +289,43 @@ desk300 = Desk.create!(
   space: work_in
   )
 puts ' --> DESKS created for Work In'
+
+
+puts ' --> creating REVIEWS for Work In'
+review1 = review.create!(
+  content: "Fantastic location close to both North Sydney and Milsons Point stations. Great facilities and the staff are always on hand and very helpful. A very integrated community feel between companies. An all round great operation!",
+  rating: "5",
+  user: "aure",
+  space: "work_in",
+  created_at: "02/06/19",
+  updated_at: "18:00")
+
+review2 = review.create!(
+  content: "When I tell people I work in this space they get the serious case of the “jeals”. Everything you could possibly need in a workspace (and more) is catered for here.",
+  rating: "4",
+  user: "lulu",
+  space: "work_in",
+  created_at: "03/06/19",
+  updated_at: "10:00")
+
+review3 = review.create!(
+  content: "Well located site , right in the heart of Sydney, near the one of most popular train station in town. Comfortable offices across different industries, which make colleagues interesting people to talk.",
+  rating: "5",
+  user: "pierre",
+  space: "work_in",
+  created_at: "05/06/19",
+  updated_at: "18:00")
+
+review4 = review.create!(
+  content: "Work in has amazing facilities, it is a fantastic welcoming place to work. The location is great too.",
+  rating: "5",
+  user: "marc",
+  space: "work_in",
+  created_at: "04/05/19",
+  updated_at: "18:00")
+puts ' --> REVIEWS created for Work In'
+
+
 # SEEDS AUSTRALIA END
 
 

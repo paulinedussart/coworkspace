@@ -93,12 +93,25 @@ owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '
 mlc.remote_photo_url = url
 mlc.save
 
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: mlc
+) end
+
 url = "https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
 manly_house_studio = Space.new(name: "Manly House Studio", address: "46 Palomar Parade, Sydney, Australia", description: "Manly House Studio is a series of co-working spaces in a 200m2 open plan New York loft style warehouse in North Manly on Sydney's Northern Beaches. Situated just out of town, 5 mins from 2 beaches, it was founded to provide people
 nvolved with the Creative Industries an inspiring place to work, connect and share knowledge with each other.",
 owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.manly_house_studio.com')
 manly_house_studio.remote_photo_url = url
 manly_house_studio.save
+
+2.times do
+Desk.create!(
+   price_per_day: 15,
+   space: manly_house_studio
+  )
+end
 
 url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
 havana_beach = Space.new(name: "Havana Beach", address: "14 South Steyne, Manly, Sydney, Australia", description: "Havana Beach turns the restaurant that is normally closed during the day into a unique and affordable co-working space. Located in Manly, mere steps away from the beach sits Havana Beach.
@@ -107,11 +120,12 @@ vibrancy so renowned in Cuban culture.", owner: vr_lab, opening_hours: {'Mon-Fri
 havana_beach.remote_photo_url = url
 havana_beach.save
 
-5.times do
-Desk.create!(
- price_per_day: 15,
- space: havana_beach
-) end
+20.times do
+  Desk.create!(
+    price_per_day: 15,
+    space: havana_beach
+  )
+end
 
 url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
 we_work_martin_place = Space.new(name: "We Work Martin Place", address: "5 Martin Place, Sydney, Australia", description: "We Work is the worlds most unique coworking space, tucked within the foundations of the iconic Sydney Harbour Bridge at Lavender Bay. This heritage space has been reimagined to cultivate a community of driven start-ups and businesses created by entrepreneurs for entrepreneurs.
@@ -126,6 +140,12 @@ Join up month-to-month with no lock in contracts just an awesome environment wit
 owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Hub-Southern-Cross.com')
 hub_southern_cross_melbourne.remote_photo_url = url
 hub_southern_cross_melbourne.save
+
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: hub_southern_cross_melbourne
+) end
 
 url = "https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 fishburners = Space.new(name: "Fishburners", address: "10 Middlemiss Street, Sydney, Australia", description:"Working alone can be a bore sometimes. It might even be a routine that’s suddenly unproductive for you anymore. Or perhaps the bustling cafe is just not for you to spend long working hours in? At Fishburners, this is why they’ve built a coworking space for such purposes of working together instead of alone. Break your normal working style and try coworking at their collaborative space instead!",
@@ -148,7 +168,7 @@ owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', '
 work_in.remote_photo_url = url
 work_in.save
 
-5.times do
+10.times do
 Desk.create!(
  price_per_day: 18,
  space: work_in
@@ -167,20 +187,44 @@ cowork_in_montpellier = Space.new(name: "Cowork'in Montpellier", address: "4 Rue
 cowork_in_montpellier.remote_photo_url = url
 cowork_in_montpellier.save
 
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: cowork_in_montpellier
+) end
+
 url = "https://images.unsplash.com/photo-1461988625982-7e46a099bf4f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 the_island = Space.new(name: "The Island", address: "19 Avenue de Toulouse, 34070 Montpellier, France", description: 'New establishment, private access to the sea. Free deckchairs at your disposal.', owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 the_island.remote_photo_url = url
 the_island.save
+
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: the_island
+) end
 
 url = "https://images.unsplash.com/photo-1554902843-260acd0993f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 le_loft = Space.new(name: "Le Loft", address: "33 Rue de Robien, 35000 Rennes, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 le_loft.remote_photo_url = url
 le_loft.save
 
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: le_loft
+) end
+
 url = "https://images.unsplash.com/photo-1429681601148-75510b2cef43?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 etincelle_cowoking = Space.new(name: "Etincelle Cowoking", address: "2 Rue d'Austerlitz, 31000 Toulouse, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 etincelle_cowoking.remote_photo_url = url
 etincelle_cowoking.save
+
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: etincelle_cowoking
+) end
 
 url = "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
 coworkimmo = Space.new(name: "Coworkimmo", address: "23 Rue Edmond Michelet, 33000 Bordeaux, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
@@ -356,15 +400,33 @@ finns = Space.new(name: "Finns", address: "80 Circuit Rd, Singapore 370080", own
 finns.remote_photo_url = url
 finns.save
 
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: finns
+) end
+
 url = "https://coworker.imgix.net/photos/singapore/singapore/the-hive-new-bridge-road-singapore/1-1526289115.JPG"
 the_hive = Space.new(name: "The Hive", address: "59 New Bridge Road, Singapore, Singapore", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 the_hive.remote_photo_url = url
 the_hive.save
 
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: the_hive
+) end
+
 url = "https://coworker.imgix.net/photos/singapore/singapore/the-company/8-1557286237.jpg"
 the_company = Space.new(name: "The Company", address: "331 NORTH BRIDGE ROAD, Singapore, Singapore", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 the_company.remote_photo_url = url
 the_company.save
+
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: the_company
+) end
 
 puts 'SPACES created!'
 puts 'Great ! Everything has been created ! '

@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :reservations
   has_many :messages, dependent: :destroy
 
-
+  mount_uploader :avatar, PhotoUploader
   # validates :first_name, :last_name, presence: true
 end

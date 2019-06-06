@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4 offset-sm-4">
+      <h2>Bonjour <%= @user.first_name %> </h2>
+      <div class="card-profile">
+        <div class="card-photo">
+        <%= cl_image_tag @user.avatar, width: 150%> </br>
+        <p><%= @user.first_name %> <%= @user.last_name %></p>
+        <%= link_to "Edit my profile", edit_user_registration_path, class: "btn-custom btn-custom-gradient" %>
+        </div>
+
+        <div class="profile-info">
+
+        </div>
+
+        <div class="profile-action">
+          <%= link_to "My bookings", user_path(:id), class: "btn-custom btn-custom-gradient" %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

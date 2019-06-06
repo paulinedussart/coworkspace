@@ -1,32 +1,39 @@
 <div class="container">
   <div class="card-space_details">
-    <div class="banner" style= "background-image: url('<%= cl_image_path @space.photo%>')"></div>
 
-    <div>
-      <h1> <%= @space.name %> </h1>
+    <div class="banner" style= "background-image: url('<%= cl_image_tag @space.photo%>')"></div>
+    <%= link_to "Back to list", spaces_path, class: "btn btn-outline-primary mb-5"  %>
+
+  <div >
+    <h1> <%= @space.name %> </h1>
+  </div>
+  <div>
+    <p> <i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
+    <p><em> <%= link_to @space.website %></em></p>
+    <p> <%= @space.description %> </p>
+
+      <div class="space-infos">
+        <p> <i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
+        <p><em> <%= link_to @space.website %></em></p>
+        <p> THE REVIEWS RATE</p>
+        <h3> @space.desks.first.price_per_day / desk /day </h3>
+        <h2>Description</h2>
+        <p> <%= @space.description %> </p>
+      </div>
+
+
+
+      <div class="space-services">
+        <h2 >Services available</h2>
+      </div>
+
+      <div class="card hours" style="width: 18rem;">
+        <h3 class="card-title"> <i class="far fa-clock"></i> Opening Hours</h3>
+        <p class="card-text"> <strong>Monday-Friday :</strong> <%= @space.opening_hours["Mon-Fri"] %> </p>
+        <p class="card-text"> <strong>Saturday :</strong> <%= @space.opening_hours['Sat'] %> </p>
+        <p class="card-text"> <strong>Sunday :</strong> <%= @space.opening_hours['Sun'] %> </p>
+      </div>
     </div>
-
-    <div class="space-infos">
-      <p> <i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
-      <p><em> <%= link_to @space.website %></em></p>
-      <p> THE REVIEWS RATE</p>
-      <h3> @space.desks.first.price_per_day / desk /day </h3>
-      <h2>Description</h2>
-      <p> <%= @space.description %> </p>
-    </div>
-
-
-    <div class="space-services">
-      <h2 >Services available</h2>
-    </div>
-
-    <div class="card hours" style="width: 18rem;">
-      <h3 class="card-title"> <i class="far fa-clock"></i> Opening Hours</h3>
-      <p class="card-text"> <strong>Monday-Friday :</strong> <%= @space.opening_hours["Mon-Fri"] %> </p>
-      <p class="card-text"> <strong>Saturday :</strong> <%= @space.opening_hours['Sat'] %> </p>
-      <p class="card-text"> <strong>Sunday :</strong> <%= @space.opening_hours['Sun'] %> </p>
-    </div>
-
     <div
       id="map"
       style="width: 500px;
@@ -35,6 +42,24 @@
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+
+  <!--REVIEWS PAULINE -->
+    <h2>
+      <div id="counter">
+      <%= pluralize @space.reviews.size, "review" %>
+      </div>
+    </h2>
+
+    <div id="reviews">
+      <% if @space.reviews.blank? %>
+        Be the first to leave a review for <%= @space.name %>
+      <% else %>
+        <% @space.reviews.order('created_at DESC').each do |review| %>
+          <%= render 'reviews/show', review: review %>
+        <% end %>
+      <% end %>
+      <%= render 'reviews/form', space: @space, review: @review %>
+     </div>
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -74,5 +99,4 @@
     </div>
   </div>
 </div>
-
 

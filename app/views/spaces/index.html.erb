@@ -1,14 +1,13 @@
-<div class="container">
-
-  <h1>Spaces</h1>
+<div class="contour">
 
    <%= form_tag spaces_path, method: :get, class:"form-inline" do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
-      placeholder: "Find a space "%>
-      <%= submit_tag 'Go!', class:"btn btn-primary mx-2" %>
+      class: "form-control search-form",
+      placeholder: "Where do you want to go next ?"%>
+      <%= submit_tag 'Go!', class:"btn-custom btn-custom-gradient" %>
   <% end %>
+
 
   <div class="content-spaces d-flex">
     <div class="cards-spaces-container">

@@ -178,7 +178,7 @@ reservation2 = Reservation.create!(
   departure_date: Date.today + 4.week,
   status: "PENDING",
   user: pauline,
-  desk: desk100
+  desk: desk1
   )
 reservation3 = Reservation.create!(
   arrival_date: Date.today + 4.week,

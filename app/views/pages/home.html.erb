@@ -5,6 +5,7 @@
     <% end %>
     <form class="form-inline">
           <% if user_signed_in? %>
+            <%= link_to "Manage your coworking space", owner_session_path, class: "btn-outline-primary" %>
             <button class="btn btn-outline-light mx-3" type="button">Manage your space</button>
             <button class="btn btn-outline-light mx-3" type="button">Find a space</button>
             <button class=" nav-item dropdown btn mx-3" type="button">
@@ -27,12 +28,23 @@
 
   <div class="header">
     <div class="title">
-      <h1>COWORK SPACE</h1>
+      <h1>COWORK SPACE </h1>
       <h2>Find the desk you deserve !</h2>
       <p>COWORK SPACE allows you to search coworking spaces around the world</p>
+
+
+    <%= form_tag spaces_path, method: :get, class:"form-inline" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a space "%>
+        <%= submit_tag 'Go !', class:"btn-custom btn-custom-gradient mx-2" %>
+    <% end %>
+
     </div>
 
 
+</div>
  <!--  <form class="form-inline">
     <i class="fas fa-map-marker-alt"></i>
     <label class="sr-only" for="inlineFormInputName2">Place</label>
@@ -42,14 +54,6 @@
     <input type="text" class="form-control mx-2 mb-2 mr-sm-2" id="inlineFormInputGroupUsername2" placeholder="When ?">
     <button type="submit"  mb-2">Search</button>
   </form> -->
-  <%= form_tag spaces_path, method: :get, class:"form-inline" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Next destination ?"
-    %>
-    <%= submit_tag 'Go !', class:"btn-custom btn-lg btn-custom-gradient mx-2" %>
-  <% end %>
 </section>
 
 

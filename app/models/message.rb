@@ -1,7 +1,6 @@
 class Message < ApplicationRecord
   belongs_to :chat_room
   belongs_to :user
-  validates :content, prensence: true, allow_blank: false
   after_create :broadcast_message
 
   def from?(some_user)

@@ -3,25 +3,28 @@
 
 <div class="container">
   <% @reservations.each do |reservation| %>
-  <div class="card m3 card-index-reservations-user">
+  <div class="card m-5 card-index-reservations-user">
+
     <div class="card-header header-resa-user d-flex justify-content-between">
       <div class="space-name"><h3><%= reservation.desk.space.name %></h3></div>
       <div class="reservation-status"><h4 class="card-title "> <%= reservation.status %> </h4></div>
-
-
     </div>
+
     <div class="card-body">
       <div class="reservation_info d-flex justify-content-between">
         <em><%= reservation.desk.space.address %></em>
         <a href="#" class="btn btn-primary">Show on map </a>
       </div>
-
-      <p> <i class="far fa-clock"></i> <%= reservation.arrival_date.strftime("%a %e %B %Y") %> <i class="fas fa-angle-double-right"></i> <%= reservation.departure_date.strftime("%a %e %B %Y") %> </p>
-
-        <div class="text-right"> <i class="fas fa-paperclip "></i> <%= link_to "Reservation...PDF" %></div>
-
-
+<br>
+      <div class="d-flex justify-content-between"  >
+        <div> <h5><i class="far fa-calendar-check"></i> <%= reservation.arrival_date.strftime("%e %B %Y") %> <i class="fas fa-long-arrow-alt-right"></i> <%= reservation.departure_date.strftime("%e %B %Y") %> </h5></div>
+        <div> <i class="fas fa-paperclip "></i> <%= link_to "Reservation...PDF" %></div>
+      </div>
     </div>
+
+
+
+
   </div>
   <% end %>
 </div>

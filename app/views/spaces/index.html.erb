@@ -1,38 +1,35 @@
-<div class="container">
-
-  <h1>Spaces</h1>
+<div class="contour">
 
    <%= form_tag spaces_path, method: :get, class:"form-inline" do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
-      placeholder: "Find a space "%>
-      <%= submit_tag 'Go!', class:"btn btn-primary mx-2" %>
+      class: "form-control search-form",
+      placeholder: "Where do you want to go next ?"%>
+      <%= submit_tag 'Go!', class:"btn-custom btn-custom-gradient" %>
   <% end %>
 
-<div class="">
-  <div class="cards-spaces-container">
-    <% @spaces.each do |space|  %>
-      <div class=" card card-space cloudinary">
-    <!--     <img src="..." class="card-img-top" alt="..."> -->
-        <%= cl_image_tag space.photo, width: 300, height: 200, crop: :fill %>
-        <div class="card-body">
-          <h3 class="card-title"> <%= space.name %> </h3>
-          <p class="card-text"> <%= space.address %> </p>
-          <%= link_to "See details", space_path(space), class: "btn btn-primary"%>
+
+  <div class="content-spaces d-flex">
+    <div class="cards-spaces-container">
+      <% @spaces.each do |space|  %>
+        <div class="card card-space cloudinary">
+      <!--     <img src="..." class="card-img-top" alt="..."> -->
+          <%= cl_image_tag space.photo, width: 300, height: 200, crop: :fill %>
+          <div class="card-body">
+            <h3 class="card-title"> <%= space.name %> </h3>
+            <p class="card-text"> <%= space.address %> </p>
+            <%= link_to "See details", space_path(space), class: "btn btn-outline-primary"%>
+          </div>
         </div>
-      </div>
-    <% end  %>
+      <% end %>
+    </div>
+    <div
+      id="map"
+      style="width: 600px;
+      height: 600px;
+      margin-left: 15px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-  <div
-    id="map"
-    style="width: 600px;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
-</div>
-
-
-
 </div>

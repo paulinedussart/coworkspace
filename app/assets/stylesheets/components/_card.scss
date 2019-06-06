@@ -1,4 +1,12 @@
 // SPACES #index
+.contour {
+  margin: 20px;
+}
+
+.content-spaces {
+  padding-top: 40px;
+  flex: 1;
+}
 
 .cards-spaces-container {
   grid-template-columns: 1fr 1fr 1fr;
@@ -6,6 +14,21 @@
   display: grid;
   grid-gap: 10px;
 }
+
+.card-space {
+  border-radius: 5px;
+  min-width: 300px;
+  img {
+    align-self: center;
+    padding: 10px;
+  }
+}
+
+.card-text {
+  line-height: 20px;
+  font-size: 12px;
+}
+
 
 // USER Profile
 .card-profile {
@@ -39,7 +62,6 @@
 // RESERVATIONS USER #index (Pauline Dussart)
 .card-index-reservations-user {
   width: 600px;
-  margin: auto;
   height: 190px;
 }
 
@@ -50,6 +72,4 @@
 //   max-width: 300px;
 // object-fit: cover;
 // }
-
-
 

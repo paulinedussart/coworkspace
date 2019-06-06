@@ -1,65 +1,91 @@
 <div class="container">
-  <div class="card-space_details">
+  <div class="banner" style= "background-image: url('<%= cl_image_path @space.photo%>')">
+  </div>
+  <%= link_to "Back to list", spaces_path, class: "btn btn-outline-primary mb-5"  %>
 
-    <div class="banner" style= "background-image: url(<%= cl_image_path @space.photo%>)">
-    </div>
-
-    <%= link_to "Back to list", spaces_path, class: "btn btn-outline-primary mb-5"  %>
-    <div>
-      <div >
-        <h1> <%= @space.name %> </h1>
-      </div>
-
-      <div class="space-infos">
-        <p> <i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
+  <div class="container-spaces d-flex">
+    <div class="card-space-infos">
+      <div class="space-infos border-bottom">
+        <h1> <%= @space.name %></h1>
+        <p><i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
         <p><em> <%= link_to @space.website %></em></p>
         <p> THE REVIEWS RATE</p>
-        <h3> @space.desks.first.price_per_day / desk /day </h3>
-        <h2>Description</h2>
-        <p> <%= @space.description %> </p>
+        <h3> @space.desk.price_per_day / desk /day </h3>
       </div>
 
-        <div class="space-services">
-          <h2 >Services available</h2>
-        </div>
+      <div class="space-description border-bottom">
+        <h3><strong>About <%= @space.name %></strong></h3>
+        <p><%= @space.description %></p>
+      </div>
 
-        <div class="card hours" style="width: 18rem;">
+      <div class="space-services border-bottom">
+        <h3><strong>Amenities</strong></h3>
+      </div>
+
+      <div class="space-rules-container border-bottom">
+        <h3><strong>Space rules</strong></h3>
+        <div class="space-rules">
+          <div class="rules">
+            <span><i class="far fa-check-circle"></i>Food allowed</span>
+          </div>
+          <div class="rules">
+            <span><i class="far fa-check-circle"></i>Pets allowed</span>
+          </div>
+          <div class="rules">
+            <span><i class="far fa-check-circle"></i>Parties and events allowed</span>
+          </div>
+          <div class="rules">
+            <span><i class="far fa-times-circle"></i>Suitable for children</span>
+          </div>
+          <div class="rules">
+            <span><i class="far fa-times-circle"></i>Cooking not allowed</span>
+          </div>
+        </div>
+      </div>
+      <div class="space-reviews"> <!--REVIEWS PAULINE -->
+        <h2>
+          <div id="counter">
+          <h3><strong><%= pluralize @space.reviews.size, "review" %></strong></h3>
+          </div>
+        </h2>
+        <div id="reviews">
+          <% if @space.reviews.blank? %>
+            Be the first to leave a review for <%= @space.name %>
+          <% else %>
+            <% @space.reviews.order('created_at DESC').each do |review| %>
+              <%= render 'reviews/show', review: review %>
+            <% end %>
+          <% end %>
+          <%= render 'reviews/form', space: @space, review: @review %>
+         </div>
+     </div>
+
+
+    </div>
+
+  <!--       <div class="card hours" style="width: 18rem;">
           <h3 class="card-title"> <i class="far fa-clock"></i> Opening Hours</h3>
           <p class="card-text"> <strong>Monday-Friday :</strong> <%= @space.opening_hours["Mon-Fri"] %> </p>
           <p class="card-text"> <strong>Saturday :</strong> <%= @space.opening_hours['Sat'] %> </p>
           <p class="card-text"> <strong>Sunday :</strong> <%= @space.opening_hours['Sun'] %> </p>
-        </div>
+        </div> -->
+    <div class="space-map-book">
+      <div
+        id="map"
+        style="width: 500px;
+        height: 400px;
+        position: sticky;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      BOOK !
+      </button>
     </div>
-    <div
-      id="map"
-      style="width: 500px;
-      height: 400px;
-      position: sticky;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+  </div>
+
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      BOOK !
-    </button>
-  <!--REVIEWS PAULINE -->
-    <h2>
-      <div id="counter">
-      <%= pluralize @space.reviews.size, "review" %>
-      </div>
-    </h2>
-
-    <div id="reviews">
-      <% if @space.reviews.blank? %>
-        Be the first to leave a review for <%= @space.name %>
-      <% else %>
-        <% @space.reviews.order('created_at DESC').each do |review| %>
-          <%= render 'reviews/show', review: review %>
-        <% end %>
-      <% end %>
-      <%= render 'reviews/form', space: @space, review: @review %>
-     </div>
 
 
 
@@ -94,7 +120,7 @@
 
         </div>
       </div>
-    </div>
+
 
   </div>
 </div>

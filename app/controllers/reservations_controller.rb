@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = current_user.reservation.build(reservation_params)
+    @reservation = current_user.reservations.build(reservation_params)
     @desk = Desk.find(params[:desk_id])
     @reservation.desk = @desk
     @reservation.status = "Pending"

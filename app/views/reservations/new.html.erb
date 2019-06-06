@@ -4,7 +4,7 @@
       <div class="form-reservation">
 
   <h1>Make your booking</h1>
-  <%= simple_form_for [@desk, @reservation], url: new_user_desk_reservation_path(current_user) do |f| %>
+  <%= simple_form_for [@desk, @reservation], url: user_desk_reservations_path(current_user) do |f| %>
   <div class="form-inputs my-5">
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>

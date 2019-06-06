@@ -3,7 +3,6 @@ class Space < ApplicationRecord
   has_many :space_services
   has_many :desks, dependent: :destroy
   has_many :services, through: :space_services
-  has_many :desks, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
   geocoded_by :address

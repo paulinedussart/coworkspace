@@ -181,6 +181,8 @@ reservation2 = Reservation.create!(
   )
 puts ' --> RESERVATIONS created for Havana Beach'
 
+Review1 = review.create!(content: "From the day we moved in to Havana Beach, it has met all our needs professionally and quickly. The environment is perfect for a small and rapidly growing business, with so much space to accommodate small client meetings and larger marketing or networking events.", rating: "5", user: "aure", space: havana_beach, created_at: "04/06/19", updated_at: "18:00")
+
 url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
 we_work_martin_place = Space.new(name: "We Work Martin Place", address: "5 Martin Place, Sydney, Australia", description: "We Work is the worlds most unique coworking space, tucked within the foundations of the iconic Sydney Harbour Bridge at Lavender Bay. This heritage space has been reimagined to cultivate a community of driven start-ups and businesses created by entrepreneurs for entrepreneurs.
 ", owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.wework.com')

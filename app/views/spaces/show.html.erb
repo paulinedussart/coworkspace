@@ -1,16 +1,15 @@
 <div class="container">
   <div class="card-space_details">
 
-    <div class="banner" style= "background-image: url('<%= cl_image_tag @space.photo%>')"></div>
-    <%= link_to "Back to list", spaces_path, class: "btn btn-outline-primary mb-5"  %>
+    <div class="banner" style= "background-image: url(<%= cl_image_path @space.photo%>)">
+    </div>
 
-  <div >
-    <h1> <%= @space.name %> </h1>
-  </div>
-  <div>
-    <p> <i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
-    <p><em> <%= link_to @space.website %></em></p>
-    <p> <%= @space.description %> </p>
+    <%= link_to "Back to list", spaces_path, class: "btn btn-outline-primary mb-5"  %>
+    <div>
+      <div >
+        <h1> <%= @space.name %> </h1>
+      </div>
+
 
       <div class="space-infos">
         <p> <i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
@@ -21,18 +20,16 @@
         <p> <%= @space.description %> </p>
       </div>
 
+        <div class="space-services">
+          <h2 >Services available</h2>
+        </div>
 
-
-      <div class="space-services">
-        <h2 >Services available</h2>
-      </div>
-
-      <div class="card hours" style="width: 18rem;">
-        <h3 class="card-title"> <i class="far fa-clock"></i> Opening Hours</h3>
-        <p class="card-text"> <strong>Monday-Friday :</strong> <%= @space.opening_hours["Mon-Fri"] %> </p>
-        <p class="card-text"> <strong>Saturday :</strong> <%= @space.opening_hours['Sat'] %> </p>
-        <p class="card-text"> <strong>Sunday :</strong> <%= @space.opening_hours['Sun'] %> </p>
-      </div>
+        <div class="card hours" style="width: 18rem;">
+          <h3 class="card-title"> <i class="far fa-clock"></i> Opening Hours</h3>
+          <p class="card-text"> <strong>Monday-Friday :</strong> <%= @space.opening_hours["Mon-Fri"] %> </p>
+          <p class="card-text"> <strong>Saturday :</strong> <%= @space.opening_hours['Sat'] %> </p>
+          <p class="card-text"> <strong>Sunday :</strong> <%= @space.opening_hours['Sun'] %> </p>
+        </div>
     </div>
     <div
       id="map"
@@ -43,6 +40,10 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      BOOK !
+    </button>
   <!--REVIEWS PAULINE -->
     <h2>
       <div id="counter">
@@ -61,10 +62,7 @@
       <%= render 'reviews/form', space: @space, review: @review %>
      </div>
 
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-      BOOK !
-    </button>
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -94,9 +92,11 @@
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Confirm</button>
           </div>
+
         </div>
       </div>
     </div>
+
   </div>
 </div>
 

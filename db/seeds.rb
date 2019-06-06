@@ -6,6 +6,7 @@ Owner.destroy_all
 Space.destroy_all
 User.destroy_all
 Service.destroy_all
+Desk.destroy_all
 
 
 
@@ -20,7 +21,7 @@ services = [ "High-speed wifi", "Heating", "Air conditioning", "Standing desks",
 services.each do |service|
   Service.create!(name: service)
 end
-puts 'SERVICES created !'
+puts ' --> SERVICES created !'
 
 
 
@@ -51,7 +52,7 @@ green_advisor = Owner.create!(
   name: "Green Advisor",
   siret: '493 234 654 00038'
 )
-puts 'OWNERS created!'
+puts ' --> OWNERS created!'
 
 
 
@@ -67,18 +68,43 @@ pauline = User.create!(
   last_name: "Dussart"
 )
 
-ludivine = User.create!(
+aure = User.create!(
   email: 'aure@gmail.com',
   phone: '0638294710',
+  password: 'password',
+  first_name: "Aurelie",
+  last_name: "Gimet"
+)
+
+lulu = User.create!(
+  email: 'lulu@gmail.com',
+  phone: '0638294730',
   password: 'password',
   first_name: "Ludivine",
   last_name: "Robin"
 )
-puts 'USERS created!'
-
-
-
-
+popo = User.create!(
+  email: 'popo@gmail.com',
+  phone: '0638294740',
+  password: 'password',
+  first_name: "Pauline",
+  last_name: "Florens"
+)
+marc = User.create!(
+  email: 'marc@gmail.com',
+  phone: '0638294750',
+  password: 'password',
+  first_name: "Marc",
+  last_name: "Dubois"
+)
+pierre = User.create!(
+  email: 'pierre@gmail.com',
+  phone: '0638294760',
+  password: 'password',
+  first_name: "Pierre",
+  last_name: "De Latour"
+)
+puts ' --> USERS created!'
 
 
 # SEED DESKS
@@ -100,7 +126,7 @@ Desk.create!(
 ) end
 
 url = "https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-manly_house_studio = Space.new(name: "Manly House Studio", address: "46 Palomar Parade, Sydney, Australia", description: "Manly House Studio is a series of co-working spaces in a 200m2 open plan New York loft style warehouse in North Manly on Sydney's Northern Beaches. Situated just out of town, 5 mins from 2 beaches, it was founded to provide people
+manly_house_studio = Space.new(name: "Manly House Studio", address: "17-19 Bridge Street, Sydney, Australia", description: "Manly House Studio is a series of co-working spaces in a 200m2 open plan New York loft style warehouse in North Manly on Sydney's Northern Beaches. Situated just out of town, 5 mins from 2 beaches, it was founded to provide people
 nvolved with the Creative Industries an inspiring place to work, connect and share knowledge with each other.",
 owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.manly_house_studio.com')
 manly_house_studio.remote_photo_url = url
@@ -120,12 +146,73 @@ vibrancy so renowned in Cuban culture.", owner: vr_lab, opening_hours: {'Mon-Fri
 havana_beach.remote_photo_url = url
 havana_beach.save
 
-20.times do
-  Desk.create!(
-    price_per_day: 15,
-    space: havana_beach
+puts 'Creating DESKS for Havana Beach...'
+# Desk for Havana Beach
+desk1 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
   )
-end
+
+desk2 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+
+desk3 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+puts ' --> DESKS created for Havana Beach !'
+
+puts 'Creating RESERVATIONS for Havana Beach...'
+# Reservation for Havana Beach
+reservation1 = Reservation.create!(
+  arrival_date: Date.today + 1.week,
+  departure_date: Date.today + 2.week,
+  status: "PENDING",
+  user: pauline,
+  desk: desk1
+  )
+reservation2 = Reservation.create!(
+  arrival_date: Date.today + 3.week,
+  departure_date: Date.today + 4.week,
+  status: "PENDING",
+  user: pauline,
+  desk: desk1
+  )
+puts ' --> RESERVATIONS created for Havana Beach'
+
+puts ' --> creating REVIEWS for Havana Beach'
+review1 = Review.create!(
+  content: "From the day we moved in to Havana Beach, it has met all our needs professionally and quickly. The environment is perfect for a small and rapidly growing business, with so much space to accommodate small client meetings and larger marketing or networking events.",
+  rating: 5,
+  user: aure,
+  space: havana_beach
+  )
+
+review2 = Review.create!(
+  content: "Work Inc has the fastest internet we could find, mixed with the coolest warehouse vibe, strong community feel and reasonable pricing.",
+  rating: 4,
+  user: lulu,
+  space: havana_beach
+)
+
+review3 = Review.create!(
+  content: "Great working environment with a super dedicated team ensuring everything runs smoothly.",
+  rating: 5,
+  user: pierre,
+  space: havana_beach
+  )
+
+review4 = Review.create!(
+  content: "Great location, creative design, vibrant community and friendly staff! I’ve been working at Work Inc for months and seeing how the team is making continuous improvement where things are already good enough. Thanks team! Highly recommended.",
+  rating: 5,
+  user: marc,
+  space: havana_beach
+  )
+puts ' --> REVIEWS created for Havana Beach'
+
+
 
 url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
 we_work_martin_place = Space.new(name: "We Work Martin Place", address: "5 Martin Place, Sydney, Australia", description: "We Work is the worlds most unique coworking space, tucked within the foundations of the iconic Sydney Harbour Bridge at Lavender Bay. This heritage space has been reimagined to cultivate a community of driven start-ups and businesses created by entrepreneurs for entrepreneurs.
@@ -153,6 +240,12 @@ owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', '
 fishburners.remote_photo_url = url
 fishburners.save
 
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: fishburners
+) end
+
 url = "https://images.unsplash.com/photo-1554774853-719586f82d77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 spacecubed = Space.new(name: "Spacecubed", address: "45 St Georges Terrace, Perth WA 6000, Australia", description:"An impressive space for your next business meeting.
 berrins is a boutique co-working space in the heart of Manly, right across the road from Manly Wharf.
@@ -161,6 +254,13 @@ owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '
 spacecubed.remote_photo_url = url
 spacecubed.save
 
+2.times do
+Desk.create!(
+ price_per_day: 15,
+ space: spacecubed
+) end
+
+
 url = "https://coworker.imgix.net/photos/australia/sydney/work-inc/1-1542083293.JPG"
 work_in = Space.new(name: "CoWork In", address: "36 Sydney Road, Manly, Sydney, Australia", description: "Work In is the biggest coworking space in the southern area of Sydney. In their words, “Work for yourself, not by yourself” so if you ever feel
 the need to escape the lonesome confined spaces of your cubicle or your comfy sofa at home, head on over to Inspire Cowork to get your work mojo going while being surrounded by motivated like minded individuals.",
@@ -168,11 +268,56 @@ owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', '
 work_in.remote_photo_url = url
 work_in.save
 
-10.times do
-Desk.create!(
- price_per_day: 18,
- space: work_in
-)end
+puts 'Creating DESKS for Work In ...'
+# Desk for Work In
+desk100 = Desk.create!(
+  price_per_day: 18,
+  space: work_in
+  )
+
+desk200 = Desk.create!(
+  price_per_day: 18,
+  space: work_in
+  )
+
+desk300 = Desk.create!(
+  price_per_day: 18,
+  space: work_in
+  )
+puts ' --> DESKS created for Work In'
+
+
+puts ' --> creating REVIEWS for Work In'
+review1 = Review.create!(
+  content: "Fantastic location close to both North Sydney and Milsons Point stations. Great facilities and the staff are always on hand and very helpful. A very integrated community feel between companies. An all round great operation!",
+  rating: 5,
+  user: aure,
+  space: work_in
+  )
+
+review2 = Review.create!(
+  content: "When I tell people I work in this space they get the serious case of the “jeals”. Everything you could possibly need in a workspace (and more) is catered for here.",
+  rating: 4,
+  user: lulu,
+  space: work_in,
+)
+
+review3 = Review.create!(
+  content: "Well located site , right in the heart of Sydney, near the one of most popular train station in town. Comfortable offices across different industries, which make colleagues interesting people to talk.",
+  rating: 5,
+  user: pierre,
+  space: work_in,
+)
+
+review4 = Review.create!(
+  content: "Work in has amazing facilities, it is a fantastic welcoming place to work. The location is great too.",
+  rating: 5,
+  user: marc,
+  space: work_in,
+)
+puts ' --> REVIEWS created for Work In'
+
+
 # SEEDS AUSTRALIA END
 
 
@@ -428,7 +573,7 @@ Desk.create!(
  space: the_company
 ) end
 
-puts 'SPACES created!'
+puts ' --> SPACES created!'
 puts 'Great ! Everything has been created ! '
 
 # SEED RESERVATIONS

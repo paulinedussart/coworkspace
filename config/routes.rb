@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :owners
-  devise_for :users
+  devise_for :owners, path: 'owners'
+  devise_for :users, path: 'users'
+
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :owners do
@@ -14,6 +15,14 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :edit] do
-    resources :reservations, only: [:new, :create, :index, :show]
+    resources :reservations, only: [:new, :index, :create, :show]
   end
+
+
+  resources :spaces, only: [:index, :show]
+
+  resources :chat_rooms, only: [:show] do
+    resources :messages, only: [:create]
+  end
+
 end

@@ -6,7 +6,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.3'
-gem 'redis'
+# gem 'redis'
+gem 'redis', '3.0.0'
+
 gem 'devise'
 gem 'geocoder'
 
@@ -19,8 +21,6 @@ gem 'webpacker'
 gem 'pg_search'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
-
-
 
 group :development do
   gem 'web-console', '>= 3.3.0'

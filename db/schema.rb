@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_04_125554) do
+ActiveRecord::Schema.define(version: 2019_06_06_105649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "desks", force: :cascade do |t|
     t.integer "price_per_day"
@@ -21,6 +27,17 @@ ActiveRecord::Schema.define(version: 2019_06_04_125554) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["space_id"], name: "index_desks_on_space_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.string "sender_type"
+    t.bigint "sender_id"
+    t.bigint "chat_room_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["sender_type", "sender_id"], name: "index_messages_on_sender_type_and_sender_id"
   end
 
   create_table "owners", force: :cascade do |t|
@@ -118,6 +135,7 @@ ActiveRecord::Schema.define(version: 2019_06_04_125554) do
   end
 
   add_foreign_key "desks", "spaces"
+  add_foreign_key "messages", "chat_rooms"
   add_foreign_key "reservations", "desks"
   add_foreign_key "reservations", "users"
   add_foreign_key "reviews", "spaces"

@@ -10,9 +10,9 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-     <% unless action_name == "home" %>
-       <%= render 'shared/navbar' %>
-      <% end %>
+    <% unless action_name == "home" %>
+      <%= render 'shared/navbar' %>
+    <% end %>
 
     <%= yield %>
 
@@ -20,7 +20,6 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= yield :after_js %>

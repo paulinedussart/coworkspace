@@ -16,8 +16,19 @@
       <!--     <img src="..." class="card-img-top" alt="..."> -->
           <%= cl_image_tag space.photo, width: 300, height: 200, crop: :fill %>
           <div class="card-body">
-            <h3 class="card-title"> <%= space.name %> </h3>
-            <p class="card-text"> <%= space.address %> </p>
+            <h4 class="card-title"> <%= space.name %></h4>
+            <div class="card-reviews-price d-flex">
+            <div class="card-reviews">
+              <% if  space.reviews.empty? %>
+              <p>No reviews yet</p>
+              <% else %>
+              <p><%= space.reviews.average(:rating) %><i class="fas fa-star"></i></p>
+              <% end %>
+            </div>
+            <div class="card-price">
+              <p>$ <%= space.desks.first.price_per_day %> /day</p>
+            </div>
+          </div>
             <%= link_to "See details", space_path(space), class: "btn btn-outline-primary"%>
           </div>
         </div>

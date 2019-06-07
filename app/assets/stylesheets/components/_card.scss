@@ -29,6 +29,23 @@
   font-size: 12px;
 }
 
+.fa-star {
+  color: $orange;
+  padding-left: 5px;
+}
+
+.card-reviews-price {
+  justify-content: space-between;
+}
+
+.card-reviews {
+  color: $orange;
+  font-weight: bold;
+}
+
+.card-price {
+  font-weight: bold;
+}
 
 // USER Profile
 .card-profile {

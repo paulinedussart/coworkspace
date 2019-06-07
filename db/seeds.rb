@@ -76,6 +76,7 @@ aure = User.create!(
   password: 'password',
   first_name: "Aurelie",
   last_name: "Gimet"
+
 )
 
 lulu = User.create!(

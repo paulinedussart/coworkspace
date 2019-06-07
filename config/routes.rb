@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :owners, path: 'owners'
   devise_for :users, path: 'users'
 
+  mount ActionCable.server => "/cable"
+
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :owners do

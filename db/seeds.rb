@@ -139,7 +139,7 @@ Desk.create!(
   )
 end
 
-url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
+url = "https://twospace.com.au/venue/havana-beach-manly-sydney/"
 havana_beach = Space.new(name: "Havana Beach", address: "14 South Steyne, Manly, Sydney, Australia", description: "Havana Beach turns the restaurant that is normally closed during the day into a unique and affordable co-working space. Located in Manly, mere steps away from the beach sits Havana Beach.
 Light and color fill this eternally sunny space as people rest their backs on plush scarlet and lime patterned cushions and listen to the ocean as they sip on hot coffee made by the in-house barista. The exposed brick walls and light bulbs, murals and vintage posters are reminiscent of the warmth and easy
 vibrancy so renowned in Cuban culture.", owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.havana_beach.com')

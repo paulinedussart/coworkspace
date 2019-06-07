@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @owner = current_owner
   end
 end

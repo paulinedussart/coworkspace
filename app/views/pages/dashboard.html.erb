@@ -1,2 +1,52 @@
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+          <div class="image-cropper">
+          <%= cl_image_tag @owner.spaces.first.photo, width: 150, crop: :fill %>
+          </div>
+            <h3><%= @owner.name %> </h3>
+        </div>
 
-<h1>Coucou Pauline !</h1>
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">My Space</a>
+
+                </ul>
+            </li>
+
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bookings</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">To be confirmed</a>
+                    </li>
+                    <li>
+                        <a href="#">Upcoming</a>
+                    </li>
+                    <li>
+                        <a href="#">Passed</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Rapports</a>
+            </li>
+            <li>
+                <a href="#">Je sais plus</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="stats">
+      <div class="stat">
+      </div>
+
+      <div class="stat">
+      </div>
+
+      <div class="stat">
+      </div>
+    </div>
+
+</div>

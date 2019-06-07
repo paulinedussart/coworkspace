@@ -1,1 +1,25 @@
-<p><%= review.content %> - <%= review.rating %>/5</p>
+<div class="reviews-user">
+  <div class=" review-head d-flex justify-content-between">
+      <p><strong><%= review.user.first_name %>  <%= review.user.last_name %></strong></p>
+      <% if review.rating == 1 %>
+      <p class="rating-yellow"><%= review.rating %> <i class="fas fa-star"></i></p>
+      <% elsif review.rating == 2 %>
+      <p class="rating-yellow"><%= review.rating %> <i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+      <% elsif review.rating == 3 %>
+      <p class="rating-yellow"><%= review.rating %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+      <% elsif review.rating == 4 %>
+      <p class="rating-yellow"><%= review.rating %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+      <% else review.rating == 5 %>
+      <p class="rating-yellow"><%= review.rating %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
+      <% end  %>
+  </div><br>
+  <div>
+    <%= review.content %>
+    </div>
+
+  <br>
+  <a href="">Respond</a>
+</div>
+
+
+

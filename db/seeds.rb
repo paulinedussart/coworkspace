@@ -8,7 +8,7 @@ Service.destroy_all
 Desk.destroy_all
 Message.destroy_all
 User.destroy_all
-Chat_rooms.destroy_all
+ChatRoom.destroy_all
 
 
 

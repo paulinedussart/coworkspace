@@ -31,9 +31,10 @@
 }
 
 a.nav-link {
-  color: black;
+  color: white;
   margin: 0 15px;
 }
+
 
 .navbar-light .navbar-nav .nav-link {
   color: black;
@@ -51,4 +52,32 @@ a.nav-link {
   margin-top: 4px;
   font-size: 13px !important;
 }
+
+// nav bar home
+button.nav-item {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.nav-item .fas {
+  color: white;
+  font-size: 24px;
+}
+
+a.nav-link {
+  color: white;
+  margin: 0 15px;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
 

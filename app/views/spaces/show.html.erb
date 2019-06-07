@@ -1,6 +1,7 @@
-<div class="container">
-  <div class="banner" style= "background-image: url('<%= cl_image_path @space.photo%>')">
+<div class="banner" style= "background-image: url('<%= cl_image_path @space.photo%>')">
   </div>
+<div class="container">
+
   <%= link_to "Back to list", spaces_path, class: "btn btn-outline-primary mb-5"  %>
 
   <div class="container-spaces d-flex">
@@ -8,7 +9,7 @@
       <div class="space-infos border-bottom">
         <h1> <%= @space.name %></h1>
         <p><i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
-        <p><em> <%= link_to @space.website %></em></p>
+        <em><a href="https://twospace.com.au/venue/havana-beach-manly-sydney/"><%= @space.website %></a></em>
         <div class="reviews-header">
           <% if  @space.reviews.empty? %>
             <p>No reviews yet</p>
@@ -26,6 +27,92 @@
 
       <div class="space-services border-bottom">
         <h3><strong>Amenities</strong></h3>
+        <div class="space-amenities">
+          <div class="space-amenitie">
+            <h5><strong>Basics</strong></h5>
+            <div class="basics">
+              <i class="far fa-check-circle"></i>
+              <p>High-speed wifi</p>
+              <i class="far fa-check-circle"></i>
+              <p>Air conditioning</p>
+              <i class="far fa-check-circle"></i>
+              <p>Heating</p>
+            </div>
+          </div>
+          <div class="space-amenitie">
+            <h5><strong>Seating</strong></h5>
+            <div class="seating">
+              <i class="far fa-check-circle"></i>
+              <p>Standing desks</p>
+              <i class="far fa-check-circle"></i>
+              <p>Ergonomic chairs</p>
+              <i class="far fa-check-circle"></i>
+              <p>Beanbags</p>
+            </div>
+          </div>
+          <div class="space-amenitie">
+            <h5><strong>Equipment</strong></h5>
+            <div class="equipment">
+              <i class="far fa-check-circle"></i>
+              <p>Printer</p>
+              <i class="far fa-check-circle"></i>
+              <p>3D Printer</p>
+              <i class="far fa-check-circle"></i>
+              <p>Scanner</p>
+              <i class="far fa-check-circle"></i>
+              <p>Sound recording system</p>
+            </div>
+          </div>
+          <div class="space-amenitie">
+            <h5><strong>Community</strong></h5>
+            <div class="community">
+              <i class="far fa-check-circle"></i>
+              <p>Events</p>
+              <i class="far fa-check-circle"></i>
+              <p>Workshops</p>
+            </div>
+          </div>
+          <div class="space-amenitie">
+            <h5><strong>Relax zone</strong></h5>
+            <div class="relax">
+              <i class="far fa-check-circle"></i>
+              <p>Outdoor terrace</p>
+              <i class="far fa-check-circle"></i>
+              <p>Lounge</p>
+            </div>
+          </div>
+          <div class="space-amenitie">
+            <h5><strong>Cool stuff</strong></h5>
+            <div class="cool">
+              <i class="far fa-check-circle"></i>
+              <p>Sea-view</p>
+              <i class="far fa-check-circle"></i>
+              <p>Surf equipment available</p>
+            </div>
+          </div>
+          <div class="space-amenitie">
+            <h5><strong>Transportation</strong></h5>
+            <div class="transportation">
+              <i class="far fa-check-circle"></i>
+              <p>Free parking on premises</p>
+              <i class="far fa-check-circle"></i>
+              <p>Bus stop at 5min</p>
+              <i class="far fa-check-circle"></i>
+              <p>Wheelchair accessibility</p>
+            </div>
+          </div>
+          <div class="space-amenitie">
+            <h5><strong>Catering</strong></h5>
+            <div class="transportation">
+              <i class="far fa-check-circle"></i>
+              <p>Free drinking water</p>
+              <i class="far fa-check-circle"></i>
+              <p>Free coffee</p>
+              <i class="far fa-check-circle"></i>
+              <p>Free tea</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="space-rules-container border-bottom">
@@ -94,6 +181,8 @@
     <!-- Button trigger modal -->
 
 
+
+    <%= link_to "Book !", new_user_desk_reservation_path(current_user, @desk), class: "btn-custom btn-custom-gradient" %>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

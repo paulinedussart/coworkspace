@@ -5,8 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reviews
   has_many :reservations
-  has_many :messages, dependent: :destroy
-
+  has_many :messages
   mount_uploader :avatar, PhotoUploader
   # validates :first_name, :last_name, presence: true
 end

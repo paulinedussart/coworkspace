@@ -19,6 +19,21 @@ grid-template-columns: repeat(auto-fit, minmax(200px, 32%));
 margin-bottom: 24px;
 }
 
+// SPACES AMENITIES
+.space-amenities {
+display: grid;
+gap: 10px 10px;
+grid-template-columns: 1fr 1fr;
+}
+
+.space-amenitie {
+  border: 1px solid #d9dadb;
+  padding: 10px 14px 2px;
+  border-radius: 4px;
+  float: left;
+  width: 100%;
+}
+
 // -> icones
 .fa-check-circle {
   color: #58b368;

@@ -17,10 +17,10 @@ class ReservationsController < ApplicationController
     @reservation = current_user.reservations.build(reservation_params)
     @desk = Desk.find(params[:desk_id])
     @reservation.desk = @desk
-    @reservation.status = "Pending"
+    @reservation.status = "PENDING"
     respond_to do |format|
       if @reservation.save
-        format.html { redirect_to root_path, notice: 'Thank you for your booking ! Your reservation is pending. You will receive an email in the next 24h to confirm your reservation !' }
+        format.html { redirect_to user_reservations_path, notice: 'Thank you for your booking ! Your reservation is pending. You will receive an email in the next 24h to confirm your reservation !' }
       else
         format.html { render :new }
       end

@@ -1,9 +1,8 @@
+<div class="banner" style= "background-image: url('<%= cl_image_path @space.photo%>')"></div>
+
 <div class="container">
   <div class="card-space_details">
-
-    <div class="banner" style= "background-image: url('<%= cl_image_tag @space.photo%>')"></div>
     <%= link_to "Back to list", spaces_path, class: "btn btn-outline-primary mb-5"  %>
-
   <div >
     <h1> <%= @space.name %> </h1>
   </div>
@@ -59,6 +58,8 @@
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
       BOOK !
     </button>
+
+    <%= link_to "Book !", new_user_desk_reservation_path(current_user, @desk), class: "btn-custom btn-custom-gradient" %>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -28,6 +28,7 @@ class SpacesController < ApplicationController
     }
     @review = Review.new
     @reservation = Reservation.new
+    @desk = @space.desks.first
   end
 
   def new

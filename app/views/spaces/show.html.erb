@@ -9,8 +9,14 @@
         <h1> <%= @space.name %></h1>
         <p><i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
         <p><em> <%= link_to @space.website %></em></p>
-        <p> THE REVIEWS RATE</p>
-        <h3> @space.desk.price_per_day / desk /day </h3>
+        <div class="reviews-header">
+          <% if  @space.reviews.empty? %>
+            <p>No reviews yet</p>
+          <% else %>
+            <p><%= @space.reviews.average(:rating) %><i class="fas fa-star"></i></p>
+          <% end %>
+        </div>
+        <h3>$ <%= @space.desks.first.price_per_day %> /day </h3>
       </div>
 
       <div class="space-description border-bottom">

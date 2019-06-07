@@ -1,12 +1,14 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 puts 'Cleaning database...'
-User.destroy_all
 Reservation.destroy_all
 Owner.destroy_all
 Space.destroy_all
 Service.destroy_all
 Desk.destroy_all
+Message.destroy_all
+User.destroy_all
+Chat_rooms.destroy_all
 
 
 
@@ -190,14 +192,6 @@ reservation3 = Reservation.create!(
 
 puts ' --> MESSAGES created for Havana Beach'
 
-message1 = Message.create!(
-  content: "Have you got a question ?",
-  sender: havana_beach_coworking )
-
-puts ' --> creating MESSAGES for Havana Beach'
-
-
-puts ' --> RESERVATIONS created for Havana Beach'
 
 puts ' --> creating REVIEWS for Havana Beach'
 review1 = Review.create!(
@@ -367,7 +361,7 @@ Desk.create!(
 ) end
 
 url = "https://images.unsplash.com/photo-1554902843-260acd0993f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-le_loft = Space.new(name: "Le Loft", address: "33 Rue de Robien, 35000 Rennes, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+le_loft = Space.new(name: "Le Loft", address: "33 Rue de Robien, 35000 Rennes, France", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 le_loft.remote_photo_url = url
 le_loft.save
 
@@ -378,7 +372,7 @@ Desk.create!(
 ) end
 
 url = "https://images.unsplash.com/photo-1429681601148-75510b2cef43?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-etincelle_cowoking = Space.new(name: "Etincelle Cowoking", address: "2 Rue d'Austerlitz, 31000 Toulouse, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+etincelle_cowoking = Space.new(name: "Etincelle Cowoking", address: "2 Rue d'Austerlitz, 31000 Toulouse, France", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 etincelle_cowoking.remote_photo_url = url
 etincelle_cowoking.save
 
@@ -389,12 +383,12 @@ Desk.create!(
 ) end
 
 url = "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-coworkimmo = Space.new(name: "Coworkimmo", address: "23 Rue Edmond Michelet, 33000 Bordeaux, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+coworkimmo = Space.new(name: "Coworkimmo", address: "23 Rue Edmond Michelet, 33000 Bordeaux, France", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 coworkimmo.remote_photo_url = url
 coworkimmo.save
 
 url = "https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-la_ruche = Space.new(name: "La Ruche", address: "66 Rue Abbé de l'Épée, 33000 Bordeaux, France", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+la_ruche = Space.new(name: "La Ruche", address: "66 Rue Abbé de l'Épée, 33000 Bordeaux, France", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 la_ruche.remote_photo_url = url
 la_ruche.save
 
@@ -406,7 +400,7 @@ mtp.save
 
     # AUTRES
 url = "https://images.unsplash.com/photo-1535078035266-a0fa7d3b8f65?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-cowork_central = Space.new(name: "Cowork Central – Cais do Sodré", address: "Av. da República 46, Lisboa, Portugal", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+cowork_central = Space.new(name: "Cowork Central – Cais do Sodré", address: "Av. da República 46, Lisboa, Portugal", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 cowork_central.remote_photo_url = url
 cowork_central.save
 
@@ -448,39 +442,39 @@ station_house.remote_photo_url = url
 station_house.save
 
 url = "https://images.unsplash.com/photo-1498409785966-ab341407de6e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-co_white_house_work = Space.new(name: "Co White House Work", address: "2720 N MacArthur Dr, Alexandria, LA 71303, États-Unis", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+co_white_house_work = Space.new(name: "Co White House Work", address: "2720 N MacArthur Dr, Alexandria, LA 71303, États-Unis", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 co_white_house_work.remote_photo_url = url
 co_white_house_work.save
 
 url = "https://coworker.imgix.net/photos/indonesia/bali/hub-bali-coworking-legian/1.jpg"
-coworking_legian = Space.new(name: "Coworking Legian", address: "1409 W Hwy St, Iowa Park, TX 76367, États-Unis", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+coworking_legian = Space.new(name: "Coworking Legian", address: "1409 W Hwy St, Iowa Park, TX 76367, États-Unis", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 coworking_legian.remote_photo_url = url
 coworking_legian.save
 
 url = "https://images.unsplash.com/photo-1467320424268-f91a16cf7c77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-the_lab_miami = Space.new(name: "The Lab Miami", address: "3600 Suncadia Trail, Cle Elum, WA 98922, États-Unis", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+the_lab_miami = Space.new(name: "The Lab Miami", address: "3600 Suncadia Trail, Cle Elum, WA 98922, États-Unis", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 the_lab_miami.remote_photo_url = url
 the_lab_miami.save
 
 url = "https://images.unsplash.com/photo-1445865272827-4894eb9d48de?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-we_work = Space.new(name: "We Work", address: "10068 W South Highway 69, Mayer, AZ 86333, États-Unis", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+we_work = Space.new(name: "We Work", address: "10068 W South Highway 69, Mayer, AZ 86333, États-Unis", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 we_work.remote_photo_url = url
 we_work.save
 
 
     # AUTRE
 url = "https://images.unsplash.com/photo-1461782296610-c552d61b149a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-guaja_café_coworking = Space.new(name: "GUAJA Café & Coworking", address: " R Fradique Coutinho, 160, Sao Paulo, Brazil", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+guaja_café_coworking = Space.new(name: "GUAJA Café & Coworking", address: " R Fradique Coutinho, 160, Sao Paulo, Brazil", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 guaja_café_coworking.remote_photo_url = url
 guaja_café_coworking.save
 
 url = "https://images.unsplash.com/photo-1511549945984-b2b193cb87e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-rather_coworking = Space.new(name: "Rather Coworking", address: "Av. Caxangá, 3210 - Iputinga, Recife - PE, 50731-000, Brésil", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+rather_coworking = Space.new(name: "Rather Coworking", address: "Av. Caxangá, 3210 - Iputinga, Recife - PE, 50731-000, Brésil", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 rather_coworking.remote_photo_url = url
 rather_coworking.save
 
 url = "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-chillhy = Space.new(name: "Chill'Hi", address: "Aviador David Fuentes, Pudahuel, Región Metropolitana, Chili", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+chillhy = Space.new(name: "Chill'Hi", address: "Aviador David Fuentes, Pudahuel, Región Metropolitana, Chili", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 chillhy.remote_photo_url = url
 chillhy.save
 
@@ -496,7 +490,7 @@ smart_point.remote_photo_url = url
 smart_point.save
 
 url = "https://images.unsplash.com/photo-1464075208758-5623fb69e13b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-ay7_coworking = Space.new(name: "7AY Coworking", address: "23, Rue Chellah - Place Mellilia - Hassan، Rabat, Maroc", owner: tech_digital, opening_hours: {"Mon-Fri": "8AMP-8PM", "Sat": "9AM-6PM", "Sun": "10AM-1PM"})
+ay7_coworking = Space.new(name: "7AY Coworking", address: "23, Rue Chellah - Place Mellilia - Hassan، Rabat, Maroc", owner: havana_beach_coworking, opening_hours: {"Mon-Fri": "8AMP-8PM", "Sat": "9AM-6PM", "Sun": "10AM-1PM"})
 ay7_coworking.remote_photo_url = url
 ay7_coworking.save
 
@@ -532,17 +526,17 @@ banj.save
 
 # AFRIQUE
 url = "https://images.unsplash.com/photo-1520881363902-a0ff4e722963?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-africa_work = Space.new(name: "Africa Work", address: "10 Buxton St, Queenstown, 5320, Afrique du Sud", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+africa_work = Space.new(name: "Africa Work", address: "10 Buxton St, Queenstown, 5320, Afrique du Sud", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 africa_work.remote_photo_url = url
 africa_work.save
 
 url = "https://images.unsplash.com/photo-1440492248262-6895f9da82fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-africowork = Space.new(name: "Africowork", address: "1, King Shaka Ave, Point, Durban, 4001, South Africa", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+africowork = Space.new(name: "Africowork", address: "1, King Shaka Ave, Point, Durban, 4001, South Africa", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 africowork.remote_photo_url = url
 africowork.save
 
 url = "https://images.unsplash.com/photo-1522683280249-025c6e03d311?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-africa_south = Space.new(name: "Africa South", address: "26 Murray St, Tarkastad, 5370, Afrique du Sud", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+africa_south = Space.new(name: "Africa South", address: "26 Murray St, Tarkastad, 5370, Afrique du Sud", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 africa_south.remote_photo_url = url
 africa_south.save
 
@@ -558,7 +552,7 @@ the_hub.save
 
 # ASIE
 url = "https://coworker.imgix.net/photos/indonesia/bali/finns-bali/4-1529055152.jpg"
-finns = Space.new(name: "Finns", address: "80 Circuit Rd, Singapore 370080", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+finns = Space.new(name: "Finns", address: "80 Circuit Rd, Singapore 370080", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 finns.remote_photo_url = url
 finns.save
 
@@ -569,7 +563,7 @@ Desk.create!(
 ) end
 
 url = "https://coworker.imgix.net/photos/singapore/singapore/the-hive-new-bridge-road-singapore/1-1526289115.JPG"
-the_hive = Space.new(name: "The Hive", address: "59 New Bridge Road, Singapore, Singapore", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+the_hive = Space.new(name: "The Hive", address: "59 New Bridge Road, Singapore, Singapore", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 the_hive.remote_photo_url = url
 the_hive.save
 
@@ -580,7 +574,7 @@ Desk.create!(
 ) end
 
 url = "https://coworker.imgix.net/photos/singapore/singapore/the-company/8-1557286237.jpg"
-the_company = Space.new(name: "The Company", address: "331 NORTH BRIDGE ROAD, Singapore, Singapore", owner: tech_digital, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
+the_company = Space.new(name: "The Company", address: "331 NORTH BRIDGE ROAD, Singapore, Singapore", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'})
 the_company.remote_photo_url = url
 the_company.save
 

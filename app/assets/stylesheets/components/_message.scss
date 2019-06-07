@@ -49,7 +49,7 @@ input.form-control {
   border: 1px solid #ECECEC;
   box-shadow: none;
   font-size: 14px;
-  color: #868686;
+  color: #a59898;
   &:focus {
     outline: none;
     border: 1px solid blue;
@@ -57,12 +57,4 @@ input.form-control {
   }
 }
 
-.chat-header {
-  background-color: #4F2F4C;
-  color: white;
-  padding: 10px 20px;
-  margin-top: 10px;
-  h4 {
-    margin: 0;
-  }
-}
+

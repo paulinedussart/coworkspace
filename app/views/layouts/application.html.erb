@@ -15,13 +15,16 @@
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% unless action_name == "home" %>
+    <% unless action_name == "home" || "dashboard"%>
       <%= render 'shared/navbar' %>
     <% end %>
 
     <%= yield %>
 
-    <%= render 'shared/footer' %>
+    <% unless action_name == "dashboard" %>
+      <%= render 'shared/footer' %>
+    <% end %>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 

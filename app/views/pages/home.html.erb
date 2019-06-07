@@ -16,7 +16,7 @@
           </div>
             </button>
          <% elsif owner_signed_in? %>
-          <%= link_to "Manage your space", spaces_path, class: "btn btn-outline-light mx-2" %>
+          <%= link_to "Manage your space", owner_dashboard_path(:id), class: "btn btn-outline-light mx-2" %>
           <%= link_to "Log out", destroy_owner_session_path, method: :delete%>
          <% else %>
            <button class=" nav-item btn btn-outline-warning mx-4" type="button">

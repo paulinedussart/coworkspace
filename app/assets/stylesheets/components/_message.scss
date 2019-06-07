@@ -1,7 +1,7 @@
 .messages {
   font-size: 14px;
   color: #868686;
-  background-color: #ffffff !important;
+  background-color: #ffffff ;
   padding: 20px;
   border: 1px solid #ececec;
   border-top: none;
@@ -16,23 +16,26 @@
   &.right {
     flex-direction: row-reverse;
     .message-content {
-      background-color: #F2F9FC;
+      background-color: #6B4696;
+      color: white;
     }
   }
 }
 
 .message-content {
   background-color: #F7F7F7;
-  border-radius: 3px;
+  border-radius: 5px;
   margin: 0 10px;
   padding: 11px 10px 8px 10px;
 }
 
-.avatar {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-}
+
+// quand on aura un avatar pour les users et les owners
+// .avatar {
+//   width: 42px;
+//   height: 42px;
+//   border-radius: 50%;
+// }
 
 #create-message {
   padding: 10px;
@@ -56,5 +59,3 @@ input.form-control {
     box-shadow: none;
   }
 }
-
-

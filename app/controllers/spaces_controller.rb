@@ -21,6 +21,8 @@ class SpacesController < ApplicationController
 
   def show
     @space = Space.find(params[:id])
+    # @desk = Desk.find(params[:desk_id])
+    # @space.desk = @desk
     @markers = []
     @markers << {
       lat: @space.latitude,

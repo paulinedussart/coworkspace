@@ -2,26 +2,37 @@
 
 
 <div class="container">
+  <h1>My reservations</h1>
   <% @reservations.each do |reservation| %>
-  <div class="card m3 card-index-reservations-user">
+  <div class="card m-5 card-index-reservations-user">
+
     <div class="card-header header-resa-user d-flex justify-content-between">
-      <div class="space-name"><h3><%= reservation.desk.space.name %></h3></div>
-      <div class="reservation-status"><h4 class="card-title "> <%= reservation.status %> </h4></div>
-
-
+      <h3><%= reservation.desk.space.name %></h3>
+      <h4 class="card-title reservation-status">
+        <% if reservation.status == "PENDING" %>
+          <div class="text-warning"> <i class="fas fa-hourglass-half"></i> <strong><%= "PENDING" %></strong> </div>
+        <% elsif reservation.status == "ACCEPTED" %>
+          <div class="text-success"> <i class="fas fa-check"></i> <strong><%= "ACCEPTED" %></strong> </div>
+        <% else %>
+          <div class="text-danger"> <i class="fas fa-times"></i> <strong><%= "REFUSED" %></strong> </div>
+        <% end  %></h4>
     </div>
+
     <div class="card-body">
       <div class="reservation_info d-flex justify-content-between">
         <em><%= reservation.desk.space.address %></em>
         <a href="#" class="btn btn-primary">Show on map </a>
       </div>
-
-      <p> <i class="far fa-clock"></i> <%= reservation.arrival_date.strftime("%a %e %B %Y") %> <i class="fas fa-angle-double-right"></i> <%= reservation.departure_date.strftime("%a %e %B %Y") %> </p>
-
-        <div class="text-right"> <i class="fas fa-paperclip "></i> <%= link_to "Reservation...PDF" %></div>
-
-
+<br>
+      <div class="d-flex justify-content-between"  >
+        <div> <h6><i class="far fa-calendar-check text-primary"></i> <%= reservation.arrival_date.strftime("%e %B %Y") %> <i class="fas text-primary fa-long-arrow-alt-right"></i> <%= reservation.departure_date.strftime("%e %B %Y") %> </h6></div>
+        <div> <i class="fas text-primary fa-paperclip "></i> <%= link_to "Reservation...PDF" %></div>
+      </div>
     </div>
+
+
+
+
   </div>
   <% end %>
 </div>

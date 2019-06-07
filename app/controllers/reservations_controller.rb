@@ -1,12 +1,12 @@
 class ReservationsController < ApplicationController
   def index
     @reservations = current_user.reservations
-    # @reservation.desk = @desk
   end
 
   def show
     @reservation = Reservation.find(params[:id])
   end
+
 
   def new
     @reservation = Reservation.new

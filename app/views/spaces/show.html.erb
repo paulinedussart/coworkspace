@@ -10,6 +10,7 @@
         <h1> <%= @space.name %></h1>
         <p><i class="fas fa-map-marker-alt"></i><%= @space.address %></p>
        <em><a href="https://twospace.com.au/venue/havana-beach-manly-sydney/"><%= @space.website %></a></em>
+
         <p> THE REVIEWS RATE</p>
         <h3> @space.desk.price_per_day / desk /day </h3>
       </div>
@@ -175,6 +176,8 @@
     <!-- Button trigger modal -->
 
 
+
+    <%= link_to "Book !", new_user_desk_reservation_path(current_user, @desk), class: "btn-custom btn-custom-gradient" %>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -2,11 +2,13 @@ Rails.application.routes.draw do
   devise_for :owners, path: 'owners'
   devise_for :users, path: 'users'
 
+  mount ActionCable.server => "/cable"
+
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :owners do
     resources :spaces, only: [:index, :show, :new, :create] do
-      resources :reservations, only: [:index, :show, :destroy, :edit, :update]
+        resources :reservations, only: [:index, :show, :destroy, :edit, :update]
     end
   end
 
@@ -31,4 +33,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
+  resources :owners do
+    get "dashboard", to: "pages#dashboard"
+  end
 end

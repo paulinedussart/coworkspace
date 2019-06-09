@@ -23,6 +23,8 @@
     position: relative;
     overflow: hidden;
     border-radius: 50%;
+    align-self: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.6);
 }
 img {
     display: inline;
@@ -37,10 +39,9 @@ img {
 .sidebar-header {
   display: flex;
   flex-direction: column;
-  height: 300px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   text-align: center;
-  justify-content: center;
 }
 
 .space-photo {

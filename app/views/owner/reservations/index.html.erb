@@ -1,0 +1,10 @@
+<h1>bookings on my spaces</h1>
+<% @reservations.each do | reservation | %>
+          <div>
+            <p><%= reservation.id %></p>
+            <p><%= reservation.desk.space.name %></p>
+            <p><%= reservation.arrival_date %></p>
+            <p><%= reservation.departure_date %></p>
+            <td><%= reservation.status %></p>
+          </div>
+        <% end %>

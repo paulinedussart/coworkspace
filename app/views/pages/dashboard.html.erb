@@ -12,22 +12,12 @@
             <li class="active">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">My Space</a>
 
+
                 </ul>
             </li>
 
             <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Bookings</a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">To be confirmed</a>
-                    </li>
-                    <li>
-                        <a href="#">Upcoming</a>
-                    </li>
-                    <li>
-                        <a href="#">Passed</a>
-                    </li>
-                </ul>
+                <%= link_to "My bookings", owner_space_reservations_path(current_owner, :space_id) %>
             </li>
             <li>
                 <a href="#">Rapports</a>

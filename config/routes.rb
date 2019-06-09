@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit] do
     resources :desks, only: [:create, :new] do
-      resources :reservations, only: [:new, :create]
+      resources :reservations, only: [:create]
     end
   end
 

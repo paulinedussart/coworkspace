@@ -12,21 +12,30 @@ h3 {
   width: 60%;
 }
 
+ul {
+  padding-left: 0;
+}
+li {
+  display: inline;
+  list-style: none; /* pour enlever les puces sur IE7 */
+  margin: 10px;
+}
+
 // SPACES RULES
 // -> Container
 .space-rules {
-display: grid;
-gap: 10px 10px;
-grid-template-columns: repeat(auto-fit, minmax(200px, 32%));
-margin-bottom: 24px;
+  display: grid;
+  gap: 10px 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 25%));
+  margin-bottom: 24px;
 }
 
 // SPACES AMENITIES
 .space-amenities {
-display: grid;
-    gap: 10px 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 32%));
-    margin-bottom: 24px;
+  display: grid;
+  gap: 10px 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 25%));
+  margin-bottom: 24px;
 }
 
 .space-amenitie {
@@ -71,7 +80,6 @@ display: grid;
 
 
 // Map + form
-
 .card-form-booking {
   border: 1px solid #d9dadb;
 }

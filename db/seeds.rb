@@ -118,7 +118,7 @@ url = "https://coworker.imgix.net/photos/australia/sydney/servcorp-mlc-centre-sy
 mlc = Space.new(name: "MCL", address: "369 Pittwater Road, North Manly, Sydney, Australia", description: "MCL is a creative workspace with an established working environment located just 2km from the Sydney CBD. Featuring great location accessibility, efficient workspaces and a thriving community, this is where coworking works.
 Professional shared workspace meets flexible memberships and functional facilities, MCL offers designer desks, tables, sofas and super fast wifi. There are also informal meeting areas, barista coffee, access to all Spaces locations worldwide and additional services.
 Work better together in the Spaces Surry Hills environment where their community supports one another in many ways through exchanging valuable insight and feedback, idea sharing as well as collaborative efforts intended for professional development.",
-owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.mcl-sydney.com')
+owner: vr_lab, opening_hours: {'Mon-Fri': '8AM-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.mcl-sydney.com')
 mlc.remote_photo_url = url
 mlc.save
 
@@ -131,7 +131,7 @@ Desk.create!(
 url = "https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
 manly_house_studio = Space.new(name: "Manly House Studio", address: "17-19 Bridge Street, Sydney, Australia", description: "Manly House Studio is a series of co-working spaces in a 200m2 open plan New York loft style warehouse in North Manly on Sydney's Northern Beaches. Situated just out of town, 5 mins from 2 beaches, it was founded to provide people
 nvolved with the Creative Industries an inspiring place to work, connect and share knowledge with each other.",
-owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.manly_house_studio.com')
+owner: vr_lab, opening_hours: {'Mon-Fri': '8AM-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.manly_house_studio.com')
 manly_house_studio.remote_photo_url = url
 manly_house_studio.save
 
@@ -145,7 +145,7 @@ end
 url = "http://fairlightgardens.com.au/wp-content/uploads/2015/06/Manly-Beach.jpg"
 havana_beach = Space.new(name: "Havana Beach", address: "14 South Steyne, Manly, Sydney, Australia", description: "Havana Beach turns the restaurant that is normally closed during the day into a unique and affordable co-working space. Located in Manly, mere steps away from the beach sits Havana Beach.
 Light and color fill this eternally sunny space as people rest their backs on plush scarlet and lime patterned cushions and listen to the ocean as they sip on hot coffee made by the in-house barista. The exposed brick walls and light bulbs, murals and vintage posters are reminiscent of the warmth and easy
-vibrancy so renowned in Cuban culture.", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.havana_beach.com')
+vibrancy so renowned in Cuban culture.", owner: havana_beach_coworking, opening_hours: {'Mon-Fri': '8AM-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.havana_beach.com')
 havana_beach.remote_photo_url = url
 havana_beach.save
 
@@ -228,7 +228,7 @@ puts ' --> REVIEWS created for Havana Beach'
 
 url = "https://coworker.imgix.net/photos/australia/sydney/wework-martin-place/2.jpg"
 we_work_martin_place = Space.new(name: "We Work Martin Place", address: "5 Martin Place, Sydney, Australia", description: "We Work is the worlds most unique coworking space, tucked within the foundations of the iconic Sydney Harbour Bridge at Lavender Bay. This heritage space has been reimagined to cultivate a community of driven start-ups and businesses created by entrepreneurs for entrepreneurs.
-", owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.wework.com')
+", owner: green_advisor, opening_hours: {'Mon-Fri': '8AM-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.wework.com')
 we_work_martin_place.remote_photo_url = url
 we_work_martin_place.save
 
@@ -236,7 +236,7 @@ url = "https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?ixlib=rb-1.2
 hub_southern_cross_melbourne = Space.new(name: "Hub Southern Cross - Melbourne", address: "696 Bourke St, Melbourne VIC 3000, Australia", description:"Coworking space and serviced offices in a stunning heritage listed building!
 Check out our North Strathfield space for Serviced Offices for every business type and size. Our offices are there to help you start your business off or seat all 30 of your employees! Doesn't matter what size or how many you need we have the offices to accomodate you and your business.
 Join up month-to-month with no lock in contracts just an awesome environment with loads of people waiting to meet you! ",
-owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Hub-Southern-Cross.com')
+owner: green_advisor, opening_hours: {'Mon-Fri': '8AM-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Hub-Southern-Cross.com')
 hub_southern_cross_melbourne.remote_photo_url = url
 hub_southern_cross_melbourne.save
 
@@ -248,7 +248,7 @@ Desk.create!(
 
 url = "https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 fishburners = Space.new(name: "Fishburners", address: "10 Middlemiss Street, Sydney, Australia", description:"Working alone can be a bore sometimes. It might even be a routine that’s suddenly unproductive for you anymore. Or perhaps the bustling cafe is just not for you to spend long working hours in? At Fishburners, this is why they’ve built a coworking space for such purposes of working together instead of alone. Break your normal working style and try coworking at their collaborative space instead!",
-owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Fishburners.com')
+owner: green_advisor, opening_hours: {'Mon-Fri': '8AM-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Fishburners.com')
 fishburners.remote_photo_url = url
 fishburners.save
 
@@ -262,7 +262,7 @@ url = "https://images.unsplash.com/photo-1554774853-719586f82d77?ixlib=rb-1.2.1&
 spacecubed = Space.new(name: "Spacecubed", address: "45 St Georges Terrace, Perth WA 6000, Australia", description:"An impressive space for your next business meeting.
 berrins is a boutique co-working space in the heart of Manly, right across the road from Manly Wharf.
 With mid-century modern furniture, quality light fittings, high ceilings, abundance of natural light and Manly’s best barista just next door – it’s the perfect destination for your next business meeting.",
-owner: vr_lab, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Spacecubed.com')
+owner: vr_lab, opening_hours: {'Mon-Fri': '8AM-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Spacecubed.com')
 spacecubed.remote_photo_url = url
 spacecubed.save
 
@@ -276,7 +276,7 @@ Desk.create!(
 url = "https://coworker.imgix.net/photos/australia/sydney/work-inc/1-1542083293.JPG"
 work_in = Space.new(name: "CoWork In", address: "36 Sydney Road, Manly, Sydney, Australia", description: "Work In is the biggest coworking space in the southern area of Sydney. In their words, “Work for yourself, not by yourself” so if you ever feel
 the need to escape the lonesome confined spaces of your cubicle or your comfy sofa at home, head on over to Inspire Cowork to get your work mojo going while being surrounded by motivated like minded individuals.",
-owner: green_advisor, opening_hours: {'Mon-Fri': '8AMP-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.CoWorkin.com')
+owner: green_advisor, opening_hours: {'Mon-Fri': '8AM-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.CoWorkin.com')
 work_in.remote_photo_url = url
 work_in.save
 

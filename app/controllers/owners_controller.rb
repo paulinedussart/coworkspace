@@ -1,4 +1,5 @@
-class UsersController < ApplicationController
+class OwnersController < ApplicationController
+  layout "ownersession"
   def show
     @owner = current_owner
   end

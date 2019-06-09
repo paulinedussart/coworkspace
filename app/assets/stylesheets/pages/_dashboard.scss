@@ -1,13 +1,15 @@
 .wrapper {
     display: flex;
     align-items: stretch;
+    height: 100vh;
 }
 
 #sidebar {
     min-width: 250px;
     max-width: 250px;
     min-height: 100vh;
-    background-color: $purple;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     padding: 20px;
 }
 
@@ -45,25 +47,15 @@ img {
   height: 200px;
 }
 
-a {
-  color: white;
-  text-decoration: none;
-}
-
-
-#stats {
-  display: flex;
+.stats {
   width: 90%;
-  height: 500px;
-  justify-content: space-between;
-  margin: 20px;
 }
 
 .stat{
   background-color: white;
   height: 300px;
-  width: 400px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  margin: 10px;
 }
 
 

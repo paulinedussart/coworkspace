@@ -28,8 +28,10 @@ class SpacesController < ApplicationController
       lat: @space.latitude,
       lng: @space.longitude
     }
+    @user = current_user
     @review = Review.new
     @reservation = Reservation.new
+    @desk = Desk.new
     @desk = @space.desks.first
   end
 

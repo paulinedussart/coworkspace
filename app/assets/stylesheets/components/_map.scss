@@ -13,9 +13,13 @@
 #map{
   border-radius: 5px !important;
   position: sticky;
-  top: 70px;
+  top: 100px;
 }
 
+.no-sticky {
+  border-radius: 5px !important;
+  position: relative !important;
+}
 
 .mapboxgl-ctrl-geocoder--input {
   border-radius: 5px !important;

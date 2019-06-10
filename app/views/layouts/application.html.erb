@@ -7,7 +7,7 @@
     <meta property=“og:description” content=“Cowork Space is a platform where freelancers and digital nomads can find and book a spot in a coworking space all around the world“>
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://www.find-coworkspace.com">
-    <meta property=“og:image” content=“cowork-card.jpg”>
+    <meta property=“og:image” content=“logo.png”>
     <meta property=“og:site_name” content=“Cowork Space”/>
     <title>COWORKSPACE - Find the coworkspace you need around the world 🌍 </title>
     <%= favicon_link_tag asset_path('fav.jpg') %>
@@ -30,13 +30,10 @@
     <% unless action_name == "dashboard" %>
       <%= render 'shared/footer' %>
     <% end %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
+<!--     <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= yield :after_js %>
-
   </body>
 </html>

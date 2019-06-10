@@ -5,5 +5,4 @@ class Owner < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :spaces, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
-
 end

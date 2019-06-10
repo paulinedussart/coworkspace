@@ -1,16 +1,15 @@
 footer{
-  background-image: asset-url('footer.png');
-  height: 400px;
   width: 100%;
   background-size: cover;
   opacity: 0.8;
 }
 
 .footer {
+  background-color: red;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  height: 350px;
+  height: 110px;
   padding: 0px 50px;
   position: relative;
   width: 100%;

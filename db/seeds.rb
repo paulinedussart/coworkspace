@@ -267,21 +267,21 @@ review5 = Review.create!(
   content: "Much more comfortable and convenient than working from home, and MUCH quieter! Awesome facilities with every creature comfort imaginable (even a slippery-slide!).",
   rating: 4,
   user: aure,
-  space: spacecubed,
+  space: fishburners,
   )
 
 review6 = Review.create!(
   content: "It's really quiet, really friendly and a great place to get work done. Location couldn't be better, easy access to the train, heaps of parking and heaps of restaurants around.",
   rating: 4,
   user: lulu,
-  space: spacecubed,
+  space: fishburners,
 )
 
 review7 = Review.create!(
   content: "Wow! Love it here. I escape to get focused work done without the other distractions. I love the buzz of productivity and the friendliness of everyone.",
   rating: 5,
   user: pierre,
-  space: spacecubed,
+  space: fishburners,
 )
 
 puts ' --> REVIEWS created for Fishburners'

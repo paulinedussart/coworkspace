@@ -14,7 +14,7 @@
       <% @spaces.each do |space|  %>
         <div class="card card-space cloudinary">
       <!--     <img src="..." class="card-img-top" alt="..."> -->
-          <%= cl_image_tag space.photo, width: 300, height: 200, crop: :fill %>
+          <%= cl_image_tag space.photo, width: 300, height: 200, crop: :fill, class: "img-fluid" %>
           <div class="card-body">
             <h4 class="card-title"> <%= space.name %></h4>
             <div class="card-reviews-price d-flex">
@@ -44,3 +44,4 @@
     </div>
   </div>
 </div>
+

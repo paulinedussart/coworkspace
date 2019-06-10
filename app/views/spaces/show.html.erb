@@ -33,7 +33,7 @@
             <li><strong>Sunday :</strong><%= @space.opening_hours['Sun'] %></li>
           </ul>
         </div>
-        <div class="description pb-4">
+        <div class="description text-justify pb-4">
           <%= @space.description %>
         </div>
       </div>
@@ -167,7 +167,7 @@
 
       <div
         id="map"
-        class = "no-sticky"
+        class="no-sticky"
         style="width: 500px;
         height: 400px;"
         data-markers="<%= @markers.to_json %>"
@@ -251,4 +251,3 @@
 
   </div>
 </div>
-

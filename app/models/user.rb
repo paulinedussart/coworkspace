@@ -6,6 +6,6 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :reservations
   has_many :messages
-  mount_uploader :avatar, PhotoUploader
+  mount_uploader :avatar, AvatarUploader
   # validates :first_name, :last_name, presence: true
 end

@@ -44,7 +44,8 @@ havana_beach_coworking = Owner.create!(
   password: 'password',
   phone: '0678327438',
   name: "Havana Beach",
-  siret: '456 954 345 00038'
+  siret: '456 954 345 00038',
+  avatar: 'https://images.ecosia.org/etC7Jgp_eHj6_jH6CHgUawmDmhs=/0x390/smart/https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fab%2FHB_logo.svg%2F521px-HB_logo.svg.png'
 )
 
 green_advisor = Owner.create!(

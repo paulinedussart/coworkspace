@@ -81,19 +81,23 @@
   width: 500px;
   height: 190px;
   margin: 3rem auto !important;
-
-}
-
-h7 {
-  padding-top: 16px;
-  font-size: 14px;
 }
 
 .card-title-reservation{
   margin-top: 10px;
 }
 
+// Amenities dans show spaces
+.space-services p {
+  margin: 0 auto;
+}
 
+
+
+h7 {
+  padding-top: 16px;
+  font-size: 14px;
+}
 // add-cloudinary-carrierwave
 // .cloudinary > img {
 //   max-height: 200px;

@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :owner do
     resources :spaces do
-      resources :reservations, only: [:index, :edit, :update, :destroy]
+      resources :reservations, only: [:index, :edit, :update, :destroy, :accept] do
+        member do
+          patch :accept
+          patch :decline
+        end
+      end
     end
   end
 

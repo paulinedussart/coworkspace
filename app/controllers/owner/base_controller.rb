@@ -1,3 +1,3 @@
 class Owner::BaseController < ApplicationController
-  # layout 'admin'
+  layout 'ownersession'
 end

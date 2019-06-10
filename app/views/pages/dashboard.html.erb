@@ -1,33 +1,28 @@
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
-        <div class="sidebar-header">
+       <div class="coworspace border-bottom">
+              <%= link_to "/", class: "navbar-brand" do %>
+              <%= image_tag "logo-x2.png" %>
+              <% end %>
+        </div>
+
+        <div class="sidebar-header border-bottom">
           <div class="image-cropper">
-          <%= cl_image_tag @owner.spaces.first.photo, width: 150, crop: :fill %>
+            <%= cl_image_tag @owner.spaces.first.photo, width: 150, crop: :fill %>
           </div>
             <h3><%= @owner.name %> </h3>
         </div>
 
-        <ul class="list-unstyled components">
-            <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">My Space</a>
-
-
-                </ul>
-            </li>
-
-            <li>
-                <%= link_to "My bookings", owner_space_reservations_path(current_owner, :space_id) %>
-            </li>
-            <li>
-                <a href="#">Rapports</a>
-            </li>
-            <li>
-                <a href="#">Je sais plus</a>
-            </li>
-        </ul>
+        <div class="navigation border-bottom">
+          <ul class="list">
+            <li><%= link_to "My space", "" %></li></br>
+            <li><%= link_to "My bookings", owner_space_reservations_path(current_owner, :space_id) %></li></br>
+            <li><%= link_to "My reports", "" %></li></br>
+            <li><%= link_to "My messages", "" %></li></br>
+          </ul>
+        </div>
     </nav>
-
 
     <div class="stats">
       <div class="row justify-content-around">

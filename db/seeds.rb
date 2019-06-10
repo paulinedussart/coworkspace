@@ -63,39 +63,52 @@ puts ' --> OWNERS created!'
 
 # SEED USERS
 puts 'Creating USERS...'
-pauline = User.create!(
+url = 'https://avatars1.githubusercontent.com/u/43919015?v=4'
+pauline = User.new(
   email: 'pau@example.com',
   password: 'password',
   phone: '0678327438',
   first_name: "Pauline",
   last_name: "Dussart",
-  avatar: 'https://avatars1.githubusercontent.com/u/43919015?v=4'
 )
+pauline.remote_avatar_url = url
+pauline.save
+
+
+url = 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/gqon2jj9cj7tss7gpvzb.jpg'
 aure = User.create!(
   email: 'aure@gmail.com',
   phone: '0638294710',
   password: 'password',
   first_name: "Aurelie",
   last_name: "Gimet",
-  avatar:'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/gqon2jj9cj7tss7gpvzb.jpg'
-
 )
+aure.remote_avatar_url = url
+aure.save
+
+url = 'https://avatars2.githubusercontent.com/u/45851146?v=4'
 lulu = User.create!(
   email: 'lulu@gmail.com',
   phone: '0638294730',
   password: 'password',
   first_name: "Ludivine",
   last_name: "Robin",
-  avatar: 'https://avatars2.githubusercontent.com/u/45851146?v=4'
 )
+lulu.remote_avatar_url = url
+lulu.save
+
+url = 'https://avatars0.githubusercontent.com/u/48763705?v=4'
 popo = User.create!(
   email: 'popo@gmail.com',
   phone: '0638294740',
   password: 'password',
   first_name: "Pauline",
   last_name: "Florens",
-  avatar: 'https://avatars0.githubusercontent.com/u/48763705?v=4'
 )
+popo.remote_avatar_url = url
+popo.save
+
+url = 'https://www.jeancoutu.com/globalassets/revamp/photo/conseils-photo/20160302-01-reseaux-sociaux-profil/image-principale-919b9d.png'
 marc = User.create!(
   email: 'marc@gmail.com',
   phone: '0638294750',
@@ -103,6 +116,10 @@ marc = User.create!(
   first_name: "Marc",
   last_name: "Dubois"
 )
+marc.remote_avatar_url = url
+marc.save
+
+url = 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500'
 pierre = User.create!(
   email: 'pierre@gmail.com',
   phone: '0638294760',
@@ -110,7 +127,11 @@ pierre = User.create!(
   first_name: "Pierre",
   last_name: "De Latour"
 )
+pierre.remote_avatar_url = url
+pierre.save
+
 puts ' --> USERS created!'
+
 
 
 # SEED DESKS

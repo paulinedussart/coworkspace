@@ -1,10 +1,72 @@
-<h1>bookings on my spaces</h1>
-<% @reservations.each do | reservation | %>
-          <div>
-            <p><%= reservation.id %></p>
-            <p><%= reservation.desk.space.name %></p>
-            <p><%= reservation.arrival_date %></p>
-            <p><%= reservation.departure_date %></p>
-            <td><%= reservation.status %></p>
+<div class="wrapper">
+<!-- Sidebar -->
+<nav id="sidebar">
+       <div class="coworspace border-bottom">
+              <%= link_to "/", class: "navbar-brand" do %>
+              <%= image_tag "logo-x2.png" %>
+              <% end %>
+        </div>
+
+        <div class="sidebar-header border-bottom">
+          <div class="image-cropper">
+            <%= cl_image_tag current_owner.spaces.first.photo, width: 150, crop: :fill %>
           </div>
-        <% end %>
+            <h3><%= current_owner.name %> </h3>
+        </div>
+
+        <div class="navigation border-bottom">
+          <ul class="list">
+            <li><%= link_to "My space", "" %></li></br>
+            <li><%= link_to "My bookings", owner_space_reservations_path(current_owner, :space_id) %></li></br>
+            <li><%= link_to "My reports", "" %></li></br>
+            <li><%= link_to "My messages", "" %></li></br>
+          </ul>
+        </div>
+    </nav>
+
+<div class="resa">
+<% @reservations.each do |reservation| %>
+  <div class="card m-5 card-index-reservations-user">
+
+    <div class="card-header header-resa-user d-flex justify-content-between">
+      <h4><%= reservation.user.first_name %> <%= reservation.user.last_name %></h4>
+      <h4 class="card-title reservation-status">
+        <% if reservation.status == "PENDING" %>
+          <div class="text-warning"> <i class="fas fa-hourglass-half"></i> <strong><%= "PENDING" %></strong> </div>
+        <% elsif reservation.status == "ACCEPTED" %>
+          <div class="text-success"> <i class="fas fa-check"></i> <strong><%= "ACCEPTED" %></strong> </div>
+        <% else %>
+          <div class="text-danger"> <i class="fas fa-times"></i> <strong><%= "REFUSED" %></strong> </div>
+        <% end  %></h4>
+    </div>
+
+    <div class="card-body">
+      <div class="reservation_info d-flex justify-content-between">
+        <em><%= reservation.desk.space.address %></em>
+        <div class="status-bookings d-flex justify-content-between">
+          <div class="accept" style="font-size:24px">
+            <%= link_to accept_owner_space_reservation_path(@space, reservation), method: :patch do %>
+              <i class=" status far fa-check-circle"></i>
+            <% end %>
+          </div>
+          <div class="decline" style="font-size:24px">
+             <%= link_to decline_owner_space_reservation_path(@space, reservation), method: :patch do  %>
+                <i class="status far fa-times-circle"></i>
+             <% end %>
+           </div>
+        </div>
+      </div>
+
+<br>
+      <div class="d-flex justify-content-between"  >
+        <div> <h6><i class="far fa-calendar-check text-primary"></i> <%= reservation.arrival_date.strftime("%e %B %Y") %> <i class="fas text-primary fa-long-arrow-alt-right"></i> <%= reservation.departure_date.strftime("%e %B %Y") %> </h6></div>
+      </div>
+    </div>
+</div>
+
+
+
+  </div>
+  <% end %>
+
+</div>

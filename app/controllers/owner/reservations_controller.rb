@@ -13,21 +13,18 @@ class Owner::ReservationsController < Owner::BaseController
   def edit
   end
 
-  def update
-    respond_to do |format|
-      if @reservation.update(reservation_params)
-        format.html { redirect_to owner_space_reservations_path, notice: 'Reservation was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
-    end
+  def accept
+    @reservation = Reservation.find(params[:id])
+    @reservation.status = "ACCEPTED"
+    @reservation.save
+    redirect_to owner_space_reservations_path(current_owner, :space_id)
   end
 
-  def destroy
-    @reservation.destroy
-    respond_to do |format|
-      format.html { redirect_to desks_url, notice: 'Reservation was successfully destroyed.' }
-    end
+  def decline
+    @reservation = Reservation.find(params[:id])
+    @reservation.status = "DECLINED"
+    @reservation.save
+    redirect_to owner_space_reservations_path(current_owner, :space_id)
   end
 
   private

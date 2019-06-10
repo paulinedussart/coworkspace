@@ -1,4 +1,5 @@
 import "bootstrap";
+
 import activeCheckBoxes from "./service_choice";
 import bookReservation from "./book_reservation";
 
@@ -13,3 +14,4 @@ import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
 
 import "../plugins/flatpickr"
+

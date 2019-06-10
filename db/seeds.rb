@@ -215,6 +215,15 @@ reservation3 = Reservation.create!(
   desk: desk1
   )
 
+30.times do
+Reservation.create!(
+ arrival_date: Date.today + ((-50 .. 50).to_a.sample).day,
+ status: "PENDING",
+ user: User.all.sample,
+ desk: desk2,
+ created_at: Date.today + ((-100 .. -49).to_a.sample).day
+) end
+
 puts ' --> MESSAGES created for Havana Beach'
 
 

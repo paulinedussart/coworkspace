@@ -12,7 +12,10 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+    <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/
+    application.js -->
+    <%= javascript_pack_tag 'chartkick' %>
+
   </head>
   <body>
     <% if action_name == "home"%>
@@ -32,8 +35,10 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= javascript_include_tag 'application' %>
+        <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+    <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+
     <%= yield :after_js %>
 
   </body>

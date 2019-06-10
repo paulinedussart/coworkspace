@@ -25,7 +25,7 @@
     </nav>
 
 <div class="resa">
-  <% @reservations.each do |reservation| %>
+  <% @reservations.first(6).each do |reservation| %>
   <div class="card m-5 card-index-reservations-user">
     <div class="card-header header-resa-user d-flex justify-content-between">
       <h4><%= reservation.user.first_name %> <%= reservation.user.last_name %></h4>

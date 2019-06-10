@@ -67,31 +67,33 @@ pauline = User.create!(
   password: 'password',
   phone: '0678327438',
   first_name: "Pauline",
-  last_name: "Dussart"
+  last_name: "Dussart",
+  avatar: 'https://avatars1.githubusercontent.com/u/43919015?v=4'
 )
-
 aure = User.create!(
   email: 'aure@gmail.com',
   phone: '0638294710',
   password: 'password',
   first_name: "Aurelie",
-  last_name: "Gimet"
+  last_name: "Gimet",
+  avatar:'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/gqon2jj9cj7tss7gpvzb.jpg'
 
 )
-
 lulu = User.create!(
   email: 'lulu@gmail.com',
   phone: '0638294730',
   password: 'password',
   first_name: "Ludivine",
-  last_name: "Robin"
+  last_name: "Robin",
+  avatar: 'https://avatars2.githubusercontent.com/u/45851146?v=4'
 )
 popo = User.create!(
   email: 'popo@gmail.com',
   phone: '0638294740',
   password: 'password',
   first_name: "Pauline",
-  last_name: "Florens"
+  last_name: "Florens",
+  avatar: 'https://avatars0.githubusercontent.com/u/48763705?v=4'
 )
 marc = User.create!(
   email: 'marc@gmail.com',
@@ -258,6 +260,33 @@ Desk.create!(
  space: fishburners
 ) end
 
+puts ' --> creating REVIEWS for Fishburners'
+
+review5 = Review.create!(
+  content: "Much more comfortable and convenient than working from home, and MUCH quieter! Awesome facilities with every creature comfort imaginable (even a slippery-slide!).",
+  rating: 4,
+  user: aure,
+  space: spacecubed,
+  )
+
+review6 = Review.create!(
+  content: "It's really quiet, really friendly and a great place to get work done. Location couldn't be better, easy access to the train, heaps of parking and heaps of restaurants around.",
+  rating: 4,
+  user: lulu,
+  space: spacecubed,
+)
+
+review7 = Review.create!(
+  content: "Wow! Love it here. I escape to get focused work done without the other distractions. I love the buzz of productivity and the friendliness of everyone.",
+  rating: 5,
+  user: pierre,
+  space: spacecubed,
+)
+
+puts ' --> REVIEWS created for Fishburners'
+
+
+
 url = "https://images.unsplash.com/photo-1554774853-719586f82d77?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
 spacecubed = Space.new(name: "Spacecubed", address: "45 St Georges Terrace, Perth WA 6000, Australia", description:"An impressive space for your next business meeting.
 berrins is a boutique co-working space in the heart of Manly, right across the road from Manly Wharf.
@@ -299,31 +328,32 @@ desk300 = Desk.create!(
 puts ' --> DESKS created for Work In'
 
 
+
 puts ' --> creating REVIEWS for Work In'
-review1 = Review.create!(
+review8 = Review.create!(
   content: "Fantastic location close to both North Sydney and Milsons Point stations. Great facilities and the staff are always on hand and very helpful. A very integrated community feel between companies. An all round great operation!",
-  rating: 5,
+  rating: 4,
   user: aure,
   space: work_in
   )
 
-review2 = Review.create!(
+review9 = Review.create!(
   content: "When I tell people I work in this space they get the serious case of the “jeals”. Everything you could possibly need in a workspace (and more) is catered for here.",
   rating: 4,
   user: lulu,
   space: work_in,
 )
 
-review3 = Review.create!(
+review10 = Review.create!(
   content: "Well located site , right in the heart of Sydney, near the one of most popular train station in town. Comfortable offices across different industries, which make colleagues interesting people to talk.",
   rating: 5,
   user: pierre,
   space: work_in,
 )
 
-review4 = Review.create!(
+review11 = Review.create!(
   content: "Work in has amazing facilities, it is a fantastic welcoming place to work. The location is great too.",
-  rating: 5,
+  rating: 4,
   user: marc,
   space: work_in,
 )

@@ -25,9 +25,8 @@
     </nav>
 
 <div class="resa">
-<% @reservations.each do |reservation| %>
+  <% @reservations.each do |reservation| %>
   <div class="card m-5 card-index-reservations-user">
-
     <div class="card-header header-resa-user d-flex justify-content-between">
       <h4><%= reservation.user.first_name %> <%= reservation.user.last_name %></h4>
       <h4 class="card-title reservation-status">
@@ -56,17 +55,15 @@
            </div>
         </div>
       </div>
-
-<br>
-      <div class="d-flex justify-content-between"  >
-        <div> <h6><i class="far fa-calendar-check text-primary"></i> <%= reservation.arrival_date.strftime("%e %B %Y") %> <i class="fas text-primary fa-long-arrow-alt-right"></i> <%= reservation.departure_date.strftime("%e %B %Y") %> </h6></div>
+    <br>
+      <div class="d-flex justify-content-between">
+        <div> <h6><i class="far fa-calendar-check text-primary"></i> <%= reservation.arrival_date.strftime("%e %B %Y") %> <i class="fas text-primary fa-long-arrow-alt-right"></i> <%= reservation.departure_date.strftime("%e %B %Y") %> </h6>
+        </div>
       </div>
     </div>
-</div>
-
-
-
   </div>
   <% end %>
-
 </div>
+</div>
+
+

@@ -3,6 +3,7 @@
   <% @reservations.each do |reservation| %>
   <div class="card m-5 card-index-reservations-user">
 
+
     <div class="card-header header-resa-user d-flex justify-content-between">
       <h3 class="card-title-reservation"><%= reservation.desk.space.name %></h3>
       <h7 class="card-title reservation-status">
@@ -26,6 +27,7 @@
         <div> <i class="fas text-primary fa-paperclip "></i> <%= link_to "Reservation...PDF" %></div>
       </div>
     </div>
+
   </div>
   <% end %>
 </div>

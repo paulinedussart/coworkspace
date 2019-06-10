@@ -78,16 +78,26 @@
 
 // RESERVATIONS USER #index (Pauline Dussart)
 .card-index-reservations-user {
-  width: 600px;
+  width: 500px;
   height: 190px;
+  margin: 3rem auto !important;
 }
 
-// CARD SERVICES IN SHOW SPACES
-.space-amenities p {
-  margin: 0px auto;
+.card-title-reservation{
+  margin-top: 10px;
+}
+
+// Amenities dans show spaces
+.space-services p {
+  margin: 0 auto;
 }
 
 
+
+h7 {
+  padding-top: 16px;
+  font-size: 14px;
+}
 // add-cloudinary-carrierwave
 // .cloudinary > img {
 //   max-height: 200px;

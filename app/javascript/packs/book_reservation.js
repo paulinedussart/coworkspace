@@ -1,3 +1,6 @@
+
+
+
 const bookReservation = () => {
 
 const arrivalInput = document.querySelector('.arrival');
@@ -14,7 +17,7 @@ const departureInput = document.querySelector('.departure');
       totalPrice.innerText = `${(totalDays * parseInt(price_per_day.innerText, 10))+ 3} $ AUD `;
     });
   }
-
 }
+
 
 export default bookReservation;

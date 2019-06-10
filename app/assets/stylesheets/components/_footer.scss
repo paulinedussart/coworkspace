@@ -5,12 +5,12 @@ footer{
 }
 
 .footer {
-  background-color: red;
+  background-image: linear-gradient(#EC6CA3, #402A7C);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
   height: 110px;
-  padding: 0px 50px;
+  padding: 20px 50px;
   position: relative;
   width: 100%;
   bottom: 0; left: 0;
@@ -31,6 +31,7 @@ footer{
   color: white;
   text-align: center;
   line-height: 0.5;
+
 }
 
 .footer_contacts i {
@@ -39,6 +40,6 @@ footer{
 }
 
 .footer_contacts, .footer-links, .footer-copyright {
-  margin-top: 100px;
+  margin-top: 10px;
 }
 

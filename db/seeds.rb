@@ -197,23 +197,54 @@ reservation1 = Reservation.create!(
   arrival_date: Date.today + 1.week,
   departure_date: Date.today + 2.week,
   status: "ACCEPTED",
-  user: pauline,
+  user: popo,
   desk: desk1
   )
 reservation2 = Reservation.create!(
   arrival_date: Date.today + 3.week,
   departure_date: Date.today + 4.week,
   status: "PENDING",
-  user: pauline,
+  user: aure,
   desk: desk1
   )
 reservation3 = Reservation.create!(
   arrival_date: Date.today + 4.week,
   departure_date: Date.today + 5.week,
   status: "REFUSED",
-  user: pauline,
+  user: lulu,
   desk: desk1
   )
+reservation4 = Reservation.create!(
+  arrival_date: Date.today + 4.week,
+  departure_date: Date.today + 5.week,
+  status: "REFUSED",
+  user: pierre,
+  desk: desk1
+  )
+reservation5 = Reservation.create!(
+  arrival_date: Date.today + 4.week,
+  departure_date: Date.today + 5.week,
+  status: "ACCEPTED",
+  user: marc,
+  desk: desk1
+  )
+reservation6 = Reservation.create!(
+  arrival_date: Date.today + 4.week,
+  departure_date: Date.today + 5.week,
+  status: "ACCEPTED",
+  user: aure,
+  desk: desk1
+  )
+
+100.times do
+Reservation.create!(
+ arrival_date: Date.today + ((-50 .. 50).to_a.sample).day,
+ departure_date: Date.today + ((-50 .. 50).to_a.sample).day,
+ status: "PENDING",
+ user: User.all.sample,
+ desk: desk2,
+ created_at: Date.today + ((-30 .. 0).to_a.sample).day
+) end
 
 puts ' --> MESSAGES created for Havana Beach'
 

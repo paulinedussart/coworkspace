@@ -22,7 +22,7 @@ class Owner::ReservationsController < Owner::BaseController
 
   def decline
     @reservation = Reservation.find(params[:id])
-    @reservation.status = "DECLINED"
+    @reservation.status = "REFUSED"
     @reservation.save
     redirect_to owner_space_reservations_path(current_owner, :space_id)
   end

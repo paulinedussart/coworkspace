@@ -56,6 +56,7 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
+    chartkick (2.2.5)
     cloudinary (1.9.1)
       aws_cf_signer
       rest-client
@@ -82,12 +83,20 @@ GEM
     geocoder (1.5.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    groupdate (4.1.2)
+      activesupport (>= 4.2)
+    highcharts-rails (6.0.3)
+      railties (>= 3.1)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     jbuilder (2.9.1)
       activesupport (>= 4.2.0)
+    jquery-rails (4.3.3)
+      rails-dom-testing (>= 1, < 3)
+      railties (>= 4.2.0)
+      thor (>= 0.14, < 2.0)
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -222,12 +231,16 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   carrierwave (~> 1.2)
+  chartkick
   cloudinary (~> 1.9.1)
   devise
   dotenv-rails
   font-awesome-sass (~> 5.6.1)
   geocoder
+  groupdate
+  highcharts-rails
   jbuilder (~> 2.0)
+  jquery-rails
   listen (~> 3.0.5)
   pg (~> 0.21)
   pg_search

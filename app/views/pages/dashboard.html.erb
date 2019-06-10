@@ -1,3 +1,5 @@
+
+
 <div class="wrapper">
     <!-- Sidebar -->
     <nav id="sidebar">
@@ -35,7 +37,7 @@
       </div>
 
       <div class="row justify-content-around">
-        <div class="stat col-lg-5"></div>
+        <div class="stat col-lg-5"><%= line_chart Reservation.group_by_week(:created_at).count %></div>
 
         <div class="stat col-lg-5"></div>
       </div>
@@ -45,3 +47,5 @@
       </div>
     </div>
 </div>
+
+

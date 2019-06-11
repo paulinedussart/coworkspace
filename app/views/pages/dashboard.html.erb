@@ -10,20 +10,22 @@
         </div>
 
         <div class="sidebar-header border-bottom">
-          <div class="image-cropper">
-            <%= cl_image_tag @owner.avatar, width: 150, crop: :fill %>
-          </div>
-            <h3><%= @owner.name %> </h3>
+          <%= link_to owner_dashboard_path do %>
+          <!-- <div class="image-cropper"> -->
+            <%= cl_image_tag @owner.spaces.first.photo, :gravity=>"face", width: 150, height: 150, crop: :fill, :radius=>"max", :format=>"png" %>
+          <!-- </div> -->
+          <% end %>
+            <h3 style="margin-top:20px;"><%= @owner.name %> </h3>
 
         </div>
 
         <div class="navigation border-bottom">
           <ul class="list">
-            <li><%= link_to "My space", "" %></li></br>
-            <li><%= link_to "My bookings", owner_space_reservations_path(current_owner, :space_id) %></li></br>
-            <li><%= link_to "My reports", "" %></li></br>
-            <li><%= link_to "My messages", "" %></li></br>
-            <li><%= link_to "ChatRoom", chatroom_owner_path(:id) %></li>
+            <li><i class="far fa-building" style="color: gray; font-size: 26px"></i><%= link_to "My space", "" %></li></br>
+            <li><i class="far fa-address-book" style="color: gray; font-size: 26px"></i><%= link_to "My bookings", owner_space_reservations_path(current_owner, :space_id) %></li></br>
+            <li><i class="far fa-file-archive" style="color: gray; font-size: 26px"></i><%= link_to "Documents", "" %></li></br>
+            <!--<li><%= link_to "My messages", "" %></li></br>-->
+            <!--<li><li><%= link_to "ChatRoom", chatroom_owner_path(:id) %></li>-->
           </ul>
         </div>
     </nav>
@@ -31,11 +33,23 @@
     <div class="stats">
       <div class="row justify-content-around">
         <div class="top-stat col-lg-11">
-           <div class="graph"><%= pie_chart User.group(:gender).count, width: "200", height: "200", colors: ["#f29c33", "#5134a2"] %></div> <!-- graph gender -->
-           <div class="age-average"><%= User.average(:age).to_i %> yrs</div> </br> <!-- age moyen -->
-           <div class="time-average"><%= Reservation.average(:total_days).to_i %> days</div></br><!-- durée moyenne de résa -->
-           <div class="pending"><%= Reservation.where(status:"PENDING").count %> pending</div></br><!-- nombre de résa pending -->
-        </div>
+
+           <div class="graph-gender"><%= pie_chart User.group(:gender).count, width: "200", height: "200",legend: "bottom", colors: ["#f29c33", "#5134a2"] %></div> <!-- graph gender -->
+
+           <div class="stat-category">
+              <div class="header-number">Age average</div>
+              <div class="number age-average"><%= User.average(:age).to_i %> yrs</div> </br> <!-- age moyen -->
+           </div>
+
+            <div class="stat-category">
+              <div class="header-number">Average duration of stay</div>
+              <div class="number time-average"><%= Reservation.average(:total_days).to_i %> days</div></br><!-- durée moyenne de résa -->
+            </div>
+
+           <div class="stat-category no-border">
+            <div class="header-number">Pending bookings</div>
+            <div class="number pending"><%= Reservation.where(status:"PENDING").count %></div></br></div><!-- nombre de résa pending --></div>
+
       </div>
 
       <div class="row justify-content-around">

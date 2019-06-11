@@ -34,16 +34,15 @@
   <div class="header">
     <div class="title">
       <h1>COWORK SPACE </h1>
-      <h2>Find the desk you deserve !</h2>
-      <p>COWORK SPACE allows you to search coworking spaces around the world</p>
+      <h4>Your coworking all around the world ! </h4>
 
 
-    <%= form_tag spaces_path, method: :get, class:"form-inline" do %>
+    <%= form_tag spaces_path, method: :get, class:"form-inline mt-5" do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control-home",
-        placeholder: "Find a space "%>
-        <%= date_field_tag :arrival_date, params[:arrival_date], class: "form-control-da" %>
+        class: "form-control-home form-control",
+        placeholder: "Find a space" %>
+        <%= date_field_tag :arrival_date, params[:arrival_date], class: "form-control-da form-control", placeholder: "Today" %>
         <%= submit_tag 'Go !', class:"btn-custom btn-custom-gradient mx-2" %>
     <% end %>
 
@@ -64,13 +63,14 @@
 
 
 <section class="about">
-    <div class="infos">
+    <div class="infos pt-4">
       <div class="info-photo">
         <img src="/assets/night.svg">
       </div>
       <div class="content text-justify">
-        <h1>About us</h1>
-        <p>Less alone than at home and more professional than in a coffee shop, Cowork Space has been installed all over the world since 2019. A place of work, exchange and sharing of skills for all entrepreneurs, self-employed, freelancers, project leaders and teleworkers wishing to break the isolation of their homes and develop a quality professional network. Enjoy our spaces and all the services they offer without further delay: cafeteria, relaxation areas, individual or collective offices, wifi, etc.</p>
+        <h1 class="text-center">About us</h1>
+        <br>
+        <p>Less alone than at home and more professional than in a coffee shop, Cowork Space has been installed all over the world since 2019. A place of work, exchange and sharing of skills for all entrepreneurs, self-employed, freelancers, project leaders and teleworkers wishing to break the isolation of their homes and develop a quality professional network.</p>
       </div>
     </div>
 </section>

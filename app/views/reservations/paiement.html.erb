@@ -4,24 +4,41 @@
 
 
   <div class="card card-paiement">
-    <h2 class="mt-3 text-center border-bottom"> <strong>Reservation Confirmation</strong></h2>
-    <div class="card-body">
+    <h2 class="text-center mt-4 pb-2 border-bottom"> <strong>Reservation Confirmation</strong></h2>
+    <div class="card-body-paiement">
       <%= form_tag reservation_payments_path(@reservation) do %>
-        <div class="date border-bottom">
-          <%= @reservation.arrival_date.strftime("%e %B %Y") %> to <%= @reservation.departure_date.strftime("%e %B %Y") %>
+      <div class="order-number">
+        <h4 class="text-right">Order Number : 34985</h4>
+        <p class="text-right mb-4"> <%= Date.today.strftime("%e %B %Y") %> </p>
+      </div>
+      <div class="info-coworking-paiement pb-4">
+        <h4>Havana Beach</h4>
+        <p>14 South Steyne, Manly</p>
+        <p>Sydney, Australia</p>
+      </div>
+        <div class="date-stay">
+          <h3 class="date border-bottom" >Dates :</h3>
+          <div>
+            <p><i class="fas fa-plane-arrival"></i> : <%= @reservation.arrival_date.strftime("%e %B %Y") %></p>
+            <p><i class="fas fa-plane-departure"></i> :  <%= @reservation.departure_date.strftime("%e %B %Y") %></p>
+          </div>
         </div>
-        <article>
-          <label class="amount">
-            <span>TOTAL: <%= humanized_money_with_symbol(@reservation.total_price) %> AUD </span>
-          </label>
-        </article>
 
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button btn button-resa-book"
+        <div class="price-recap">
+        </div>
+
+        <div class="amount border-top">
+          <h3 class="text-center"> <strong>TOTAL : <%= humanized_money_with_symbol(@reservation.total_price) %> AUD</strong>  </h3>
+        </div>
+
+
+        <script src="https://checkout.stripe.com/checkout.js"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-name="Desk Booking in  "
           data-email="<%= current_user.email %>"
           data-amount="<%= @reservation.total_price_cents %>"
           data-currency="<%= @reservation.total_price.currency %>"></script>
+          <button type="submit" class="stripe-button  d-flex justify-content-center btn-custom btn " style="visibility: visible;"><span style="display: block;">Confirm and Pay </span></button>
       <% end %>
     </div>
   </div>

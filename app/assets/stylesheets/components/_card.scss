@@ -94,13 +94,36 @@
 
 // CARD PAIEMENT
 .card-paiement {
-  width: 600px;
-  height: 200px;
+  width: 450px;
+  height: 600px;
   margin: 3rem auto !important;
   border-radius: 10px;
   box-shadow: 1px 10px 10px rgba(0,0,0,0.3);
+  padding: 0 35px;
 }
 
+.card-body-paiement {
+  margin-top: -5px;
+}
+
+.info-coworking-paiement p {
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.info-coworking-paiement h4 {
+  margin-bottom: 0;
+}
+
+.date-stay p {
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+
+.border-bottom {
+  margin-bottom: 5px;
+}
 
 h7 {
   padding-top: 16px;

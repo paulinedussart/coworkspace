@@ -3,7 +3,7 @@
 <div class="container">
 
   <%= link_to "Back to list", spaces_path, class: "btn btn-outline-primary mb-5 mt-4"  %>
-
+  <%= link_to "Contact", chatroom_owner_path(@space.owner) %>
   <div class="container-spaces d-flex">
     <div class="card-space-infos">
       <div class="space-infos border-bottom">

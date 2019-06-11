@@ -24,7 +24,7 @@ class PaymentsController < ApplicationController
 
 rescue Stripe::CardError => e
   flash[:alert] = e.message
-  redirect_to new_reservation_payment_path(@reservation)
+  redirect_to new_reservation_payment_path(@reservation), notice: 'Thank you for your bookin blablabl !'
   end
 
 private

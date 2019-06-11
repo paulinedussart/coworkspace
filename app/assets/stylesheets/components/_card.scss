@@ -94,9 +94,9 @@
 
 // CARD PAIEMENT
 .card-paiement {
-  width: 450px;
+  width: 430px;
   height: 600px;
-  margin: 3rem auto !important;
+  margin: 2rem auto !important;
   border-radius: 10px;
   box-shadow: 1px 10px 10px rgba(0,0,0,0.3);
   padding: 0 35px;
@@ -106,24 +106,26 @@
   margin-top: -5px;
 }
 
-.info-coworking-paiement p {
+.card-paiement h4, h5 {
+  margin-bottom: 0;
+}
+
+.card-paiement p {
   line-height: 1.5;
   margin-bottom: 0;
 }
-
-.info-coworking-paiement h4 {
-  margin-bottom: 0;
-}
-
-.date-stay p {
-  line-height: 1.5;
-  margin-bottom: 0;
-}
-
 
 .border-bottom {
   margin-bottom: 5px;
 }
+
+.card-paiement .fas {
+  font-size: 20px;
+  background: -webkit-linear-gradient(#E47097, #F8A348);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 
 h7 {
   padding-top: 16px;

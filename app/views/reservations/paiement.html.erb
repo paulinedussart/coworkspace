@@ -4,41 +4,52 @@
 
 
   <div class="card card-paiement">
-    <h2 class="text-center mt-4 pb-2 border-bottom"> <strong>Reservation Confirmation</strong></h2>
+    <h3 class="text-center mt-3 pb-3 border-bottom"> <strong>Reservation Confirmation</strong></h3>
     <div class="card-body-paiement">
       <%= form_tag reservation_payments_path(@reservation) do %>
       <div class="order-number">
-        <h4 class="text-right">Order Number : 34985</h4>
-        <p class="text-right mb-4"> <%= Date.today.strftime("%e %B %Y") %> </p>
+        <h5 class="text-right mt-2">Order Number : 34_0619</h5>
+        <p class="text-right mb-2"> <%= Date.today.strftime("%e %B %Y") %> </p>
       </div>
       <div class="info-coworking-paiement pb-4">
-        <h4>Havana Beach</h4>
-        <p>14 South Steyne, Manly</p>
-        <p>Sydney, Australia</p>
+        <h5>Havana Beach</h5>
+        <p><em>14 South Steyne, Manly</em></p>
+        <p><em>Sydney, Australia</em></p>
+        <p></p>
       </div>
-        <div class="date-stay">
-          <h3 class="date border-bottom" >Dates :</h3>
-          <div>
-            <p><i class="fas fa-plane-arrival"></i> : <%= @reservation.arrival_date.strftime("%e %B %Y") %></p>
-            <p><i class="fas fa-plane-departure"></i> :  <%= @reservation.departure_date.strftime("%e %B %Y") %></p>
+        <div class="date-stay pb-4">
+          <h4 class="date border-bottom" > <strong>Dates :</strong> </h4>
+          <div class="d-flex justify-content-between mt-2 px-3">
+            <p><i class="fas fa-calendar-day fa"> :</i></p>
+            <p><%= @reservation.arrival_date.strftime("%e %B %Y") %></p>
+            <p><i class="fas fa-long-arrow-alt-right"></i></p>
+            <p><%= @reservation.departure_date.strftime("%e %B %Y") %></p>
           </div>
         </div>
 
-        <div class="price-recap">
+        <div class="price-recap pb-4">
+          <h4 class="date border-bottom" > <strong>Price Details :</strong> </h4>
+          <div class=" mt-2 px-3 mb-2">
+            <p> Number of days : </p>
+            <p> Price per days : </p>
+            <p> Taxes :  $3</p>
+            <p></p>
+          </div>
         </div>
 
         <div class="amount border-top">
-          <h3 class="text-center"> <strong>TOTAL : <%= humanized_money_with_symbol(@reservation.total_price) %> AUD</strong>  </h3>
+          <h4 class="text-center mt-4"> <strong>TOTAL : <%= humanized_money_with_symbol(@reservation.total_price) %> AUD</strong>  </h4>
         </div>
 
 
-        <script src="https://checkout.stripe.com/checkout.js"
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-name="Desk Booking in  "
+          data-name="Payment Proces "
           data-email="<%= current_user.email %>"
+          data-description="<%= current_user.first_name %> <%= current_user.last_name %>"
           data-amount="<%= @reservation.total_price_cents %>"
           data-currency="<%= @reservation.total_price.currency %>"></script>
-          <button type="submit" class="stripe-button  d-flex justify-content-center btn-custom btn " style="visibility: visible;"><span style="display: block;">Confirm and Pay </span></button>
+          <button type="submit" class="stripe-button mt-4 d-flex justify-content-center btn-custom btn" style="visibility: visible;"><span style="display: block;">Confirm and Pay </span></button>
       <% end %>
     </div>
   </div>

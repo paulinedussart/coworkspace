@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
   def current_entity
     current_user || current_owner
   end
+
+    protected
+
+  # def after_sign_in_path_for(resource)
+  #   # return the path based on resource
+  #   owner_dashboard_path(current_owner.id) if current_owner.present?
+  # end
 end

@@ -29,6 +29,7 @@ class ReservationsController < ApplicationController
 
   def paiement
     # redirect_to user_reservations_path
+    @reservation = Reservation.find(params[:reservation_id])
   end
 
   # private

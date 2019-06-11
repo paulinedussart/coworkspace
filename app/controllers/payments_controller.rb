@@ -7,19 +7,20 @@ class PaymentsController < ApplicationController
   def create
     # ask stripe to charge customer card
     customer = Stripe::Customer.create(
-    source: params[:stripeToken],
-    email:  params[:stripeEmail]
-  )
+      source: params[:stripeToken],
+      email:  params[:stripeEmail]
+    )
 
-  charge = Stripe::Charge.create(
-    customer:     customer.id,   # You should store this customer id and re-use it.
-    amount:       @reservation.amount_cents,
-    description:  "Payment for reservation ",
-    currency:     @reservation.amount.currency
-  )
+    charge = Stripe::Charge.create(
+      customer:     customer.id,   # You should store this customer id and re-use it.
+      amount:       @reservation.total_price_cents,
+      description:  "Payment for reservation ",
+      currency:     @reservation.total_price.currency
+    )
 
-  @reservation.update(payment: charge.to_json, state: 'paid')
-  redirect_to reservation_path(@reservation)
+    @reservation.update(status: 'PAID')
+
+  redirect_to user_reservations_path(current_user)
 
 rescue Stripe::CardError => e
   flash[:alert] = e.message
@@ -29,6 +30,6 @@ rescue Stripe::CardError => e
 private
 
   def set_reservation
-    @reservation = current_user.reservations.where(state: 'pending').find(params[:reservation_id])
+    @reservation = current_user.reservations.where(status: 'PENDING').find(params[:reservation_id])
   end
 end

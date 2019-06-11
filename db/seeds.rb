@@ -317,7 +317,7 @@ puts ' --> creating REVIEWS for Fishburners'
 
 review5 = Review.create!(
   content: "Much more comfortable and convenient than working from home, and MUCH quieter! Awesome facilities with every creature comfort imaginable (even a slippery-slide!).",
-  rating: 4,
+  rating: 3,
   user: aure,
   space: fishburners,
   )

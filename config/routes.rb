@@ -50,5 +50,8 @@ Rails.application.routes.draw do
 
   resources :owners do
     get "dashboard", to: "pages#dashboard"
+    collection do
+      get "/chat_room/:id", to: "chat_rooms#show_owner", as: :chatroom
+    end
   end
 end

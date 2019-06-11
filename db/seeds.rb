@@ -671,6 +671,8 @@ Desk.create!(
 puts ' --> SPACES created!'
 puts 'Great ! Everything has been created ! '
 
+# ChatRoom.create(user: User.all.sample, owner: Owner.all.sample)
+
 # SEED RESERVATIONS
 # puts 'Creating reservations...'
 

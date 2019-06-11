@@ -1,111 +1,187 @@
  <!DOCTYPE html>
 <html>
 <head>
-  <title>Sorry, Error 500 </title>
-
+  <title>Sorry, Error 500</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-body {
-  * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+/*
+ * Global
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-  padding: 0;
   margin: 0;
-}
-
-#notfound {
-  position: relative;
-  height: 100vh;
-}
-
-#notfound .notfound {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.notfound {
-  max-width: 410px;
-  width: 100%;
-  text-align: center;
-}
-
-.notfound .notfound-500 {
-  height: 280px;
-  position: relative;
-  z-index: -1;
-}
-
-.notfound .notfound-500 h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 230px;
-  margin: 0px;
-  font-weight: 900;
-  position: absolute;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  background: url('../images/bg.jpg') no-repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: cover;
-  background-position: center;
-}
-
-
-.notfound h2 {
-  font-family: 'Montserrat', sans-serif;
-  color: #000;
-  font-size: 24px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-top: 0;
-}
-
-.notfound p {
-  font-family: 'Montserrat', sans-serif;
-  color: #000;
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom: 20px;
-  margin-top: 0px;
-}
-
-.notfound a {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  text-decoration: none;
-  text-transform: uppercase;
-  background: #0046d5;
-  display: inline-block;
-  padding: 15px 30px;
-  border-radius: 40px;
+  font-family: "Roboto", sans-serif;
+  background-color: #493d6f;
+  background: linear-gradient(to top left, #493d6f, #080417);
   color: #fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+ * Content
+ */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/*
+ * 500
+ */
+.error-500 {
+  position: relative;
+  z-index: 999;
+}
+
+.error-number {
+  text-align: center;
+  font-size: 8rem;
   font-weight: 700;
-  -webkit-box-shadow: 0px 4px 15px -5px #0046d5;
-          box-shadow: 0px 4px 15px -5px #0046d5;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: scale 1.4s ease-in-out;
 }
 
-
-@media only screen and (max-width: 767px) {
-    .notfound .notfound-500 {
-      height: 142px;
-    }
-    .notfound .notfound-500 h1 {
-      font-size: 112px;
-    }
+.icon {
+  width: 7rem;
+  max-height: 8rem;
+  margin: 0 0.2rem;
+  animation: balance 3s ease infinite 1.3s;
 }
 
+@keyframes scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes balance {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 1rem, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+/*
+ * Type effect
+ */
+.type {
+  font-size: 1.2rem;
+  font-weight: 400;
+  word-spacing: 0.4rem;
+  letter-spacing: 0.1rem;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 8px solid transparent;
+  margin: 2rem 0;
+  animation: typing 3.5s steps(35, end) forwards 1.5s, blink 0.7s linear infinite 1.6s;
+  opacity: 0;
+  width: 0;
+}
 
+@keyframes typing {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 1;
+  }
+}
+@keyframes blink {
+  0% {
+    border-color: #fff;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
+/*
+ * Moon
+ */
+.moon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50vw;
+  height: 30vw;
+  border-radius: 50%;
+  background-color: #eee;
+  background: radial-gradient(#7b4e27 0%, #ffffff 100%);
+  transform: translate3d(20%, 80%, 0);
+  box-shadow: 0 0 3px 27vw rgba(96, 83, 142, 0.05), 0 0 3px 18vw rgba(96, 83, 142, 0.1), 0 0 3px 9vw rgba(96, 83, 142, 0.15);
+  z-index: 998;
+}
+.moon::before, .moon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5%;
+  height: 4%;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.moon::before {
+  transform: translate3d(-400%, -1000%, 0);
+}
+.moon::after {
+  transform: translate3d(0, -600%, 0);
+  width: 10%;
+  height: 6%;
+}
+
+@media only screen and (max-width: 48em) {
+  .type {
+    font-size: 0.75rem;
+    word-spacing: 0.2rem;
+  }
+}
 
   </style>
 </head>
-
+<main class="wrapper">
+  <div class="error-500">
+    <div class="error-number has-animation"><span>5</span><span><img class="icon has-animation" src="https://image.flaticon.com/icons/svg/139/139695.svg" alt=""/></span><span>0</span></div>
+    <h1 class="type has-animation">500, Internal Server Error</h1>
+    <h1 class="type has-animation">Turn around and <a href="https://www.find-coworkspace.com/">go home?</a></h1>
+  </div>
+  <div class="moon"></div>
+</main>
 
 </html>

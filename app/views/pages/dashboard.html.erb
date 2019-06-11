@@ -11,9 +11,10 @@
 
         <div class="sidebar-header border-bottom">
           <div class="image-cropper">
-            <%= cl_image_tag @owner.spaces.first.photo, width: 150, crop: :fill %>
+            <%= cl_image_tag @owner.avatar, width: 150, crop: :fill %>
           </div>
             <h3><%= @owner.name %> </h3>
+
         </div>
 
         <div class="navigation border-bottom">
@@ -22,29 +23,33 @@
             <li><%= link_to "My bookings", owner_space_reservations_path(current_owner, :space_id) %></li></br>
             <li><%= link_to "My reports", "" %></li></br>
             <li><%= link_to "My messages", "" %></li></br>
-            <li><%= link_to "ChatRoom", chatroom_owner_path(:id) %></li>
           </ul>
         </div>
     </nav>
 
     <div class="stats">
       <div class="row justify-content-around">
-        <div class=" stat col-lg-3">
-        </div>
-        <div class=" stat col-lg-3">
-        </div>
-        <div class=" stat col-lg-3">
+        <div class="top-stat col-lg-11">
+           <div class="graph"><%= pie_chart User.group(:gender).count, width: "200", height: "200", colors: ["#f29c33", "#5134a2"] %></div> <!-- graph gender -->
+           <div class="age-average"><%= User.average(:age).to_i %> yrs</div> </br> <!-- age moyen -->
+           <div class="time-average"><%= Reservation.average(:total_days).to_i %> days</div></br><!-- durée moyenne de résa -->
+           <div class="pending"><%= Reservation.where(status:"PENDING").count %> pending</div></br><!-- nombre de résa pending -->
         </div>
       </div>
 
       <div class="row justify-content-around">
-        <div class="stat col-lg-5"><%= line_chart Reservation.group_by_week(:created_at).count %></div>
-
-        <div class="stat col-lg-5"></div>
+        <div class="stat col-lg-5">
+          <div class="stat-header">Bookings</div>
+          <div class="graph"><%= area_chart Reservation.group_by_week(:created_at).count, points: false, width: "500px", height: "250px", colors: ["#5134a2"] %></div> <!-- graph résa -->
+        </div>
+        <div class="stat col-lg-5">
+        <div class="stat-header">Revenues</div>
+          <div class="graph"><%= column_chart Reservation.group_by_week(:created_at).sum(:total_price), width: "500px", height: "250px", colors: ["#5134a2"] %></div> <!-- graph revenus -->
+        </div>
       </div>
 
       <div class="row justify-content-around">
-         <div class="stat col-lg-11"></div>
+         <div class="bottom-stat col-lg-11"></div>
       </div>
     </div>
 </div>

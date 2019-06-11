@@ -1,7 +1,7 @@
  <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>We're sorry, but something went wrong (422)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
 body {
@@ -137,7 +137,14 @@ span {
   top: 0;
   transform: translateY(-50%);
 }
-
+span:nth-of-type(1) {
+  right: 0.55em;
+  color: #FCB230;
+}
+span:nth-of-type(2) {
+  left: 0.50em;
+  color: #FCB230;
+}
 @media (max-width: 460px) {
   span {
     display: none;
@@ -315,8 +322,8 @@ span {
         <div class="stars s3"></div>
         <div class="stars s4"></div>
     </div>
+    <p class="info">422, HTTP Status code: <a href="https://www.find-coworkspace.com/">Go home</p>
 
-    <p class="info">422: The change you wanted was rejected.</p>
-</div>
+
 </body>
 </html>

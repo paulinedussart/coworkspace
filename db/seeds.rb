@@ -696,6 +696,6 @@ puts 'Great ! Everything has been created ! '
 #   arrival_date: "2019-04-30",
 #   departure_date: "2019-07-30",
 #   status: "pending",
-#   user: pauline,
+#   user: aure,
 #   desk: the_company
 # )

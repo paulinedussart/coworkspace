@@ -64,15 +64,15 @@ puts ' --> OWNERS created!'
 # SEED USERS
 puts 'Creating USERS...'
 url = 'https://avatars1.githubusercontent.com/u/43919015?v=4'
-pauline = User.new(
+martin = User.new(
   email: 'pau@example.com',
   password: 'password',
   phone: '0678327438',
   first_name: "Pauline",
   last_name: "Dussart",
 )
-pauline.remote_avatar_url = url
-pauline.save
+martin.remote_avatar_url = url
+martin.save
 
 
 url = 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/gqon2jj9cj7tss7gpvzb.jpg'
@@ -189,6 +189,64 @@ desk3 = Desk.create!(
   price_per_day: 15,
   space: havana_beach
   )
+desk4 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+
+desk5 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+
+desk6 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+desk7 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+
+desk8 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+
+desk9 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+desk10 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+
+desk11 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+
+desk12 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+
+desk13 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+
+desk14 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+
+desk15 = Desk.create!(
+  price_per_day: 15,
+  space: havana_beach
+  )
+
 puts ' --> DESKS created for Havana Beach !'
 
 puts 'Creating RESERVATIONS for Havana Beach...'
@@ -196,7 +254,7 @@ puts 'Creating RESERVATIONS for Havana Beach...'
 reservation1 = Reservation.create!(
   arrival_date: Date.today + 1.week,
   departure_date: Date.today + 2.week,
-  status: "ACCEPTED",
+  status: "PENDING",
   user: popo,
   desk: desk1
   )
@@ -210,40 +268,40 @@ reservation2 = Reservation.create!(
 reservation3 = Reservation.create!(
   arrival_date: Date.today + 4.week,
   departure_date: Date.today + 5.week,
-  status: "REFUSED",
+  status: "PENDING",
   user: lulu,
   desk: desk1
   )
 reservation4 = Reservation.create!(
   arrival_date: Date.today + 4.week,
   departure_date: Date.today + 5.week,
-  status: "REFUSED",
+  status: "PENDING",
   user: pierre,
   desk: desk1
   )
-reservation5 = Reservation.create!(
-  arrival_date: Date.today + 4.week,
-  departure_date: Date.today + 5.week,
-  status: "ACCEPTED",
-  user: marc,
-  desk: desk1
-  )
-reservation6 = Reservation.create!(
-  arrival_date: Date.today + 4.week,
-  departure_date: Date.today + 5.week,
-  status: "ACCEPTED",
-  user: aure,
-  desk: desk1
-  )
 
-100.times do
+
+
+50.times do
+arrival = Date.today + ((-20 .. 50).to_a.sample).day
 Reservation.create!(
- arrival_date: Date.today + ((-50 .. 50).to_a.sample).day,
- departure_date: Date.today + ((-50 .. 50).to_a.sample).day,
- status: "PENDING",
+ arrival_date: arrival,
+ departure_date: arrival + ((1 .. 50).to_a.sample).day,
+ status: "ACCEPTED",
  user: User.all.sample,
- desk: desk2,
+ desk: Desk.all.sample,
  created_at: Date.today + ((-30 .. 0).to_a.sample).day
+) end
+
+30.times do
+arrival = Date.today + ((-10 .. 50).to_a.sample).day
+Reservation.create!(
+ arrival_date: arrival,
+ departure_date: arrival + ((1 .. 50).to_a.sample).day,
+ status: "ACCEPTED",
+ user: User.all.sample,
+ desk: Desk.all.sample,
+ created_at: Date.today + ((-10 .. 0).to_a.sample).day
 ) end
 
 puts ' --> MESSAGES created for Havana Beach'

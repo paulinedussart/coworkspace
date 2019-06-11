@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
     @reservation.status = "PENDING"
 
     # Methode calul du prix total
-    @total_days = params[:reservation][:departure_date].to_i - params[:reservation][:departure_date].to_i + 1
+    @total_days = params[:reservation][:departure_date].to_i - params[:reservation][:arrival_date].to_i + 1
     # Methode calul du prix total
     @total_price = (@total_days * @desk.price_per_day) + 3
     @reservation.total_price = @total_price

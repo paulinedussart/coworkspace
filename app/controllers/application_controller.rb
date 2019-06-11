@@ -17,8 +17,8 @@ class ApplicationController < ActionController::Base
 
     protected
 
-  def after_sign_in_path_for(resource)
-    # return the path based on resource
-    owner_dashboard_path(current_owner.id)
-  end
+  # def after_sign_in_path_for(resource)
+  #   # return the path based on resource
+  #   owner_dashboard_path(current_owner.id) if current_owner.present?
+  # end
 end

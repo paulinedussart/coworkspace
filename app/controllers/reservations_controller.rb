@@ -16,15 +16,20 @@ class ReservationsController < ApplicationController
     # Methode calul du prix total
     @total_days = params[:reservation][:departure_date].to_i - params[:reservation][:arrival_date].to_i + 1
     # Methode calul du prix total
-    @total_price = (@total_days * @desk.price_per_day) + 3
+    @total_price = (@total_days * @desk.price_per_day.to_i) + 3
     @reservation.total_price = @total_price
     respond_to do |format|
       if @reservation.save
-        format.html { redirect_to user_reservations_path, notice: 'Thank you for your booking ! Your reservation is pending. You will receive an email in the next 24h to confirm your reservation !' }
+        format.html { redirect_to reservation_paiement_path(@reservation), notice: 'Thank you for your booking !' }
       else
         format.html { render :new }
       end
     end
+  end
+
+  def paiement
+    # redirect_to user_reservations_path
+    @reservation = Reservation.find(params[:reservation_id])
   end
 
   # private

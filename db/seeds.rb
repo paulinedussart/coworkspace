@@ -65,11 +65,13 @@ puts ' --> OWNERS created!'
 puts 'Creating USERS...'
 url = 'https://avatars1.githubusercontent.com/u/43919015?v=4'
 martin = User.new(
-  email: 'pau@example.com',
+  email: 'martin@example.com',
   password: 'password',
   phone: '0678327438',
-  first_name: "Pauline",
-  last_name: "Dussart",
+  first_name: "Martin",
+  last_name: "De La Rivière",
+  gender: "Men",
+  age: 35
 )
 martin.remote_avatar_url = url
 martin.save
@@ -82,6 +84,8 @@ aure = User.create!(
   password: 'password',
   first_name: "Aurelie",
   last_name: "Gimet",
+  gender: "Women",
+  age: 28
 )
 aure.remote_avatar_url = url
 aure.save
@@ -93,6 +97,8 @@ lulu = User.create!(
   password: 'password',
   first_name: "Ludivine",
   last_name: "Robin",
+  gender: "Women",
+  age: 25
 )
 lulu.remote_avatar_url = url
 lulu.save
@@ -104,6 +110,8 @@ popo = User.create!(
   password: 'password',
   first_name: "Pauline",
   last_name: "Florens",
+  gender: "Women",
+  age: 30
 )
 popo.remote_avatar_url = url
 popo.save
@@ -114,7 +122,9 @@ marc = User.create!(
   phone: '0638294750',
   password: 'password',
   first_name: "Marc",
-  last_name: "Dubois"
+  last_name: "Dubois",
+  gender: "Men",
+  age: 45
 )
 marc.remote_avatar_url = url
 marc.save
@@ -125,10 +135,25 @@ pierre = User.create!(
   phone: '0638294760',
   password: 'password',
   first_name: "Pierre",
-  last_name: "De Latour"
+  last_name: "De Latour",
+  gender: "Men",
+  age: 40
 )
 pierre.remote_avatar_url = url
 pierre.save
+
+url = 'https://avatars0.githubusercontent.com/u/48763705?v=4'
+lilou = User.create!(
+  email: 'lilou@gmail.com',
+  phone: '0638294760',
+  password: 'password',
+  first_name: "lilou",
+  last_name: "Forsa",
+  gender: "Women",
+  age: 32
+)
+lilou.remote_avatar_url = url
+lilou.save
 
 puts ' --> USERS created!'
 
@@ -252,7 +277,7 @@ puts ' --> DESKS created for Havana Beach !'
 puts 'Creating RESERVATIONS for Havana Beach...'
 # Reservation for Havana Beach
 reservation1 = Reservation.create!(
-  arrival_date: Date.today + 1.week,
+  arrival_date:
   departure_date: Date.today + 2.week,
   status: "PENDING",
   user: popo,

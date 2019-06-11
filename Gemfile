@@ -13,6 +13,7 @@ gem 'devise'
 gem 'geocoder'
 gem 'coffee-script'
 gem 'money-rails'
+gem 'stripe'
 
 
 gem 'autoprefixer-rails'

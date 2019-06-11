@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'orders/show'
+  get 'orders/create'
   devise_for :owners, path: 'owners'
   devise_for :users, path: 'users'
 
@@ -41,6 +43,9 @@ Rails.application.routes.draw do
     resources :reservations, only: [:index]
   end
 
+  resources :reservations, only: [] do
+    get "/paiement", to: "reservations#paiement", as: :paiement
+  end
 
   resources :spaces, only: [:index, :show]
 

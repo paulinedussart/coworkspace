@@ -149,8 +149,7 @@ mlc.save
 2.times do
 Desk.create!(
  price_per_day: 15,
- space: mlc,
- sku: "desk"
+ space: mlc
 ) end
 
 url = "https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
@@ -163,8 +162,7 @@ manly_house_studio.save
 2.times do
 Desk.create!(
    price_per_day: 15,
-   space: manly_house_studio,
-   sku: "desk"
+   space: manly_house_studio
   )
 end
 
@@ -179,20 +177,17 @@ puts 'Creating DESKS for Havana Beach...'
 # Desk for Havana Beach
 desk1 = Desk.create!(
   price_per_day: 15,
-  space: havana_beach,
-  sku: "desk"
+  space: havana_beach
   )
 
 desk2 = Desk.create!(
   price_per_day: 15,
-  space: havana_beach,
-  sku: "desk"
+  space: havana_beach
   )
 
 desk3 = Desk.create!(
   price_per_day: 15,
-  space: havana_beach,
-  sku: "desk"
+  space: havana_beach
   )
 puts ' --> DESKS created for Havana Beach !'
 

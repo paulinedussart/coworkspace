@@ -400,7 +400,7 @@ puts ' --> creating REVIEWS for Fishburners'
 
 review5 = Review.create!(
   content: "Much more comfortable and convenient than working from home, and MUCH quieter! Awesome facilities with every creature comfort imaginable (even a slippery-slide!).",
-  rating: 4,
+  rating: 3,
   user: aure,
   space: fishburners,
   )
@@ -754,6 +754,8 @@ Desk.create!(
 puts ' --> SPACES created!'
 puts 'Great ! Everything has been created ! '
 
+# ChatRoom.create(user: User.all.sample, owner: Owner.all.sample)
+
 # SEED RESERVATIONS
 # puts 'Creating reservations...'
 
@@ -777,6 +779,6 @@ puts 'Great ! Everything has been created ! '
 #   arrival_date: "2019-04-30",
 #   departure_date: "2019-07-30",
 #   status: "pending",
-#   user: pauline,
+#   user: aure,
 #   desk: the_company
 # )

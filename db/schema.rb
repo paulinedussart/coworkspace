@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(version: 2019_06_11_130418) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.bigint "owner_id"
+    t.index ["owner_id"], name: "index_chat_rooms_on_owner_id"
+    t.index ["user_id"], name: "index_chat_rooms_on_user_id"
   end
 
   create_table "desks", force: :cascade do |t|
@@ -140,6 +144,8 @@ ActiveRecord::Schema.define(version: 2019_06_11_130418) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chat_rooms", "owners"
+  add_foreign_key "chat_rooms", "users"
   add_foreign_key "desks", "spaces"
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "reservations", "desks"

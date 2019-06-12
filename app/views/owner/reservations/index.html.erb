@@ -4,10 +4,11 @@
     <div class="sidebar-header border-bottom">
       <%= link_to owner_dashboard_path(current_owner) do %>
       <!-- <div class="image-cropper"> -->
-      <%= cl_image_tag @current_owner.spaces.first.photo, :gravity=>"face", width: 150, height: 150, crop: :fill, :radius=>"max", :format=>"png" %>
+      <%= image_tag "logo-1.png" %>
       <!-- </div> -->
       <% end %>
-      <h3 class="my-3" "><%= @current_owner.name %> </h3>
+      <h3 class="my-3">Hello Ludivine !</h3>
+      <p>Member since April 2019</p>
     </div>
     <div class="navigation border-bottom">
       <ul class="list">

@@ -4,10 +4,11 @@
     <div class="sidebar-header border-bottom">
       <%= link_to owner_dashboard_path do %>
       <!-- <div class="image-cropper"> -->
-      <%= cl_image_tag @owner.spaces.first.photo, :gravity=>"face", width: 150, height: 150, crop: :fill, :radius=>"max", :format=>"png" %>
+      <%= image_tag "logo-1.png" %>
       <!-- </div> -->
       <% end %>
-      <h3 class="my-3" "><%= @owner.name %> </h3>
+      <h3 class="my-3">Hello Ludivine !</h3>
+      <p>Member since April 2019</p>
     </div>
     <div class="navigation border-bottom">
       <ul class="list">
@@ -31,7 +32,10 @@
   <div class="container">
     <div class="row justify-content-between">
       <div class="top-stat col-lg-12">
-        <div class="graph-gender"><%= pie_chart User.group(:gender).count, width: "80", height: "80",legend: "bottom", colors: ["#f29c33", "#5134a2"] %></div> <!-- graph gender -->
+        <div class="stat-category mb-4">
+          <div class="header-number">Desks avalaible</div>
+            <div class="number desks">7</div>
+        </div> <!-- graph gender -->
         <div class="stat-category">
           <div class="header-number">Age average</div>
           <div class="number age-average"><%= User.average(:age).to_i %> yrs</div> </br> <!-- age moyen -->
@@ -50,16 +54,16 @@
 
         <div class="stat col-lg-5">
           <div class="stat-header">Bookings</div>
-          <div class="graph"><%= area_chart Reservation.group_by_week(:created_at).count, points: false, colors: ["#5134a2"] %></div> <!-- graph résa -->
+          <div class="graph"><%= area_chart Reservation.group_by_week(:created_at).count, points: false, colors: ["#F5B155"] %></div> <!-- graph résa -->
         </div>
         <div class="stat col-lg-5">
           <div class="stat-header">Revenues</div>
-          <div class="graph"><%= column_chart Reservation.group_by_week(:created_at).sum(:total_price_cents), colors: ["#5134a2"] %></div> <!-- graph revenus -->
+          <div class="graph"><%= column_chart Reservation.group_by_week(:created_at).sum(:total_price_cents), colors: ["#F5B155"] %></div> <!-- graph revenus -->
         </div>
 
 
         <div class="bottom-stat col-lg-12">
-          <table style= "margin-top: 69px; line-height: 1.35; border: 1px solid #ddd">
+          <table style= "margin-top: 69px; line-height: 1.63; border: 1px solid #ddd">
             <thead>
               <tr>
                 <th>Desk</th>

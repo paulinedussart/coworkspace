@@ -18,7 +18,37 @@ document.addEventListener('DOMContentLoaded', function() {
     events: [
        {
       title: "Jessie Williams",
-      start: "2019-06-09",
+      start: "2019-06-05",
+      end: "2019-06-12",
+      desk: 467,
+   },
+   {
+      title: "Sarah James",
+      start: "2019-06-06",
+      end: "2019-06-13",
+      desk: 467,
+   },
+   {
+      title: "Kike Gonzalez",
+      start: "2019-06-10",
+      end: "2019-06-15",
+      desk: 467,
+   },
+   {
+      title: "Kieran Skelton",
+      start: "2019-06-06",
+      end: "2019-06-15",
+      desk: 467,
+   },
+   {
+      title: "Steve McGarett",
+      start: "2019-06-06",
+      end: "2019-06-16",
+      desk: 467,
+   },
+   {
+      title: "Mame n'Gone",
+      start: "2019-06-10",
       end: "2019-06-12",
       desk: 467,
    },

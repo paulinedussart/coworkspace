@@ -18,21 +18,15 @@
     margin-left: -250px;
 }
 
-.image-cropper {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 50%;
-    align-self: center;
-    box-shadow: 0 0 5px rgba(0,0,0,0.6);
+.sidebar-header{
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
-img {
-    display: inline;
-    margin: 0 auto;
-    height: 100%;
-    width: auto;
-    align-self: center;
+
+.sidebar-header img{
+  height: 120px;
+  margin: 0;
 }
 
 .list a {
@@ -177,11 +171,6 @@ img {
   padding: 20px;
 }
 
-.graph-gender{
-  padding: 5px;
-  border-right: solid 2px #f3f3f7;
-}
-
 .header-number{
   color: $primary;
 }
@@ -198,6 +187,12 @@ img {
 .fc-content {
   background-color:#A68FD0;
   color: #333333;
+  border-radius: 10px !important;
+  padding-left: 4px !important;
+}
+
+.fc td {
+  padding: 2px !important;
 }
 
 .fc-event, .fc-event-dot {
@@ -205,12 +200,13 @@ img {
 }
 .fc-event {
   border: 1px solid #A68FD0 !important;
+  border-radius: 10px !important;
 }
 
 .fc-button-primary {
     color: #fff;
-    background-color: #333333 !important;
-    border-color: #333333 !important;
+    background-color: #bbbbbb  !important;
+    border-color: #bbbbbb !important;
 }
 
 // Bookings #index

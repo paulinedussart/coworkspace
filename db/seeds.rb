@@ -143,7 +143,7 @@ pierre.remote_avatar_url = url
 pierre.save
 
 url = 'https://avatars0.githubusercontent.com/u/48763705?v=4'
-Marina = User.create!(
+marina = User.create!(
   email: 'marina@gmail.com',
   phone: '0638294760',
   password: 'password',

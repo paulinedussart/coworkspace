@@ -49,14 +49,8 @@
           <div class="graph"><%= area_chart Reservation.group_by_week(:created_at).count, points: false, colors: ["#5134a2"] %></div> <!-- graph résa -->
         </div>
         <div class="stat col-lg-5">
-<<<<<<< HEAD
-        <div class="stat-header">Revenues</div>
-          <div class="graph"><%= column_chart Reservation.group_by_week(:created_at).sum(:total_price_cents), width: "500px", height: "250px", colors: ["#5134a2"] %></div> <!-- graph revenus -->
-=======
-
           <div class="stat-header">Revenues</div>
           <div class="graph"><%= column_chart Reservation.group_by_week(:created_at).sum(:total_price_cents), colors: ["#5134a2"] %></div> <!-- graph revenus -->       
->>>>>>> 130f9a890c3010f53e460e65e45ef14b7ea76be7
         </div>
 
 

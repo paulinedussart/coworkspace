@@ -18,13 +18,11 @@ class PaymentsController < ApplicationController
       currency:     @reservation.total_price.currency
     )
 
-    @reservation.update(status: 'PAID')
+    redirect_to user_reservations_path(current_user), notice: " Successful Payment! You will be charged only if the owner accepts your booking!"
 
-  redirect_to user_reservations_path(current_user)
-
-rescue Stripe::CardError => e
-  flash[:alert] = e.message
-  redirect_to new_reservation_payment_path(@reservation), notice: 'Thank you for your bookin blablabl !'
+  rescue Stripe::CardError => e
+    flash[:alert] = e.message
+    redirect_to new_reservation_payment_path(@reservation)
   end
 
 private

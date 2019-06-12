@@ -6,25 +6,24 @@
     <% end %>
     <form class="form-inline">
           <% if user_signed_in? %>
-            <%= link_to "Find a space", spaces_path, class: "btn btn-outline-light mx-2" %>
+            <%= link_to "Find a space", spaces_path, class: "btn  btn-home-signin btn-outline-light mx-2" %>
             <button class=" nav-item dropdown btn mx-2" type="button">
               <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Profile", user_path(:id), class: "dropdown-item" %>
-            <%= link_to  "Settings", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
             </button>
          <% elsif owner_signed_in? %>
-          <%= link_to "Manage your space", owner_dashboard_path(:id), class: "btn btn-outline-light mx-2" %>
+          <%= link_to "Manage your space", owner_dashboard_path(:id), class: "btn  btn-home-signin btn-outline-light mx-2" %>
           <%= link_to "Log out", destroy_owner_session_path, method: :delete%>
          <% else %>
-           <button class=" nav-item btn btn-outline-warning mx-4" type="button">
+           <button class=" nav-item btn-home-signin btn mx-4" type="button">
            <i class="fas fa-user"></i><%= link_to "Login", new_user_session_path, class: "nav-link" %>
            </button>
 
-            <button class=" nav-item btn btn-outline-warning mx-4" type="button">
+            <button class=" nav-item  btn-home-signin btn mx-4" type="button">
             <i class="fas fa-building"></i><%= link_to "Login", new_owner_session_path, class: "nav-link" %>
            </button>
          <% end %>

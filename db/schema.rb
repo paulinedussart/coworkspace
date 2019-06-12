@@ -89,8 +89,8 @@ ActiveRecord::Schema.define(version: 2019_06_11_164942) do
     t.bigint "desk_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "total_days"
     t.integer "total_price_cents", default: 0, null: false
+    t.integer "total_days"
     t.index ["desk_id"], name: "index_reservations_on_desk_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end

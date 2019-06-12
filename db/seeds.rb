@@ -277,7 +277,7 @@ puts ' --> DESKS created for Havana Beach !'
 puts 'Creating RESERVATIONS for Havana Beach...'
 # Reservation for Havana Beach
 reservation1 = Reservation.create!(
-  arrival_date:
+  arrival_date:Date.today + 1.week,
   departure_date: Date.today + 2.week,
   status: "PENDING",
   user: popo,

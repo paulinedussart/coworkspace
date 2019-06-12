@@ -48,6 +48,19 @@
 }
 
 // Card confirmation_reservations to process paiement
+
+.stripe-button {
+  background-image: linear-gradient(to right, #E47097, #F8A348);
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  transition: 0.9s;
+  border-radius: 20px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 5px 25px;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
 .card-paiement .stripe-button-el {
   background: none;
   border: none;
@@ -70,7 +83,8 @@
     vertical-align: middle;
     margin: 0 auto;
   }
-}
+
+
 
 .card-paiement .stripe-button-el span:hover {
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);

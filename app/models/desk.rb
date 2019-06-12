@@ -1,6 +1,7 @@
 class Desk < ApplicationRecord
   belongs_to :space
   has_many :reservations
+  monetize :price_per_day_cents
 
   # validates :name, presence: true, uniqueness: true
   # validates :photo, presence: true

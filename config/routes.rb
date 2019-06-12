@@ -41,6 +41,10 @@ Rails.application.routes.draw do
     resources :reservations, only: [:index]
   end
 
+  resources :reservations, only: [] do
+    get "/paiement", to: "reservations#paiement", as: :paiement
+    resources :payments, only: [:new, :create]
+  end
 
   resources :spaces, only: [:index, :show]
 

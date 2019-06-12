@@ -92,6 +92,39 @@
   margin: 0 auto;
 }
 
+// CARD PAIEMENT
+.card-paiement {
+  width: 430px;
+  height: 600px;
+  margin: 2rem auto !important;
+  border-radius: 10px;
+  box-shadow: 1px 10px 10px rgba(0,0,0,0.3);
+  padding: 0 35px;
+}
+
+.card-body-paiement {
+  margin-top: -5px;
+}
+
+.card-paiement h4, h5 {
+  margin-bottom: 0;
+}
+
+.card-paiement p {
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.border-bottom {
+  margin-bottom: 5px;
+}
+
+.card-paiement .fas {
+  font-size: 20px;
+  background: -webkit-linear-gradient(#E47097, #F8A348);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 
 h7 {

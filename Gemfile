@@ -11,6 +11,9 @@ gem 'redis', '3.0.0'
 
 gem 'devise'
 gem 'geocoder'
+gem 'coffee-script'
+gem 'money-rails'
+gem 'stripe'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'

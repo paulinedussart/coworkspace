@@ -1,9 +1,11 @@
 <div class="banner">
 </div>
 <div class="container">
-
   <%= link_to "Back to list", spaces_path, class: "btn btn-outline-primary mb-5 mt-4"  %>
+<<<<<<< HEAD
+=======
   <%= link_to "Contact", chatroom_owner_path(@space.owner) %>
+>>>>>>> c07929c1385e306619828e5f8408b0ec899ef648
   <div class="container-spaces d-flex">
     <div class="card-space-infos">
       <div class="space-infos border-bottom">
@@ -20,7 +22,7 @@
         </div>
         <div class="website-price d-flex justify-content-between">
           <em><a href="https://twospace.com.au/venue/havana-beach-manly-sydney/"><%= @space.website %></a></em>
-          <h3> <%= @space.desks.first.price_per_day %> $ AUD /day </h3>
+          <h3><%= humanized_money_with_symbol(@space.desks.first.price_per_day) %> /day</h3>
         </div>
       </div>
 
@@ -199,7 +201,7 @@
             </div>
             <div class="total-price border-bottom align-middle p-1 d-flex justify-content-between">
               <h5><strong>TOTAL :</strong></h5>
-              <h5 class="resa-total-price"> <%= @desk.price_per_day + 3 %> $ AUD </h5>
+              <h5 class="resa-total-price">  <%= humanized_money_with_symbol(@space.desks.first.price_per_day).to_i + 18 %> $ AUD </h5>
             </div>
           </div>
 
@@ -209,6 +211,9 @@
         <% end %>
         </div>
       </div>
+
+      <%= link_to "Send a message to Havana Beach ", spaces_path, class: "btn btn-contact-owner btn-outline-primary"  %>
+
     </div>
   </div>
 

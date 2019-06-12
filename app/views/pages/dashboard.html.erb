@@ -60,7 +60,7 @@
         </div>
         <div class="stat col-lg-5">
         <div class="stat-header">Revenues</div>
-          <div class="graph"><%= column_chart Reservation.group_by_week(:created_at).sum(:total_price), width: "500px", height: "250px", colors: ["#5134a2"] %></div> <!-- graph revenus -->
+          <div class="graph"><%= column_chart Reservation.group_by_week(:created_at).sum(:total_price_cents), width: "500px", height: "250px", colors: ["#5134a2"] %></div> <!-- graph revenus -->
         </div>
       </div>
 

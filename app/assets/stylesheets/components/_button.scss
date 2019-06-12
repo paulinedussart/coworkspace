@@ -69,7 +69,8 @@
 
   span {
     line-height: 1.5em;
-    font-family: Robotto, sans-serif !important;
+    text-shadow: none;
+    font-family: "Roboto", "Helvetica", "sans-serif" !important;
     box-shadow: none;
     background-image: -webkit-linear-gradient(left, #E47097, #F8A348);
     background-image: -o-linear-gradient(left, #E47097, #F8A348);
@@ -79,9 +80,10 @@
     transition: 0.9s;
     border-radius: 20px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    padding: 5px 25px;
-    vertical-align: middle;
-    margin: 0 auto;
+    padding: 4px 50px;
+    width: 199px;
+    margin: 14px 80px;
+    font-size: 16px;
   }
 
 

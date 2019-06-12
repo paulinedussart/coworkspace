@@ -277,7 +277,7 @@ puts ' --> DESKS created for Havana Beach !'
 puts 'Creating RESERVATIONS for Havana Beach...'
 # Reservation for Havana Beach
 reservation1 = Reservation.create!(
-  arrival_date:Date.today + 1.week,
+  arrival_date: Date.today + 1.week,
   departure_date: Date.today + 2.week,
   status: "PENDING",
   user: popo,
@@ -307,7 +307,7 @@ reservation4 = Reservation.create!(
 
 
 
-50.times do
+40.times do
 arrival = Date.today + ((-20 .. 50).to_a.sample).day
 Reservation.create!(
  arrival_date: arrival,
@@ -328,6 +328,18 @@ Reservation.create!(
  desk: Desk.all.sample,
  created_at: Date.today + ((-10 .. 0).to_a.sample).day
 ) end
+
+30.times do
+  arrival = Date.today + ((4..8).to_a.sample).day
+  Reservation.create!(
+   arrival_date: arrival,
+   departure_date: arrival + ((1 .. 5).to_a.sample).day,
+   status: "ACCEPTED",
+   user: User.all.sample,
+   desk: Desk.all.sample,
+   created_at: Date.today + ((-20 .. 0).to_a.sample).day
+)
+end
 
 puts ' --> MESSAGES created for Havana Beach'
 

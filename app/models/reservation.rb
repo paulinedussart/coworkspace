@@ -19,4 +19,5 @@ class Reservation < ApplicationRecord
     # Methode calul du prix total
     self.total_price_cents = (total_days * desk.price_per_day_cents) + 300
   end
+
 end

@@ -13,5 +13,11 @@ activeCheckBoxes();
 bookReservation();
 
 
-import "../plugins/flatpickr"
+import "../plugins/flatpickr";
 
+
+import "@fullcalendar/core/main.css";
+import "@fullcalendar/daygrid/main.css";
+
+import fullCalendar from "./fullcalendar";
+fullCalendar();

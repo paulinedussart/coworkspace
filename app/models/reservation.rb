@@ -17,6 +17,7 @@ class Reservation < ApplicationRecord
     # Methode calul du prix total
     # total_days = (departure_date - arrival_date).to_i + 1
     # Methode calul du prix total
-    self.total_price_cents = (total_days * desk.price_per_day_cents) + 3
+    self.total_price_cents = (total_days * desk.price_per_day_cents) + 300
   end
+
 end

@@ -40,7 +40,7 @@ vr_lab = Owner.create!(
 )
 
 havana_beach_coworking = Owner.create!(
-  email: 'hb-coworking@example.com',
+  email: 'hb-coworking@gmail.com',
   password: 'password',
   phone: '0678327438',
   name: "Havana Beach",
@@ -91,17 +91,17 @@ aure.remote_avatar_url = url
 aure.save
 
 url = 'https://avatars2.githubusercontent.com/u/45851146?v=4'
-lulu = User.create!(
+lucie = User.create!(
   email: 'lulu@gmail.com',
   phone: '0638294730',
   password: 'password',
-  first_name: "Ludivine",
+  first_name: "Lucie",
   last_name: "Robin",
   gender: "Women",
   age: 25
 )
-lulu.remote_avatar_url = url
-lulu.save
+lucie.remote_avatar_url = url
+lucie.save
 
 url = 'https://avatars0.githubusercontent.com/u/48763705?v=4'
 popo = User.create!(
@@ -143,17 +143,17 @@ pierre.remote_avatar_url = url
 pierre.save
 
 url = 'https://avatars0.githubusercontent.com/u/48763705?v=4'
-lilou = User.create!(
-  email: 'lilou@gmail.com',
+marina = User.create!(
+  email: 'marina@gmail.com',
   phone: '0638294760',
   password: 'password',
-  first_name: "lilou",
+  first_name: "Marina",
   last_name: "Forsa",
   gender: "Women",
   age: 32
 )
-lilou.remote_avatar_url = url
-lilou.save
+marina.remote_avatar_url = url
+marina.save
 
 puts ' --> USERS created!'
 
@@ -277,7 +277,7 @@ puts ' --> DESKS created for Havana Beach !'
 puts 'Creating RESERVATIONS for Havana Beach...'
 # Reservation for Havana Beach
 reservation1 = Reservation.create!(
-  arrival_date:Date.today + 1.week,
+  arrival_date: Date.today + 1.week,
   departure_date: Date.today + 2.week,
   status: "PENDING",
   user: popo,
@@ -294,7 +294,7 @@ reservation3 = Reservation.create!(
   arrival_date: Date.today + 4.week,
   departure_date: Date.today + 5.week,
   status: "PENDING",
-  user: lulu,
+  user: lucie,
   desk: desk1
   )
 reservation4 = Reservation.create!(
@@ -307,7 +307,7 @@ reservation4 = Reservation.create!(
 
 
 
-50.times do
+40.times do
 arrival = Date.today + ((-20 .. 50).to_a.sample).day
 Reservation.create!(
  arrival_date: arrival,
@@ -329,6 +329,18 @@ Reservation.create!(
  created_at: Date.today + ((-10 .. 0).to_a.sample).day
 ) end
 
+30.times do
+  arrival = Date.today + ((4..8).to_a.sample).day
+  Reservation.create!(
+   arrival_date: arrival,
+   departure_date: arrival + ((1 .. 5).to_a.sample).day,
+   status: "ACCEPTED",
+   user: User.all.sample,
+   desk: Desk.all.sample,
+   created_at: Date.today + ((-20 .. 0).to_a.sample).day
+)
+end
+
 puts ' --> MESSAGES created for Havana Beach'
 
 
@@ -343,7 +355,7 @@ review1 = Review.create!(
 review2 = Review.create!(
   content: "Work Inc has the fastest internet we could find, mixed with the coolest warehouse vibe, strong community feel and reasonable pricing.",
   rating: 4,
-  user: lulu,
+  user: lucie,
   space: havana_beach
 )
 
@@ -408,7 +420,7 @@ review5 = Review.create!(
 review6 = Review.create!(
   content: "It's really quiet, really friendly and a great place to get work done. Location couldn't be better, easy access to the train, heaps of parking and heaps of restaurants around.",
   rating: 4,
-  user: lulu,
+  user: lucie,
   space: fishburners,
 )
 
@@ -476,7 +488,7 @@ review8 = Review.create!(
 review9 = Review.create!(
   content: "When I tell people I work in this space they get the serious case of the “jeals”. Everything you could possibly need in a workspace (and more) is catered for here.",
   rating: 4,
-  user: lulu,
+  user: lucie,
   space: work_in,
 )
 

@@ -1,31 +1,35 @@
 <div class="wrapper">
   <!-- Sidebar -->
   <nav id="sidebar">
-    <div class="coworspace border-bottom">
-      <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "logo-x2.png" %>
-      <% end %>
-    </div>
     <div class="sidebar-header border-bottom">
       <%= link_to owner_dashboard_path do %>
       <!-- <div class="image-cropper"> -->
       <%= cl_image_tag @owner.spaces.first.photo, :gravity=>"face", width: 150, height: 150, crop: :fill, :radius=>"max", :format=>"png" %>
       <!-- </div> -->
       <% end %>
-      <h3 style="margin-top:20px;"><%= @owner.name %> </h3>
+      <h3 class="my-3" "><%= @owner.name %> </h3>
     </div>
     <div class="navigation border-bottom">
       <ul class="list">
-        <li><i class="far fa-building" style="color: gray; font-size: 26px"></i><%= link_to "My space", "" %></li></br>
-        <li><i class="far fa-address-book" style="color: gray; font-size: 26px"></i><%= link_to "My bookings", owner_space_reservations_path(current_owner, :space_id) %></li></br>
-        <li><i class="far fa-file-archive" style="color: gray; font-size: 26px"></i><%= link_to "Documents", "" %></li></br>
+        <li><button><i class="fab fa-cloudscale"></i>  <%= link_to "Dashboard",owner_dashboard_path %></button></li></br>
+        <li><button><i class="far fa-building"></i><%= link_to "My space", "" %></button></li></br>
+        <li><button><i class="far fa-address-book"></i><%= link_to "My bookings", owner_space_reservations_path(current_owner, :space_id) %></button></li></br>
+        <li><button><i class="far fa-file-archive"></i><%= link_to "Documents", "" %></button></li></br>
         <!--<li><%= link_to "My messages", "" %></li></br>-->
         <!--<li><li><%= link_to "ChatRoom", chatroom_owner_path(:id) %></li>-->
       </ul>
     </div>
+      <div class="coworspace d-flex p-3">
+      <%= link_to "/", class: "navbar-brand" do %>
+      <%= image_tag "logo-x2.png" %>
+      <% end %>
+      <h5 class="mt-3"
+      style="color:#333333">COWORSPACE</h5>
+    </div>
+
   </nav>
   <div class="container">
-    <div class="row ">
+    <div class="row justify-content-between">
       <div class="top-stat col-lg-12">
         <div class="graph-gender"><%= pie_chart User.group(:gender).count, width: "80", height: "80",legend: "bottom", colors: ["#f29c33", "#5134a2"] %></div> <!-- graph gender -->
         <div class="stat-category">
@@ -49,7 +53,6 @@
           <div class="graph"><%= area_chart Reservation.group_by_week(:created_at).count, points: false, colors: ["#5134a2"] %></div> <!-- graph résa -->
         </div>
         <div class="stat col-lg-5">
-
           <div class="stat-header">Revenues</div>
           <div class="graph"><%= column_chart Reservation.group_by_week(:created_at).sum(:total_price_cents), colors: ["#5134a2"] %></div> <!-- graph revenus -->
         </div>

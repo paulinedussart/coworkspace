@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
     # @reservation.total_price = @total_price
     respond_to do |format|
       if @reservation.save
-        format.html { redirect_to reservation_paiement_path(@reservation), notice: 'Thank you for your booking !' }
+        format.html { redirect_to reservation_paiement_path(@reservation)}
       else
         format.html { render :new }
       end

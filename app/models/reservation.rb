@@ -18,5 +18,4 @@ class Reservation < ApplicationRecord
     self.total_price = (total_days * desk.price_per_day) + 3
   end
 
-  Reservation.to_json
 end

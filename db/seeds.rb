@@ -100,8 +100,8 @@ lucie = User.create!(
   gender: "Women",
   age: 25
 )
-lulu.remote_avatar_url = url
-lulu.save
+lucie.remote_avatar_url = url
+lucie.save
 
 url = 'https://avatars0.githubusercontent.com/u/48763705?v=4'
 popo = User.create!(
@@ -143,7 +143,7 @@ pierre.remote_avatar_url = url
 pierre.save
 
 url = 'https://avatars0.githubusercontent.com/u/48763705?v=4'
-Marina = User.create!(
+marina = User.create!(
   email: 'marina@gmail.com',
   phone: '0638294760',
   password: 'password',
@@ -152,8 +152,8 @@ Marina = User.create!(
   gender: "Women",
   age: 32
 )
-lilou.remote_avatar_url = url
-lilou.save
+marina.remote_avatar_url = url
+marina.save
 
 puts ' --> USERS created!'
 
@@ -294,7 +294,7 @@ reservation3 = Reservation.create!(
   arrival_date: Date.today + 4.week,
   departure_date: Date.today + 5.week,
   status: "PENDING",
-  user: lulu,
+  user: lucie,
   desk: desk1
   )
 reservation4 = Reservation.create!(
@@ -355,7 +355,7 @@ review1 = Review.create!(
 review2 = Review.create!(
   content: "Work Inc has the fastest internet we could find, mixed with the coolest warehouse vibe, strong community feel and reasonable pricing.",
   rating: 4,
-  user: lulu,
+  user: lucie,
   space: havana_beach
 )
 
@@ -420,7 +420,7 @@ review5 = Review.create!(
 review6 = Review.create!(
   content: "It's really quiet, really friendly and a great place to get work done. Location couldn't be better, easy access to the train, heaps of parking and heaps of restaurants around.",
   rating: 4,
-  user: lulu,
+  user: lucie,
   space: fishburners,
 )
 
@@ -488,7 +488,7 @@ review8 = Review.create!(
 review9 = Review.create!(
   content: "When I tell people I work in this space they get the serious case of the “jeals”. Everything you could possibly need in a workspace (and more) is catered for here.",
   rating: 4,
-  user: lulu,
+  user: lucie,
   space: work_in,
 )
 

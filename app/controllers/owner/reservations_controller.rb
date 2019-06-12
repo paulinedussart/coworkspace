@@ -5,7 +5,9 @@ class Owner::ReservationsController < Owner::BaseController
     @space = current_owner.spaces.first
     @space.desks.each do |desk|
       desk.reservations.each do |reservation|
-        @reservations << reservation
+        if reservation.status == "PENDING"
+          @reservations << reservation
+        end
       end
     end
   end

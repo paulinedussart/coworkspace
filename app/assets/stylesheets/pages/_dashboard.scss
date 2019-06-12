@@ -35,6 +35,10 @@ img {
     align-self: center;
 }
 
+.list a:hover {
+  text-decoration: none;
+}
+
 .coworspace {
   width: 200px;
 }
@@ -47,7 +51,7 @@ img {
 .sidebar-header {
   display: flex;
   flex-direction: column;
-  height: 150px;
+  height: 200px;
   width: 200px;
   text-align: center;
 }
@@ -77,7 +81,7 @@ img {
 
 .top-stat{
   background-color: white;
-  height: 150px;
+  height: 170px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   margin: 10px;
   display: flex;
@@ -87,7 +91,7 @@ img {
 }
 .bottom-stat{
   background-color: white;
-  height: 400px;
+  height: 350px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   margin: 10px;
   display: flex;
@@ -99,8 +103,35 @@ img {
   padding: 5px;
 }
 
+.stat-category{
+  height: 150px;
+  border-right: solid 2px #f3f3f7;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .graph {
   padding: 20px;
+}
+
+.graph-gender{
+  padding: 5px;
+  border-right: solid 2px #f3f3f7;
+}
+
+.header-number{
+  color: $primary;
+}
+
+.number {
+  font-size: 48px;
+}
+
+.no-border{
+  border-right: none;
 }
 
 // Bookings #index

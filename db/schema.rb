@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_11_130418) do
+ActiveRecord::Schema.define(version: 2019_06_11_164942) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,10 +26,11 @@ ActiveRecord::Schema.define(version: 2019_06_11_130418) do
   end
 
   create_table "desks", force: :cascade do |t|
-    t.integer "price_per_day"
     t.bigint "space_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "sku"
+    t.integer "price_per_day_cents", default: 0, null: false
     t.index ["space_id"], name: "index_desks_on_space_id"
   end
 
@@ -42,6 +43,17 @@ ActiveRecord::Schema.define(version: 2019_06_11_130418) do
     t.datetime "updated_at", null: false
     t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
     t.index ["sender_type", "sender_id"], name: "index_messages_on_sender_type_and_sender_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "desk_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.jsonb "payment"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "owners", force: :cascade do |t|
@@ -77,7 +89,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_130418) do
     t.bigint "desk_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "total_price"
+    t.integer "total_price_cents", default: 0, null: false
     t.integer "total_days"
     t.index ["desk_id"], name: "index_reservations_on_desk_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
@@ -148,6 +160,7 @@ ActiveRecord::Schema.define(version: 2019_06_11_130418) do
   add_foreign_key "chat_rooms", "users"
   add_foreign_key "desks", "spaces"
   add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "orders", "users"
   add_foreign_key "reservations", "desks"
   add_foreign_key "reservations", "users"
   add_foreign_key "reviews", "spaces"

@@ -40,7 +40,7 @@ vr_lab = Owner.create!(
 )
 
 havana_beach_coworking = Owner.create!(
-  email: 'hb-coworking@example.com',
+  email: 'hb-coworking@gmail.com',
   password: 'password',
   phone: '0678327438',
   name: "Havana Beach",
@@ -91,11 +91,11 @@ aure.remote_avatar_url = url
 aure.save
 
 url = 'https://avatars2.githubusercontent.com/u/45851146?v=4'
-lulu = User.create!(
+lucie = User.create!(
   email: 'lulu@gmail.com',
   phone: '0638294730',
   password: 'password',
-  first_name: "Ludivine",
+  first_name: "Lucie",
   last_name: "Robin",
   gender: "Women",
   age: 25
@@ -143,11 +143,11 @@ pierre.remote_avatar_url = url
 pierre.save
 
 url = 'https://avatars0.githubusercontent.com/u/48763705?v=4'
-lilou = User.create!(
-  email: 'lilou@gmail.com',
+Marina = User.create!(
+  email: 'marina@gmail.com',
   phone: '0638294760',
   password: 'password',
-  first_name: "lilou",
+  first_name: "Marina",
   last_name: "Forsa",
   gender: "Women",
   age: 32

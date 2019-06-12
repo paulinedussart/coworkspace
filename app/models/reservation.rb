@@ -2,6 +2,8 @@ class Reservation < ApplicationRecord
   belongs_to :user
   belongs_to :desk
 
+  monetize :total_price_cents
+
   before_save :compute_total_days
   before_save :compute_total_price
 
@@ -13,9 +15,9 @@ class Reservation < ApplicationRecord
 
   def compute_total_price
     # Methode calul du prix total
-    total_days = (departure_date - arrival_date).to_i + 1
+    # total_days = (departure_date - arrival_date).to_i + 1
     # Methode calul du prix total
-    self.total_price = (total_days * desk.price_per_day) + 3
+    self.total_price_cents = (total_days * desk.price_per_day_cents) + 300
   end
 
 end

@@ -1,6 +1,6 @@
 <div class="wrapper">
-<!-- Sidebar -->
-<nav id="sidebar">
+    <!-- Sidebar -->
+    <nav id="sidebar">
        <div class="coworspace border-bottom">
               <%= link_to "/", class: "navbar-brand" do %>
               <%= image_tag "logo-x2.png" %>
@@ -8,18 +8,22 @@
         </div>
 
         <div class="sidebar-header border-bottom">
+          <%= link_to owner_dashboard_path(current_owner), class: "navbar-brand" do %>
           <div class="image-cropper">
-            <%= cl_image_tag current_owner.spaces.first.photo, width: 150, crop: :fill %>
+            <%= cl_image_tag current_owner.avatar, width: 150, crop: :fill %>
           </div>
+          <% end %>
             <h3><%= current_owner.name %> </h3>
+
         </div>
 
         <div class="navigation border-bottom">
           <ul class="list">
-            <li><%= link_to "My space", "" %></li></br>
-            <li><%= link_to "My bookings", owner_space_reservations_path(current_owner, :space_id) %></li></br>
-            <li><%= link_to "My reports", "" %></li></br>
-            <li><%= link_to "My messages", "" %></li></br>
+            <li><i class="far fa-building" style="color: gray; font-size: 26px"></i><%= link_to "My space", "" %></li></br>
+            <li><i class="far fa-address-book" style="color: gray; font-size: 26px"></i><%= link_to "My bookings", owner_space_reservations_path(current_owner, :space_id) %></li></br>
+            <li><i class="far fa-file-archive" style="color: gray; font-size: 26px"></i><%= link_to "Documents", "" %></li></br>
+            <!--<li><%= link_to "My messages", "" %></li></br>-->
+            <!--<li><li><%= link_to "ChatRoom", chatroom_owner_path(:id) %></li>-->
           </ul>
         </div>
     </nav>

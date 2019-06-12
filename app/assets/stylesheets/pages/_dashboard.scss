@@ -138,6 +138,25 @@ img {
   border-right: none;
 }
 
+// FullCalendar
+.fc-content {
+  background-color:#A68FD0;
+  color: #333333;
+}
+
+.fc-event, .fc-event-dot {
+  background-color:#A68FD0 !important;
+}
+.fc-event {
+  border: 1px solid #A68FD0 !important;
+}
+
+.fc-button-primary {
+    color: #fff;
+    background-color: #333333 !important;
+    border-color: #333333 !important;
+}
+
 // Bookings #index
 
 .status-bookings{

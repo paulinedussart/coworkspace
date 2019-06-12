@@ -12,14 +12,15 @@
         <p class="text-right mb-2"> <%= Date.today.strftime("%e %B %Y") %> </p>
       </div>
       <div class="info-coworking-paiement pb-4">
-        <h5>Havana Beach</h5>
+        <h5><strong><%= @reservation.desk.space.name %></strong></h5>
         <p><em>14 South Steyne, Manly</em></p>
         <p><em>Sydney, Australia</em></p>
+        <p> </p>
         <p></p>
       </div>
         <div class="date-stay pb-4">
           <h4 class="date border-bottom" > <strong>Dates :</strong> </h4>
-          <div class="d-flex justify-content-between mt-2 px-3">
+          <div class="d-flex justify-content-between mt-3 px-3">
             <p><i class="fas fa-calendar-day fa"> :</i></p>
             <p><%= @reservation.arrival_date.strftime("%e %B %Y") %></p>
             <p><i class="fas fa-long-arrow-alt-right"></i></p>
@@ -27,24 +28,36 @@
           </div>
         </div>
 
-        <div class="price-recap pb-4">
+        <div class="price-recap pb-3">
           <h4 class="date border-bottom" > <strong>Price Details :</strong> </h4>
           <div class=" mt-2 px-3 mb-2">
-            <p> Number of days : <%= @reservation.total_days %></p>
-            <p> Price per days : <%= @reservation.desk.price_per_day %> </p>
-            <p> Taxes :  $3</p>
-            <p></p>
+            <div class="days-number d-flex justify-content-between">
+              <p> Number of days : </p>
+              <p><%= @reservation.total_days %></p>
+            </div>
+            <div class="days-number d-flex justify-content-between">
+              <p> Price per days : </p>
+              <p>$<%= @reservation.desk.price_per_day %></p>
+            </div>
+            <div class="days-number d-flex justify-content-between mt-2">
+              <p> <strong>TOTAL HT : </strong> </p>
+              <p> <strong>$<%= @reservation.total_days * @reservation.desk.price_per_day %></strong> </p>
+            </div>
+            <div class="days-number d-flex justify-content-between">
+              <p> Taxes : </p>
+              <p>$3.00</p>
+            </div>
           </div>
         </div>
 
         <div class="amount border-top">
-          <h4 class="text-center mt-4"> <strong>TOTAL : <%= humanized_money_with_symbol(@reservation.total_price) %> AUD</strong>  </h4>
+          <h4 class="text-center mt-3"> <strong>TOTAL : <%= humanized_money_with_symbol(@reservation.total_price) %> AUD</strong>  </h4>
         </div>
 
 
         <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-name="Payment Proces "
+          data-name="Payment Proces"
           data-email="<%= current_user.email %>"
           data-description="<%= current_user.first_name %> <%= current_user.last_name %>"
           data-amount="<%= @reservation.total_price_cents %>"

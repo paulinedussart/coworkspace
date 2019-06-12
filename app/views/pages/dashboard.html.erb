@@ -51,11 +51,34 @@
         <div class="stat col-lg-5">
 
           <div class="stat-header">Revenues</div>
-          <div class="graph"><%= column_chart Reservation.group_by_week(:created_at).sum(:total_price_cents), colors: ["#5134a2"] %></div> <!-- graph revenus -->       
+          <div class="graph"><%= column_chart Reservation.group_by_week(:created_at).sum(:total_price_cents), colors: ["#5134a2"] %></div> <!-- graph revenus -->
         </div>
 
 
         <div class="bottom-stat col-lg-12">
+          <table style= "margin-top: 69px; line-height: 1.35; border: 1px solid #ddd">
+            <thead>
+              <tr>
+                <th>Desk</th>
+               </tr>
+            </thead>
+          <tbody style="color: #333333; text-align: center;">
+              <tr><td>1</td></tr>
+              <tr><td>2</td></tr>
+              <tr><td>3</td></tr>
+              <tr><td>4</td></tr>
+              <tr><td>5</td></tr>
+              <tr><td>6</td></tr>
+              <tr><td>7</td></tr>
+              <tr><td>8</td></tr>
+              <tr><td>9</td></tr>
+              <tr><td>10</td></tr>
+              <tr><td>11</td></tr>
+              <tr><td>12</td></tr>
+              <tr><td>13</td></tr>
+              <tr><td>14</td></tr>
+          </tbody>
+          </table>
           <div id='calendar'></div>
         </div>
 

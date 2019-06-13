@@ -64,6 +64,9 @@
       <div class="d-flex justify-content-between">
         <div> <h6><i class="far fa-calendar-check text-primary"></i> <%= reservation.arrival_date.strftime("%e %B %Y") %> <i class="fas text-primary fa-long-arrow-alt-right"></i> <%= reservation.departure_date.strftime("%e %B %Y") %> </h6>
         </div>
+         <div class="price-résa mr-2" style="font-size: 22px">
+          $<%= reservation.total_price %>
+        </div>
       </div>
     </div>
   </div>

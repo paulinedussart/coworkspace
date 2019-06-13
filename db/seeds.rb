@@ -178,7 +178,7 @@ Desk.create!(
 ) end
 
 url = "https://images.unsplash.com/photo-1515965885361-f1e0095517ea?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80"
-manly_house_studio = Space.new(name: "Manly House Studio", address: "17-19 Bridge Street, Sydney, Australia", description: "Manly House Studio is a series of co-working spaces in a 200m2 open plan New York loft style warehouse in North Manly on Sydney's Northern Beaches. Situated just out of town, 5 mins from 2 beaches, it was founded to provide people
+manly_house_studio = Space.new(name: "Manly House Studio", address: "135 Edgecliff Road Woollahra NSW 2025 Australia", description: "Manly House Studio is a series of co-working spaces in a 200m2 open plan New York loft style warehouse in North Manly on Sydney's Northern Beaches. Situated just out of town, 5 mins from 2 beaches, it was founded to provide people
 nvolved with the Creative Industries an inspiring place to work, connect and share knowledge with each other.",
 owner: vr_lab, opening_hours: {'Mon-Fri': '8AM-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.manly_house_studio.com')
 manly_house_studio.remote_photo_url = url
@@ -353,7 +353,7 @@ review1 = Review.create!(
   )
 
 review2 = Review.create!(
-  content: "Work Inc has the fastest internet we could find, mixed with the coolest warehouse vibe, strong community feel and reasonable pricing.",
+  content: "Havana Beach has the fastest internet we could find, mixed with the coolest warehouse vibe, strong community feel and reasonable pricing.",
   rating: 4,
   user: lucie,
   space: havana_beach
@@ -367,7 +367,7 @@ review3 = Review.create!(
   )
 
 review4 = Review.create!(
-  content: "Great location, creative design, vibrant community and friendly staff! I’ve been working at Work Inc for months and seeing how the team is making continuous improvement where things are already good enough. Thanks team! Highly recommended.",
+  content: "Great location, creative design, vibrant community and friendly staff! I’ve been working at Havana Beach for months and seeing how the team is making continuous improvement where things are already good enough. Thanks team! Highly recommended.",
   rating: 5,
   user: marc,
   space: havana_beach

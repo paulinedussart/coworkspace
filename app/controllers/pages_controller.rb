@@ -4,5 +4,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @owner = current_owner
+    @pending = Reservation.where(status:"PENDING").count
   end
 end

@@ -46,7 +46,12 @@
         </div>
         <div class="stat-category no-border">
           <div class="header-number">Pending bookings</div>
-          <div class="number pending"><%= Reservation.where(status:"PENDING").count %>
+          <% if @pending == 0 %>
+          <div class="number pending">
+          <% else %>
+          <div class="number pending notification d-flex justify-content-around">
+          <% end %>
+            <%= @pending %>
           </div></br>
           </div><!-- nombre de résa pending -->
         <!--    </div> -->

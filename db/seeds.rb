@@ -201,74 +201,74 @@ havana_beach.save
 puts 'Creating DESKS for Havana Beach...'
 # Desk for Havana Beach
 desk1 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 
 desk2 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 
 desk3 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 desk4 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 
 desk5 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 
 desk6 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 desk7 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 
 desk8 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 
 desk9 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 desk10 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 
 desk11 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 
 desk12 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 
 desk13 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 
 desk14 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 
 desk15 = Desk.create!(
-  price_per_day: 15,
+  price_per_day: 10,
   space: havana_beach
   )
 

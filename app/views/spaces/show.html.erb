@@ -12,7 +12,7 @@
             <% if  @space.reviews.empty? %>
               <p>No reviews yet</p>
             <% else %>
-              <h4><%= @space.reviews.average(:rating) %><i class="fas fa-star"></i></h4>
+              <h4><%= @space.reviews.average(:rating) %>/5<i class="fas fa-star"></i></h4>
             <% end %>
           </div>
         </div>

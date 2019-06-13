@@ -44,15 +44,18 @@
           <div class="header-number">Average duration of stay</div>
           <div class="number time-average"><%= Reservation.average(:total_days).to_i %> days</div></br><!-- durée moyenne de résa -->
         </div>
+
+        <%= link_to owner_space_reservations_path(current_owner, :space_id), class: "pending-center" do %>
         <div class="stat-category no-border">
           <div class="header-number">Pending bookings</div>
           <% if @pending == 0 %>
           <div class="number pending">
           <% else %>
-          <div class="number pending notification d-flex justify-content-around">
+          <div class="number pending notification d-flex justify-content-center">
           <% end %>
             <%= @pending %>
           </div></br>
+          <% end %>
           </div><!-- nombre de résa pending -->
         <!--    </div> -->
       </div>

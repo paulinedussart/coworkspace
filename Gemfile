@@ -10,6 +10,7 @@ gem 'rails', '5.2.3'
 gem 'redis', '3.0.0'
 
 gem 'devise'
+gem 'nokogiri', '~> 1.10.7'
 gem 'geocoder'
 gem 'coffee-script'
 gem 'money-rails'

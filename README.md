@@ -26,7 +26,25 @@ Pour les mettre à jour
 ```bash
 brew upgrade yarn
 ```
-## SDF
+
+## Débuter le projet 
+
+1. Récuperer le master à jour
+```ruby
+git pull origin master
+```
+
+2. Créer une branch 
+```bash
+git checkout -b name-of-the-branch
+```
+
+3.Changer de branch
+```bash
+git checkout name-of-the-branch
+```
+
+## Server in development 
 
 2. To delete the DB
 ```bash
@@ -48,31 +66,37 @@ rails db:migrate
 rails db:seed
 ```
 
+## Push server in developpement
 
-
-## Débuter le projet 
-
-1. Récuperer le master à jour
-```ruby
-git pull origin master
+```bash
+rails s
 ```
 
-## TO PUSH DEVELOPEMENT CHANGE IN PRODUCTION
+If you cannot open the local host with HTTP and server Puma suggest
+tcp://0.0.0.0:3000
+
+TRY 
+http://127.0.0.1:3000
+OR 
+http://0.0.0.0:3000
+OR
+http://127.0.0.1:3000
+
+
+## Push in production
 
 1. Login
 ```bash
 heroku login`
 ```
 
-Let’s deploy!
-
-a) Push your code to Heroku
+2. Push your code to Heroku
 `git push heroku master`
 
-b) Run a command on Heroku
-`heroku run rails/rake db:create`
-`heroku run rails/rake db:migrate`
-`heroku run rails/rake db:seed`
+3. Run a command on Heroku
+`heroku run rake db:create`
+`heroku run rake db:migrate`
+`heroku run rake db:seed`
 
 'Some useful commands'
 ```bash

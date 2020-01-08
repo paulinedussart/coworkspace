@@ -8,16 +8,16 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 import bookReservation from "./book_reservation";
+bookReservation();
 
 activeCheckBoxes();
-bookReservation();
+
 
 
 import "../plugins/flatpickr";
 
-
+// ------------ Calendar ------------
 import "@fullcalendar/core/main.css";
 import "@fullcalendar/daygrid/main.css";
-
 import fullCalendar from "./fullcalendar";
 fullCalendar();

@@ -133,10 +133,11 @@ height: auto;
   margin: auto 0px;
 }
 
-.total-price {
-}
-
 .form-fill-height {
   min-height: calc(100vh - 186px);
 }
 
+// ---------FORM FOOTER NEWSLETTER
+.form-newsletter {
+ border-radius: 7px !important;
+}

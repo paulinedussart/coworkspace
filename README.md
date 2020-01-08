@@ -2,6 +2,10 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 
 
 **COWORKSPACE** 
+CHECK YARN PACKAGES
+`yarn install --check-files`
+`brew upgrade yarn`
+
 1. To install all the dependencies 
 `Bundle install`
 

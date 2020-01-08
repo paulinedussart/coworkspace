@@ -34,8 +34,9 @@ a) Push your code to Heroku
 `git push heroku master`
 
 b) Run a command on Heroku
-`heroku run rails db:migrate`
-
+`heroku run rails/rake db:create`
+`heroku run rails/rake db:migrate`
+`heroku run rails/rake db:seed`
 
 'Some useful commands'
 `heroku open`         # open in your browser

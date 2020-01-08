@@ -5,8 +5,7 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 Is a website to book a desk in a coworkspace and allow the coworkspace to manage theirs desks
 
 
-## Installation 
-1. To install all the dependencies 
+## Installation of all the dependencies 
 
 For the Gemfile
 
@@ -27,7 +26,7 @@ Pour les mettre à jour
 ```bash
 brew upgrade yarn
 ```
-
+## SDF
 
 2. To delete the DB
 ```bash

@@ -2,6 +2,7 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 
 
 **COWORKSPACE** 
+
 CHECK YARN PACKAGES
 `yarn install --check-files`
 `brew upgrade yarn`
@@ -20,3 +21,23 @@ CHECK YARN PACKAGES
 
 5. To play the seeds
 `rails db:seed`
+
+
+TO PUSH DEVELOPEMENT CHANGE IN PRODUCTION
+
+1. Login
+`heroku login`
+
+Let’s deploy!
+
+a) Push your code to Heroku
+`git push heroku master`
+
+b) Run a command on Heroku
+`heroku run rails db:migrate`
+
+
+'Some useful commands'
+`heroku open`         # open in your browser
+`heroku logs --tail`  # show the app logs and keep listening
+`heroku run rails c`

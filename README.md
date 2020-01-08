@@ -109,3 +109,10 @@ heroku open         # open in your browser
 heroku logs --tail  # show the app logs and keep listening
 heroku run rails c
 ```
+
+## Find Us
+
+https://coworkspace-paulinedussart.herokuapp.com/
+OR 
+http://www.find-coworkspace.com/
+

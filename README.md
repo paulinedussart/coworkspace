@@ -75,13 +75,14 @@ rails s
 If you cannot open the local host with HTTP and server Puma suggest
 tcp://0.0.0.0:3000
 
+```bash
 TRY 
 http://127.0.0.1:3000
 OR 
 http://0.0.0.0:3000
 OR
 http://127.0.0.1:3000
-
+```
 
 ## Push in production
 
@@ -93,7 +94,7 @@ heroku login`
 Push your code to Heroku
 ```bash
 git push heroku master
-`
+```
 
 Run a command on Heroku
 ```bash

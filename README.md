@@ -1,32 +1,69 @@
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
 
-**COWORKSPACE** 
+# COWORKSPACE 
+Is a website to book a desk in a coworkspace and allow the coworkspace to manage theirs desks
 
-CHECK YARN PACKAGES
-`yarn install --check-files`
-`brew upgrade yarn`
 
+## Installation 
 1. To install all the dependencies 
-`Bundle install`
+
+For the Gemfile
+
+```bash
+bundle install
+```
+
+For packages.json
+```bash
+yarn install
+```
+Si les packages ne sont pas à jours
+```bash
+yarn install --check-files
+```
+
+Pour les mettre à jour
+```bash
+brew upgrade yarn
+```
+
 
 2. To delete the DB
-`rails db:drop`
+```bash
+rails db:drop
+```
 
 3. To re create the DB
-`rails db:create`
+```bash
+rails db:create
+```
 
 4. To plya the migration 
-`rails db:migrate`
+```bash
+rails db:migrate
+```
 
 5. To play the seeds
-`rails db:seed`
+```bash
+rails db:seed
+```
 
 
-TO PUSH DEVELOPEMENT CHANGE IN PRODUCTION
+
+## Débuter le projet 
+
+1. Récuperer le master à jour
+```ruby
+git pull origin master
+```
+
+## TO PUSH DEVELOPEMENT CHANGE IN PRODUCTION
 
 1. Login
-`heroku login`
+```bash
+heroku login`
+```
 
 Let’s deploy!
 
@@ -39,6 +76,8 @@ b) Run a command on Heroku
 `heroku run rails/rake db:seed`
 
 'Some useful commands'
-`heroku open`         # open in your browser
-`heroku logs --tail`  # show the app logs and keep listening
-`heroku run rails c`
+```bash
+heroku open         # open in your browser
+heroku logs --tail  # show the app logs and keep listening
+heroku run rails c
+```

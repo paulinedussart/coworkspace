@@ -8,7 +8,6 @@ Is a website to book a desk in a coworkspace and allow the coworkspace to manage
 ## Installation of all the dependencies 
 
 For the Gemfile
-
 ```bash
 bundle install
 ```
@@ -17,51 +16,52 @@ For packages.json
 ```bash
 yarn install
 ```
-Si les packages ne sont pas à jours
+
+If packages are not updates
 ```bash
 yarn install --check-files
 ```
 
-Pour les mettre à jour
+To update them
 ```bash
 brew upgrade yarn
 ```
 
 ## Débuter le projet 
 
-1. Récuperer le master à jour
+To get the new master with updates
 ```ruby
 git pull origin master
 ```
 
-2. Créer une branch 
+Create a branch 
 ```bash
 git checkout -b name-of-the-branch
 ```
 
-3.Changer de branch
+Change of branch
 ```bash
 git checkout name-of-the-branch
 ```
 
-## Server in development 
+## Server Puma in development 
 
-2. To delete the DB
+To delete the DB
 ```bash
 rails db:drop
 ```
 
-3. To re create the DB
+To re create the DB
 ```bash
 rails db:create
 ```
 
-4. To plya the migration 
+To play the migration 
 ```bash
 rails db:migrate
 ```
 
-5. To play the seeds
+To play the seeds
 ```bash
 rails db:seed
 ```
@@ -85,18 +85,22 @@ http://127.0.0.1:3000
 
 ## Push in production
 
-1. Login
+Login
 ```bash
 heroku login`
 ```
 
-2. Push your code to Heroku
-`git push heroku master`
+Push your code to Heroku
+```bash
+git push heroku master
+`
 
-3. Run a command on Heroku
-`heroku run rake db:create`
-`heroku run rake db:migrate`
-`heroku run rake db:seed`
+Run a command on Heroku
+```bash
+heroku run rake db:create
+heroku run rake db:migrate
+heroku run rake db:seed
+```
 
 'Some useful commands'
 ```bash

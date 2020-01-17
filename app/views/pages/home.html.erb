@@ -1,55 +1,68 @@
-<section class="intro">
+<div class="big_container">
 
-  <nav class="navbar nav-home">
-    <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "logo-x2.png" %>
+  <nav class="navbar nav-home ">
+    <%= link_to "/", class: "navbar-brand d-flex" do %>
+    <div class="d-flex">
+      <%= image_tag "logo_coworkspace.svg" %>
+      <h2 class="name-site my-0 pl-2">COWORKSPACE</h2>
+    </div>
+
     <% end %>
     <form class="form-inline">
-          <% if user_signed_in? %>
-            <%= link_to "Find a space", spaces_path, class: "btn  btn-home-signin btn-outline-light mx-2" %>
-            <button class=" nav-item dropdown btn mx-2" type="button">
+      <% if user_signed_in? %>
+        <%= link_to "Find a space", spaces_path, class: "btn  btn-home-signin btn-outline-light mx-2" %>
+          <button class=" nav-item dropdown btn mx-2" type="button">
               <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Profile", user_path(:id), class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-            </button>
-         <% elsif owner_signed_in? %>
-          <%= link_to "Manage your space", owner_dashboard_path(:id), class: "btn  btn-home-signin btn-outline-light mx-2" %>
-          <%= link_to "Log out", destroy_owner_session_path, method: :delete%>
-         <% else %>
-           <button class=" nav-item btn-home-signin btn mx-4" type="button">
-           <i class="fas fa-user"></i><%= link_to "Login", new_user_session_path, class: "nav-link" %>
-           </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", user_path(:id), class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </button>
+      <% elsif owner_signed_in? %>
+        <%= link_to "Manage your space", owner_dashboard_path(:id), class: "btn  btn-home-signin btn-outline-light mx-2" %>
+        <%= link_to "Log out", destroy_owner_session_path, method: :delete%>
+      <% else %>
+        <button class=" nav-item btn-nav-link-sign-in btn mx-4" type="button">
+          <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+        </button>
 
-            <button class=" nav-item  btn-home-signin btn mx-4" type="button">
-            <i class="fas fa-building"></i><%= link_to "Login", new_owner_session_path, class: "nav-link" %>
-           </button>
-         <% end %>
+        <button class=" nav-item  btn-nav-link-sign-in btn mx-4" type="button">
+          <i class="fas fa-building"></i><%= link_to "Login", new_owner_session_path, class: "nav-link" %>
+        </button>
+      <% end %>
     </form>
   </nav>
 
 
-  <div class="header">
-    <div class="title">
-      <h1>COWORK SPACE </h1>
-      <h4>Your coworking all around the world ! </h4>
-
-
-    <%= form_tag spaces_path, method: :get, class:"form-inline mt-5" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control-home form-control",
-        placeholder: "Find a space" %>
-        <%= date_field_tag :arrival_date, params[:arrival_date], class: "form-control-da form-control", placeholder: "Today" %>
-        <%= submit_tag 'Go !', class:"btn-custom btn-custom-gradient mx-2" %>
-    <% end %>
-
+  <div class="header d-flex">
+    <div class="home_ellipse">
+      <%= image_tag "ellipse_home.svg" %>
     </div>
+    <div class="slogan_title">
+      <h1 class="home_slogan">Find your desk all over the world ! </h1>
+      <h4 class="home_title pt-2">From private offices to open spaces <br>
+          we will find a space that suits you perfectly.
+      </h4>
+
+      <div class="">
+              <%= form_tag spaces_path, method: :get, class:"form-inline mt-5" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control form-control-home",
+          placeholder: "Find a space" %>
+          <%= date_field_tag :arrival_date, params[:arrival_date], class: "form-control-home form-control", placeholder: "12/11/2020" %>
+          <%= submit_tag 'Find', class:"btn-custom btn-home-search mx-2" %>
+      <% end %>
+      </div>
+    </div>
+    <div class="home_illusta ">
+      <div class="home_sun"></div>
+      <%= image_tag "home_illustration.svg"%>
+    </div>
+  </div>
 
 
-</div>
  <!--  <form class="form-inline">
     <i class="fas fa-map-marker-alt"></i>
     <label class="sr-only" for="inlineFormInputName2">Place</label>
@@ -59,60 +72,20 @@
     <input type="text" class="form-control mx-2 mb-2 mr-sm-2" id="inlineFormInputGroupUsername2" placeholder="When ?">
     <button type="submit"  mb-2">Search</button>
   </form> -->
-</section>
 
 
-<section class="about">
-    <div class="infos pt-4">
-      <div class="info-photo">
-        <%= image_tag "night.svg" %>
+
+  <div class="home_about">
+      <div class="infos pt-4">
+        <div class="info-photo">
+          <%= image_tag "night.svg" %>
+        </div>
+        <div class="content text-justify">
+          <h1 class="text-center">About us</h1>
+          <br>
+          <p>Less alone than at home and more professional than in a coffee shop, Cowork Space has been installed all over the world since 2019. A place of work, exchange and sharing of skills for all entrepreneurs, self-employed, freelancers, project leaders and teleworkers wishing to break the isolation of their homes and develop a quality professional network.</p>
+        </div>
       </div>
-      <div class="content text-justify">
-        <h1 class="text-center">About us</h1>
-        <br>
-        <p>Less alone than at home and more professional than in a coffee shop, Cowork Space has been installed all over the world since 2019. A place of work, exchange and sharing of skills for all entrepreneurs, self-employed, freelancers, project leaders and teleworkers wishing to break the isolation of their homes and develop a quality professional network.</p>
-      </div>
-    </div>
-</section>
-
-<div class="background-3">
-  <br>
-  <br>
-  <br>
-<div class="container text-center">
-  <div class="row justify-content-between">
-    <div class="col africa">
-      <i class="fas fa-globe-africa "></i>
-      <h3> Around The World</h3>
-      <p>Located all over the world, Cowork Space offers you clean and modern spaces, adapted to your needs.
-          Because your need is our priority.</p>
-    </div>
-    <div class="col">
-      <i class="far fa-clock"></i>
-      <h3> Time Saved</h3>
-      <p>Optimize your working time by finding a place near you, and that allows you to immerse yourself and carry out your wildest projects.</p>
-    </div>
-    <div class="col laptop">
-      <i class="fas fa-laptop"></i>
-      <h3>Business Environment</h3>
-
-      <p>In our offices, talk to professionals and find the people you need. The world at your fingertips.</p>
-    </div>
   </div>
-  <br>
-  <br>
-  <br>
+
 </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<!-- <section class="map-home">
-    <div class="fond">
-      <div class="map">
-        <%= image_tag "carte.png" %>
-      </div>
-      <br>
-    </div>
-</section> -->

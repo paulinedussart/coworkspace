@@ -113,7 +113,6 @@
   width: 179px;
   height: 57px;
   border: none;
-
 }
 
 .btn-nav-link-sign-in:hover i {
@@ -133,6 +132,13 @@
   background-color: white !important;
   color: red !important;
   font-size: bold !important;
+}
+
+
+
+.btn-nav-link{
+color: #110F49 !important;
+text-decoration: underline red;
 }
 
 // -----------bouton du footer --------------

@@ -23,12 +23,11 @@
         <%= link_to "Manage your space", owner_dashboard_path(:id), class: "btn  btn-home-signin btn-outline-light mx-2" %>
         <%= link_to "Log out", destroy_owner_session_path, method: :delete%>
       <% else %>
+        <%= link_to "Places", new_owner_session_path, class: "btn-nav-link nav-item mx-5" %>
+        <%= link_to "Compagny", new_owner_session_path, class: "btn-nav-link nav-item mx-5" %>
+
         <button class=" nav-item btn-nav-link-sign-in btn mx-4" type="button">
           <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
-        </button>
-
-        <button class=" nav-item  btn-nav-link-sign-in btn mx-4" type="button">
-          <i class="fas fa-building"></i><%= link_to "Login", new_owner_session_path, class: "nav-link" %>
         </button>
       <% end %>
     </form>
@@ -50,7 +49,7 @@
         <%= text_field_tag :query,
           params[:query],
           class: "form-control form-control-home",
-          placeholder: "Find a space" %>
+          placeholder: "Select a city" %>
           <%= date_field_tag :arrival_date, params[:arrival_date], class: "form-control-home form-control", placeholder: "12/11/2020" %>
           <%= submit_tag 'Find', class:"btn-custom btn-home-search mx-2" %>
       <% end %>

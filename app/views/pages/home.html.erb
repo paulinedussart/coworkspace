@@ -1,13 +1,15 @@
 <div class="big_container">
 
   <nav class="navbar nav-home ">
-    <%= link_to "/", class: "navbar-brand d-flex" do %>
-    <div class="d-flex">
-      <%= image_tag "logo_coworkspace.svg" %>
-      <h2 class="name-site my-0 pl-2">COWORKSPACE</h2>
-    </div>
 
+    <!-- logo redirection homepage -->
+    <%= link_to "/", class: "navbar-brand d-flex" do %>
+      <div class="d-flex">
+        <%= image_tag "logo_coworkspace.svg" %>
+        <h2 class="name-site my-0 pl-2">COWORKSPACE</h2>
+      </div>
     <% end %>
+
     <form class="form-inline">
       <% if user_signed_in? %>
         <%= link_to "Find a space", spaces_path, class: "btn  btn-home-signin btn-outline-light mx-2" %>
@@ -23,10 +25,10 @@
         <%= link_to "Manage your space", owner_dashboard_path(:id), class: "btn  btn-home-signin btn-outline-light mx-2" %>
         <%= link_to "Log out", destroy_owner_session_path, method: :delete%>
       <% else %>
-        <%= link_to "Places", new_owner_session_path, class: "btn-nav-link nav-item mx-5" %>
-        <%= link_to "Compagny", new_owner_session_path, class: "btn-nav-link nav-item mx-5" %>
+        <%= link_to "Coworking", new_owner_session_path, class: "btn-nav-link nav-item mx-5" %>
+        <%= link_to "Entreprise", new_owner_session_path, class: "btn-nav-link nav-item mx-5" %>
 
-        <button class=" nav-item btn-nav-link-sign-in btn mx-4" type="button">
+        <button class=" nav-item btn-nav-link-sign-in btn ml-5 mr-4" type="button">
           <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
         </button>
       <% end %>
@@ -62,28 +64,11 @@
   </div>
 
 
- <!--  <form class="form-inline">
-    <i class="fas fa-map-marker-alt"></i>
-    <label class="sr-only" for="inlineFormInputName2">Place</label>
-    <input type="text" class="form-control mx-2 mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Where ?">
-    <i class="fas fa-calendar-alt"></i>
-    <label class="sr-only" for="inlineFormInputGroupUsername2">Date</label>
-    <input type="text" class="form-control mx-2 mb-2 mr-sm-2" id="inlineFormInputGroupUsername2" placeholder="When ?">
-    <button type="submit"  mb-2">Search</button>
-  </form> -->
-
-
-
-  <div class="home_about">
-      <div class="infos pt-4">
-        <div class="info-photo">
-          <%= image_tag "night.svg" %>
-        </div>
-        <div class="content text-justify">
-          <h1 class="text-center">About us</h1>
+  <div class="home_about background-grey">
+      <div class="py-4">
+          <h1 class="text-center title_home">About us</h1>
           <br>
-          <p>Less alone than at home and more professional than in a coffee shop, Cowork Space has been installed all over the world since 2019. A place of work, exchange and sharing of skills for all entrepreneurs, self-employed, freelancers, project leaders and teleworkers wishing to break the isolation of their homes and develop a quality professional network.</p>
-        </div>
+          <p class="content text-center">Less alone than at home and more professional than in a coffee shop, Cowork Space has been installed all over the world since 2019. A place of work, exchange and sharing of skills for all entrepreneurs, self-employed, freelancers, project leaders and teleworkers wishing to break the isolation of their homes and develop a quality professional network.</p>
       </div>
   </div>
 

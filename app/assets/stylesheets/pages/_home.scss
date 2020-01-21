@@ -102,29 +102,33 @@ p {
 }
 
 .home_about {
-  height: 80vh;
   width: 100%;
-}
-
-.infos {
-  display: flex;
-  width: 80%;
   height: 70vh;
-  margin: 100px;
-  justify-content: space-betwwen;
-  padding-top: 20px;
-  align-self: center;
-}
-
-.info-photo img{
-  width: 600px;
-  margin-left: 50px;
+  margin-top: 60px;
 }
 
 .content {
-  margin-left: 100px;
-  width: 600px;
-  padding: 20px;
-  padding-top: 50px;
+  padding: 0 150px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 125%;
+  /* or 22px */
+  letter-spacing: 0.01em;
+  color: #110F49;
+}
+
+.background-grey {
+  height: 265px;
+  background: #F5F6FA;
+}
+
+.title_home {
+  margin-top: 60px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+  color: #110F49;
 }
 

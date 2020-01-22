@@ -33,3 +33,6 @@ AOS.init({
   easing: 'ease', // default easing for AOS animations
   once: true, // whether animation should happen only once - while scrolling down
 });
+
+// --------- NAVBAR ---------
+import scrollNavbarFunction from "./navbar"

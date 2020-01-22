@@ -5,6 +5,8 @@
 body {
   margin: 0 auto;
   position: relative;
+  color: #110F49;
+
 }
 
 .name-site {
@@ -25,9 +27,35 @@ h1 {
   line-height: 41px;
 }
 
-p {
+h3 {
+font-weight: 900;
+font-size: 24px;
+margin-bottom: 26px !important;
+}
+
+h2 {
+  font-weight: 900;
+  font-size: 30px;
+}
+
+h4 {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+h5 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  margin-bottom: 0px;
+}
+
+.big_container p {
   font-size: 16px;
-  line-height: 30px;
+  line-height: 22px;
+  margin-bottom: 0px;
 }
 
 .header {
@@ -55,14 +83,14 @@ p {
 }
 
 .home_illusta {
-  right: 50px;
+  right: 100px;
   top: 250px;
   float: right !important;
   position: absolute;
   height: auto;
 }
 .home_illusta img {
-  width: 700px;
+  width: 110%;
 }
 
 .home_sun {
@@ -102,33 +130,99 @@ p {
 }
 
 .home_about {
-  width: 100%;
-  height: 70vh;
-  margin-top: 60px;
+  margin-top: 2vh;
+  margin-bottom: 15vh;
 }
 
-.content {
-  padding: 0 150px;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 125%;
-  /* or 22px */
-  letter-spacing: 0.01em;
-  color: #110F49;
+.text_about {
+  padding: 0 180px;
+}
+
+.explication_home {
+  padding: 0 230px;
+}
+
+#business {
+  margin-bottom: 190px !important;
 }
 
 .background-grey {
-  height: 265px;
   background: #F5F6FA;
 }
 
-.title_home {
-  margin-top: 60px;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 28px;
-  color: #110F49;
+.background-blue {
+  background: #9BC9FF;
 }
+
+.illustation_home img {
+  width: 300px;
+}
+
+.description_content_home {
+  padding: 50px;
+}
+
+.avis_customer_box {
+  background: #FFFFFF;
+  box-shadow: 10px 10px 0px #2F2E41;
+  border-radius: 20px;
+  width: 520px;
+  height: 256px;
+  position: relative;
+}
+
+.avis_customer {
+  padding: 0 100px;
+}
+
+.text_avis {
+  width: 440px;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.text_avis::before {
+  position: absolute;
+  content: "";
+  left: 44px;
+  background-color: #9BC8FA;
+  height: 60px;
+  width: 3px;
+  z-index: 1;
+}
+
+.client_info img {
+  width: 68px;
+}
+
+.client_info p {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.client_info {
+  position: absolute;
+  bottom: 20px;
+  left: 5px;
+}
+
+.number-circle {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 12px;
+  background-color: #9BC8FA;
+  text-align: center;
+  margin-right: 30px;
+}
+
+.deroulement-content {
+  width: 245px;
+}
+
+
 

@@ -1,19 +1,24 @@
 .footer {
   background-color: #120F49;
-  height: 420px;
+  height: 400px;
   padding: 5px 40px;
   position: relative;
   width: 100%;
   bottom: 0; left: 0;
-  font-size: 20px;
+  font-size: 14px;
 }
 
-.first_element  {
+.footer p {
   color: white;
+  text-align: center;
+  line-height: 5px;
 }
 
-.second_element .form-group {
+.footer h5 {
   color: white;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 .third_element {
@@ -24,27 +29,26 @@
   text-decoration: none;
   padding: 0px 10px;
 }
+
 .footer .fa-heart {
   color: #D23333;
-  font-size: 20px;
+  font-size: 15px;
   padding: 0 8px;
 }
-.footer p {
-  color: white;
-  text-align: center;
-  line-height: 1;
-}
+
 
 .footer .fab {
   color: white;
   text-align: center;
   line-height: 0.5;
-  font-size: 24px;
+  font-size: 16px;
 }
 
-.footer i {
-  color: white;
+
+.footer .fab:hover {
+  color: #9BC8FA;
   font-size: 20px;
+  transition: 0.5s;
 }
 
 .footer_about, .footer-links, .footer-copyright {

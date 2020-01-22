@@ -1,118 +1,174 @@
-<section class="intro">
+<div class="big_container">
 
-  <nav class="navbar nav-home">
-    <%= link_to "/", class: "navbar-brand" do %>
-    <%= image_tag "logo-x2.png" %>
+  <nav class="navbar nav-home navbar-fixed-top fixed-top" id="theNavbar">
+
+    <!-- logo redirection homepage -->
+    <%= link_to "/", class: "navbar-brand d-flex" do %>
+      <div class="d-flex">
+        <div class="logoCoworkspace">
+        <%= image_tag "logo_coworkspace.svg" %>
+        </div>
+        <h2 class="name-site my-0 pl-2">COWORKSPACE</h2>
+      </div>
     <% end %>
+
     <form class="form-inline">
-          <% if user_signed_in? %>
-            <%= link_to "Find a space", spaces_path, class: "btn  btn-home-signin btn-outline-light mx-2" %>
-            <button class=" nav-item dropdown btn mx-2" type="button">
+      <% if user_signed_in? %>
+        <%= link_to "Find a space", spaces_path, class: "btn  btn-home-signin btn-outline-light mx-2" %>
+          <button class=" nav-item dropdown btn mx-2" type="button">
               <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
 
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Profile", user_path(:id), class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-            </button>
-         <% elsif owner_signed_in? %>
-          <%= link_to "Manage your space", owner_dashboard_path(:id), class: "btn  btn-home-signin btn-outline-light mx-2" %>
-          <%= link_to "Log out", destroy_owner_session_path, method: :delete%>
-         <% else %>
-           <button class=" nav-item btn-home-signin btn mx-4" type="button">
-           <i class="fas fa-user"></i><%= link_to "Login", new_user_session_path, class: "nav-link" %>
-           </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", user_path(:id), class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </button>
+      <% elsif owner_signed_in? %>
+        <%= link_to "Manage your space", owner_dashboard_path(:id), class: "btn  btn-home-signin btn-outline-light mx-2" %>
+        <%= link_to "Log out", destroy_owner_session_path, method: :delete%>
+      <% else %>
+        <%= link_to "Coworking", new_owner_session_path, class: "btn-nav-link nav-item mx-5" %>
+        <%= link_to "Entreprise", new_owner_session_path, class: "btn-nav-link nav-item mx-5" %>
 
-            <button class=" nav-item  btn-home-signin btn mx-4" type="button">
-            <i class="fas fa-building"></i><%= link_to "Login", new_owner_session_path, class: "nav-link" %>
-           </button>
-         <% end %>
+        <button class=" nav-item btn-nav-link-sign-in btn ml-5 mr-4" type="button">
+          <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+        </button>
+      <% end %>
     </form>
   </nav>
 
 
-  <div class="header">
-    <div class="title">
-      <h1>COWORK SPACE </h1>
-      <h4>Your coworking all around the world ! </h4>
-
-
-    <%= form_tag spaces_path, method: :get, class:"form-inline mt-5" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control-home form-control",
-        placeholder: "Find a space" %>
-        <%= date_field_tag :arrival_date, params[:arrival_date], class: "form-control-da form-control", placeholder: "Today" %>
-        <%= submit_tag 'Go !', class:"btn-custom btn-custom-gradient mx-2" %>
-    <% end %>
-
+  <div class="header d-flex">
+    <div class="home_ellipse">
+      <%= image_tag "ellipse_home.svg" %>
     </div>
+    <div class="slogan_title">
+      <h1 class="home_slogan">Find your desk all over the world ! </h1>
+      <h3 class="home_title pt-2">From private offices to open spaces <br>
+          we will find a space that suits you perfectly.
+      </h3>
 
-
-</div>
- <!--  <form class="form-inline">
-    <i class="fas fa-map-marker-alt"></i>
-    <label class="sr-only" for="inlineFormInputName2">Place</label>
-    <input type="text" class="form-control mx-2 mb-2 mr-sm-2" id="inlineFormInputName2" placeholder="Where ?">
-    <i class="fas fa-calendar-alt"></i>
-    <label class="sr-only" for="inlineFormInputGroupUsername2">Date</label>
-    <input type="text" class="form-control mx-2 mb-2 mr-sm-2" id="inlineFormInputGroupUsername2" placeholder="When ?">
-    <button type="submit"  mb-2">Search</button>
-  </form> -->
-</section>
-
-
-<section class="about">
-    <div class="infos pt-4">
-      <div class="info-photo">
-        <%= image_tag "night.svg" %>
-      </div>
-      <div class="content text-justify">
-        <h1 class="text-center">About us</h1>
-        <br>
-        <p>Less alone than at home and more professional than in a coffee shop, Cowork Space has been installed all over the world since 2019. A place of work, exchange and sharing of skills for all entrepreneurs, self-employed, freelancers, project leaders and teleworkers wishing to break the isolation of their homes and develop a quality professional network.</p>
+      <div class="">
+              <%= form_tag spaces_path, method: :get, class:"form-inline mt-5" do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control form-control-home",
+          placeholder: "Select a city" %>
+          <%= date_field_tag :arrival_date, params[:arrival_date], class: "form-control-home form-control", placeholder: "12/11/2020" %>
+          <%= submit_tag 'Find', class:"btn-custom btn-home-search mx-2" %>
+      <% end %>
       </div>
     </div>
-</section>
-
-<div class="background-3">
-  <br>
-  <br>
-  <br>
-<div class="container text-center">
-  <div class="row justify-content-between">
-    <div class="col africa">
-      <i class="fas fa-globe-africa "></i>
-      <h3> Around The World</h3>
-      <p>Located all over the world, Cowork Space offers you clean and modern spaces, adapted to your needs.
-          Because your need is our priority.</p>
-    </div>
-    <div class="col">
-      <i class="far fa-clock"></i>
-      <h3> Time Saved</h3>
-      <p>Optimize your working time by finding a place near you, and that allows you to immerse yourself and carry out your wildest projects.</p>
-    </div>
-    <div class="col laptop">
-      <i class="fas fa-laptop"></i>
-      <h3>Business Environment</h3>
-
-      <p>In our offices, talk to professionals and find the people you need. The world at your fingertips.</p>
+    <div class="home_illusta ">
+      <div class="home_sun"></div>
+      <%= image_tag "home_illustration.svg"%>
     </div>
   </div>
-  <br>
-  <br>
-  <br>
-</div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<!-- <section class="map-home">
-    <div class="fond">
-      <div class="map">
-        <%= image_tag "carte.png" %>
+
+
+  <div class="home_about background-grey text-center py-5" >
+      <div data-aos="zoom-in">
+          <h3 class=" title_home ">About us</h3>
+          <p class="text_about">Less alone than at home and more professional than in a coffee shop, Cowork Space has been installed all over the world since 2019. A place of work, exchange and sharing of skills for all entrepreneurs, self-employed, freelancers, project leaders and teleworkers wishing to break the isolation of their homes and develop a quality professional network.</p>
       </div>
-      <br>
+  </div>
+
+  <div class="explication_home d-flex justify-content-center align-items-center my-4" id="explication_step_1">
+    <div class="description_content_home" data-aos="fade-right">
+      <h3 class="title_home">All Around The World</h3>
+      <p class="text_description">Located all over the world, you can find your Coworking Space <strong>everywhere</strong> ! <br>
+      We offers you clean and modern spaces, adapted to your needs. Because your <strong>success</strong> is our priority. </p>
     </div>
-</section> -->
+    <div class="illustation_home" data-aos="fade-left">
+      <%= image_tag "planete.svg"%>
+    </div>
+  </div>
+
+  <div class="explication_home d-flex justify-content-center my-5 py-5 align-items-center background-grey py-4" id="explication_step_2" data-aos-delay="1000" data-aos-anchor="#explication_step_1" >
+    <div class="illustation_home" data-aos="fade-right">
+      <%= image_tag "clock.svg"%>
+    </div>
+    <div class="description_content_home" data-aos="fade-left">
+      <h3 class="title_home">Save Timer</h3>
+      <p class="text_description">Optimize your working time by finding a place where can book and play <strong>immediately</strong>. CoworkSpace avoid to wait too much time to receive a host answer.
+    </div>
+  </div>
+
+  <div class="explication_home d-flex justify-content-center  my-4 align-items-center" id="business" data-aos-delay="2000" data-aos-anchor="#explication_step_2" >
+    <div class="description_content_home" data-aos="fade-right" >
+      <h3 class="title_home">Business Environment</h3>
+      <p class="text_description">You will have the opportunity to meet professionals from the same sector of activity, exchanges between members will allow you to enrich each other, to <strong>create synergies</strong> , working groups, skills associations, etc. Group spirit contributes to strengthening <strong>motivation and productivity.</strong>  </p>
+    </div>
+    <div class="illustation_home" data-aos="fade-left">
+      <%= image_tag "team.svg"%>
+    </div>
+  </div>
+
+  <div class="text-center background-blue my-4 py-5">
+    <h3 class="title_home mb-5">Customers Reviews</h3>
+    <div class=" d-flex avis_customer mb-3" >
+      <div class="avis_customer_box mx-4 py-4" data-aos="zoom-out" id="trigger-left">
+        <p class=" text_avis text-left  pl-5">With others tools we found ourselves constantly waiting on responses to questions, the payment process and the validation is very fast. </p>
+        <div class="client_info d-flex ml-4 align-items-center ">
+          <%= image_tag "avatar_girl.svg"%>
+          <div class="text-left pl-3 ">
+            <h5>Ana Longo</h5>
+            <p>Director of Clients Relations </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="avis_customer_box mx-4 py-4" data-aos="zoom-out" data-aos-delay="500"
+     data-aos-anchor="#trigger-left" >
+        <p class=" text_avis text-left  pl-5">We are a remote team working across multiple timeszones. Coworkspace is a great tool where I can book easily my coworking ! I can find what Iwe looking for immediately, and leave a comment for others to view if it’s convenient for them.  </p>
+        <div class="client_info d-flex ml-4 align-items-center"  >
+          <%= image_tag "avatar_man.svg"%>
+          <div class="text-left align-items-center pl-3">
+            <h5>Simon Hebert</h5>
+            <p>Product Owner Freelance, Paris </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="deroulement" style="padding: 110px 80px;">
+    <h2 class="mb-5" id="step-trigger-1" data-aos="fade-right"
+     >Getting started has <br>never been easier</h2>
+    <div class="d-flex justify-content-center">
+
+      <div class=" mx-4 d-flex" id="step-trigger-2" data-aos="fade-right" data-aos-delay="500"
+     data-aos-anchor="#step-trigger-1">
+        <h3 class="number-circle">1</h3>
+        <div class="deroulement-content">
+          <h3 class="">Choose your <br>coworkplace</h3>
+          <p>There is more 3490 coworking in more than 25 country. </p>
+        </div>
+      </div>
+
+      <div class=" mx-4 d-flex" id="step-trigger-3" data-aos="fade-right" data-aos-delay="800"
+     data-aos-anchor="#step-trigger-2">
+        <h3 class="number-circle">2</h3>
+        <div class="deroulement-content">
+          <h3 class="">Set the date <br>of your stay</h3>
+          <p>Plan your stay with or without your team. </p>
+        </div>
+      </div>
+
+      <div class="  mx-4 d-flex" data-aos="fade-right" data-aos-delay="1100"
+     data-aos-anchor="#step-trigger-3">
+        <h3 class="number-circle">3</h3>
+        <div class="deroulement-content">
+          <h3 class="">Easy Paiment <br> Process</h3>
+          <p>Just pay and receive the confirmation. </p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+    <button class="btn-nav-link-sign-in justify-content-center d-flex" style="margin: 70px auto;width: 200px" type="button">
+          <%= link_to "Try Now !", new_user_session_path, class: "nav-link " %>
+    </button>
+</div>

@@ -1,22 +1,50 @@
 // form design search-form
-.form-inline .form-control-da {
-  width: 170px;
-  margin-right: 10px;
-  border: solid lightgrey 1px;
-  border-radius: 15px;
-  color: grey;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+.form-inline .form-control-home {
+  width: 190px;
+  margin-right: 15px;
+  padding-left: 18px;
+  color: #484848 !important;
+  background: #FFFFFF;
+  box-shadow: 4px 4px 0px #252A62;
+  border-radius: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  line-height: 18px;
+  display: flex;
+  border: none;
+  align-items: center;
+}
+
+.form-inline .form-control-home:focus {
+  background: #FFFFFF;
+  box-shadow: 4px 4px 0px #252A62;
+  border-radius: 20px;
+  border: none;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.form-control-home::placeholder {
+  color: #484848 !important;
 }
 
 
-// Form design search sur home
-.form-inline .form-control-home{
-  width: 200px;
-  margin-right: 10px;
-  border: solid lightgrey 1px;
-  border-radius: 15px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-}
+// // Form design search sur home
+// .form-inline .form-control-home{
+//   width: 200px;
+//   margin-right: 10px;
+//   border: solid lightgrey 1px;
+//   border-radius: 15px;
+//   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+// }
 
 
 

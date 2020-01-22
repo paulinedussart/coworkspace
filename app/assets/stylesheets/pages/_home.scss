@@ -9,6 +9,11 @@ body {
 
 }
 
+.logoCoworkspace:hover img {
+  transform: rotate(180deg);
+  transition: transform 2s cubic-bezier(0.620, 0.105, 0.106, 0.03 );
+}
+
 .name-site {
   font-family: Roboto;
   font-style: normal;

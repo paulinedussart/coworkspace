@@ -13,6 +13,7 @@
     <meta property="og:site_name" content="Cowork Space"/>
     <link href='fullcalendar/core/main.css' rel='stylesheet' />
     <link href='fullcalendar/daygrid/main.css' rel='stylesheet' />
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <%= favicon_link_tag asset_path('favicon_CoworkSpace2.ico') %>
     <%= csrf_meta_tags %>
@@ -41,6 +42,15 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
     <%= javascript_include_tag "https://www.gstatic.com/charts/loader.js" %>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+  // delay: 500, // values from 0 to 3000, with step 50ms
+  duration: 1250, // values from 0 to 3000, with step 50ms
+  easing: 'ease', // default easing for AOS animations
+  once: true, // whether animation should happen only once - while scrolling down
+});
+  </script>
 
     <%= yield :after_js %>
   </body>

@@ -1,11 +1,11 @@
-<div class="contour">
+<div class="mt-5 pt-5 contour">
 
    <%= form_tag spaces_path, method: :get, class:"form-inline" do %>
     <%= text_field_tag :query,
       params[:query],
-      class: "form-control",
+      class: "form-control form-control form-control-border-blue ",
       placeholder: "Find a space "%>
-      <%= submit_tag 'Go!', class:"btn-custom btn-custom-gradient mx-2" %>
+      <%= submit_tag 'Go!', class:"btn-custom btn-home-search mx-2" %>
   <% end %>
 
 

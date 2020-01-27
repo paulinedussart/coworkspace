@@ -1,5 +1,5 @@
 // form design search-form
-.form-inline .form-control-home {
+.form-inline .form-control {
   width: 190px;
   margin-right: 15px;
   padding-left: 18px;
@@ -14,15 +14,13 @@
   letter-spacing: 0.5px;
   line-height: 18px;
   display: flex;
-  border: none;
   align-items: center;
 }
 
-.form-inline .form-control-home:focus {
+.form-inline .form-control:focus {
   background: #FFFFFF;
   box-shadow: 4px 4px 0px #252A62;
   border-radius: 20px;
-  border: none;
   font-family: Roboto;
   font-style: normal;
   font-weight: 300;
@@ -30,6 +28,18 @@
   line-height: 18px;
   display: flex;
   align-items: center;
+}
+
+.form-inline-no-border {
+  border: none;
+}
+
+.form-inline-no-border:focus {
+  border: none !important;
+}
+
+.form-control-border-blue {
+  border-color: #252A62 !important;
 }
 
 .form-control-home::placeholder {

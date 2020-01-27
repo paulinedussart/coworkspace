@@ -1,47 +1,70 @@
 // SPACES #index
 .contour {
-  margin: 20px;
+  padding: 30px;
+  background-color: #9BC8FA;
+
+  p {
+    font-size: 14px;
+  }
 }
 
 .content-spaces {
   padding-top: 40px;
   flex: 1;
-}
 
-.cards-spaces-container {
-  grid-template-columns: 1fr 1fr 1fr;
-  // flex-grow: 1;
-  display: grid;
-  grid-gap: 10px;
-}
+  .cards-spaces-container {
+    display: flex;
+    grid-gap: 8px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin-top: 65px !important;
+    padding-left: 40px;
 
-.card-space {
-  border-radius: 5px;
-  min-width: 300px;
-  img {
-    align-self: center;
-    padding: 10px;
+    .card-space {
+      max-width: 290px;
+      border-radius: 5px;
+      margin: 20px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border: none;
+      box-shadow: 4px 4px 0px #252A62;
+
+      img {
+        background-position: center;
+        width: 100%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
+
+      .card-body {
+        padding: 10px;
+      }
+
+      .card-body .text-description {
+        word-wrap: break-word !important;
+        width: 240px;
+      }
+
+      a.hover-animate-grow:hover {
+        transform: translateY(-10px) !important;
+        color: $primary !important;
+      }
+    }
   }
 }
 
-.card-text {
-  line-height: 20px;
-  font-size: 12px;
-}
 
 .fa-star {
   color: $orange;
-  padding-left: 5px;
+  padding-right: 3px;
 }
 
 .card-reviews-price {
   justify-content: space-between;
 }
 
-.card-reviews {
-  color: $orange;
-  font-weight: bold;
-}
 
 .card-price {
   font-weight: bold;

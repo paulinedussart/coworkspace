@@ -1,7 +1,7 @@
 // SPACES #show ---> MAPBOX POPUP
 
 .mapboxgl-popup {
-  max-width: 200px;
+  max-width: 250px;
 }
 
 .mapboxgl-popup-content {
@@ -11,9 +11,11 @@
 }
 
 #map{
-  border-radius: 5px !important;
+  border-radius: 10px !important;
   position: sticky;
-  top: 100px;
+  top: 190px;
+  // z-index: 5;
+  margin-left: 0px;
 }
 
 .no-sticky {

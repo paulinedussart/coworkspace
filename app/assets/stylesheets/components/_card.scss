@@ -5,6 +5,7 @@
 
   p {
     font-size: 14px;
+    margin-bottom: 0;
   }
 }
 
@@ -16,12 +17,13 @@
     display: flex;
     grid-gap: 8px;
     flex-wrap: wrap;
-    max-width: 1000px;
-    margin-top: 65px !important;
+    max-width: 700px;
+    margin-top: 40px !important;
     padding-left: 40px;
 
     .card-space {
       max-width: 290px;
+      background-color: white;
       border-radius: 5px;
       margin: 20px;
       border-top-left-radius: 15px;
@@ -29,7 +31,7 @@
       border-bottom-right-radius: 15px;
       border-bottom-left-radius: 15px;
       border: none;
-      box-shadow: 4px 4px 0px #252A62;
+      box-shadow: 6px 6px 0px #110F49;
 
       img {
         background-position: center;
@@ -47,10 +49,16 @@
         width: 240px;
       }
 
-      a.hover-animate-grow:hover {
-        transform: translateY(-10px) !important;
-        color: $primary !important;
+      .hover-animate-grow:hover {
+        transform: translateY(10px) !important;
+        color: #110F49 !important;
       }
+
+      .hover-animate-grow:hover {
+        color: #110F49;
+      }
+
+
     }
   }
 }
@@ -61,9 +69,6 @@
   padding-right: 3px;
 }
 
-.card-reviews-price {
-  justify-content: space-between;
-}
 
 
 .card-price {

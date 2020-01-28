@@ -6,5 +6,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # def default_url
   #   ActionController::Base.helpers.asset_path("fallback/" + [version_name, "userWhitoutPicture.png"].compact.join('_'))
   # end
+
+
+  CarrierWave.configure do |config|
+    config.cache_storage = :file
+  end
 end
 

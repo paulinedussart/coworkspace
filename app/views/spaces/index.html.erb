@@ -12,30 +12,30 @@
 
 
 
-  <div class="content-spaces ml-2 d-flex">
+  <div class="content-spaces ml-2 d-flex justify-content-around">
 
     <div class="cards-spaces-container">
       <% @spaces.each do |space|  %>
 
-        <div class="card card-space cloudinary">
+        <div class="card-space cloudinary">
           <%= cl_image_tag space.photo, width: 270, height: 200, crop: :fill, class: "img-fluid" %>
           <div class="card-body">
             <div class="d-flex justify-content-between">
-              <h4 class="card-title"> <%= space.name.upcase %></h4>
-              <p><%= humanized_money_with_symbol(space.desks.first.price_per_day) %> /day </p>
+              <h4> <%= space.name.upcase %></h4>
+              <!-- <p><%= humanized_money_with_symbol(space.desks.first.price_per_day) %> /day </p> -->
             </div>
 
             <p class="text-description" ><%= space.description.truncate_words(15) if space.description != nil  %></p>
 
-            <div class="card-reviews-price d-flex">
-              <div class="card-reviews">
+            <div class="card-reviews-more-info d-flex justify-content-between mt-3">
+              <div class="">
                 <% if  space.reviews.empty? %>
                 <p>No reviews yet</p>
                 <% else %>
                 <p><i class="fas fa-star"></i><strong><%= space.reviews.average(:rating) %></strong> (<%= space.reviews.count %>) </p>
                 <% end %>
               </div>
-              <p><strong><%= link_to "See details ... ", space_path(space), :class => "hover-animate-grow", :style => "text-decoration: none"%></strong>  </p>
+              <p ><strong><%= link_to "See details", space_path(space), :class => "hover-animate-grow", :style => ""%></strong></p>
             </div>
           </div>
 
@@ -46,9 +46,10 @@
 
     <div
       id="map"
-      style="width: 50% !important;
+      style="width: 40% !important;
       height: 500px;
-      margin-left: 10px;"
+      margin-right: 80px;
+      "
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>

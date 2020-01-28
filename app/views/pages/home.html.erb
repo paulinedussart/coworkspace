@@ -16,40 +16,54 @@
         <%= link_to "Coworking", spaces_path, class: "btn-nav-link nav-item mx-4" %>
         <%= link_to "Bookings", user_reservations_path(current_user), class: "btn-nav-link nav-item mx-4" %>
         <% if current_user.avatar.file.nil? %>
-        <button class=" nav-item dropdown btn avatarUser mx-2" type="button">
-              <%= image_tag "fallback/userAvatarDefault.png", class: "rounded-circle  dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <div class="text-center info_user border-bottom mx-2 pb-2">
-                  <strong> <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize[0] %></strong>
-                  <p style="opacity:0.6;color:#FE3551;"><em><%= current_user.email %></em> </p>
-                </div>
-
-                <div class="dropdown-item-choice d-fex pl-3 p-1 ">
-                  <i class="fas icon_navbar fa-user"></i>
-                  <%= link_to "Profile", user_path(:id), class: " pl-2 dropdown-item" %>
-                </div>
-
-                <div class="dropdown-item-choice d-fex pl-3 p-1 ">
-                  <i class="fas icon_navbar fa-envelope"></i>
-                  <%= link_to "Messages", user_path(:id), class: " pl-2 dropdown-item" %>
-                </div>
-
-                <div class="dropdown-item-choice d-fex pl-3 p-1">
-                  <i class="fas icon_navbar fa-sign-out-alt"></i>
-                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item pl-2" %>
-                </div>
+          <button class=" nav-item dropdown btn avatarUser mx-2" type="button">
+            <%= image_tag "fallback/userAvatarDefault.png", class: "rounded-circle  dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <div class="text-center info_user border-bottom mx-2 pb-2">
+                <strong> <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize[0] %></strong>
+                <p style="opacity:0.6;color:#FE3551;"><em><%= current_user.email %></em> </p>
               </div>
+
+              <div class="dropdown-item-choice d-fex pl-3 p-1 ">
+                <i class="fas icon_navbar fa-user"></i>
+                <%= link_to "Profile", user_path(:id), class: " pl-2 dropdown-item" %>
+              </div>
+
+              <div class="dropdown-item-choice d-fex pl-3 p-1 ">
+                <i class="fas icon_navbar fa-envelope"></i>
+                <%= link_to "Messages", "#", class: " pl-2 dropdown-item" %>
+              </div>
+
+              <div class="dropdown-item-choice d-fex pl-3 p-1">
+                <i class="fas icon_navbar fa-sign-out-alt"></i>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item pl-2" %>
+              </div>
+            </div>
           </button>
          <% else %>
-            <button class="nav-item dropdown btn mx-2" type="button">
-              <%= cl_image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <div class="d-fex">
-                  <i class="fas icon_navbar fa-user"></i>
-                  <%= link_to "Profile", user_path(:id), class: "dropdown-item" %>
-                </div>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          <button class=" nav-item dropdown btn avatarUser mx-2" type="button">
+            <%= cl_image_tag current_user.avatar, class: "rounded-circle  dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <div class="text-center info_user border-bottom mx-2 pb-2">
+                <strong> <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize[0] %></strong>
+                <p style="opacity:0.6;color:#FE3551;"><em><%= current_user.email %></em> </p>
               </div>
+
+              <div class="dropdown-item-choice d-fex pl-3 p-1 ">
+                <i class="fas icon_navbar fa-user"></i>
+                <%= link_to "Profile", user_path(:id), class: " pl-2 dropdown-item" %>
+              </div>
+
+              <div class="dropdown-item-choice d-fex pl-3 p-1 ">
+                <i class="fas icon_navbar fa-envelope"></i>
+                <%= link_to "Messages", "#", class: " pl-2 dropdown-item" %>
+              </div>
+
+              <div class="dropdown-item-choice d-fex pl-3 p-1">
+                <i class="fas icon_navbar fa-sign-out-alt"></i>
+                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item pl-2" %>
+              </div>
+            </div>
           </button>
         <% end %>
       <% elsif owner_signed_in? %>

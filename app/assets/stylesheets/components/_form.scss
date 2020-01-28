@@ -32,6 +32,7 @@
 
 .form-inline-no-border {
   border: none;
+
 }
 
 .form-inline-no-border:focus {
@@ -44,12 +45,12 @@
 
 .form-inline-index {
   top: 85px;
-  background-color: white;
+  background-color: #9BC8FA;
   width: 100%;
   z-index: 3;
   padding: 20px 40px;
   left: 0px;
-
+  box-shadow: 0px 0px 2px 4px #9BC8FA;
 }
 
 .form-control-home::placeholder {

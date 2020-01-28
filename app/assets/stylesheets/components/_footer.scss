@@ -41,14 +41,14 @@
   color: white;
   text-align: center;
   line-height: 0.5;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 
 .footer .fab:hover {
   color: #9BC8FA;
-  font-size: 20px;
-  transition: 0.5s;
+  transform:scale(1.5);
+  transition: all .2s ease-in-out;
 }
 
 .footer_about, .footer-links, .footer-copyright {

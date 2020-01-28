@@ -12,4 +12,5 @@ class User < ApplicationRecord
   # rajoute avec la mise en place de stripe
   has_many :orders
   # validates :first_name, :last_name, presence: true
+
 end

@@ -4,10 +4,10 @@
 const bookReservation = () => {
 
 const arrivalInput = document.querySelector('.arrival');
+const departureInput = document.querySelector('.departure');
 const totalPrice = document.querySelector('.resa-total-price');
 const days = document.querySelector('.days-total');
 const price_per_day = document.querySelector('.price');
-const departureInput = document.querySelector('.departure');
 
   if (departureInput) {
 

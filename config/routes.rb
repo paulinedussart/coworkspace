@@ -31,11 +31,9 @@ Rails.application.routes.draw do
     resources :reviews, only: :create
   end
 
-  resources :users, only: [:show, :edit] do
     resources :desks, only: [:create, :new] do
       resources :reservations, only: [:create]
     end
-  end
 
   resources :users, only: [:show, :edit] do
     resources :reservations, only: [:index]

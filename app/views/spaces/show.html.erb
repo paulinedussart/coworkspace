@@ -2,7 +2,7 @@
 </div>
 <div class="container">
   <p> ⭠ <%= link_to "Back to list", spaces_path, class: "mb-5 mt-4"  %></p>
-  <div class="container-spaces d-flex">
+  <div class="container-spaces d-flex justify-content-around">
     <div class="card-space-infos">
       <div class="space-infos border-bottom">
         <h1> <%= @space.name %></h1>
@@ -10,9 +10,9 @@
           <p><i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
           <div class="reviews-header">
             <% if  @space.reviews.empty? %>
-              <p>No reviews yet</p>
+            <p>No reviews yet</p>
             <% else %>
-              <h4><%= @space.reviews.average(:rating) %>/5<i class="fas fa-star"></i></h4>
+            <h4><%= @space.reviews.average(:rating) %>/5<i class="fas fa-star"></i></h4>
             <% end %>
           </div>
         </div>
@@ -42,8 +42,12 @@
           <div class="space-amenitie">
             <h5><strong>Basics</strong></h5>
             <div class="basics">
-              <span><p><i class="far fa-check-circle"></i>High-speed wifi</p></span>
-              <span><p><i class="far fa-check-circle"></i>Air conditioning</p></span>
+              <span>
+                <p><i class="far fa-check-circle"></i>High-speed wifi</p>
+              </span>
+              <span>
+                <p><i class="far fa-check-circle"></i>Air conditioning</p>
+              </span>
               <p><i class="far fa-check-circle"></i>Heating</p>
             </div>
           </div>
@@ -123,64 +127,60 @@
           </div>
         </div>
       </div>
-      <div class="space-reviews"> <!--REVIEWS PAULINE -->
+      <div class="space-reviews">
+        <!--REVIEWS PAULINE -->
         <h2 class="d-flex justify-content-between">
           <div id="counter">
             <h3><strong><%= pluralize @space.reviews.size, "review" %></strong></h3>
           </div>
           <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reviewModal">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reviewModal">
             Add a review
-            </button>
+          </button>
         </h2>
         <div id="reviews">
           <% if @space.reviews.blank? %>
-            Be the first to leave a review for <%= @space.name %>
+          Be the first to leave a review for <%= @space.name %>
           <% else %>
-            <% @space.reviews.order('created_at DESC').each do |review| %>
-              <%= render 'reviews/show', review: review %>
-            <% end %>
+          <% @space.reviews.order('created_at DESC').each do |review| %>
+          <%= render 'reviews/show', review: review %>
+          <% end %>
           <% end %>
         </div>
-         <!-- Modal -->
-          <div class="modal" tabindex="-1" role="dialog" id='reviewModal' >
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Add a review</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p><%= render 'reviews/form', space: @space, review: @review %></p>
-                </div>
+        <!-- Modal -->
+        <div class="modal" tabindex="-1" role="dialog" id='reviewModal'>
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Add a review</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p><%= render 'reviews/form', space: @space, review: @review %></p>
               </div>
             </div>
           </div>
-     </div>
+        </div>
+      </div>
     </div>
 
     <div class="book">
 
-      <div
-        id="map"
-        class="no-sticky"
-        style="width: 500px;
-        height: 400px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      <div id="map" class="no-sticky" style="width: 500px;
+        height: 400px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
 
       <div class="card-form-booking">
         <div class="form-reservation">
           <h3 class="text-center border-bottom pb-2 "><strong>Book your space</strong></h3>
-           <%= simple_form_for [@user, @desk, @reservation] do |f| %>
+          <%= simple_form_for [@user, @desk, @reservation] do |f| %>
           <div class="form-inputs my-3 border-bottom">
-             <%= f.error_notification %>
-             <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-             <%= f.input :arrival_date, as: :string, label: "Arrival Date : ", required: false, input_html: {value: Date.today, class: "datepicker arrival"} %>
-             <%= f.input :departure_date, as: :string,  label: "Departure Date : ", required: false, input_html: {value: Date.tomorrow, class: "datepicker departure"}%>
+            <%= f.error_notification %>
+            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+            <%= f.input :arrival_date, as: :string, label: "Arrival Date : ", required: false, input_html: {value: Date.today, class: "datepicker arrival"} %>
+            <%= f.input :departure_date, as: :string,  label: "Departure Date : ", required: false, input_html: {value: Date.tomorrow, class: "datepicker departure"}%>
           </div>
           <div class="calcul-price">
             <div class="total-days d-flex justify-content-between">
@@ -197,14 +197,14 @@
             </div>
             <div class="total-price border-bottom align-middle p-1 d-flex justify-content-between">
               <h5><strong>TOTAL :</strong></h5>
-              <h5 class="resa-total-price">  <%= humanized_money_with_symbol(@space.desks.first.price_per_day).to_i + 18 %> $ AUD </h5>
+              <h5 class="resa-total-price"> <%= humanized_money_with_symbol(@space.desks.first.price_per_day).to_i + 18 %> $ AUD </h5>
             </div>
           </div>
 
-         <div class="form-actions button-resa-book my-3">
-           <%= f.button :submit, class:'btn text-white btn-block' %>
-         </div>
-        <% end %>
+          <div class="form-actions button-resa-book my-3">
+            <%= f.button :submit, class:'btn text-white btn-block' %>
+          </div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -214,7 +214,7 @@
 
 
 
-    <!-- Modal
+  <!-- Modal
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -247,5 +247,5 @@
       </div> -->
 
 
-  </div>
+</div>
 </div>

@@ -4,8 +4,8 @@
   margin-right: 15px;
   padding-left: 18px;
   color: #484848 !important;
-  background: #FFFFFF;
-  box-shadow: 4px 4px 0px #252A62;
+  background: #ffffff;
+  box-shadow: 4px 4px 0px #252a62;
   border-radius: 20px;
   font-family: Roboto;
   font-style: normal;
@@ -18,8 +18,8 @@
 }
 
 .form-inline .form-control:focus {
-  background: #FFFFFF;
-  box-shadow: 4px 4px 0px #252A62;
+  background: #ffffff;
+  box-shadow: 4px 4px 0px #252a62;
   border-radius: 20px;
   font-family: Roboto;
   font-style: normal;
@@ -32,7 +32,6 @@
 
 .form-inline-no-border {
   border: none;
-
 }
 
 .form-inline-no-border:focus {
@@ -40,23 +39,22 @@
 }
 
 .form-control-border-blue {
-  border-color: #252A62 !important;
+  border-color: #252a62 !important;
 }
 
 .form-inline-index {
-  top: 85px;
-  background-color: #9BC8FA;
+  top: 82px;
+  background-color: #9bc8fa;
   width: 100%;
   z-index: 3;
   padding: 20px 40px;
   left: 0px;
-  box-shadow: 0px 0px 2px 4px #9BC8FA;
+  box-shadow: 0px 0px 2px 4px #9bc8fa;
 }
 
 .form-control-home::placeholder {
   color: #484848 !important;
 }
-
 
 // // Form design search sur home
 // .form-inline .form-control-home{
@@ -67,38 +65,29 @@
 //   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 // }
 
-
-
 // Form design for devise -> signup
 
-
-
-
 // Form design for devise -> login
-.form-login, .form-sign-up {
+.form-login,
+.form-sign-up {
   background: white;
   padding: 10px 20px;
   margin-top: 50px;
   border-radius: 3px;
-  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   h2 {
     font-size: 25px;
     font-weight: bold;
     margin-bottom: 30px;
     text-align: center;
-
   }
   .btn {
     width: 100%;
     margin-bottom: 20px;
-    background-color: #6E609D;
+    background-color: #6e609d;
     color: white;
   }
-
 }
-
-
-
 
 // Form design spaces
 
@@ -136,10 +125,10 @@
 }
 
 .service-choice {
-  background: #ECECEC;
+  background: #ececec;
   padding: 15px;
   border-radius: 5px;
-  opacity: .4;
+  opacity: 0.4;
   flex: 0 0 30%;
   text-align: center;
   display: flex;
@@ -150,14 +139,14 @@
     cursor: pointer;
   }
   &.active {
-  background: #F99A1B;
-  color: white;
-  opacity: .7;
+    background: #f99a1b;
+    color: white;
+    opacity: 0.7;
   }
 }
 
 .hidden {
-  display:none;
+  display: none;
 }
 
 // Form design booking show space
@@ -174,8 +163,8 @@
 }
 
 .form-reservation {
-padding: 20px;
-height: auto;
+  padding: 20px;
+  height: auto;
 }
 
 .calcul-price p {
@@ -188,5 +177,5 @@ height: auto;
 
 // ---------FORM FOOTER NEWSLETTER
 .form-newsletter {
- border-radius: 7px !important;
+  border-radius: 7px !important;
 }

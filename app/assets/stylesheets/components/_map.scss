@@ -1,7 +1,7 @@
 // SPACES #show ---> MAPBOX POPUP
 
 .mapboxgl-popup {
-  max-width: 250px;
+  max-width: 11em;
 }
 
 .mapboxgl-popup-content {
@@ -10,20 +10,17 @@
   border-radius: 30px !important;
 }
 
-#map{
+#map {
   border-radius: 10px !important;
   position: sticky;
-  top: 190px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+  top: 0px;
+  left: 70px;
+  width: 22rem !important;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .no-sticky {
   border-radius: 5px !important;
   position: relative !important;
 }
-
-// .mapboxgl-ctrl-geocoder--input {
-//   border-radius: 5px !important;
-// }
-
 // --------------------------------

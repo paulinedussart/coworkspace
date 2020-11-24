@@ -1,9 +1,9 @@
 <div class="banner">
 </div>
-<div class="container">
-  <p> ⭠ <%= link_to "Back to list", spaces_path, class: "mb-5 mt-4"  %></p>
-  <div class="container-spaces d-flex justify-content-around">
-    <div class="card-space-infos">
+<div id="show-space" class="container">
+  <div class="row">
+    <div class="col-7">
+      <p> ⭠ <%= link_to "Back to list", spaces_path, class: "mb-5 mt-4"  %></p>
       <div class="space-infos border-bottom">
         <h1> <%= @space.name %></h1>
         <div class="reviews-address d-flex justify-content-between">
@@ -127,6 +127,7 @@
           </div>
         </div>
       </div>
+
       <div class="space-reviews">
         <!--REVIEWS PAULINE -->
         <h2 class="d-flex justify-content-between">
@@ -166,14 +167,12 @@
       </div>
     </div>
 
-    <div class="book">
-
-      <div id="map" class="no-sticky" style="width: 500px;
-        height: 400px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="col-5">
+      <div id="map" class="mt-3" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
 
-      <div class="card-form-booking">
-        <div class="form-reservation">
+      <div class="card-form-booking mt-5">
+        <div class="p-3">
           <h3 class="text-center border-bottom pb-2 "><strong>Book your space</strong></h3>
           <%= simple_form_for [@user, @desk, @reservation] do |f| %>
           <div class="form-inputs my-3 border-bottom">
@@ -209,43 +208,5 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-  <!-- Modal
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-
-          <div class="modal-header">
-            <h2 class="modal-title" id="exampleModalLabel"> <strong>Reservation Details</strong> </h2>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-
-          <div class="modal-body">
-            <h3><%= @space.name %></h3>
-            <p>puts ratings</p>
-
-            <h3>Dates</h3>
-            <p>Add a calendar to select dates</p>
-            <p><i class="fas fa-user"></i> 1 person</p>
-            <p></p>
-            <p> Service charge :</p>
-            <p><strong>Total : </strong></p>
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Confirm</button>
-          </div>
-
-        </div>
-      </div> -->
-
-
 </div>
 </div>

@@ -151,20 +151,16 @@
 
 // Form design booking show space
 .card-form-booking {
+  float: right;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  width: 350px;
+  width: 17em;
   border-radius: 5px;
-  margin: 130px auto;
   background-color: rgba(250, 250, 250, 0.9);
+  border: 1px solid #d9dadb;
 }
 
 .card-form-booking p {
   margin: 0 auto;
-}
-
-.form-reservation {
-  padding: 20px;
-  height: auto;
 }
 
 .calcul-price p {

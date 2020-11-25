@@ -4,13 +4,13 @@
   <div class="row">
     <div class="col-8">
       <div class="d-flex justify-content-end">
-        <button type="" class="btn btn-primary mt-2" style="border-radius: 12px;"><b><i class=" fas fa-undo-alt mr-2"></i></b> <%= link_to "Back to list", spaces_path, class: "text-white"  %></button>
+        <div class="action-btn"><b><i class=" fas fa-undo-alt mr-2"></i></b> <%= link_to "Back to list", spaces_path, class: "text-white"  %></div>
       </div>
       <div class="space-infos border-bottom">
-        <h1> <%= @space.name %></h1>
-        <div class="reviews-address d-flex justify-content-between">
-          <p><i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
-          <div class="reviews-header">
+        <h1 class="mb-0"> <%= @space.name %></h1>
+        <div class="d-flex justify-content-between">
+          <p class="mb-0"><i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
+          <div>
             <% if  @space.reviews.empty? %>
             <p>No reviews yet</p>
             <% else %>
@@ -18,129 +18,99 @@
             <% end %>
           </div>
         </div>
-        <div class="website-price d-flex justify-content-between">
-          <em><a href="https://twospace.com.au/venue/havana-beach-manly-sydney/"><%= @space.website %></a></em>
+        <div class="d-flex justify-content-between">
+          <em><a href="#"><%= @space.website %></a></em>
           <h3><%= humanized_money_with_symbol(@space.desks.first.price_per_day) %> /day</h3>
         </div>
       </div>
 
-      <div class="space-description border-bottom">
+      <div class="border-bottom">
         <h3><strong>About <%= @space.name %></strong></h3>
         <div class="hours border-bottom">
           <ul>
-            <li><strong> Monday-Friday :</strong><%= @space.opening_hours["Mon-Fri"] %></li>
-            <li><strong>Saturday :</strong><%= @space.opening_hours['Sat'] %></li>
-            <li><strong>Sunday :</strong><%= @space.opening_hours['Sun'] %></li>
+            <li><strong> Monday-Friday : </strong><%= @space.opening_hours["Mon-Fri"] %></li>
+            <li><strong>Saturday : </strong><%= @space.opening_hours['Sat'] %></li>
+            <li><strong>Sunday : </strong><%= @space.opening_hours['Sun'] %></li>
           </ul>
         </div>
-        <div class="description text-justify pb-4">
+        <p class=" text-justify">
           <%= @space.description %>
-        </div>
+        </p>
       </div>
 
-      <div class="space-services border-bottom">
-        <h3><strong>Amenities</strong></h3>
+      <div class="space-services mb-5">
+        <h3 class="mb-3"><strong>Amenities</strong></h3>
         <div class="space-amenities mb-3">
           <div class="space-amenitie py-2">
             <h5><strong>Basics</strong></h5>
-            <div class="basics">
-              <span>
-                <p><i class="far fa-check-circle"></i>High-speed wifi</p>
-              </span>
-              <span>
-                <p><i class="far fa-check-circle"></i>Air conditioning</p>
-              </span>
-              <p><i class="far fa-check-circle"></i>Heating</p>
-            </div>
+            <p><i class="far fa-check-circle"></i>High-speed wifi</p>
+            <p><i class="far fa-check-circle"></i>Air conditioning</p>
+            <p><i class="far fa-check-circle"></i>Heating</p>
           </div>
           <div class="space-amenitie py-2">
             <h5><strong>Seating</strong></h5>
-            <div class="seating">
-              <p><i class="far fa-check-circle"></i>Standing desks</p>
-              <p><i class="far fa-check-circle"></i>Ergonomic chairs</p>
-              <p><i class="far fa-check-circle"></i>Beanbags</p>
-            </div>
+            <p><i class="far fa-check-circle"></i>Standing desks</p>
+            <p><i class="far fa-check-circle"></i>Ergonomic chairs</p>
+            <p><i class="far fa-check-circle"></i>Beanbags</p>
           </div>
           <div class="space-amenitie py-2">
             <h5><strong>Equipment</strong></h5>
-            <div class="equipment">
-              <p><i class="far fa-check-circle"></i>Printer</p>
-              <p><i class="far fa-check-circle"></i>3D Printer</p>
-              <p><i class="far fa-check-circle"></i>Scanner</p>
-            </div>
+            <p><i class="far fa-check-circle"></i>Printer</p>
+            <p><i class="far fa-check-circle"></i>3D Printer</p>
+            <p><i class="far fa-check-circle"></i>Scanner</p>
           </div>
           <div class="space-amenitie py-2">
             <h5><strong>Community</strong></h5>
-            <div class="community">
-              <p><i class="far fa-check-circle"></i>Events</p>
-              <p><i class="far fa-check-circle"></i>Workshops</p>
-            </div>
+            <p><i class="far fa-check-circle"></i>Events</p>
+            <p><i class="far fa-check-circle"></i>Workshops</p>
           </div>
           <div class="space-amenitie py-2">
             <h5><strong>Relax zone</strong></h5>
-            <div class="relax">
-              <p><i class="far fa-check-circle"></i>Outdoor terrace</p>
-              <p><i class="far fa-check-circle"></i>Lounge</p>
-            </div>
+            <p><i class="far fa-check-circle"></i>Outdoor terrace</p>
+            <p><i class="far fa-check-circle"></i>Lounge</p>
           </div>
           <div class="space-amenitie py-2">
             <h5><strong>Cool stuff</strong></h5>
-            <div class="cool">
-              <p><i class="far fa-check-circle"></i>Sea-view</p>
-              <p><i class="far fa-check-circle"></i>Surf equipment</p>
-            </div>
+            <p><i class="far fa-check-circle"></i>Sea-view</p>
+            <p><i class="far fa-check-circle"></i>Surf equipment</p>
           </div>
           <div class="space-amenitie py-2">
             <h5><strong>Transportation</strong></h5>
-            <div class="transportation">
-              <p><i class="far fa-check-circle"></i>Free parking</p>
-              <p><i class="far fa-check-circle"></i>Bus stop at 5min</p>
-              <p><i class="far fa-check-circle"></i>Wheelchair accessibility</p>
-            </div>
+            <p><i class="far fa-check-circle"></i>Free parking</p>
+            <p><i class="far fa-check-circle"></i>Bus stop at 5min</p>
+            <p><i class="far fa-check-circle"></i>Wheelchair access</p>
           </div>
           <div class="space-amenitie py-2">
             <h5><strong>Catering</strong></h5>
-            <div class="transportation">
-              <p><i class="far fa-check-circle"></i>Free drinking water</p>
-              <p><i class="far fa-check-circle"></i>Free coffee</p>
-              <p><i class="far fa-check-circle"></i>Free tea</p>
-            </div>
+            <p><i class="far fa-check-circle"></i>Free drinking water</p>
+            <p><i class="far fa-check-circle"></i>Free coffee</p>
+            <p><i class="far fa-check-circle"></i>Free tea</p>
           </div>
         </div>
       </div>
 
-      <div class="space-rules-container border-bottom ">
-        <h3><strong>Space rules</strong></h3>
+      <div class="mb-5">
+        <h3 class="mb-3"><strong>Space rules</strong></h3>
         <div class="space-rules p-2">
-          <div class="rules">
-            <span><i class="far fa-check-circle"></i>Food allowed</span>
-          </div>
-          <div class="rules">
-            <span><i class="far fa-check-circle"></i>Pets allowed</span>
-          </div>
-          <div class="rules">
-            <span><i class="far fa-check-circle"></i>Parties and events</span>
-          </div>
-          <div class="rules">
-            <span><i class="far fa-times-circle"></i>Suitable for children</span>
-          </div>
-          <div class="rules">
-            <span><i class="far fa-times-circle"></i>Cooking not allowed</span>
-          </div>
+          <span><i class="far fa-check-circle"></i>Food allowed</span>
+          <span><i class="far fa-check-circle"></i>Pets allowed</span>
+          <span><i class="far fa-check-circle"></i>Parties and events</span>
+          <span><i class="far fa-times-circle"></i>Suitable for children</span>
+          <span><i class="far fa-times-circle"></i>Cooking not allowed</span>
         </div>
       </div>
 
       <div class="space-reviews">
-        <!--REVIEWS PAULINE -->
-        <h2 class="d-flex justify-content-between">
-          <div id="counter">
-            <h3><strong><%= pluralize @space.reviews.size, "review" %></strong></h3>
+        <div class="d-flex justify-content-between">
+          <div>
+            <h3 class="mb-3"><strong><%= pluralize @space.reviews.size, "review" %></strong></h3>
           </div>
           <!-- Button trigger modal -->
-          <button type="button" style="border-radius: 12px;" class="btn btn-primary" data-toggle="modal" data-target="#reviewModal">
-            <i class="fas fa-plus mr-2"></i>Add a review
-          </button>
-        </h2>
+          <div class="action-btn" data-toggle="modal" data-target="#reviewModal">
+            <i class="fas fa-plus mr-2"></i>
+            Add a review
+          </div>
+        </div>
         <div id="reviews" class="mb-3">
           <% if @space.reviews.blank? %>
           Be the first to leave a review for <%= @space.name %>

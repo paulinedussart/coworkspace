@@ -24,7 +24,6 @@ li {
 // -> Container
 .space-rules {
   display: grid;
-  gap: 10px 10px;
   grid-template-columns: repeat(auto-fit, minmax(11em, 11em));
   margin-bottom: 24px;
   background-color: #fff;

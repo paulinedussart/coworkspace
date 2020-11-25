@@ -25,24 +25,25 @@ li {
 .space-rules {
   display: grid;
   gap: 10px 10px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 25%));
+  grid-template-columns: repeat(auto-fit, minmax(11em, 11em));
   margin-bottom: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 // SPACES AMENITIES
 .space-amenities {
   display: grid;
   gap: 10px 10px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 25%));
-  margin-bottom: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(11em, 11em));
 }
 
 .space-amenitie {
-  border: 1px solid #d9dadb;
   padding: 10px 14px 2px;
-  border-radius: 4px;
-  float: left;
-  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 // -> icones
@@ -77,8 +78,19 @@ li {
   color: #f29c33;
   font-weight: bold;
 }
-.reviews {
-  margin-bottom: 5px;
+
+#reviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.review-user {
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  background-color: white;
+  width: 23em;
+  font-size: 16px;
 }
 
 // Map + form

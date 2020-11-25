@@ -1,14 +1,11 @@
-.reviews-user {
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  padding: 10px;
-  margin: 15px;
-  border-radius: 5px;
-}
-
 .rating-yellow {
   color: $orange;
 }
 
 .review-head p {
   font-size: 20px;
+  .fa-star {
+    padding: 1px;
+    font-size: 13px;
+  }
 }

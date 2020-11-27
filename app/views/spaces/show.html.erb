@@ -1,44 +1,47 @@
 <div class="banner">
 </div>
-<div id="show-space" class="px-5">
+<div id="show-space" class="px-2">
   <div class="row">
-    <div class="col-8">
+    <div class="col-12">
       <div class="d-flex justify-content-end">
         <div class="action-btn"><b><i class=" fas fa-undo-alt mr-2"></i></b> <%= link_to "Back to list", spaces_path, class: "text-white"  %></div>
       </div>
-      <div class="space-infos border-bottom">
-        <h1 class="mb-0"> <%= @space.name %></h1>
-        <div class="d-flex justify-content-between">
-          <p class="mb-0"><i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
-          <div>
-            <% if  @space.reviews.empty? %>
-            <p>No reviews yet</p>
-            <% else %>
-            <h4><%= @space.reviews.average(:rating) %>/5<i class="fas fa-star"></i></h4>
-            <% end %>
+      <div class="row">
+        <div class="col-12 col-md-8">
+          <div class="row">
+            <div class="col-12 col-md-8 p-0">
+              <h1 class="mb-0"><%= @space.name %></h1>
+              <div>
+                <p><i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
+                <p><em><a href="#"><%= @space.website %></a></em></p>
+              </div>
+              <ul>
+                <li><strong> Monday-Friday : </strong><%= @space.opening_hours["Mon-Fri"] %></li>
+                <li><strong>Saturday : </strong><%= @space.opening_hours['Sat'] %></li>
+                <li><strong>Sunday : </strong><%= @space.opening_hours['Sun'] %></li>
+              </ul>
+            </div>
+            <div class="col-12 col-md-4 text-right p-0">
+              <div>
+                <% if  @space.reviews.empty? %>
+                <p class=" mb-0">No reviews yet</p>
+                <% else %>
+                <h5><%= @space.reviews.average(:rating) %>/5<i class="fas fa-star"></i></h5>
+                <% end %>
+                <h3 class="mb-0"><%= humanized_money_with_symbol(@space.desks.first.price_per_day) %> /day</h3>
+              </div>
+            </div>
           </div>
+          <p class="text-justify">
+            <%= @space.description %>
+          </p>
         </div>
-        <div class="d-flex justify-content-between">
-          <em><a href="#"><%= @space.website %></a></em>
-          <h3><%= humanized_money_with_symbol(@space.desks.first.price_per_day) %> /day</h3>
+        <div class="col-12 col-md-4" id="map" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
       </div>
-
-      <div class="border-bottom">
-        <h3><strong>About <%= @space.name %></strong></h3>
-        <div class="hours border-bottom">
-          <ul>
-            <li><strong> Monday-Friday : </strong><%= @space.opening_hours["Mon-Fri"] %></li>
-            <li><strong>Saturday : </strong><%= @space.opening_hours['Sat'] %></li>
-            <li><strong>Sunday : </strong><%= @space.opening_hours['Sun'] %></li>
-          </ul>
-        </div>
-        <p class=" text-justify">
-          <%= @space.description %>
-        </p>
-      </div>
-
-      <div class="space-services mb-5">
+    </div>
+    <div class="col-12 col-md-8">
+      <div class="space-services mt-5">
         <h3 class="mb-3"><strong>Amenities</strong></h3>
         <div class="space-amenities mb-3">
           <div class="space-amenitie py-2">
@@ -100,25 +103,20 @@
         </div>
       </div>
 
-      <div class="space-reviews">
-        <div class="d-flex justify-content-between">
-          <div>
-            <h3 class="mb-3"><strong><%= pluralize @space.reviews.size, "review" %></strong></h3>
-          </div>
-          <!-- Button trigger modal -->
-          <div class="action-btn" data-toggle="modal" data-target="#reviewModal">
-            <i class="fas fa-plus mr-2"></i>
-            Add a review
-          </div>
-        </div>
+      <div>
+        <h3 class="mb-3"><strong><%= pluralize @space.reviews.size, "review" %></strong></h3>
         <div id="reviews" class="mb-3">
           <% if @space.reviews.blank? %>
-          Be the first to leave a review for <%= @space.name %>
+          Add a review
           <% else %>
           <% @space.reviews.order('created_at DESC').each do |review| %>
           <%= render 'reviews/show', review: review %>
           <% end %>
           <% end %>
+        </div>
+        <div class="action-btn mb-5" data-toggle="modal" data-target="#reviewModal">
+          <i class="fas fa-plus mr-2"></i>
+          Add a review
         </div>
         <!-- Modal -->
         <div class="modal" tabindex="-1" role="dialog" id='reviewModal'>
@@ -138,11 +136,7 @@
         </div>
       </div>
     </div>
-
-    <div class="col-4">
-      <div id="map" class="mt-3" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-
+    <div class="col-12 col-md-4">
       <div class="card-form-booking mt-5">
         <div class="p-3">
           <h3 class="text-center border-bottom pb-2 "><strong>Book your space</strong></h3>
@@ -172,7 +166,7 @@
           </div>
 
           <div class="text-center my-3">
-            <%= f.button :submit, class:'w-75 m-auto btn-nav-link-sign-in' %>
+            <%= f.button :submit, "Validate", class:'w-75 m-auto btn-nav-link-sign-in' %>
           </div>
           <% end %>
         </div>

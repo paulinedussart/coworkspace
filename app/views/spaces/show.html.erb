@@ -1,14 +1,17 @@
 <div class="banner">
 </div>
 <div id="show-space" class="px-3 pt-3">
-  <div class=" row">
+  <div class="row">
     <div class="col-12">
       <div class="d-flex justify-content-end">
       </div>
+      <div class="action-btn text-right mr-0 mb-2">
+        <i class=" fas fa-undo-alt mr-2"> <%= link_to "Back to list", spaces_path, class: "text-white"  %></i>
+      </div>
       <div class="row">
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-8 px-1">
           <div class="row">
-            <div class="col-12 col-md-8 p-0">
+            <div class="col-12 col-md-8 py-0">
               <h1 class="mb-0"><%= @space.name %></h1>
               <div>
                 <p><i class="fas fa-map-marker-alt"></i> <%= @space.address %></p>
@@ -22,17 +25,16 @@
             </div>
             <div class="col-12 col-md-4 text-right p-0">
               <div>
-                <div class="action-btn text-right mr-0 mb-2"><b><i class=" fas fa-undo-alt mr-2"></i></b> <%= link_to "Back to list", spaces_path, class: "text-white"  %></div>
                 <% if  @space.reviews.empty? %>
                 <p class=" mb-0">No reviews yet</p>
                 <% else %>
-                <h5><%= @space.reviews.average(:rating) %>/5<i class="fas fa-star"></i></h5>
+                <h4><%= @space.reviews.average(:rating) %>/5<i class="fas fa-star"></i></h4>
                 <% end %>
                 <h3 class="mb-0"><%= humanized_money_with_symbol(@space.desks.first.price_per_day) %> /day</h3>
               </div>
             </div>
           </div>
-          <p class="text-justify">
+          <p class="text-justify p-2">
             <%= @space.description %>
           </p>
         </div>
@@ -92,7 +94,7 @@
         </div>
       </div>
 
-      <div class="my-5">
+      <div class="my-4">
         <h3 class="mb-3"><strong>Space rules</strong></h3>
         <div class="space-rules p-2">
           <span><i class="far fa-check-circle"></i>Food allowed</span>
@@ -114,7 +116,7 @@
           <% end %>
           <% end %>
         </div>
-        <div class="action-btn mb-5" data-toggle="modal" data-target="#reviewModal">
+        <div class="action-btn mb-3" data-toggle="modal" data-target="#reviewModal">
           <i class="fas fa-plus mr-2"></i>
           Add a review
         </div>
@@ -137,7 +139,7 @@
       </div>
     </div>
     <div class="col-12 col-md-4">
-      <div class="card-form-booking mt-5">
+      <div class="card-form-booking my-4">
         <div class="p-3">
           <h3 class="text-center border-bottom pb-2 "><strong>Book your space</strong></h3>
           <%= simple_form_for [@user, @desk, @reservation] do |f| %>
@@ -172,6 +174,8 @@
         </div>
       </div>
     </div>
+    <div class="action-btn text-right mr-0 mb-2">
+      <i class=" fas fa-undo-alt mr-2"> <%= link_to "Back to list", spaces_path, class: "text-white"  %></i>
+    </div>
   </div>
-</div>
 </div>

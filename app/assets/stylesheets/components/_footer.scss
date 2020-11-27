@@ -1,41 +1,13 @@
 .footer {
-  background-color: #120F49;
-  height: 400px;
-  padding: 5px 40px;
-  position: relative;
-  width: 100%;
-  bottom: 0; left: 0;
-  font-size: 14px;
-}
-
-.footer p {
+  background-color: #120f49;
   color: white;
-  text-align: center;
-  line-height: 5px;
-}
-
-.footer h5 {
-  color: white;
-  font-size: 18px;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.third_element {
-  height: 50px;
-}
-
-.footer-links a {
-  text-decoration: none;
-  padding: 0px 10px;
 }
 
 .footer .fa-heart {
-  color: #D23333;
+  color: #d23333;
   font-size: 15px;
   padding: 0 8px;
 }
-
 
 .footer .fab {
   color: white;
@@ -44,17 +16,8 @@
   font-size: 20px;
 }
 
-
 .footer .fab:hover {
-  color: #9BC8FA;
-  transform:scale(1.5);
-  transition: all .2s ease-in-out;
-}
-
-.footer_about, .footer-links, .footer-copyright {
-  margin-top: 10px;
-}
-
-.content_footer {
-  margin-top: 40px;
+  color: #9bc8fa;
+  transform: scale(1.5);
+  transition: all 0.2s ease-in-out;
 }

@@ -23,15 +23,13 @@
                 <li><strong>Sunday : </strong><%= @space.opening_hours['Sun'] %></li>
               </ul>
             </div>
-            <div class="col-12 col-md-4 text-right p-0">
-              <div>
-                <% if  @space.reviews.empty? %>
-                <p class=" mb-0">No reviews yet</p>
-                <% else %>
-                <h4><%= @space.reviews.average(:rating) %>/5<i class="fas fa-star"></i></h4>
-                <% end %>
-                <h3 class="mb-0"><%= humanized_money_with_symbol(@space.desks.first.price_per_day) %> /day</h3>
-              </div>
+            <div class="col-12 col-md-4 text-right p-0 pr-2">
+              <% if  @space.reviews.empty? %>
+              <p class=" mb-0">No reviews yet</p>
+              <% else %>
+              <h4><%= @space.reviews.average(:rating) %>/5<i class="fas fa-star"></i></h4>
+              <% end %>
+              <h3 class="mb-0"><%= humanized_money_with_symbol(@space.desks.first.price_per_day) %> /day</h3>
             </div>
           </div>
           <p class="text-justify p-2">

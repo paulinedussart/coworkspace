@@ -25,3 +25,36 @@ p {
 li {
   margin: 0px !important;
 }
+
+h1 {
+  color: $purple;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 41px;
+}
+
+h3 {
+  font-weight: 900;
+  font-size: 24px;
+  margin-bottom: 26px !important;
+}
+
+h2 {
+  font-weight: 900;
+  font-size: 30px;
+}
+
+h4 {
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+h5 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  margin-bottom: 0px;
+}

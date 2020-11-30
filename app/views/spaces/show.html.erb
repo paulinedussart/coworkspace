@@ -140,7 +140,7 @@
       <div class="card-form-booking my-4">
         <div class="p-3">
           <h3 class="text-center border-bottom pb-2 "><strong>Book your space</strong></h3>
-          <%= simple_form_for [@user, @desk, @reservation] do |f| %>
+          <%= simple_form_for [@user, @reservation] do |f| %>
           <div class="form-inputs my-3 border-bottom">
             <%= f.error_notification %>
             <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>

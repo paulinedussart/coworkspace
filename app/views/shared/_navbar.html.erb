@@ -1,3 +1,5 @@
+<%
+=begin%>
 <div class=" navbar nav fixed-top navbar-expand-sm navbar-lewagon mb-5" style="background-color:white;margin-bottom:200px; ">
 
   <%= link_to "/", class: "navbar-brand" do %>
@@ -75,4 +77,56 @@
       </button>
       <% end %>
   </form>
+</div>
+<%
+=end%>
+
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "/", class: "navbar-brand" do %>
+  <div class="d-flex">
+    <div class="logoCoworkspace">
+      <%= image_tag "logo_coworkspace.svg" %>
+    </div>
+    <h2 class="name-site my-0">COWORKSPACE</h2>
+  </div>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+		  <li class="nav-item active">
+        <%= link_to "Coworking", spaces_path, class: "btn-nav-link nav-item mx-4" %>
+      </li>
+      <% if user_signed_in? %>
+
+      <% else %>
+			
+      <% end %>
+
+      <li class="nav-item active">
+       <%= link_to "Coworking", spaces_path, class: "btn-nav-link nav-item mx-4" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Messages", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <% if current_user.avatar.file.nil? %>
+          <button class="nav-item dropdown btn avatarUser mx-2" type="button">
+            <%= image_tag "fallback/userAvatarDefault.png", class: "rounded-circle  dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= render partial: "shared/dropdown", current_user: current_user %>
+          </button>
+        <% else %>
+          <button class="nav-item dropdown btn avatarUser mx-2" type="button">
+            <%= cl_image_tag current_user.avatar, class: "rounded-circle  dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+           <%= render partial: "shared/dropdown", current_user: current_user %>
+          </button>
+        <% end %>
+      </li>
+    </ul>
+  </div>
 </div>

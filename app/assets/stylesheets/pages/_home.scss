@@ -1,17 +1,16 @@
-.big_container{
+.big_container {
   width: 100%;
 }
 
 body {
   margin: 0 auto;
   position: relative;
-  color: #110F49;
-
+  color: #110f49;
 }
 
 .logoCoworkspace:hover img {
-  transform: rotate(180deg);
-  transition: transform 2s cubic-bezier(0.620, 0.105, 0.106, 0.03 );
+  transform: translateY(3px);
+  transition: 0.3s;
 }
 
 .name-site {
@@ -21,40 +20,6 @@ body {
   font-size: 40px;
   line-height: 47px;
   letter-spacing: 0.1em;
-}
-
-
-h1 {
-  color: $purple;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 35px;
-  line-height: 41px;
-}
-
-h3 {
-font-weight: 900;
-font-size: 24px;
-margin-bottom: 26px !important;
-}
-
-h2 {
-  font-weight: 900;
-  font-size: 30px;
-}
-
-h4 {
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 28px;
-}
-
-h5 {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 15px;
-  line-height: 18px;
-  margin-bottom: 0px;
 }
 
 .big_container p {
@@ -73,7 +38,7 @@ h5 {
   padding-left: 90px;
 }
 
-.home_slogan{
+.home_slogan {
   width: 300px;
   padding-top: 90px;
 }
@@ -105,10 +70,10 @@ h5 {
   left: 340px;
   z-index: 3;
   border-radius: 50%;
-  background: linear-gradient(207deg, #FF4268 13%, #FFB800 85%);
+  background: linear-gradient(207deg, #ff4268 13%, #ffb800 85%);
 }
 
-.home_sun{
+.home_sun {
   animation-duration: 9s;
   animation-name: glissement;
   animation-direction: alternate;
@@ -152,11 +117,11 @@ h5 {
 }
 
 .background-grey {
-  background: #F5F6FA;
+  background: #f5f6fa;
 }
 
 .background-blue {
-  background: #9BC9FF;
+  background: #9bc9ff;
 }
 
 .illustation_home img {
@@ -168,8 +133,8 @@ h5 {
 }
 
 .avis_customer_box {
-  background: #FFFFFF;
-  box-shadow: 10px 10px 0px #2F2E41;
+  background: #ffffff;
+  box-shadow: 10px 10px 0px #2f2e41;
   border-radius: 20px;
   width: 520px;
   height: 256px;
@@ -190,9 +155,9 @@ h5 {
 
 .text_avis::before {
   position: absolute;
-  content: "";
+  content: '';
   left: 44px;
-  background-color: #9BC8FA;
+  background-color: #9bc8fa;
   height: 60px;
   width: 3px;
   z-index: 1;
@@ -220,7 +185,7 @@ h5 {
   width: 50px;
   height: 50px;
   padding: 12px;
-  background-color: #9BC8FA;
+  background-color: #9bc8fa;
   text-align: center;
   margin-right: 30px;
 }
@@ -228,6 +193,3 @@ h5 {
 .deroulement-content {
   width: 245px;
 }
-
-
-

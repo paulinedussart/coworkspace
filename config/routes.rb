@@ -18,9 +18,6 @@ Rails.application.routes.draw do
   end
 
   resources :owners do
-    member do
-      get "/chatroom", to: "chat_rooms#show"
-    end
 
     resources :spaces, only: [:index, :show, :new, :create] do
       resources :reservations, only: [:index, :show, :destroy, :edit, :update]
@@ -46,14 +43,7 @@ Rails.application.routes.draw do
 
   resources :spaces, only: [:index, :show]
 
-  resources :chat_rooms, only: [] do
-    resources :messages, only: [:create]
-  end
-
   resources :owners do
     get "dashboard", to: "pages#dashboard"
-    collection do
-      get "/chat_room/:id", to: "chat_rooms#show_owner", as: :chatroom
-    end
   end
 end

@@ -1,0 +1,21 @@
+<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+  <div class="text-center info_user border-bottom mx-2 pb-2">
+    <strong> <%= current_user.first_name.capitalize %> <%= current_user.last_name.capitalize[0] %></strong>
+    <p style="opacity:0.6;color:#FE3551;"><em><%= current_user.email %></em> </p>
+  </div>
+
+  <div class="dropdown-item-choice d-fex pl-3 p-1 ">
+    <i class="fas icon_navbar fa-user"></i>
+    <%= link_to "Profile", user_path(:id), class: " pl-2 dropdown-item" %>
+  </div>
+
+  <div class="dropdown-item-choice d-fex pl-3 p-1 ">
+    <i class="fas icon_navbar fa-envelope"></i>
+    <%= link_to "Messages", "#", class: " pl-2 dropdown-item" %>
+  </div>
+
+  <div class="dropdown-item-choice d-fex pl-3 p-1">
+    <i class="fas icon_navbar fa-sign-out-alt"></i>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item pl-2" %>
+  </div>
+</div>

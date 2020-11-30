@@ -26,11 +26,12 @@
   </head>
   <body>
     <% if action_name == "home"%>
-      <%= render 'shared/navbarhome' %>
+      <%= render partial: "shared/navbar", current_user: current_user, locals: {id: "theNavbar", background: ""} %>
     <% elsif action_name == "dashboard"%>
       <%= render 'shared/sidebardash' %>
     <% else %>
-      <%= render 'shared/navbar' %>
+			<%= render partial: "shared/navbar", current_user: current_user, locals: {id: "", background: "bg-white"} %>
+ 
     <% end %>
 
     <%= yield %>

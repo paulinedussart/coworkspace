@@ -3,6 +3,7 @@
     width: 50px;
   }
 
+  // COWORKSPACE TITLE
   .name-site {
     font-family: Roboto;
     font-style: normal;
@@ -11,11 +12,6 @@
     line-height: 47px;
     letter-spacing: 0.1em;
   }
-}
-
-.nav {
-  justify-content: space-between;
-  background-color: none;
 }
 
 // pauline
@@ -36,6 +32,10 @@
     display: inline !important;
     text-align: right;
     color: $primary !important;
+
+    &:hover {
+      background-color: transparent;
+    }
   }
 
   .icon_navbar {
@@ -46,14 +46,6 @@
   .info_user {
     color: $primary !important;
   }
-
-  .dropdown-item-choice:hover {
-    background-color: #f5f6fa;
-  }
-
-  .dropdown-item:hover {
-    background-color: transparent;
-  }
 }
 
 //pauline
@@ -61,29 +53,6 @@
   border-radius: 10px !important;
   box-shadow: 4px 4px 0px $primary;
   border-color: #252a62 !important;
-}
-
-// navbar user connected
-.navbar-light .navbar-nav .nav-link {
-  color: white;
-  padding: 5px 18px;
-  font-size: 15px !important;
-  margin-top: 4px;
-  border-radius: 30px;
-  background-color: $primary;
-  margin-top: 5px;
-}
-
-.navbar-light .navbar-nav .nav-link:hover {
-  color: green;
-  background-color: white;
-  border-radius: 30px;
-  padding: 8px 18px;
-  margin-top: 4px;
-  font-size: 15px !important;
-  margin-top: 5px;
-  border: solid $primary 2px;
-  font-size: bold;
 }
 
 // nav bar home
@@ -112,4 +81,8 @@ a.nav-link {
       display: none;
     }
   }
+}
+
+.navbar-collapse {
+  flex-grow: 0;
 }

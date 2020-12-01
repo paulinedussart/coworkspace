@@ -31,7 +31,6 @@
       <%= render 'shared/sidebardash' %>
     <% else %>
 			<%= render partial: "shared/navbar", current_user: current_user, locals: {id: "", background: "bg-white"} %>
- 
     <% end %>
 
     <%= yield %>

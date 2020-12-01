@@ -21,4 +21,17 @@
   border-radius: 5px !important;
   position: relative !important;
 }
+
 // --------------------------------
+
+@media screen and (max-width: 650px) {
+  .map-index {
+    display: none;
+  }
+}
+
+#index .map-index {
+  height: calc(100vh - 130px) !important;
+  position: sticky;
+  top: 115px;
+}

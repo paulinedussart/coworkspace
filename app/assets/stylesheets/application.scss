@@ -12,6 +12,16 @@
 @import 'components/index';
 @import 'pages/index';
 
+#show-space,
+#index {
+  background-color: #9bc8fa;
+}
+
+#index {
+  padding-top: 30px;
+  margin-top: 85px;
+}
+
 p,
 span,
 ul {

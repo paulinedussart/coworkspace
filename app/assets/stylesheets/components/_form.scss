@@ -10,9 +10,9 @@
   line-height: 18px;
   border-color: #252a62 !important;
   box-shadow: 4px 4px 0px #252a62 !important;
-  height: 45px;
-  padding-left: 20px;
-  font-size: 16px !important;
+  height: 55px;
+  padding-left: 23px;
+  font-size: 20px !important;
 }
 
 .form-control-home::placeholder {
@@ -124,9 +124,10 @@
   margin: auto 0px;
 }
 
-// .form-fill-height {
-//   min-height: calc(100vh - 186px);
-// }
+.form-fill-height {
+  min-height: calc(100vh - 186px);
+  margin-top: 85px;
+}
 
 // ---------FORM FOOTER NEWSLETTER
 .form-newsletter {

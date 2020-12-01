@@ -4,7 +4,7 @@
   .cards-spaces-container {
     display: grid;
     grid-gap: 30px;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     flex-grow: 1;
 
     .card-space {
@@ -100,19 +100,13 @@
   margin: 0 auto;
 }
 
-.form-fill-height {
-  height: calc(100vh - 85px);
-}
-
 // CARD PAIEMENT
 .card-paiement {
-  width: 650px;
   height: fit-content;
   padding: 1em;
   border-radius: 10px;
   box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.3);
   background-color: #fff;
-  margin-top: 7em;
 }
 
 .border-bottom {

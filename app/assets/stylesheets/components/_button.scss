@@ -33,14 +33,13 @@
 .stripe-button {
   transition: 0.9s;
   border-radius: 12px !important;
-  width: 245px;
   margin: 14px 80px;
   font-size: 16px;
   padding: 12px 15px;
   color: #fff !important;
   background: #110f49 !important;
   box-shadow: 6px 6px 0px #9bc9ff;
-  height: 57px;
+  height: fit-content;
   font-size: 20px !important;
 }
 
@@ -57,14 +56,13 @@
   span {
     transition: 0.9s;
     border-radius: 12px !important;
-    width: 245px;
     margin: 14px 80px;
     font-size: 16px;
     padding: 12px 15px;
     color: #fff !important;
     background: #110f49;
     box-shadow: 6px 6px 0px #9bc9ff;
-    height: 57px;
+    height: fit-content;
     font-size: 20px !important;
     &:hover {
       transform: translateY(8px);
@@ -162,4 +160,8 @@
   &:hover {
     color: white;
   }
+}
+
+.navbar-toggler:focus {
+  outline: none;
 }

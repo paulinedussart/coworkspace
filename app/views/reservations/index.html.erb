@@ -1,7 +1,7 @@
 <div id="index-resa" class="full-screen">
   <h1 class="pt-3 px-4"><strong>BOOKINGS</strong></h1>
 	<% if @reservations.present? %>
-		<div id="reservations-index" class="m-3">
+		<div id="reservations-index" class="p-3">
 			<% @reservations.each do |reservation| %>
 				<div class="card p-3 card-index-reservations-user">
 			    <h2><%= reservation.desk.space.name %></h2>

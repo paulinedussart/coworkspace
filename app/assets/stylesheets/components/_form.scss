@@ -5,31 +5,19 @@
   border-radius: 20px;
   font-family: Roboto;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.5px;
   line-height: 18px;
   border-color: #252a62 !important;
   box-shadow: 4px 4px 0px #252a62 !important;
-}
-
-.form-inline-index {
-  .form-inline .form-control {
-    width: 50% !important;
-  }
-  top: 82px;
-  background-color: #9bc8fa;
-  width: 100%;
-  z-index: 3;
-  padding: 20px 40px;
-  left: 0px;
-  box-shadow: 0px 0px 2px 4px #9bc8fa;
+  height: 45px;
+  padding-left: 20px;
+  font-size: 16px !important;
 }
 
 .form-control-home::placeholder {
   color: #484848 !important;
 }
-
-// Form design for devise -> signup
 
 // Form design for devise -> login
 .form-login,

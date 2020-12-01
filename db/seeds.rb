@@ -383,7 +383,7 @@ we_work_martin_place.remote_photo_url = url
 we_work_martin_place.save
 
 url = "https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
-hub_southern_cross_melbourne = Space.new(name: "Hub Southern Cross - Melbourne", address: "696 Bourke St, Melbourne VIC 3000, Australia", description:"Coworking space and serviced offices in a stunning heritage listed building!
+hub_southern_cross_melbourne = Space.new(name: "Hub Southern", address: "696 Bourke St, Melbourne VIC 3000, Australia", description:"Coworking space and serviced offices in a stunning heritage listed building!
 Check out our North Strathfield space for Serviced Offices for every business type and size. Our offices are there to help you start your business off or seat all 30 of your employees! Doesn't matter what size or how many you need we have the offices to accomodate you and your business.
 Join up month-to-month with no lock in contracts just an awesome environment with loads of people waiting to meet you! ",
 owner: green_advisor, opening_hours: {'Mon-Fri': '8AM-8PM', 'Sat': '9AM-6PM', 'Sun': '10AM-1PM'}, website: 'https://www.Hub-Southern-Cross.com')

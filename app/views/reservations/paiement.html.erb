@@ -1,67 +1,59 @@
 
-<div class="container form-fill-height">
+<div class="form-fill-height d-flex justify-content-center">
 
-
-
-  <div class="card card-paiement">
-    <h3 class="text-center mt-3 pb-3 border-bottom"> <strong>Reservation Confirmation</strong></h3>
+  <div class="card-paiement">
+    <h2 class="text-center border-bottom pb-3"> <strong>Reservation Confirmation</strong></h2>
     <div class="card-body-paiement">
       <%= form_tag reservation_payments_path(@reservation) do %>
-      <div class="order-number">
-        <h5 class="text-right mt-2">Order Number : 34_0619</h5>
-        <p class="text-right mb-2"> <%= Date.today.strftime("%e %B %Y") %> </p>
+      <div class="d-flex justify-content-between align-items-center">
+        <h4 class="mb-0">Order Number : C219F</h4>
+        <h3 class="mb-0"><%= Date.today.strftime("%e %B %Y") %></h3>
+			</div>
+			</div>
+      <div class="d-flex justify-content-between align-items-center py-3">
+        <div>
+					<h5><strong><%= @reservation.desk.space.name %></strong></h5>
+	        <p><em>14 South Steyne, Manly</em></p>
+	        <p><em>Sydney, Australia</em></p>
+				</div>
+        <p class="my-2"> From <strong><%= @reservation.arrival_date.strftime("%d/%m/%Y") %></strong> to <strong><%= @reservation.departure_date.strftime("%d/%m/%Y") %></strong> </p>
       </div>
-      <div class="info-coworking-paiement pb-4">
-        <h5><strong><%= @reservation.desk.space.name %></strong></h5>
-        <p><em>14 South Steyne, Manly</em></p>
-        <p><em>Sydney, Australia</em></p>
-        <p> </p>
-        <p></p>
-      </div>
-        <div class="date-stay pb-4">
-          <h4 class="date border-bottom" > <strong>Dates :</strong> </h4>
-          <div class="d-flex justify-content-between mt-3 px-3">
-            <p><i class="fas fa-calendar-day fa"> :</i></p>
-            <p><%= @reservation.arrival_date.strftime("%e %B %Y") %></p>
-            <p><i class="fas fa-long-arrow-alt-right"></i></p>
-            <p><%= @reservation.departure_date.strftime("%e %B %Y") %></p>
+      <div>
+        <h4 class="date border-bottom pb-1" > <strong>Price Details :</strong> </h4>
+        <div class=" mt-2 px-3 mb-2">
+          <div class="days-number d-flex justify-content-between">
+            <p> Number of days : </p>
+            <p><%= @reservation.total_days %></p>
+          </div>
+          <div class="days-number d-flex justify-content-between">
+            <p> Price per day : </p>
+            <p>$<%= @reservation.desk.price_per_day %></p>
+          </div>
+          <div class="days-number d-flex justify-content-between mt-2">
+            <p> <strong>TOTAL HT : </strong> </p>
+            <p> <strong>$<%= @reservation.total_days * @reservation.desk.price_per_day %></strong> </p>
+          </div>
+          <div class="days-number d-flex justify-content-between">
+            <p> Taxes : </p>
+            <p>$3.00</p>
           </div>
         </div>
-
-        <div class="price-recap pb-3">
-          <h4 class="date border-bottom" > <strong>Price Details :</strong> </h4>
-          <div class=" mt-2 px-3 mb-2">
-            <div class="days-number d-flex justify-content-between">
-              <p> Number of days : </p>
-              <p><%= @reservation.total_days %></p>
-            </div>
-            <div class="days-number d-flex justify-content-between">
-              <p> Price per day : </p>
-              <p>$<%= @reservation.desk.price_per_day %></p>
-            </div>
-            <div class="days-number d-flex justify-content-between mt-2">
-              <p> <strong>TOTAL HT : </strong> </p>
-              <p> <strong>$<%= @reservation.total_days * @reservation.desk.price_per_day %></strong> </p>
-            </div>
-            <div class="days-number d-flex justify-content-between">
-              <p> Taxes : </p>
-              <p>$3.00</p>
-            </div>
-          </div>
-        </div>
+      </div>
 
         <div class="amount border-top">
-          <h4 class="text-center mt-3"> <strong>TOTAL : <%= humanized_money_with_symbol(@reservation.total_price) %> AUD</strong>  </h4>
+          <h3 class="text-center my-2"> <strong>TOTAL : <%= humanized_money_with_symbol(@reservation.total_price) %> AUD</strong>  </h3>
         </div>
 
-
-        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-name="Payment Proces"
-          data-email="<%= current_user.email %>"
-          data-description="<%= current_user.first_name %> <%= current_user.last_name %>"
-          data-amount="<%= @reservation.total_price_cents %>"
-          data-currency="<%= @reservation.total_price.currency %>"></script>
+				<div class="d-flex justify-content-center">
+				  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+	          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+	          data-name="Payment Proces"
+	          data-email="<%= current_user.email %>"
+	          data-description="<%= current_user.first_name %> <%= current_user.last_name %>"
+	          data-amount="<%= @reservation.total_price_cents %>"
+	          data-currency="<%= @reservation.total_price.currency %>">
+					</script>	
+				</div>
       <% end %>
     </div>
   </div>

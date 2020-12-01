@@ -111,28 +111,19 @@
   margin: 0 auto;
 }
 
+.form-fill-height {
+  height: calc(100vh - 85px);
+}
+
 // CARD PAIEMENT
 .card-paiement {
-  width: 430px;
-  height: 600px;
-  margin: 2rem auto !important;
+  width: 650px;
+  height: fit-content;
+  padding: 1em;
   border-radius: 10px;
   box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.3);
-  padding: 0 35px;
-}
-
-.card-body-paiement {
-  margin-top: -5px;
-}
-
-.card-paiement h4,
-h5 {
-  margin-bottom: 0;
-}
-
-.card-paiement p {
-  line-height: 1.5;
-  margin-bottom: 0;
+  background-color: #fff;
+  margin-top: 7em;
 }
 
 .border-bottom {

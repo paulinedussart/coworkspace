@@ -31,43 +31,43 @@
 
 // Card confirmation_reservations to process paiement
 .stripe-button {
-  background-image: linear-gradient(to right, #e47097, #f8a348);
-  color: white;
-  box-shadow: 0 0 20px #eee;
   transition: 0.9s;
-  border-radius: 20px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  padding: 5px 25px;
-  vertical-align: middle;
-  margin: 0 auto;
+  border-radius: 12px !important;
+  width: 245px;
+  margin: 14px 80px;
+  font-size: 16px;
+  padding: 12px 15px;
+  color: #fff !important;
+  background: #110f49 !important;
+  box-shadow: 6px 6px 0px #9bc9ff;
+  height: 57px;
+  font-size: 20px !important;
 }
 
 .card-paiement .stripe-button-el {
-  background: none;
-  border: none;
-  box-shadow: none;
-  overflow: visible;
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+
+  &:focus {
+    outline: none;
+  }
 
   span {
-    line-height: 1.5em;
-    text-shadow: none;
-    font-family: 'Roboto', 'Helvetica', 'sans-serif' !important;
-    box-shadow: none;
-    background-image: -webkit-linear-gradient(left, #e47097, #f8a348);
-    background-image: -o-linear-gradient(left, #e47097, #f8a348);
-    background-image: linear-gradient(to right, #e47097, #f8a348);
-    color: white;
-    box-shadow: 0 0 20px #eee;
     transition: 0.9s;
-    border-radius: 20px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    padding: 4px 50px;
-    width: 199px;
+    border-radius: 12px !important;
+    width: 245px;
     margin: 14px 80px;
     font-size: 16px;
+    padding: 12px 15px;
+    color: #fff !important;
+    background: #110f49;
+    box-shadow: 6px 6px 0px #9bc9ff;
+    height: 57px;
+    font-size: 20px !important;
     &:hover {
-      box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-      transform: translateY(-7px);
+      transform: translateY(8px);
     }
   }
 }
@@ -91,7 +91,7 @@
     }
   }
 }
-
+// Buttons presents in the Navbar
 .btn-nav-link {
   color: #110f49 !important;
   position: relative;
@@ -124,7 +124,7 @@
   transition: 0.3s;
 }
 
-// general btn
+// General Buttons
 .action-btn {
   background-color: #110f49;
   color: #fff;

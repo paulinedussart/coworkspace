@@ -149,3 +149,17 @@
     transition: 0.3s;
   }
 }
+// btn-reservation
+.btn-white-border {
+  background-color: #110f49;
+  border-radius: 12px;
+  box-shadow: 6px 6px 0px #9bc9ff;
+  height: 47px;
+  color: white;
+  text-align: center;
+  padding: 7px;
+
+  &:hover {
+    color: white;
+  }
+}

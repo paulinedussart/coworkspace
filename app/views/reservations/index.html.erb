@@ -1,35 +1,39 @@
-<div class=" mt-5 pt-5 container full-screen">
-  <h1>My reservations</h1>
-  <% @reservations.each do |reservation| %>
-  <div class="card m-5 card-index-reservations-user">
-
-
-    <div class="card-header header-resa-user d-flex justify-content-between">
-      <h3 class="card-title-reservation"><%= reservation.desk.space.name %></h3>
-      <h7 class="card-title reservation-status">
-        <% if reservation.status == "PENDING" %>
-          <div class="text-warning"> <i class="fas fa-hourglass-half"></i> <strong><%= "PENDING" %></strong> </div>
-        <% elsif reservation.status == "ACCEPTED" %>
-          <div class="text-success"> <i class="fas fa-check"></i> <strong><%= "ACCEPTED" %></strong> </div>
-        <% else %>
-          <div class="text-danger"> <i class="fas fa-times"></i> <strong><%= "REFUSED" %></strong> </div>
-        <% end  %></h7>
-    </div>
-
-    <div class="card-body">
-      <div class="reservation_info d-flex justify-content-between">
-        <em><%= reservation.desk.space.address %></em>
-        <a href="#" class="btn btn-primary">Show on map </a>
-      </div>
-<br>
-      <div class="d-flex justify-content-between"  >
-        <div> <h6><i class="far fa-calendar-check text-primary"></i> <%= reservation.arrival_date.strftime("%e %B %Y") %> <i class="fas text-primary fa-long-arrow-alt-right"></i> <%= reservation.departure_date.strftime("%e %B %Y") %> </h6></div>
-        <div> <i class="fas text-primary fa-paperclip "></i> <%= link_to "Reservation...PDF" %></div>
-      </div>
-    </div>
-
-  </div>
-  <% end %>
+<div id="index-resa" class="full-screen">
+  <h1 class="pt-3 px-4"><strong>BOOKINGS</strong></h1>
+	<% if @reservations.present? %>
+		<div id="reservations-index" class="m-3">
+			<% @reservations.each do |reservation| %>
+				<div class="card p-3 card-index-reservations-user">
+			    <h2><%= reservation.desk.space.name %></h2>
+			    <h3 class="card-title reservation-status">
+			      <% if reservation.status == "PENDING" %>
+			        <div class="text-warning"><i class="fas fa-hourglass-half"></i> <strong><%= "PENDING" %></strong></div>
+			      <% elsif reservation.status == "ACCEPTED" %>
+			        <div class="text-success"><i class="fas fa-check"></i> <strong><%= "ACCEPTED" %></strong></div>
+			      <% else %>
+		          <div class="text-danger"><i class="fas fa-times"></i> <strong><%= "REFUSED" %></strong></div>
+		        <% end  %>
+					</h3>
+		      <em><%= reservation.desk.space.address %></em><br>
+					<h6>
+						<i class="far fa-calendar-check text-primary"></i>
+						 	<%= reservation.arrival_date.strftime("%d/%m/%Y") %> 
+						<i class="fas text-primary fa-long-arrow-alt-right"></i> 
+							<%= reservation.departure_date.strftime("%d/%m/%Y") %> 
+					</h6>
+	       	<div class="mt-3 text-right">
+						<i class="fas text-primary fa-paperclip "></i><em><%= link_to "reservation...PDF" %></em><br>
+					</div>
+	        <a href="#" class="btn-white-border ">Show on the map</a>
+				</div>
+	  	<% end %>
+		</div>
+	<% else %>
+		<p>
+			Sorry, but there is no reservation yet. <br>
+			Please visit the coworking tab to make a reservation.
+		</p>
+	<% end %>
 </div>
 
 

@@ -1,0 +1,22 @@
+// index résa
+.full-screen {
+  min-height: calc(100vh - 190px);
+  margin-top: 85px;
+}
+
+// RESERVATIONS USER #index (Pauline Dussart)
+#reservations-index {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.card-index-reservations-user {
+  height: fit-content;
+  box-shadow: 6px 6px 0px #110f49;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.card-title-reservation {
+  margin-top: 10px;
+}

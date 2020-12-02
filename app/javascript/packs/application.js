@@ -20,13 +20,6 @@ initAutocomplete();
 // ---------- FlatPickr ----------
 import "../plugins/flatpickr";
 
-// ------------ Calendar ------------
-// import "@fullcalendar/core/main.css";
-// import "@fullcalendar/daygrid/main.css";
-// import fullCalendar from "./fullcalendar";
-// fullCalendar();
-
-
 // ------------ AOS ------------
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles

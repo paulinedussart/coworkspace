@@ -23,7 +23,6 @@
 .form-login,
 .form-sign-up {
   padding: 10px 20px;
-  margin-top: 50px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   background-color: white !important;
   border-radius: 15px !important;
@@ -133,7 +132,7 @@
 
 .form-fill-height {
   min-height: calc(100vh - 186px);
-  margin-top: 85px;
+  padding-top: 120px;
 }
 
 // ---------FORM FOOTER NEWSLETTER

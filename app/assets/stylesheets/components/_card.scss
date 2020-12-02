@@ -9,11 +9,10 @@
 
     .card-space {
       position: relative;
-      background-color: white;
-      border-radius: 5px;
-      border-radius: 15px;
+      background-color: white !important;
+      border-radius: 15px !important;
       border: none;
-      box-shadow: 6px 6px 0px #110f49;
+      box-shadow: 6px 6px 0px #110f49 !important;
       height: 415px;
 
       #note-details-card-index {
@@ -104,8 +103,8 @@
 .card-paiement {
   height: fit-content;
   padding: 1em;
-  border-radius: 10px;
-  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px !important;
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.3) !important;
   background-color: #fff;
 }
 

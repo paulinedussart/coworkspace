@@ -8,7 +8,7 @@
 	  </div>
   <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
@@ -19,9 +19,9 @@
 	      <li>
 					<%= link_to "Coworking", spaces_path, class: "btn-nav-link nav-link" %>
 	      </li>
-				<li>
+			
 	        <%= link_to "Bookings", user_reservations_path(current_user), class: "btn-nav-link nav-link" %>
-				</li>
+		
 	     	<%= render partial: "shared/dropdown", current_user: current_user %>
 
 

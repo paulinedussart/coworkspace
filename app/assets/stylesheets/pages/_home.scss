@@ -1,5 +1,9 @@
-.big_container {
-  width: 100%;
+.home_slogan {
+  margin-top: 85px;
+
+  p {
+    font-size: 20px !important;
+  }
 }
 
 body {
@@ -17,27 +21,6 @@ body {
   letter-spacing: 0.1em;
 }
 
-.big_container p {
-  font-size: 16px;
-  line-height: 22px;
-  margin-bottom: 0px;
-}
-
-.header {
-  margin-right: 0px;
-  z-index: 2;
-  height: 100vh;
-}
-
-.slogan_title {
-  padding-left: 90px;
-}
-
-.home_slogan {
-  width: 300px;
-  padding-top: 90px;
-}
-
 .home_title {
   width: 500px;
   font-style: normal;
@@ -45,70 +28,6 @@ body {
   font-size: 25px;
   line-height: 29px;
   color: $purple;
-}
-
-.home_illusta {
-  right: 100px;
-  top: 250px;
-  float: right !important;
-  position: absolute;
-  height: auto;
-}
-.home_illusta img {
-  width: 110%;
-}
-
-.home_sun {
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  left: 340px;
-  z-index: 3;
-  border-radius: 50%;
-  background: linear-gradient(207deg, #ff4268 13%, #ffb800 85%);
-}
-
-.home_sun {
-  animation-duration: 9s;
-  animation-name: glissement;
-  animation-direction: alternate;
-  animation-iteration-count: infinite;
-}
-
-@keyframes glissement {
-  from {
-    top: 10px;
-    filter: opacity(65%);
-  }
-
-  to {
-    top: -100px;
-    filter: opacity(90%);
-  }
-}
-
-.home_ellipse {
-  position: absolute;
-  z-index: -1;
-  left: -400px;
-  top: -500px;
-}
-
-.home_about {
-  margin-top: 2vh;
-  margin-bottom: 15vh;
-}
-
-.text_about {
-  padding: 0 180px;
-}
-
-.explication_home {
-  padding: 0 230px;
-}
-
-#business {
-  margin-bottom: 190px !important;
 }
 
 .background-grey {
@@ -123,29 +42,17 @@ body {
   width: 300px;
 }
 
-.description_content_home {
-  padding: 50px;
-}
-
 .avis_customer_box {
   background: #ffffff;
   box-shadow: 10px 10px 0px #2f2e41;
   border-radius: 20px;
-  width: 520px;
-  height: 256px;
+  height: 250px;
+  width: fit-content;
   position: relative;
 }
 
 .avis_customer {
   padding: 0 100px;
-}
-
-.text_avis {
-  width: 440px;
-  font-style: italic;
-  font-weight: 300;
-  font-size: 15px;
-  line-height: 20px;
 }
 
 .text_avis::before {
@@ -181,10 +88,16 @@ body {
   height: 50px;
   padding: 12px;
   background-color: #9bc8fa;
-  text-align: center;
-  margin-right: 30px;
 }
 
 .deroulement-content {
-  width: 245px;
+  width: 300px;
+  margin-left: 20px;
+  text-align: left;
+}
+
+@media screen and (max-width: 1100px) {
+  .home_illusta {
+    display: none;
+  }
 }

@@ -1,135 +1,97 @@
-<div class="big_container">
-  <div class="header d-flex">
-    <div class="home_ellipse">
-      <%= image_tag "ellipse_home.svg" %>
-    </div>
-    <div class="slogan_title">
-      <h1 class="home_slogan">Find your desk all over the world ! </h1>
-      <h3 class="home_title pt-2">From private offices to open spaces <br>
-          we will find a space that suits you perfectly.
-      </h3>
+<div class="home_slogan py-2 mb-5">
+  <div class="py-3 px-5 row">
+		<div class="col-12 col-md-8 d-flex align-items-center">
+			<div>
+		    <h1><strong>Find your desk all over the world !</strong></h1>
+		    <p>From private offices to open spaces <br>we will find a space that suits you perfectly.</p>
+			</div>
+		</div>
 
-      <div class="">
-              <%= form_tag spaces_path, method: :get, class:"form-inline mt-5" do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control form-control form-inline-no-border",
-          placeholder: "Select a city" %>
-          <%= date_field_tag :arrival_date, params[:arrival_date], class: "form-control  form-inline-no-border form-control", placeholder: "12/11/2020" %>
-          <%= submit_tag 'Find', class:"btn-custom btn-home-search mx-2" %>
-      <% end %>
-      </div>
-    </div>
-    <div class="home_illusta ">
-      <div class="home_sun"></div>
-      <%= image_tag "home_illustration.svg"%>
-    </div>
+	  <div class="col-12 text-center col-md-4">
+			<div class="d-flex justify-content-center pt-2">
+			 	<%= image_tag  "search_engine.svg" %>
+			</div>
+	    <%= form_tag spaces_path, method: :get, class:"form-group mt-3" do %>
+	    	<%= text_field_tag :query, params[:query], class: "my-2 form-inline-no-border", placeholder: "Select a city" %>
+	      <%= date_field_tag :arrival_date, params[:arrival_date], class: "my-2 form-inline-no-border", placeholder: "12/11/2020" %><br>
+	      <%= submit_tag 'Find', class: "btn-find-home my-2" %>
+	  	<% end %>
+	  </div>
   </div>
+</div>
 
-
-  <div class="home_about background-grey text-center py-5" >
-      <div data-aos="zoom-in">
-          <h3 class=" title_home ">About us</h3>
-          <p class="text_about">Less alone than at home and more professional than in a coffee shop, Cowork Space has been installed all over the world since 2019. A place of work, exchange and sharing of skills for all entrepreneurs, self-employed, freelancers, project leaders and teleworkers wishing to break the isolation of their homes and develop a quality professional network.</p>
-      </div>
+<div class="background-grey text-center py-5 row">
+  <div class="col-12" data-aos="zoom-in">
+    <h3>About us</h3>
+    <p>Less alone than at home and more professional than in a coffee shop, Cowork Space has been installed all over the world since 2019. A place of work, exchange and sharing of skills for all entrepreneurs, self-employed, freelancers, project leaders and teleworkers wishing to break the isolation of their homes and develop a quality professional network.</p>
   </div>
+</div>
 
-  <div class="explication_home d-flex justify-content-center align-items-center my-4" id="explication_step_1">
-    <div class="description_content_home" data-aos="fade-right">
-      <h3 class="title_home">All Around The World</h3>
-      <p class="text_description">Located all over the world, you can find your Coworking Space <strong>everywhere</strong> ! <br>
-      We offers you clean and modern spaces, adapted to your needs. Because your <strong>success</strong> is our priority. </p>
-    </div>
-    <div class="illustation_home" data-aos="fade-left">
-      <%= image_tag "planete.svg"%>
-    </div>
+<div class="row my-2 px-md-5 p-5" id="explication_step_1">
+  <div class="col-12 col-md-8 py-5" data-aos="fade-right">
+    <h3>All Around The World</h3>
+    <p>Located all over the world, you can find your Coworking Space <strong>everywhere</strong> ! <br>
+    We offers you clean and modern spaces, adapted to your needs. Because your <strong>success</strong> is our priority. </p>
   </div>
-
-  <div class="explication_home d-flex justify-content-center my-5 py-5 align-items-center background-grey py-4" id="explication_step_2" data-aos-delay="1000" data-aos-anchor="#explication_step_1" >
-    <div class="illustation_home" data-aos="fade-right">
-      <%= image_tag "clock.svg"%>
-    </div>
-    <div class="description_content_home" data-aos="fade-left">
-      <h3 class="title_home">Save Timer</h3>
-      <p class="text_description">Optimize your working time by finding a place where can book and play <strong>immediately</strong>. CoworkSpace avoid to wait too much time to receive a host answer.
-    </div>
+  <div class="illustation_home col-12 col-md-4 text-center" data-aos="fade-left">
+    <%= image_tag "planete.svg"%>
   </div>
+</div>
 
-  <div class="explication_home d-flex justify-content-center  my-4 align-items-center" id="business" data-aos-delay="2000" data-aos-anchor="#explication_step_2" >
-    <div class="description_content_home" data-aos="fade-right" >
-      <h3 class="title_home">Business Environment</h3>
-      <p class="text_description">You will have the opportunity to meet professionals from the same sector of activity, exchanges between members will allow you to enrich each other, to <strong>create synergies</strong> , working groups, skills associations, etc. Group spirit contributes to strengthening <strong>motivation and productivity.</strong>  </p>
-    </div>
-    <div class="illustation_home" data-aos="fade-left">
-      <%= image_tag "team.svg"%>
-    </div>
+<div class="background-grey row my-2 px-md-5 p-5 " id="explication_step_2" data-aos-delay="1000" data-aos-anchor="#explication_step_1" >
+  <div class="illustation_home col-12 col-md-4 text-center" data-aos="fade-right">
+    <%= image_tag "clock.svg"%>
   </div>
-
-  <div class="text-center background-blue my-4 py-5">
-    <h3 class="title_home mb-5">Customers Reviews</h3>
-    <div class=" d-flex avis_customer mb-3" >
-      <div class="avis_customer_box mx-4 py-4" data-aos="zoom-out" id="trigger-left">
-        <p class=" text_avis text-left  pl-5">With others tools we found ourselves constantly waiting on responses to questions, the payment process and the validation is very fast. </p>
-        <div class="client_info d-flex ml-4 align-items-center ">
-          <%= image_tag "avatar_girl.svg"%>
-          <div class="text-left pl-3 ">
-            <h5>Ana Longo</h5>
-            <p>Director of Clients Relations </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="avis_customer_box mx-4 py-4" data-aos="zoom-out" data-aos-delay="500"
-     data-aos-anchor="#trigger-left" >
-        <p class=" text_avis text-left  pl-5">We are a remote team working across multiple timeszones. Coworkspace is a great tool where I can book easily my coworking ! I can find what Iwe looking for immediately, and leave a comment for others to view if it’s convenient for them.  </p>
-        <div class="client_info d-flex ml-4 align-items-center"  >
-          <%= image_tag "avatar_man.svg"%>
-          <div class="text-left align-items-center pl-3">
-            <h5>Simon Hebert</h5>
-            <p>Product Owner Freelance, Paris </p>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="col-12 col-md-8 pt-5" data-aos="fade-left">
+    <h3>Save Timer</h3>
+    <p class="text-justify">
+			Optimize your working time by finding a place where can book and play <strong>immediately</strong>. 
+			CoworkSpace avoid to wait too much time to receive a host answer. 
+		</p>
   </div>
+</div>
 
-  <div class="deroulement" style="padding: 110px 80px;">
-    <h2 class="mb-5" id="step-trigger-1" data-aos="fade-right"
-     >Getting started has <br>never been easier</h2>
-    <div class="d-flex justify-content-center">
+<div class="row my-2 px-md-5 p-5" data-aos-delay="2000" data-aos-anchor="#explication_step_2">
+  <div class="col-12 col-md-8 py-5" data-aos="fade-right">
+    <h3>Business Environment</h3>
+    <p>You will have the opportunity to meet professionals from the same sector of activity, exchanges between members will allow you to enrich each other, to <strong>create synergies</strong> , working groups, skills associations, etc. Group spirit contributes to strengthening <strong>motivation and productivity.</strong>  </p>
+  </div>
+  <div class="illustation_home col-12 col-md-4 text-center" data-aos="fade-left">
+    <%= image_tag "team.svg"%>
+  </div>
+</div>
 
-      <div class=" mx-4 d-flex" id="step-trigger-2" data-aos="fade-right" data-aos-delay="500"
-     data-aos-anchor="#step-trigger-1">
-        <h3 class="number-circle">1</h3>
-        <div class="deroulement-content">
-          <h3 class="">Choose your <br>coworkplace</h3>
-          <p>There is more 3490 coworking in more than 25 country. </p>
-        </div>
-      </div>
 
-      <div class=" mx-4 d-flex" id="step-trigger-3" data-aos="fade-right" data-aos-delay="800"
-     data-aos-anchor="#step-trigger-2">
-        <h3 class="number-circle">2</h3>
-        <div class="deroulement-content">
-          <h3 class="">Set the date <br>of your stay</h3>
-          <p>Plan your stay with or without your team. </p>
-        </div>
-      </div>
+<div class="deroulement text-center py-5">
+  <h2 class="mb-3" id="step-trigger-1" data-aos="fade-right">Getting started has <br>never been easier</h2>
 
-      <div class="  mx-4 d-flex" data-aos="fade-right" data-aos-delay="1100"
-     data-aos-anchor="#step-trigger-3">
-        <h3 class="number-circle">3</h3>
-        <div class="deroulement-content">
-          <h3 class="">Easy Paiment <br> Process</h3>
-          <p>Just pay and receive the confirmation. </p>
-        </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-4 col-12 d-flex justify-content-center py-3" id="step-trigger-2" data-aos="fade-right" data-aos-delay="500" data-aos-anchor="#step-trigger-1">
+      <h3 class="number-circle">1</h3>
+      <div class="deroulement-content">
+        <h3 class="mb-0">Choose your coworking</h3>
+        <p>There is more 3490 coworking in more than 25 country. </p>
       </div>
     </div>
 
+    <div class="d-flex col-md-4 col-12 justify-content-center py-3" id="step-trigger-3" data-aos="fade-right" data-aos-delay="800" data-aos-anchor="#step-trigger-2">
+      <h3 class="number-circle">2</h3>
+      <div class="deroulement-content">
+        <h3 class="mb-0">Set the date of your stay</h3>
+        <p>Plan your stay with or without your team.</p>
+      </div>
+    </div>
 
+    <div class="d-flex col-md-4 col-12 justify-content-center py-3" data-aos="fade-right" data-aos-delay="1100" data-aos-anchor="#step-trigger-3">
+      <h3 class="number-circle">3</h3>
+      <div class="deroulement-content">
+        <h3 class="mb-0">Easy Paiment Process</h3>
+        <p>Just pay and receive the confirmation. </p>
+      </div>
+    </div>
   </div>
 
-    <button class="btn-nav-link-sign-in justify-content-center d-flex" style="margin: 70px auto;width: 200px" type="button">
-          <%= link_to "Try Now !", new_user_session_path, class: "nav-link " %>
-    </button>
+  <button type="button" class="btn-nav-link-sign-in mr-auto my-2">
+    <%= link_to "Try Now !", new_user_session_path, class: "nav-link" %>
+  </button>
 </div>

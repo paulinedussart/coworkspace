@@ -80,10 +80,14 @@
   width: fit-content;
   height: 57px;
   border: none;
+  a {
+    color: white !important;
+  }
   &:hover {
     transform: translateY(3px);
     transition: 0.3s;
     a {
+      color: white !important;
       border-radius: 22px;
       font-size: 900 !important;
     }
@@ -94,6 +98,7 @@
   color: #110f49 !important;
   position: relative;
   z-index: 5;
+  padding: 14px 0;
   &:hover {
     text-decoration: none;
     font-weight: 500;
@@ -104,7 +109,7 @@
   position: absolute;
   content: '';
   left: 0;
-  bottom: 0.2em;
+  bottom: 15px;
   background-color: $lightblue;
   height: 8px;
   width: 90px;
@@ -114,7 +119,7 @@
 .btn-nav-link:hover::before {
   position: absolute;
   content: '';
-  bottom: 0.2em;
+  bottom: 15px;
   background-color: $lightblue;
   height: 8px;
   width: 30px;
@@ -164,4 +169,13 @@
 
 .navbar-toggler:focus {
   outline: none;
+}
+
+.btn-find-home {
+  border-radius: 12px;
+  padding: 0px 23px;
+  height: 47px;
+  background-color: #110f49;
+  color: #fff;
+  border: none;
 }

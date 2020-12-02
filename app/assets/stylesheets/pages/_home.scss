@@ -1,3 +1,12 @@
+#title-coworkspace-on-mobile {
+  font-size: 44px;
+}
+@media screen and (min-width: 900px) {
+  #title-coworkspace-on-mobile {
+    display: none;
+  }
+}
+
 .home_slogan {
   margin-top: 85px;
 
@@ -88,6 +97,7 @@ body {
   height: 50px;
   padding: 12px;
   background-color: #9bc8fa;
+  padding: 9px 17px;
 }
 
 .deroulement-content {

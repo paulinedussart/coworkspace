@@ -1,18 +1,19 @@
 <div class="home_slogan py-2 mb-5">
-  <div class="py-3 px-5 row">
-		<div class="col-12 col-md-8 d-flex align-items-center">
-			<div>
-		    <h1><strong>Find your desk all over the world !</strong></h1>
+  <div class="py-3 px-3 row text-center">
+		<div id="header-info-with-photo" class="col-12 col-md-8 col-lg-8 d-flex">
+			<div class="align-items-around text-left">
+				<h1 id="title-coworkspace-on-mobile" class="mb-4"><strong>COWORKSPACE</strong></h1>
+		    <h2><strong>Find your desk all over the world !</strong></h2>
 		    <p>From private offices to open spaces <br>we will find a space that suits you perfectly.</p>
+				<div class="d-flex justify-content-center pt-4">
+				 	<%= image_tag  "search_engine.svg" %>
+				</div>
 			</div>
 		</div>
 
-	  <div class="col-12 text-center col-md-4">
-			<div class="d-flex justify-content-center pt-2">
-			 	<%= image_tag  "search_engine.svg" %>
-			</div>
+	  <div class="col-12 text-center col-md-4 col-lg-4 d-flex align-items-center justify-content-center">
 	    <%= form_tag spaces_path, method: :get, class:"form-group mt-3" do %>
-	    	<%= text_field_tag :query, params[:query], class: "my-2 form-inline-no-border", placeholder: "Select a city" %>
+	    	<%= text_field_tag :query, params[:query], class: "my-2 form-inline-no-border", placeholder: "Select a city", id: "search-home" %>
 	      <%= date_field_tag :arrival_date, params[:arrival_date], class: "my-2 form-inline-no-border", placeholder: "12/11/2020" %><br>
 	      <%= submit_tag 'Find', class: "btn-find-home my-2" %>
 	  	<% end %>
@@ -28,21 +29,21 @@
 </div>
 
 <div class="row my-2 px-md-5 p-5" id="explication_step_1">
-  <div class="col-12 col-md-8 py-5" data-aos="fade-right">
+  <div class="col-12 col-lg-8 py-5" data-aos="fade-right">
     <h3>All Around The World</h3>
     <p>Located all over the world, you can find your Coworking Space <strong>everywhere</strong> ! <br>
     We offers you clean and modern spaces, adapted to your needs. Because your <strong>success</strong> is our priority. </p>
   </div>
-  <div class="illustation_home col-12 col-md-4 text-center" data-aos="fade-up">
+  <div class="illustation_home col-12 col-lg-4 text-center" data-aos="fade-up">
     <%= image_tag "planete.svg"%>
   </div>
 </div>
 
 <div class="background-grey row my-2 px-md-5 p-5 " id="explication_step_2" data-aos-delay="1000" data-aos-anchor="#explication_step_1" >
-  <div class="illustation_home col-12 col-md-4 text-center" data-aos="fade-right">
+  <div class="illustation_home col-12 col-lg-4 text-center" data-aos="fade-right">
     <%= image_tag "clock.svg"%>
   </div>
-  <div class="col-12 col-md-8 pt-5" data-aos="fade-up">
+  <div class="col-12 col-lg-8 pt-5" data-aos="fade-up">
     <h3>Save Timer</h3>
     <p class="text-justify">
 			Optimize your working time by finding a place where can book and play <strong>immediately</strong>. 
@@ -52,15 +53,14 @@
 </div>
 
 <div class="row my-2 px-md-5 p-5" data-aos-delay="2000" data-aos-anchor="#explication_step_2">
-  <div class="col-12 col-md-8 py-5" data-aos="fade-right">
+  <div class="col-12 col-lg-8 py-5" data-aos="fade-right">
     <h3>Business Environment</h3>
     <p>You will have the opportunity to meet professionals from the same sector of activity, exchanges between members will allow you to enrich each other, to <strong>create synergies</strong> , working groups, skills associations, etc. Group spirit contributes to strengthening <strong>motivation and productivity.</strong>  </p>
   </div>
-  <div class="illustation_home col-12 col-md-4 text-center" data-aos="fade-up">
+  <div class="illustation_home col-12 col-lg-4 text-center" data-aos="fade-up">
     <%= image_tag "team.svg"%>
   </div>
 </div>
-
 
 <div class="deroulement text-center py-5">
   <h2 class="mb-3" id="step-trigger-1" data-aos="fade-right">Getting started has <br>never been easier</h2>

@@ -84,6 +84,23 @@ a.nav-link {
   }
 }
 
+@media screen and (max-width: 575px) {
+  ul.navbar-nav {
+    background-color: #fff;
+    padding-bottom: 20px;
+    border-radius: 18px;
+  }
+
+  .btn-nav-link {
+    font-size: 20px;
+  }
+}
 .navbar-collapse {
   flex-grow: 0;
+}
+
+@media screen and (max-width: 767px) {
+  #header-info-with-photo {
+    justify-content: center !important;
+  }
 }

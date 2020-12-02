@@ -5,22 +5,26 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { initMapbox } from '../plugins/init_mapbox';
 
-
+// ---------- MapBox ----------
 initMapbox();
+
+
 import bookReservation from "./book_reservation";
 bookReservation();
 
 activeCheckBoxes();
+// ---------- Algolia ----------
+import { initAutocomplete } from "../plugins/init_autocomplete";
+initAutocomplete();
 
-
-
+// ---------- FlatPickr ----------
 import "../plugins/flatpickr";
 
 // ------------ Calendar ------------
-import "@fullcalendar/core/main.css";
-import "@fullcalendar/daygrid/main.css";
-import fullCalendar from "./fullcalendar";
-fullCalendar();
+// import "@fullcalendar/core/main.css";
+// import "@fullcalendar/daygrid/main.css";
+// import fullCalendar from "./fullcalendar";
+// fullCalendar();
 
 
 // ------------ AOS ------------
@@ -35,4 +39,5 @@ AOS.init({
 });
 
 // --------- NAVBAR ---------
-import scrollNavbarFunction from "./navbar"
+import scrollNavbarFunction from "./navbar";
+

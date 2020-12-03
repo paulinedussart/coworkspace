@@ -30,7 +30,7 @@ module.exports = function(api) {
         {
           forceAllTransforms: true,
           useBuiltIns: 'entry',
-          corejs: 2.6.5,
+          corejs: 2,
           modules: false,
           exclude: ['transform-typeof-symbol']
         }
@@ -58,7 +58,7 @@ module.exports = function(api) {
         {
           helpers: false,
           regenerator: true,
-          corejs: 2.6.5
+          corejs: 2
         }
       ],
       [

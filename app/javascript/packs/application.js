@@ -1,6 +1,6 @@
 
 import "bootstrap";
-
+import "core-js/stable";
 import activeCheckBoxes from "./service_choice";
 activeCheckBoxes();
 

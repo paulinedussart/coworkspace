@@ -15,7 +15,6 @@
     "popper.js": "^1.15.0"
   },
   "devDependencies": {
-    "core-js": "^3.8.0",
     "webpack-dev-server": "^3.5.1"
   }
 }

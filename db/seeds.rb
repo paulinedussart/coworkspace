@@ -6,9 +6,7 @@ Owner.destroy_all
 Space.destroy_all
 Service.destroy_all
 Desk.destroy_all
-Message.destroy_all
 User.destroy_all
-ChatRoom.destroy_all
 
 
 
@@ -341,7 +339,6 @@ Reservation.create!(
 )
 end
 
-puts ' --> MESSAGES created for Havana Beach'
 
 
 puts ' --> creating REVIEWS for Havana Beach'
@@ -766,7 +763,6 @@ Desk.create!(
 puts ' --> SPACES created!'
 puts 'Great ! Everything has been created ! '
 
-# ChatRoom.create(user: User.all.sample, owner: Owner.all.sample)
 
 # SEED RESERVATIONS
 # puts 'Creating reservations...'
